@@ -1,17 +1,20 @@
+function loadPage(page) {
+  fetch("pages/" + page + "?v=" + Date.now())
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById("content").innerHTML = html;
+      window.scrollTo(0, 0);
+      closeMenu();
+    });
+}
+
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("open");
 }
 
-function loadPage(page) {
-  fetch("pages/" + page + "?v=" + Date.now())
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("content").innerHTML = data;
-      document.getElementById("menu").classList.remove("open");
-      window.scrollTo(0, 0);
-    });
+function closeMenu() {
+  document.getElementById("menu").classList.remove("open");
 }
 
-window.onload = () => {
-  loadPage("home.html");
-};
+/* LOAD HOME BY DEFAULT */
+loadPage("home.html");
