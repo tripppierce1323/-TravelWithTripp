@@ -136,3 +136,36 @@ body {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.3);
 }
+
+/* SECTION */
+.section {
+  margin-top: 80px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* DESKTOP GRID */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* CLICKABLE CARDS */
+.card.clickable {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card.clickable:hover {
+  transform: translateY(-5px);
+}
