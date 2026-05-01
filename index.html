@@ -4,31 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TravelWithTripp</title>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <header class="navbar">
-    <div class="brandWrap">
-      <div class="logo">TravelWith<span>Tripp</span></div>
-      <div class="miniTag">SMARTER REWARDS. BETTER TRIPS.</div>
-    </div>
 
-    <button class="menu-icon" onclick="toggleMenu()">☰</button>
-  </header>
+  <!-- MAIN CONTENT -->
+  <div id="content"></div>
 
-  <nav id="menu" class="menu">
-    <a onclick="loadPage('home.html')">Home</a>
-    <a onclick="loadPage('about.html')">About Me</a>
-    <a onclick="loadPage('wallet.html')">My Wallet</a>
-    <a onclick="loadPage('calculator.html')">Credit Card Calculator</a>
-    <a onclick="loadPage('bonuses.html')">Welcome Bonuses</a>
-    <a onclick="loadPage('tracker.html')">Credit Tracker</a>
-    <a onclick="loadPage('trips.html')">Trip Itineraries</a>
-  </nav>
+  <!-- SIMPLE NAV MENU (OPTIONAL) -->
+  <div id="menu" class="menu">
+    <a href="#" onclick="loadPage('home.html')">Home</a>
+    <a href="#" onclick="loadPage('wallet.html')">My Wallet</a>
+    <a href="#" onclick="loadPage('bonuses.html')">Best Welcome Offers</a>
+    <a href="#" onclick="loadPage('trips.html')">Trip Itineraries</a>
+    <a href="#" onclick="loadPage('calculator.html')">Calculator</a>
+    <a href="#" onclick="loadPage('tracker.html')">Tracker</a>
+    <a href="#" onclick="loadPage('about.html')">About Me</a>
+  </div>
 
-  <main id="content"></main>
+  <script>
+    function loadPage(page) {
+      fetch("pages/" + page)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("content").innerHTML = html;
+          window.scrollTo(0, 0);
+        });
+    }
 
-  <script src="script.js"></script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("open");
+    }
+
+    // Load homepage by default
+    loadPage("home.html");
+  </script>
+
 </body>
 </html>
