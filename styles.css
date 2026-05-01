@@ -4,102 +4,26 @@
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, Arial;
+  font-family: Inter, system-ui, Arial, sans-serif;
   background: #061a3a;
   color: white;
 }
 
+/* Background */
 .app {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top, rgba(28,85,160,0.6), transparent 40%),
-    linear-gradient(180deg, #062c64, #020b1c);
+    radial-gradient(circle at top, rgba(28, 85, 160, 0.6), transparent 40%),
+    linear-gradient(180deg, #062c64 0%, #061a3a 50%, #020b1c 100%);
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 60px 20px;
-}
-
-h1 {
-  font-size: 48px;
-  margin: 0;
-}
-
-h1 span {
-  color: gold;
-}
-
-.tagline {
-  color: gold;
-  margin-top: 10px;
-}
-
-h2 {
-  margin-top: 30px;
-  font-size: 36px;
-}
-
-/* CARDS */
-.cardsSection {
-  padding: 20px;
-}
-
-.cardsGrid {
-  display: grid;
-  gap: 20px;
-}
-
-.cardBox {
-  background: white;
-  color: black;
-  border-radius: 20px;
-  padding: 20px;
-}
-
-.cardImageWrap img {
-  width: 100%;
-}
-
-button {
-  background: navy;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 999px;
+  padding: 60px 20px 40px;
 }
 
 /* LOGO */
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.logoIcon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 3px solid gold;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.logoIcon::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-top: 3px solid gold;
-  border-right: 3px solid gold;
-  transform: rotate(45deg);
-  top: 18px;
-  left: 18px;
-}
-
-/* Better logo */
 .logoCircle {
   width: 90px;
   height: 90px;
@@ -128,55 +52,118 @@ button {
   border-radius: 50%;
 }
 
-/* Card graphics that always work */
-.fakeCard {
-  width: 100%;
-  max-width: 420px;
-  height: 220px;
-  border-radius: 18px;
-  margin: 25px auto;
-  padding: 28px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
-}
-
-.fakeCard p {
+/* TITLE */
+h1 {
+  font-size: clamp(42px, 10vw, 70px);
   margin: 0;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.fakeCard span {
-  font-size: 28px;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: -2px;
 }
 
-.goldCard {
-  background: linear-gradient(135deg, #caa84a, #f7dc85, #9b792d);
-  color: #111;
+h1 span {
+  color: #f5c96b;
 }
 
-.platinumCard {
-  background: linear-gradient(135deg, #d8d8d8, #ffffff, #999);
-  color: #111;
+/* TAGLINE */
+.tagline {
+  margin-top: 16px;
+  color: #f5c96b;
+  letter-spacing: 4px;
+  font-size: clamp(16px, 3vw, 24px);
 }
 
-.ventureCard {
-  background: linear-gradient(135deg, #031b44, #0c5a7a);
+/* MAIN TEXT */
+h2 {
+  margin-top: 28px;
+  font-size: clamp(32px, 6vw, 50px);
+  line-height: 1.2;
 }
 
-.sapphireCard {
-  background: linear-gradient(135deg, #123c8c, #061a3a);
+.subtext {
+  margin-top: 14px;
+  font-size: 18px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.reserveCard {
-  background: linear-gradient(135deg, #111, #27364a);
+/* CARDS SECTION */
+.cardsSection {
+  padding: 20px;
 }
 
-.biltCard {
-  background: linear-gradient(135deg, #111, #333);
+.cardsSection h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.cardsGrid {
+  display: grid;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CARD BOX */
+.cardBox {
+  background: white;
+  color: #061a3a;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* CARD TITLE */
+.cardBox h4 {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+/* IMAGE */
+.cardBox img {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+/* TEXT */
+.bonus {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* BUTTON */
+button {
+  border: none;
+  background: linear-gradient(135deg, #062c64, #020b1c);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* HOVER (makes it feel premium) */
+button:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
