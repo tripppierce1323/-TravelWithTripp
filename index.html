@@ -9,14 +9,17 @@
 <body>
 
 <header class="site-header">
-  <div class="logo">
-    ✈️ TravelWith<span class="gold">Tripp</span>
-    <div style="font-size:12px; color:#aaa; letter-spacing:2px;">
-      SMARTER REWARDS. BETTER TRIPS.
+  <div class="brand">
+    <div class="brand-row">
+      <span class="plane-icon">✈</span>
+      <div>
+        <div class="logo-text">TravelWith<span>Tripp</span></div>
+        <div class="tagline">SMARTER REWARDS. BETTER TRIPS.</div>
+      </div>
     </div>
-  </div>
 
-  <button class="menu-toggle" id="menuToggle">☰</button>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
 
   <nav class="nav-menu" id="navMenu">
     <a href="index.html">Home</a>
@@ -29,35 +32,29 @@
   </nav>
 </header>
 
-<main class="page-content">
+<main class="home-grid">
 
-  <!-- CARD 1 -->
-  <div class="home-card">
-    <div class="card-image">
-      <img src="https://i.ibb.co/zhKgpxBZ/89-F7-BACB-100-D-4-DC0-B04-D-A0-EC79846-FFE.png" />
-    </div>
+  <a href="pages/bonuses.html" class="home-card">
+    <img src="https://i.ibb.co/zhKgpxBZ/89-F7-BACB-100-D-4-DC0-B04-D-A0-EC79846-FFE.png" alt="Best Welcome Offers" />
 
-    <div class="card-content">
-      <div class="card-icon">🧮</div>
-      <h2>Credit Card<br>Calculator</h2>
-      <p>Calculate points, value, and rewards instantly.</p>
-      <a href="pages/calculator.html" class="card-link">Explore</a>
-    </div>
-  </div>
-
-  <!-- CARD 2 -->
-  <div class="home-card">
-    <div class="card-image">
-      <img src="https://i.ibb.co/zhKgpxBZ/89-F7-BACB-100-D-4-DC0-B04-D-A0-EC79846-FFE.png" />
-    </div>
-
-    <div class="card-content">
+    <div class="card-body">
       <div class="card-icon">🎁</div>
       <h2>Best Welcome<br>Offers</h2>
       <p>Find the highest welcome bonuses available right now.</p>
-      <a href="pages/bonuses.html" class="card-link">Explore</a>
+      <div class="explore">Explore →</div>
     </div>
-  </div>
+  </a>
+
+  <a href="pages/calculator.html" class="home-card">
+    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" alt="Credit Card Calculator" />
+
+    <div class="card-body">
+      <div class="card-icon">🧮</div>
+      <h2>Credit Card<br>Calculator</h2>
+      <p>Calculate points, value, and rewards instantly.</p>
+      <div class="explore">Explore →</div>
+    </div>
+  </a>
 
 </main>
 
