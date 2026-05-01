@@ -1,10 +1,17 @@
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("open");
+}
+
 function loadPage(page) {
-  fetch('pages/' + page)
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('content').innerHTML = data;
+  fetch("pages/" + page)
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("content").innerHTML = data;
+      document.getElementById("menu").classList.remove("open");
+      window.scrollTo(0, 0);
     });
 }
 
-// Load home page by default
-window.onload = () => loadPage('home.html');
+window.onload = () => {
+  loadPage("home.html");
+};
