@@ -6,667 +6,1826 @@
   <title>TravelWithTripp</title>
   <style>
     :root {
-      --green: #0f4a38;
-      --green2: #123f31;
-      --gold: #d7b84a;
-      --cream: #f8f5ef;
-      --text: #14213d;
-      --muted: #667085;
-      --border: #e5e7eb;
-      --orange: #c4623f;
+      --green:#0f4a38;
+      --green2:#123f31;
+      --gold:#d7b84a;
+      --cream:#f8f5ef;
+      --text:#101828;
+      --muted:#667085;
+      --border:#e5e7eb;
+      --soft:#ffffff;
+      --orange:#c4623f;
+      --shadow:0 14px 35px rgba(16,24,40,.08);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing:border-box; }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--cream);
-      color: var(--text);
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      background:linear-gradient(180deg,#fff 0%,var(--cream) 45%,#fff 100%);
+      color:var(--text);
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: white;
-      border-bottom: 1px solid var(--border);
-      padding: 14px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+      padding:16px 18px;
     }
 
-    .brand {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      font-weight: 800;
-      color: var(--green);
-      font-size: 20px;
+    .brand-wrap {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      max-width:1050px;
+      margin:auto;
     }
 
-    .logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--green);
-      color: var(--gold);
-      display: grid;
-      place-items: center;
-      font-size: 22px;
+    .brand-icon {
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      background:radial-gradient(circle at 30% 20%,#1a6f55,var(--green));
+      color:var(--gold);
+      display:grid;
+      place-items:center;
+      font-size:26px;
+      box-shadow:0 8px 20px rgba(15,74,56,.25);
     }
 
-    .tag {
-      font-size: 11px;
-      letter-spacing: 3px;
-      color: var(--muted);
-      font-weight: 700;
+    .brand-title {
+      font-size:28px;
+      font-weight:900;
+      color:var(--green);
+      line-height:1;
+    }
+
+    .brand-sub {
+      font-size:13px;
+      letter-spacing:6px;
+      color:#667085;
+      font-weight:800;
+      margin-top:8px;
     }
 
     nav {
-      display: flex;
-      overflow-x: auto;
-      gap: 8px;
-      background: white;
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--border);
+      position:sticky;
+      top:86px;
+      z-index:15;
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      padding:12px 18px;
+      background:rgba(255,255,255,.95);
+      border-bottom:1px solid var(--border);
     }
 
     nav button {
-      white-space: nowrap;
-      border: 1px solid var(--border);
-      background: white;
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-weight: 700;
-      color: var(--green);
+      white-space:nowrap;
+      border:1px solid var(--border);
+      background:white;
+      border-radius:999px;
+      padding:11px 18px;
+      font-size:15px;
+      font-weight:800;
+      color:var(--green);
     }
 
     nav button.active {
-      background: var(--green);
-      color: white;
+      background:var(--green);
+      color:white;
+      box-shadow:0 8px 16px rgba(15,74,56,.18);
     }
 
     main {
-      padding: 18px;
-      max-width: 900px;
-      margin: auto;
+      max-width:1050px;
+      margin:auto;
+      padding:20px 18px 60px;
     }
 
-    .hero {
-      background: linear-gradient(135deg, rgba(15,74,56,.95), rgba(15,74,56,.7)),
-        url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80");
-      background-size: cover;
-      background-position: center;
-      border-radius: 28px;
-      padding: 34px 24px;
-      color: white;
-      margin-bottom: 20px;
+    section { animation:fade .2s ease; }
+
+    @keyframes fade {
+      from { opacity:.65; transform:translateY(4px); }
+      to { opacity:1; transform:translateY(0); }
     }
+
+    .hide { display:none; }
 
     h1 {
-      font-size: 44px;
-      line-height: 1;
-      margin: 12px 0;
+      font-size:52px;
+      line-height:.98;
+      margin:16px 0;
+      letter-spacing:-2px;
     }
 
     h2 {
-      color: var(--green);
-      font-size: 32px;
-      margin: 10px 0;
+      font-size:42px;
+      line-height:1;
+      margin:18px 0 10px;
+      color:var(--green);
+      letter-spacing:-1px;
     }
 
     h3 {
-      margin-bottom: 8px;
+      margin:0 0 8px;
+      font-size:24px;
+      color:#111827;
     }
 
-    .gold { color: var(--gold); }
+    p { line-height:1.45; }
 
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 20px;
-      margin: 16px 0;
-      box-shadow: 0 6px 18px rgba(0,0,0,.04);
+    .muted { color:var(--muted); }
+
+    .hero {
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      min-height:560px;
+      padding:36px 26px;
+      color:white;
+      background:
+        linear-gradient(135deg,rgba(15,74,56,.96),rgba(15,74,56,.62)),
+        url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=80");
+      background-position:center;
+      background-size:cover;
+      box-shadow:var(--shadow);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
+    .hero p {
+      font-size:20px;
+      max-width:650px;
     }
 
-    @media (min-width: 700px) {
-      .grid-2 { grid-template-columns: 1fr 1fr; }
-      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .gold { color:var(--gold); }
+
+    .pill {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:#f3f4f6;
+      color:var(--green);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
     }
 
-    input, select {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #cfd8d3;
-      border-radius: 14px;
-      font-size: 16px;
-    }
-
-    label {
-      font-weight: 700;
-      display: block;
-      margin: 10px 0 6px;
+    .pill.dark {
+      background:rgba(255,255,255,.16);
+      color:white;
     }
 
     .btn {
-      border: none;
-      background: var(--gold);
-      color: #111;
-      font-weight: 800;
-      border-radius: 999px;
-      padding: 14px 18px;
-      font-size: 16px;
-      width: 100%;
-      margin-top: 12px;
+      border:0;
+      border-radius:999px;
+      padding:15px 20px;
+      font-size:17px;
+      font-weight:900;
+      background:var(--gold);
+      color:#111;
+      cursor:pointer;
+      box-shadow:0 10px 20px rgba(0,0,0,.08);
     }
 
-    .btn.secondary {
-      background: var(--green);
-      color: white;
+    .btn.full { width:100%; }
+    .btn.green { background:var(--green); color:white; }
+    .btn.ghost { background:#fff; border:1px solid var(--border); color:var(--green); box-shadow:none; }
+    .btn.small { padding:10px 14px; font-size:14px; }
+
+    .hero-actions {
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:28px;
+      max-width:360px;
     }
 
-    .pill {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #f3f4f6;
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--green);
-      margin: 4px 4px 4px 0;
+    .grid { display:grid; gap:16px; }
+    .grid-2 { grid-template-columns:1fr; }
+    .grid-3 { grid-template-columns:1fr; }
+    .grid-4 { grid-template-columns:1fr; }
+
+    @media(min-width:760px) {
+      .grid-2 { grid-template-columns:repeat(2,1fr); }
+      .grid-3 { grid-template-columns:repeat(3,1fr); }
+      .grid-4 { grid-template-columns:repeat(4,1fr); }
+      .hero-actions { flex-direction:row; max-width:none; }
+    }
+
+    .card {
+      background:white;
+      border:1px solid var(--border);
+      border-radius:26px;
+      padding:22px;
+      margin:16px 0;
+      box-shadow:var(--shadow);
+    }
+
+    .click-card {
+      cursor:pointer;
+      transition:.16s ease;
+    }
+
+    .click-card:active {
+      transform:scale(.99);
     }
 
     .stat {
-      background: #f9fafb;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px;
+      background:#f9fafb;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:16px;
     }
 
     .stat small {
-      color: var(--muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 800;
+      display:block;
+      color:#667085;
+      font-weight:900;
+      letter-spacing:2px;
+      font-size:12px;
+      text-transform:uppercase;
     }
 
     .stat strong {
-      display: block;
-      color: var(--green);
-      font-size: 22px;
-      margin-top: 5px;
+      display:block;
+      margin-top:8px;
+      font-size:26px;
+      color:var(--green);
     }
 
-    .hide { display: none; }
-
-    .wallet-card {
-      background: linear-gradient(135deg, #0e3d30, #175f49);
-      color: white;
-      border-radius: 24px;
-      padding: 20px;
-      margin: 16px 0;
+    label {
+      display:block;
+      margin:14px 0 7px;
+      font-weight:900;
+      color:#111827;
     }
+
+    input,select {
+      width:100%;
+      border:1px solid #d0d5dd;
+      border-radius:18px;
+      padding:15px;
+      font-size:18px;
+      background:white;
+    }
+
+    input::placeholder { color:#98a2b3; }
+
+    .section-kicker {
+      color:#667085;
+      font-size:13px;
+      letter-spacing:5px;
+      font-weight:900;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .proof-row {
+      margin:18px 0;
+    }
+
+    .proof-card {
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .proof-card strong {
+      font-size:26px;
+      color:var(--green);
+      display:block;
+    }
+
+    .card-face {
+      width:150px;
+      height:94px;
+      border-radius:16px;
+      padding:14px;
+      color:white;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      flex:none;
+      box-shadow:0 16px 25px rgba(0,0,0,.18);
+      background:linear-gradient(135deg,#1b4332,#0f4a38);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .card-face:after {
+      content:"";
+      position:absolute;
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      right:-70px;
+      top:-60px;
+      background:rgba(255,255,255,.12);
+    }
+
+    .card-face.gold { background:linear-gradient(135deg,#cfa43a,#7b5b18); }
+    .card-face.blue { background:linear-gradient(135deg,#1d4ed8,#0f172a); }
+    .card-face.black { background:linear-gradient(135deg,#111827,#000); }
+    .card-face.purple { background:linear-gradient(135deg,#6d28d9,#111827); }
+    .card-face.red { background:linear-gradient(135deg,#b91c1c,#111827); }
+    .card-face.silver { background:linear-gradient(135deg,#cbd5e1,#475569); }
+    .card-face.cash { background:linear-gradient(135deg,#047857,#064e3b); }
+
+    .card-face .issuer {
+      font-size:10px;
+      letter-spacing:1.5px;
+      opacity:.9;
+      text-transform:uppercase;
+      z-index:1;
+    }
+
+    .card-face .card-name {
+      font-weight:900;
+      font-size:15px;
+      line-height:1.05;
+      z-index:1;
+    }
+
+    .card-layout {
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+
+    .card-body { flex:1; min-width:220px; }
+
+    .offer-card.featured {
+      background:linear-gradient(180deg,#fff,#fbfaf6);
+      border:2px solid rgba(215,184,74,.45);
+    }
+
+    .rank {
+      float:right;
+      background:#f7edc8;
+      color:#7a5b00;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:900;
+    }
+
+    .mini-tags {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:10px 0;
+    }
+
+    .mini-tags span {
+      background:#f3f4f6;
+      color:var(--green);
+      border-radius:999px;
+      padding:7px 10px;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .button-row {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .button-row .btn { flex:1; min-width:130px; }
+
+    .empty-state {
+      background:#fff7e6;
+      border:1px solid #f2d38b;
+      color:#6b4e00;
+      border-radius:20px;
+      padding:18px;
+      margin:16px 0;
+      font-weight:800;
+    }
+
+    .wallet-hero {
+      background:linear-gradient(135deg,#0f4a38,#06281f);
+      color:white;
+      border-radius:28px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      margin:18px 0;
+    }
+
+    .wallet-hero h3 { color:white; }
 
     .progress {
-      height: 10px;
-      background: rgba(255,255,255,.25);
-      border-radius: 999px;
-      overflow: hidden;
-      margin: 10px 0;
+      height:12px;
+      background:rgba(255,255,255,.2);
+      border-radius:999px;
+      overflow:hidden;
+      margin:13px 0;
     }
 
     .bar {
-      height: 100%;
-      background: var(--gold);
-      width: 0%;
+      height:100%;
+      background:var(--gold);
+      width:0%;
     }
 
     .credit-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 12px;
-      margin: 10px 0;
-      background: white;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:14px;
+      margin:10px 0;
+      background:white;
+      cursor:pointer;
     }
 
     .credit-row.used {
-      opacity: .65;
-      text-decoration: line-through;
+      opacity:.65;
     }
 
-    .small {
-      color: var(--muted);
-      font-size: 14px;
+    .credit-row.used .credit-name {
+      text-decoration:line-through;
     }
 
-    .trip-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 18px;
+    .credit-logo {
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:#f3f4f6;
+      font-weight:900;
+      color:var(--green);
+      flex:none;
     }
+
+    .search-results {
+      margin-top:12px;
+      display:grid;
+      gap:10px;
+    }
+
+    .search-item {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:12px;
+      background:white;
+      cursor:pointer;
+    }
+
+    .search-card-face {
+      width:70px;
+      height:44px;
+      border-radius:8px;
+      transform:none;
+      box-shadow:none;
+      padding:7px;
+      font-size:8px;
+    }
+
+    .trip-card {
+      overflow:hidden;
+      padding:0;
+    }
+
+    .trip-image {
+      height:260px;
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
+
+    .trip-overlay {
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.55));
+      display:flex;
+      align-items:flex-end;
+      padding:20px;
+      color:white;
+    }
+
+    .trip-content {
+      padding:22px;
+    }
+
+    .trip-content h3 {
+      color:var(--green);
+      font-size:30px;
+    }
+
+    .callout {
+      background:linear-gradient(135deg,#0f4a38,#123f31);
+      color:white;
+      border-radius:28px;
+      padding:26px;
+      margin:20px 0;
+      box-shadow:var(--shadow);
+    }
+
+    .callout h3 { color:white; font-size:30px; }
 
     footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--muted);
+      text-align:center;
+      padding:40px 20px;
+      color:var(--muted);
+      border-top:1px solid var(--border);
+      margin-top:30px;
     }
   </style>
 </head>
 
 <body>
-  <header>
+<header>
+  <div class="brand-wrap">
+    <div class="brand-icon">✈️</div>
     <div>
-      <div class="brand"><div class="logo">✈</div><div>TravelWithTripp</div></div>
-      <div class="tag">SMARTER REWARDS</div>
+      <div class="brand-title">TravelWithTripp</div>
+      <div class="brand-sub">SMARTER REWARDS</div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <nav>
-    <button class="active" onclick="showPage('home', this)">Home</button>
-    <button onclick="showPage('builder', this)">Setup Builder</button>
-    <button onclick="showPage('bonuses', this)">Bonuses</button>
-    <button onclick="showPage('wallet', this)">Wallet</button>
-    <button onclick="showPage('trips', this)">Trip Templates</button>
-  </nav>
+<nav>
+  <button class="active" onclick="showPage('home', this)">Home</button>
+  <button onclick="showPage('builder', this)">Setup Builder</button>
+  <button onclick="showPage('bonuses', this)">Bonuses</button>
+  <button onclick="showPage('wallet', this)">Wallet</button>
+  <button onclick="showPage('trips', this)">Trip Templates</button>
+</nav>
 
-  <main>
-    <section id="home">
-      <div class="hero">
-        <span class="pill">TRAVELWITHTRIPP</span>
-        <h1>Smarter rewards. <span class="gold">Better trips.</span></h1>
-        <p>Optimize your cards, track credits, and see how everyday spending can become real travel.</p>
+<main>
+  <section id="home">
+    <div class="hero">
+      <span class="pill dark">✈ TravelWithTripp</span>
+      <h1>Smarter rewards. <span class="gold">Better trips.</span></h1>
+      <p>Optimize your credit cards, track credits, and see how everyday spending can become real travel.</p>
+      <p><strong>Most people miss hundreds in card credits and rewards every year.</strong></p>
+      <div class="hero-actions">
         <button class="btn" onclick="showPage('builder')">Build my setup →</button>
+        <button class="btn ghost" onclick="showPage('trips')">See trip templates</button>
+      </div>
+    </div>
+
+    <div class="grid grid-3 proof-row">
+      <div class="proof-card"><strong>90,000 pts</strong><span class="muted">can be worth real travel value</span></div>
+      <div class="proof-card"><strong>$424/year</strong><span class="muted">Amex Gold credit potential</span></div>
+      <div class="proof-card"><strong>1–3 cards</strong><span class="muted">simple wallet setups</span></div>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card click-card" onclick="showPage('builder')">
+        <h3>Find your best card setup</h3>
+        <p>Compare 1, 2, and 3-card setups based on your monthly spending.</p>
+        <strong>Start calculator →</strong>
+      </div>
+      <div class="card click-card" onclick="showPage('wallet')">
+        <h3>Track card credits</h3>
+        <p>Monthly, quarterly, semiannual, and annual credits are tracked by period.</p>
+        <strong>Track credits →</strong>
+      </div>
+      <div class="card click-card" onclick="showPage('bonuses')">
+        <h3>Welcome bonus rankings</h3>
+        <p>See points, estimated value, annual fee, and net first-year value.</p>
+        <strong>View offers →</strong>
+      </div>
+      <div class="card click-card" onclick="showPage('trips')">
+        <h3>Trip templates</h3>
+        <p>See how points convert into flights, hotels, and real trips.</p>
+        <strong>See trips →</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="builder" class="hide">
+    <div class="section-kicker">Setup Builder</div>
+    <h2>Find the perfect card combo</h2>
+    <p class="muted">Enter monthly spend. Values are estimates.</p>
+
+    <div class="card">
+      <div class="grid grid-2" id="spendInputs"></div>
+
+      <label>Goal</label>
+      <select id="goal">
+        <option value="travel">Travel Points</option>
+        <option value="cash">Cash Back</option>
+      </select>
+
+      <label style="display:flex;gap:10px;align-items:center;margin-top:18px;">
+        <input id="includeBusiness" type="checkbox" style="width:auto;" />
+        Include business cards
+      </label>
+
+      <button class="btn green full" onclick="calculateSetups()">Calculate setups</button>
+    </div>
+
+    <div id="setupResults"></div>
+  </section>
+
+  <section id="bonuses" class="hide">
+    <div class="section-kicker">Welcome Bonuses</div>
+    <h2>Today’s top offers</h2>
+    <p class="muted">Premium card stack ranked by first-year value after fees.</p>
+    <div id="bonusList"></div>
+  </section>
+
+  <section id="wallet" class="hide">
+    <div class="section-kicker">Wallet & Credits</div>
+    <h2>Your saved cards</h2>
+    <p class="muted">Search and add cards. Track credits by month, quarter, half-year, or year.</p>
+
+    <div class="card">
+      <label>Search cards</label>
+      <input id="cardSearch" placeholder="Search by card name or issuer..." oninput="renderSearchResults()" />
+      <div id="searchResults" class="search-results"></div>
+    </div>
+
+    <div id="walletList"></div>
+  </section>
+
+  <section id="trips" class="hide">
+    <div class="section-kicker">Trip Templates</div>
+    <h2>Real redemptions, real value</h2>
+    <p class="muted">Trip examples showing point type, cash value, and out of pocket cost.</p>
+
+    <div id="tripList"></div>
+
+    <div class="callout">
+      <h3>Want help building your points plan?</h3>
+      <p>Book a call with Tripp for trip planning, credit card setup help, or a real points strategy based on your goals.</p>
+      <button class="btn" onclick="window.location.href='mailto:tripppierce1323@gmail.com?subject=Book%20a%20TravelWithTripp%20Call'">Book a Call</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 TravelWithTripp · Estimates only. Not financial advice.
+</footer>
+
+<script>
+const pointValues = {
+  "Amex MR": 0.018,
+  "Chase UR": 0.017,
+  "Capital One": 0.017,
+  "Citi": 0.016,
+  "Delta": 0.013,
+  "Hilton": 0.005,
+  "Marriott": 0.007,
+  "Discover Cash": 0.01,
+  "Cash Back": 0.01
+};
+
+const categories = [
+  ["dining","Dining"],
+  ["groceries","Groceries"],
+  ["gas","Gas"],
+  ["travel","General Travel"],
+  ["flights","Flights"],
+  ["hotels","Hotels"],
+  ["transit","Transit / Rideshare"],
+  ["streaming","Streaming"],
+  ["drugstores","Drugstores"],
+  ["rent","Rent"],
+  ["online","Online Shopping"],
+  ["other","Other"]
+];
+
+const cards = [
+  {
+    name:"American Express Gold",
+    issuer:"American Express",
+    ecosystem:"Amex MR",
+    type:"flexible",
+    color:"gold",
+    isBusiness:false,
+    annualFee:325,
+    bonusPoints:90000,
+    bonusValue:1620,
+    bestFor:["Dining","Groceries"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["No lounge access"],
+    multipliers:{dining:4,groceries:4,flights:3,hotels:1,gas:1,travel:1,transit:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[
+      {name:"Uber Cash", value:10, frequency:"monthly", reset:"1st of month", trackable:true, logo:"Uber"},
+      {name:"Dining Credit", value:10, frequency:"monthly", reset:"1st of month", trackable:true, logo:"Dining"},
+      {name:"Dunkin Credit", value:7, frequency:"monthly", reset:"1st of month", trackable:true, logo:"Dunkin"},
+      {name:"Resy Credit", value:50, frequency:"semiannual", reset:"Jan & Jul", trackable:true, logo:"Resy"}
+    ]
+  },
+  {
+    name:"American Express Platinum",
+    issuer:"American Express",
+    ecosystem:"Amex MR",
+    type:"flexible",
+    color:"silver",
+    isBusiness:false,
+    annualFee:695,
+    bonusPoints:80000,
+    bonusValue:1440,
+    bestFor:["Flights","Lounge Access"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Centurion Lounge","Priority Pass","Delta Sky Club access when flying Delta","Hilton Gold","Marriott Gold"],
+    multipliers:{flights:5,hotels:5,dining:1,groceries:1,gas:1,travel:1,transit:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[
+      {name:"Uber Cash", value:15, frequency:"monthly", reset:"monthly", trackable:true, logo:"Uber"},
+      {name:"Digital Entertainment Credit", value:20, frequency:"monthly", reset:"monthly", trackable:true, logo:"Streaming"},
+      {name:"Airline Fee Credit", value:200, frequency:"annual", reset:"yearly", trackable:true, logo:"Airline"},
+      {name:"Hotel Credit", value:200, frequency:"annual", reset:"yearly", trackable:true, logo:"Hotel"},
+      {name:"Saks Credit", value:50, frequency:"semiannual", reset:"Jan & Jul", trackable:true, logo:"Saks"},
+      {name:"Clear Plus Credit", value:199, frequency:"annual", reset:"yearly", trackable:true, logo:"CLEAR"}
+    ]
+  },
+  {
+    name:"American Express Green",
+    issuer:"American Express",
+    ecosystem:"Amex MR",
+    type:"flexible",
+    color:"green",
+    isBusiness:false,
+    annualFee:150,
+    bonusPoints:40000,
+    bonusValue:720,
+    bestFor:["Travel","Transit"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Clear Plus credit","LoungeBuddy credit"],
+    multipliers:{travel:3,transit:3,dining:3,flights:3,hotels:3,groceries:1,gas:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Blue Business Plus",
+    issuer:"American Express",
+    ecosystem:"Amex MR",
+    type:"flexible",
+    color:"blue",
+    isBusiness:true,
+    annualFee:0,
+    bonusPoints:15000,
+    bonusValue:270,
+    bestFor:["Catch-all","Business"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["2x catch-all Membership Rewards"],
+    multipliers:{dining:2,groceries:2,gas:2,travel:2,flights:2,hotels:2,transit:2,streaming:2,drugstores:2,rent:2,online:2,other:2},
+    credits:[]
+  },
+  {
+    name:"Chase Sapphire Preferred",
+    issuer:"Chase",
+    ecosystem:"Chase UR",
+    type:"flexible",
+    color:"blue",
+    isBusiness:false,
+    annualFee:95,
+    bonusPoints:75000,
+    bonusValue:1275,
+    bestFor:["Beginner Travel","Dining"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Travel protections","Transfer partners"],
+    multipliers:{dining:3,online:3,streaming:3,travel:2,flights:2,hotels:2,groceries:1,gas:1,transit:2,drugstores:1,rent:1,other:1},
+    credits:[
+      {name:"Hotel Credit", value:50, frequency:"annual", reset:"yearly", trackable:true, logo:"Hotel"}
+    ]
+  },
+  {
+    name:"Chase Sapphire Reserve",
+    issuer:"Chase",
+    ecosystem:"Chase UR",
+    type:"flexible",
+    color:"black",
+    isBusiness:false,
+    annualFee:550,
+    bonusPoints:60000,
+    bonusValue:1020,
+    bestFor:["Travel","Lounge Access"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Priority Pass","$300 travel credit"],
+    multipliers:{dining:3,travel:3,flights:3,hotels:3,transit:3,groceries:1,gas:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[
+      {name:"Travel Credit", value:300, frequency:"annual", reset:"yearly", trackable:true, logo:"Travel"}
+    ]
+  },
+  {
+    name:"Capital One Venture X",
+    issuer:"Capital One",
+    ecosystem:"Capital One",
+    type:"flexible",
+    color:"black",
+    isBusiness:false,
+    annualFee:395,
+    bonusPoints:75000,
+    bonusValue:1275,
+    bestFor:["Catch-all","Lounge Access"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Priority Pass","Capital One Lounges","10,000 anniversary miles"],
+    multipliers:{dining:2,groceries:2,gas:2,travel:2,flights:2,hotels:2,transit:2,streaming:2,drugstores:2,rent:2,online:2,other:2},
+    credits:[
+      {name:"Travel Credit", value:300, frequency:"annual", reset:"yearly", trackable:true, logo:"Travel"},
+      {name:"10,000 Anniversary Miles", value:100, frequency:"annual", reset:"anniversary", trackable:false, logo:"Miles"}
+    ]
+  },
+  {
+    name:"Citi Strata Premier",
+    issuer:"Citi",
+    ecosystem:"Citi",
+    type:"flexible",
+    color:"blue",
+    isBusiness:false,
+    annualFee:95,
+    bonusPoints:70000,
+    bonusValue:1120,
+    bestFor:["Gas","Groceries","Travel"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Transfer partners"],
+    multipliers:{dining:3,groceries:3,gas:3,travel:3,flights:3,hotels:3,transit:3,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+
+  {
+    name:"Discover it Cash Back",
+    issuer:"Discover",
+    ecosystem:"Discover Cash",
+    type:"cash",
+    color:"cash",
+    isBusiness:false,
+    annualFee:0,
+    bonusPoints:0,
+    bonusValue:0,
+    firstYearBoost:true,
+    bestFor:["Starter Card","Rotating 5%"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["First-year cashback match"],
+    multipliers:{dining:5,groceries:5,gas:5,travel:1,flights:1,hotels:1,transit:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Citi Double Cash",
+    issuer:"Citi",
+    ecosystem:"Cash Back",
+    type:"cash",
+    color:"cash",
+    isBusiness:false,
+    annualFee:0,
+    bonusPoints:0,
+    bonusValue:200,
+    bestFor:["Flat-rate cash back"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Simple 2% cash back"],
+    multipliers:{dining:2,groceries:2,gas:2,travel:2,flights:2,hotels:2,transit:2,streaming:2,drugstores:2,rent:2,online:2,other:2},
+    credits:[]
+  },
+  {
+    name:"Wells Fargo Active Cash",
+    issuer:"Wells Fargo",
+    ecosystem:"Cash Back",
+    type:"cash",
+    color:"cash",
+    isBusiness:false,
+    annualFee:0,
+    bonusPoints:0,
+    bonusValue:200,
+    bestFor:["Flat-rate cash back"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Simple 2% cash back"],
+    multipliers:{dining:2,groceries:2,gas:2,travel:2,flights:2,hotels:2,transit:2,streaming:2,drugstores:2,rent:2,online:2,other:2},
+    credits:[]
+  },
+  {
+    name:"Citi Custom Cash",
+    issuer:"Citi",
+    ecosystem:"Cash Back",
+    type:"cash",
+    color:"cash",
+    isBusiness:false,
+    annualFee:0,
+    bonusPoints:0,
+    bonusValue:200,
+    bestFor:["Top spend category"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["5% top eligible category"],
+    multipliers:{dining:5,groceries:5,gas:5,travel:5,flights:1,hotels:1,transit:1,streaming:1,drugstores:5,rent:1,online:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Amex Blue Cash Preferred",
+    issuer:"American Express",
+    ecosystem:"Cash Back",
+    type:"cash",
+    color:"cash",
+    isBusiness:false,
+    annualFee:95,
+    bonusPoints:0,
+    bonusValue:300,
+    bestFor:["Groceries","Gas"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["High grocery cash back"],
+    multipliers:{groceries:6,streaming:6,gas:3,transit:3,dining:1,travel:1,flights:1,hotels:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Amex Blue Cash Everyday",
+    issuer:"American Express",
+    ecosystem:"Cash Back",
+    type:"cash",
+    color:"cash",
+    isBusiness:false,
+    annualFee:0,
+    bonusPoints:0,
+    bonusValue:200,
+    bestFor:["No-fee groceries","Online"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["No annual fee"],
+    multipliers:{groceries:3,gas:3,online:3,dining:1,travel:1,flights:1,hotels:1,transit:1,streaming:1,drugstores:1,rent:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Capital One Savor",
+    issuer:"Capital One",
+    ecosystem:"Cash Back",
+    type:"cash",
+    color:"cash",
+    isBusiness:false,
+    annualFee:0,
+    bonusPoints:0,
+    bonusValue:200,
+    bestFor:["Dining","Entertainment"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Strong lifestyle cash back"],
+    multipliers:{dining:3,groceries:3,streaming:3,gas:1,travel:1,flights:1,hotels:1,transit:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+
+  {
+    name:"Delta SkyMiles Gold",
+    issuer:"American Express",
+    ecosystem:"Delta",
+    type:"airline",
+    color:"blue",
+    isBusiness:false,
+    annualFee:150,
+    bonusPoints:70000,
+    bonusValue:910,
+    bestFor:["Delta flyers"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["First checked bag","Priority boarding"],
+    multipliers:{dining:2,groceries:2,flights:2,travel:1,hotels:1,gas:1,transit:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Delta SkyMiles Platinum",
+    issuer:"American Express",
+    ecosystem:"Delta",
+    type:"airline",
+    color:"purple",
+    isBusiness:false,
+    annualFee:350,
+    bonusPoints:90000,
+    bonusValue:1170,
+    bestFor:["Delta perks"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Companion certificate","First checked bag","Priority boarding"],
+    multipliers:{flights:3,hotels:3,dining:2,groceries:2,travel:1,gas:1,transit:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Delta SkyMiles Reserve",
+    issuer:"American Express",
+    ecosystem:"Delta",
+    type:"airline",
+    color:"black",
+    isBusiness:false,
+    annualFee:650,
+    bonusPoints:100000,
+    bonusValue:1300,
+    bestFor:["Delta lounge access"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Delta Sky Club access","Companion certificate","First checked bag"],
+    multipliers:{flights:3,dining:1,groceries:1,gas:1,travel:1,hotels:1,transit:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Delta SkyMiles Gold Business",
+    issuer:"American Express",
+    ecosystem:"Delta",
+    type:"airline",
+    color:"blue",
+    isBusiness:true,
+    annualFee:150,
+    bonusPoints:80000,
+    bonusValue:1040,
+    bestFor:["Business Delta"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["First checked bag","Priority boarding"],
+    multipliers:{flights:2,dining:2,gas:2,shipping:2,groceries:1,travel:1,hotels:1,transit:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Delta SkyMiles Platinum Business",
+    issuer:"American Express",
+    ecosystem:"Delta",
+    type:"airline",
+    color:"purple",
+    isBusiness:true,
+    annualFee:350,
+    bonusPoints:95000,
+    bonusValue:1235,
+    bestFor:["Business Delta perks"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Companion certificate","First checked bag"],
+    multipliers:{flights:3,hotels:3,dining:1,groceries:1,gas:1,travel:1,transit:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+  {
+    name:"Delta SkyMiles Reserve Business",
+    issuer:"American Express",
+    ecosystem:"Delta",
+    type:"airline",
+    color:"black",
+    isBusiness:true,
+    annualFee:650,
+    bonusPoints:110000,
+    bonusValue:1430,
+    bestFor:["Business lounge access"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Delta Sky Club access","Companion certificate"],
+    multipliers:{flights:3,dining:1,groceries:1,gas:1,travel:1,hotels:1,transit:1,streaming:1,drugstores:1,rent:1,online:1,other:1},
+    credits:[]
+  },
+
+  {
+    name:"Hilton Honors Card",
+    issuer:"American Express",
+    ecosystem:"Hilton",
+    type:"hotel",
+    color:"blue",
+    isBusiness:false,
+    annualFee:0,
+    bonusPoints:100000,
+    bonusValue:500,
+    bestFor:["No-fee Hilton"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Hilton Silver status"],
+    multipliers:{hotels:7,dining:5,groceries:5,gas:5,travel:3,flights:3,transit:3,streaming:3,drugstores:3,rent:3,online:3,other:3},
+    credits:[]
+  },
+  {
+    name:"Hilton Surpass",
+    issuer:"American Express",
+    ecosystem:"Hilton",
+    type:"hotel",
+    color:"gold",
+    isBusiness:false,
+    annualFee:150,
+    bonusPoints:130000,
+    bonusValue:650,
+    bestFor:["Hilton Gold"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Hilton Gold status"],
+    multipliers:{hotels:12,dining:6,groceries:6,gas:6,travel:4,flights:4,transit:4,streaming:3,drugstores:3,rent:3,online:3,other:3},
+    credits:[
+      {name:"Hilton Credit", value:50, frequency:"quarterly", reset:"quarterly", trackable:true, logo:"Hilton"}
+    ]
+  },
+  {
+    name:"Hilton Aspire",
+    issuer:"American Express",
+    ecosystem:"Hilton",
+    type:"hotel",
+    color:"black",
+    isBusiness:false,
+    annualFee:550,
+    bonusPoints:175000,
+    bonusValue:875,
+    bestFor:["Hilton Diamond"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Hilton Diamond status","Resort credits","Free night reward"],
+    multipliers:{hotels:14,flights:7,dining:7,travel:7,groceries:3,gas:3,transit:3,streaming:3,drugstores:3,rent:3,online:3,other:3},
+    credits:[
+      {name:"Hilton Resort Credit", value:200, frequency:"semiannual", reset:"Jan & Jul", trackable:true, logo:"Hilton"},
+      {name:"Flight Credit", value:50, frequency:"quarterly", reset:"quarterly", trackable:true, logo:"Airline"}
+    ]
+  },
+  {
+    name:"Hilton Business",
+    issuer:"American Express",
+    ecosystem:"Hilton",
+    type:"hotel",
+    color:"blue",
+    isBusiness:true,
+    annualFee:195,
+    bonusPoints:150000,
+    bonusValue:750,
+    bestFor:["Business Hilton"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Hilton Gold status"],
+    multipliers:{hotels:12,dining:5,gas:5,travel:5,flights:5,transit:5,groceries:3,streaming:3,drugstores:3,rent:3,online:3,other:3},
+    credits:[]
+  },
+
+  {
+    name:"Marriott Bonvoy Brilliant",
+    issuer:"American Express",
+    ecosystem:"Marriott",
+    type:"hotel",
+    color:"black",
+    isBusiness:false,
+    annualFee:650,
+    bonusPoints:185000,
+    bonusValue:1295,
+    bestFor:["Marriott Platinum"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Marriott Platinum Elite","Free night award","Priority Pass"],
+    multipliers:{hotels:6,dining:3,flights:3,travel:3,gas:2,groceries:2,transit:2,streaming:2,drugstores:2,rent:2,online:2,other:2},
+    credits:[
+      {name:"Dining Credit", value:25, frequency:"monthly", reset:"monthly", trackable:true, logo:"Dining"}
+    ]
+  },
+  {
+    name:"Marriott Bonvoy Bevy",
+    issuer:"American Express",
+    ecosystem:"Marriott",
+    type:"hotel",
+    color:"gold",
+    isBusiness:false,
+    annualFee:250,
+    bonusPoints:155000,
+    bonusValue:1085,
+    bestFor:["Marriott Gold"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Marriott Gold Elite"],
+    multipliers:{hotels:6,dining:4,groceries:4,gas:4,flights:2,travel:2,transit:2,streaming:2,drugstores:2,rent:2,online:2,other:2},
+    credits:[]
+  },
+  {
+    name:"Marriott Bonvoy Business",
+    issuer:"American Express",
+    ecosystem:"Marriott",
+    type:"hotel",
+    color:"blue",
+    isBusiness:true,
+    annualFee:125,
+    bonusPoints:125000,
+    bonusValue:875,
+    bestFor:["Business Marriott"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Marriott Gold Elite","Free night award"],
+    multipliers:{hotels:6,dining:4,gas:4,wireless:4,shipping:4,flights:2,travel:2,groceries:2,transit:2,streaming:2,drugstores:2,rent:2,online:2,other:2},
+    credits:[]
+  },
+  {
+    name:"Chase Marriott Boundless",
+    issuer:"Chase",
+    ecosystem:"Marriott",
+    type:"hotel",
+    color:"blue",
+    isBusiness:false,
+    annualFee:95,
+    bonusPoints:125000,
+    bonusValue:875,
+    bestFor:["Marriott starter"],
+    applyLink:"",
+    youtubeLink:"",
+    perks:["Free night award"],
+    multipliers:{hotels:6,gas:3,groceries:3,dining:3,flights:2,travel:2,transit:2,streaming:2,drugstores:2,rent:2,online:2,other:2},
+    credits:[]
+  }
+];
+
+const trips = [
+  {
+    name:"Tokyo in Business Class",
+    destination:"Tokyo, Japan",
+    pointType:"Chase Ultimate Rewards / Airline Miles",
+    points:150000,
+    cashValue:8500,
+    outOfPocket:250,
+    cpp:"5.5¢/pt",
+    difficulty:"Intermediate",
+    image:"https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1400&q=80",
+    youtubeLink:"",
+    notes:"Transfer Chase Ultimate Rewards to Virgin Atlantic or another airline partner for premium flights.",
+    earnPath:"Could be earned with 1–2 strong welcome bonuses plus normal spend."
+  },
+  {
+    name:"Maldives Overwater Villa",
+    destination:"Maldives",
+    pointType:"Hilton Honors / Airline Miles",
+    points:220000,
+    cashValue:9800,
+    outOfPocket:1100,
+    cpp:"4.4¢/pt",
+    difficulty:"Advanced",
+    image:"https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1400&q=80",
+    youtubeLink:"",
+    notes:"Use hotel points for the stay and airline miles for premium flights to reduce the cash cost.",
+    earnPath:"Could be built with hotel card bonuses and transferable points."
+  },
+  {
+    name:"Italian Coast Road Trip",
+    destination:"Amalfi Coast, Italy",
+    pointType:"Chase Ultimate Rewards / Cash Back",
+    points:90000,
+    cashValue:3400,
+    outOfPocket:800,
+    cpp:"3.8¢/pt",
+    difficulty:"Beginner",
+    image:"https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1400&q=80",
+    youtubeLink:"",
+    notes:"Mix points for flights or hotels with cash back for ground costs and food.",
+    earnPath:"Could be built with one premium travel bonus and one cash back card."
+  }
+];
+
+function showPage(id, btn) {
+  document.querySelectorAll("main section").forEach(s => s.classList.add("hide"));
+  document.getElementById(id).classList.remove("hide");
+
+  document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  else {
+    const buttons = [...document.querySelectorAll("nav button")];
+    const match = buttons.find(b => b.textContent.toLowerCase().includes(id === "builder" ? "setup" : id));
+    if (match) match.classList.add("active");
+  }
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function money(n) {
+  return "$" + Math.round(Number(n || 0)).toLocaleString();
+}
+
+function number(n) {
+  return Math.round(Number(n || 0)).toLocaleString();
+}
+
+function cardFace(card, small=false) {
+  return `
+    <div class="card-face ${card.color || ""} ${small ? "search-card-face" : ""}">
+      <div class="issuer">${card.issuer}</div>
+      <div class="card-name">${card.name}</div>
+    </div>
+  `;
+}
+
+function keyMultipliers(card) {
+  const entries = Object.entries(card.multipliers || {})
+    .filter(([k,v]) => v > 1)
+    .sort((a,b) => b[1] - a[1])
+    .slice(0,3);
+
+  if (!entries.length) return ["1x Everything"];
+
+  return entries.map(([k,v]) => {
+    const label = categories.find(c => c[0] === k)?.[1] || k;
+    const suffix = card.type === "cash" ? "%" : "x";
+    return `${v}${suffix} ${label}`;
+  });
+}
+
+function cardRewardValue(card, category, annualSpend) {
+  const multiplier = card.multipliers?.[category] || 1;
+  const boost = card.firstYearBoost ? 2 : 1;
+
+  if (card.type === "cash") {
+    return annualSpend * (multiplier / 100) * boost;
+  }
+
+  return annualSpend * multiplier * (pointValues[card.ecosystem] || .01);
+}
+
+function cardPoints(card, category, annualSpend) {
+  const multiplier = card.multipliers?.[category] || 1;
+  if (card.type === "cash") return 0;
+  return annualSpend * multiplier;
+}
+
+function availableCards() {
+  const includeBusiness = document.getElementById("includeBusiness")?.checked;
+  return cards.filter(c => includeBusiness || !c.isBusiness);
+}
+
+function combinations(arr, size) {
+  if (size === 1) return arr.map(x => [x]);
+  const result = [];
+  for (let i=0;i<arr.length;i++) {
+    const rest = combinations(arr.slice(i+1), size-1);
+    rest.forEach(r => result.push([arr[i],...r]));
+  }
+  return result;
+}
+
+function initInputs() {
+  document.getElementById("spendInputs").innerHTML = categories.map(([key,label]) => `
+    <div>
+      <label>${label}</label>
+      <input id="spend-${key}" type="number" inputmode="decimal" placeholder="$0 per month" />
+    </div>
+  `).join("");
+}
+
+function getSpend() {
+  const spend = {};
+  let total = 0;
+  categories.forEach(([key]) => {
+    const monthly = Number(document.getElementById(`spend-${key}`)?.value || 0);
+    spend[key] = monthly * 12;
+    total += monthly;
+  });
+  return {spend,totalMonthly:total};
+}
+
+function scoreCombo(combo, spend) {
+  let rewards = 0;
+  let points = 0;
+  const assignments = {};
+
+  categories.forEach(([cat]) => {
+    const annual = spend[cat] || 0;
+    if (!annual) return;
+
+    let bestCard = combo[0];
+    let bestValue = -1;
+
+    combo.forEach(card => {
+      const v = cardRewardValue(card, cat, annual);
+      if (v > bestValue) {
+        bestValue = v;
+        bestCard = card;
+      }
+    });
+
+    rewards += bestValue;
+    points += cardPoints(bestCard, cat, annual);
+    assignments[cat] = bestCard.name;
+  });
+
+  const fees = combo.reduce((s,c) => s + c.annualFee, 0);
+  const bonuses = combo.reduce((s,c) => s + c.bonusValue, 0);
+
+  return {
+    combo,
+    rewards,
+    points,
+    fees,
+    bonuses,
+    netFirst: rewards + bonuses - fees,
+    netOngoing: rewards - fees,
+    assignments
+  };
+}
+
+function whyComboWon(result, spend) {
+  const topSpend = Object.entries(spend)
+    .filter(([k,v]) => v > 0)
+    .sort((a,b) => b[1]-a[1])
+    .slice(0,2)
+    .map(([k]) => categories.find(c => c[0] === k)?.[1] || k);
+
+  const names = result.combo.map(c => c.name);
+
+  let line = "This setup balances rewards value, welcome bonuses, and annual fees.";
+
+  if (topSpend.length) {
+    line = `Built around your biggest categories: ${topSpend.join(" and ")}.`;
+  }
+
+  if (result.combo.length === 1) {
+    line += " Best for keeping things simple with one card.";
+  } else if (result.combo.length === 2) {
+    line += " Strong balance of simplicity and category coverage.";
+  } else {
+    line += " Higher upside by matching more categories to the right card.";
+  }
+
+  if (result.netOngoing < 0) {
+    line += " Annual fees reduce ongoing value, so this is strongest in year one.";
+  } else {
+    line += " Ongoing rewards appear to outweigh annual fees.";
+  }
+
+  return line + ` Cards included: ${names.join(", ")}.`;
+}
+
+function calculateSetups() {
+  const {spend,totalMonthly} = getSpend();
+  const box = document.getElementById("setupResults");
+
+  if (totalMonthly <= 0) {
+    box.innerHTML = `
+      <div class="empty-state">
+        Enter your monthly spending to unlock your best setup.
+      </div>
+    `;
+    return;
+  }
+
+  const pool = availableCards();
+  const sizes = [1,2,3];
+  const results = sizes.map(size => {
+    return combinations(pool,size)
+      .map(combo => scoreCombo(combo,spend))
+      .sort((a,b) => b.netFirst - a.netFirst)[0];
+  });
+
+  const bestCards = pool.map(card => {
+    const value = categories.reduce((sum,[cat]) => sum + cardRewardValue(card,cat,spend[cat] || 0),0);
+    const pointsEarned = categories.reduce((sum,[cat]) => sum + cardPoints(card,cat,spend[cat] || 0),0);
+    return {card,value,pointsEarned,net:value + card.bonusValue - card.annualFee};
+  }).sort((a,b) => b.net - a.net).slice(0,5);
+
+  box.innerHTML = `
+    <div class="card">
+      <h3>Your Best Setups</h3>
+      <p class="muted">We assign each spending category to the strongest card inside each setup.</p>
+    </div>
+    ${results.map((r,i) => renderSetupCard(r,`Best ${i+1}-Card Setup`,spend)).join("")}
+
+    <div class="card">
+      <h3>Top Cards For You</h3>
+      <p class="muted">Individual cards that score well for your spending pattern.</p>
+    </div>
+
+    ${bestCards.map((x,i) => renderRecommendationCard(x.card,i+1,x.value,x.pointsEarned,x.net)).join("")}
+  `;
+}
+
+function renderSetupCard(r,title,spend) {
+  return `
+    <div class="card">
+      <h3>${title}</h3>
+      <div class="card-layout">
+        ${r.combo.map(c => cardFace(c)).join("")}
+      </div>
+
+      <div class="mini-tags">
+        ${r.combo.flatMap(c => keyMultipliers(c)).slice(0,5).map(t => `<span>${t}</span>`).join("")}
       </div>
 
       <div class="grid grid-2">
-        <div class="card"><h3>Find your best card setup</h3><p>Compare 1, 2, and 3-card setups based on your monthly spending.</p></div>
-        <div class="card"><h3>Track card credits</h3><p>Monthly, quarterly, semiannual, and annual credits are tracked by period.</p></div>
-        <div class="card"><h3>Welcome bonus rankings</h3><p>See points, estimated value, annual fee, and net first-year value.</p></div>
-        <div class="card"><h3>Trip templates</h3><p>See how points turn into real redemptions.</p></div>
-      </div>
-    </section>
-
-    <section id="builder" class="hide">
-      <h2>Find the perfect card combo</h2>
-      <p class="small">Enter monthly spend. Values are estimates.</p>
-
-      <div class="card">
-        <div class="grid grid-2" id="spendInputs"></div>
-
-        <label>Goal</label>
-        <select id="goal">
-          <option value="travel">Team Travel Points</option>
-          <option value="cash">Team Cash Back</option>
-        </select>
-
-        <button class="btn secondary" onclick="calculateSetups()">Calculate setups</button>
+        <div class="stat"><small>Estimated Rewards Value</small><strong>${money(r.rewards)}</strong></div>
+        <div class="stat"><small>Annual Fees</small><strong>${money(r.fees)}</strong></div>
+        <div class="stat"><small>Welcome Bonus Value</small><strong>${money(r.bonuses)}</strong></div>
+        <div class="stat"><small>Net First Year</small><strong>${money(r.netFirst)}</strong></div>
+        <div class="stat"><small>Net Ongoing</small><strong>${money(r.netOngoing)}</strong></div>
+        <div class="stat"><small>Estimated Points</small><strong>${number(r.points)}</strong></div>
       </div>
 
-      <div id="setupResults"></div>
-    </section>
+      <p class="muted"><strong>Why this won:</strong> ${whyComboWon(r,spend)}</p>
 
-    <section id="bonuses" class="hide">
-      <h2>Today’s top offers</h2>
-      <p class="small">Ranked by net first-year bonus value after annual fee.</p>
-      <div id="bonusList"></div>
-    </section>
-
-    <section id="wallet" class="hide">
-      <h2>Your saved cards</h2>
-      <p class="small">Track credits by month, quarter, half-year, or year.</p>
-
-      <div class="card">
-        <label>Add card to wallet</label>
-        <select id="walletSelect"></select>
-        <button class="btn secondary" onclick="addToWallet()">Add to wallet</button>
+      <h4>Category Assignment</h4>
+      <div class="mini-tags">
+        ${Object.entries(r.assignments).map(([cat,name]) => {
+          const label = categories.find(c => c[0] === cat)?.[1] || cat;
+          return `<span>${label}: ${name}</span>`;
+        }).join("")}
       </div>
+    </div>
+  `;
+}
 
-      <div id="walletList"></div>
-    </section>
-
-    <section id="trips" class="hide">
-      <h2>Real redemptions, real value</h2>
-      <div id="tripList"></div>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 TravelWithTripp · Estimates only. Not financial advice.
-  </footer>
-
-  <script>
-    const cards = [
-      {
-        name: "American Express Gold",
-        issuer: "American Express",
-        annualFee: 325,
-        bonusPoints: 90000,
-        bonusValue: 1800,
-        multipliers: { dining: 4, groceries: 4, gas: 1, travel: 3, rent: 1, online: 1, other: 1 },
-        pointValue: .02,
-        credits: [
-          { name: "Uber Cash", value: 10, frequency: "monthly", reset: "1st of month", trackable: true },
-          { name: "Dining Credit", value: 10, frequency: "monthly", reset: "1st of month", trackable: true },
-          { name: "Dunkin Credit", value: 7, frequency: "monthly", reset: "1st of month", trackable: true },
-          { name: "Resy Credit", value: 50, frequency: "semiannual", reset: "Jan & Jul", trackable: true }
-        ]
-      },
-      {
-        name: "Chase Sapphire Preferred",
-        issuer: "Chase",
-        annualFee: 95,
-        bonusPoints: 75000,
-        bonusValue: 1350,
-        multipliers: { dining: 3, groceries: 1, gas: 1, travel: 2, rent: 1, online: 3, other: 1 },
-        pointValue: .018,
-        credits: [
-          { name: "Annual Hotel Credit", value: 50, frequency: "annual", reset: "cardmember year", trackable: true }
-        ]
-      },
-      {
-        name: "Capital One Venture X",
-        issuer: "Capital One",
-        annualFee: 395,
-        bonusPoints: 75000,
-        bonusValue: 1350,
-        multipliers: { dining: 2, groceries: 2, gas: 2, travel: 2, rent: 2, online: 2, other: 2 },
-        pointValue: .018,
-        credits: [
-          { name: "Annual Travel Credit", value: 300, frequency: "annual", reset: "cardmember year", trackable: true },
-          { name: "10,000 Anniversary Miles", value: 100, frequency: "annual", reset: "anniversary", trackable: false }
-        ]
-      },
-      {
-        name: "Chase Freedom Unlimited",
-        issuer: "Chase",
-        annualFee: 0,
-        bonusPoints: 20000,
-        bonusValue: 300,
-        multipliers: { dining: 3, groceries: 1.5, gas: 1.5, travel: 1.5, rent: 1.5, online: 1.5, other: 1.5 },
-        pointValue: .01,
-        credits: []
-      },
-      {
-        name: "Blue Cash Preferred",
-        issuer: "American Express",
-        annualFee: 95,
-        bonusPoints: 0,
-        bonusValue: 300,
-        multipliers: { dining: 1, groceries: 6, gas: 3, travel: 1, rent: 1, online: 1, other: 1 },
-        pointValue: .01,
-        credits: []
-      }
-    ];
-
-    const categories = [
-      ["dining", "Dining"],
-      ["groceries", "Groceries"],
-      ["gas", "Gas"],
-      ["travel", "Travel"],
-      ["rent", "Rent"],
-      ["online", "Online shopping"],
-      ["other", "Other"]
-    ];
-
-    const trips = [
-      {
-        name: "Tokyo in Business Class",
-        destination: "Tokyo, Japan",
-        points: 150000,
-        cash: 8500,
-        oop: 250,
-        difficulty: "Intermediate",
-        cpp: "5.5¢/pt",
-        image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80",
-        notes: "Transfer Chase Ultimate Rewards to Virgin Atlantic or another partner for premium flights."
-      },
-      {
-        name: "Maldives Overwater Villa",
-        destination: "Maldives",
-        points: 220000,
-        cash: 9800,
-        oop: 1100,
-        difficulty: "Advanced",
-        cpp: "4.4¢/pt",
-        image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1200&q=80",
-        notes: "Use hotel points and airline miles to reduce the largest costs."
-      }
-    ];
-
-    function showPage(id, btn) {
-      document.querySelectorAll("main section").forEach(s => s.classList.add("hide"));
-      document.getElementById(id).classList.remove("hide");
-
-      document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
-      if (btn) btn.classList.add("active");
-    }
-
-    function money(n) {
-      return "$" + Math.round(n).toLocaleString();
-    }
-
-    function points(n) {
-      return Math.round(n).toLocaleString();
-    }
-
-    function init() {
-      const spendBox = document.getElementById("spendInputs");
-      spendBox.innerHTML = categories.map(([key, label]) => `
-        <div>
-          <label>${label}</label>
-          <input id="${key}" type="number" inputmode="decimal" placeholder="$0 per month" value="0" />
+function renderRecommendationCard(card,rank,value,pointsEarned,net) {
+  return `
+    <div class="card offer-card">
+      <span class="rank">#${rank}</span>
+      <div class="card-layout">
+        ${cardFace(card)}
+        <div class="card-body">
+          <h3>${card.name}</h3>
+          <p class="muted">${card.issuer} · ${card.ecosystem}</p>
+          <div class="mini-tags">
+            ${keyMultipliers(card).map(t => `<span>${t}</span>`).join("")}
+            ${(card.perks || []).slice(0,2).map(p => `<span>${p}</span>`).join("")}
+          </div>
         </div>
-      `).join("");
+      </div>
 
-      document.getElementById("bonusList").innerHTML = [...cards]
-        .sort((a,b) => (b.bonusValue - b.annualFee) - (a.bonusValue - a.annualFee))
-        .map((card, i) => `
-          <div class="card">
-            <span class="pill">#${i+1}</span>
+      <div class="grid grid-2">
+        <div class="stat"><small>Rewards Value</small><strong>${money(value)}</strong></div>
+        <div class="stat"><small>Estimated Points</small><strong>${number(pointsEarned)}</strong></div>
+        <div class="stat"><small>Annual Fee</small><strong>${money(card.annualFee)}</strong></div>
+        <div class="stat"><small>Net Year 1</small><strong>${money(net)}</strong></div>
+      </div>
+
+      <div class="button-row">
+        ${card.applyLink ? `<button class="btn" onclick="window.open('${card.applyLink}','_blank')">Apply Now</button>` : `<button class="btn ghost">View Details</button>`}
+        ${card.youtubeLink ? `<button class="btn ghost" onclick="window.open('${card.youtubeLink}','_blank')">Watch Review</button>` : ``}
+      </div>
+    </div>
+  `;
+}
+
+function renderBonuses() {
+  const ranked = [...cards]
+    .filter(c => !c.isBusiness)
+    .sort((a,b) => (b.bonusValue - b.annualFee) - (a.bonusValue - a.annualFee));
+
+  document.getElementById("bonusList").innerHTML = ranked.map((card,i) => {
+    const featured = i === 0 ? "featured" : "";
+    return `
+      <div class="card offer-card ${featured}">
+        <span class="rank">#${i+1}</span>
+        <div class="card-layout">
+          ${cardFace(card)}
+          <div class="card-body">
             <h3>${card.name}</h3>
-            <p class="small">${card.issuer}</p>
-            <div class="grid grid-2">
-              <div class="stat"><small>Bonus points</small><strong>${points(card.bonusPoints)}</strong></div>
-              <div class="stat"><small>Est. value</small><strong>${money(card.bonusValue)}</strong></div>
-              <div class="stat"><small>Annual fee</small><strong>${money(card.annualFee)}</strong></div>
-              <div class="stat"><small>Net year 1</small><strong>${money(card.bonusValue - card.annualFee)}</strong></div>
+            <p class="muted">${card.issuer} · ${card.ecosystem}</p>
+            <div class="mini-tags">
+              ${keyMultipliers(card).map(t => `<span>${t}</span>`).join("")}
+              ${(card.perks || []).slice(0,2).map(p => `<span>${p}</span>`).join("")}
             </div>
-            <button class="btn">Link coming soon</button>
+            ${i===0 ? `<p><strong>Why this is #1:</strong> Strong first-year bonus value after subtracting the annual fee.</p>` : ``}
           </div>
-        `).join("");
-
-      document.getElementById("walletSelect").innerHTML = cards.map(c => `<option value="${c.name}">${c.name}</option>`).join("");
-      renderWallet();
-
-      document.getElementById("tripList").innerHTML = trips.map(t => `
-        <div class="card">
-          <img class="trip-img" src="${t.image}" onerror="this.style.display='none'" />
-          <p><span class="pill">${t.difficulty}</span><span class="pill">${t.cpp}</span></p>
-          <h3>${t.name}</h3>
-          <p class="small">${t.destination}</p>
-          <div class="grid grid-3">
-            <div class="stat"><small>Points</small><strong>${points(t.points)}</strong></div>
-            <div class="stat"><small>Cash value</small><strong>${money(t.cash)}</strong></div>
-            <div class="stat"><small>OOP</small><strong>${money(t.oop)}</strong></div>
-          </div>
-          <p>${t.notes}</p>
         </div>
-      `).join("");
-    }
 
-    function calculateSetups() {
-      const spend = {};
-      categories.forEach(([key]) => spend[key] = Number(document.getElementById(key).value || 0) * 12);
-
-      const scored = cards.map(card => {
-        let pts = 0;
-        categories.forEach(([key]) => {
-          pts += spend[key] * (card.multipliers[key] || 1);
-        });
-        const value = pts * card.pointValue;
-        return {
-          card,
-          points: pts,
-          value,
-          netFirst: value + card.bonusValue - card.annualFee,
-          netOngoing: value - card.annualFee
-        };
-      }).sort((a,b) => b.netFirst - a.netFirst);
-
-      const best1 = [scored[0]];
-      const best2 = scored.slice(0,2);
-      const best3 = scored.slice(0,3);
-
-      renderSetup("Best 1-card setup", best1);
-      renderSetup("Best 2-card setup", best2, true);
-      renderSetup("Best 3-card setup", best3, true);
-    }
-
-    function renderSetup(title, setup, append=false) {
-      const totalPoints = setup.reduce((s,x) => s + x.points, 0);
-      const totalValue = setup.reduce((s,x) => s + x.value, 0);
-      const totalFees = setup.reduce((s,x) => s + x.card.annualFee, 0);
-      const totalBonus = setup.reduce((s,x) => s + x.card.bonusValue, 0);
-      const netFirst = totalValue + totalBonus - totalFees;
-      const netOngoing = totalValue - totalFees;
-
-      const html = `
-        <div class="card">
-          <h3>${title}</h3>
-          <p>${setup.map(x => x.card.name).join(" + ")}</p>
-          <div class="grid grid-2">
-            <div class="stat"><small>Annual points</small><strong>${points(totalPoints)}</strong></div>
-            <div class="stat"><small>Est. rewards value</small><strong>${money(totalValue)}</strong></div>
-            <div class="stat"><small>Annual fees</small><strong>${money(totalFees)}</strong></div>
-            <div class="stat"><small>Welcome bonus value</small><strong>${money(totalBonus)}</strong></div>
-            <div class="stat"><small>Net first year</small><strong>${money(netFirst)}</strong></div>
-            <div class="stat"><small>Net ongoing</small><strong>${money(netOngoing)}</strong></div>
-          </div>
-          <p class="small">Why this won: strongest estimated net value based on your spend and current assumptions.</p>
+        <div class="grid grid-2">
+          <div class="stat"><small>Bonus Points</small><strong>${number(card.bonusPoints)}</strong></div>
+          <div class="stat"><small>Est. Value</small><strong>${money(card.bonusValue)}</strong></div>
+          <div class="stat"><small>Annual Fee</small><strong>${money(card.annualFee)}</strong></div>
+          <div class="stat"><small>Net Year 1</small><strong>${money(card.bonusValue - card.annualFee)}</strong></div>
         </div>
-      `;
 
-      if (append) document.getElementById("setupResults").innerHTML += html;
-      else document.getElementById("setupResults").innerHTML = html;
-    }
+        <div class="button-row">
+          ${card.applyLink ? `<button class="btn" onclick="window.open('${card.applyLink}','_blank')">Apply Now</button>` : `<button class="btn ghost">View Details</button>`}
+          ${card.youtubeLink ? `<button class="btn ghost" onclick="window.open('${card.youtubeLink}','_blank')">Watch Review</button>` : ``}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
 
-    function getWallet() {
-      return JSON.parse(localStorage.getItem("wallet") || "[]");
-    }
+function getWallet() {
+  return JSON.parse(localStorage.getItem("wallet") || "[]");
+}
 
-    function saveWallet(w) {
-      localStorage.setItem("wallet", JSON.stringify(w));
-    }
+function saveWallet(wallet) {
+  localStorage.setItem("wallet", JSON.stringify(wallet));
+}
 
-    function addToWallet() {
-      const name = document.getElementById("walletSelect").value;
-      const wallet = getWallet();
-      if (!wallet.includes(name)) wallet.push(name);
-      saveWallet(wallet);
-      renderWallet();
-    }
+function addToWallet(cardName) {
+  const wallet = getWallet();
+  if (!wallet.includes(cardName)) wallet.push(cardName);
+  saveWallet(wallet);
+  document.getElementById("cardSearch").value = "";
+  renderSearchResults();
+  renderWallet();
+}
 
-    function removeFromWallet(name) {
-      saveWallet(getWallet().filter(x => x !== name));
-      renderWallet();
-    }
+function removeFromWallet(cardName) {
+  saveWallet(getWallet().filter(x => x !== cardName));
+  renderWallet();
+}
 
-    function currentPeriod(freq) {
-      const d = new Date();
-      const y = d.getFullYear();
-      const m = d.getMonth() + 1;
-      if (freq === "monthly") return `${y}-${String(m).padStart(2,"0")}`;
-      if (freq === "quarterly") return `${y}-Q${Math.ceil(m / 3)}`;
-      if (freq === "semiannual") return `${y}-${m <= 6 ? "H1" : "H2"}`;
-      return `${y}`;
-    }
+function renderSearchResults() {
+  const q = document.getElementById("cardSearch").value.trim().toLowerCase();
+  const box = document.getElementById("searchResults");
 
-    function usageKey(card, credit) {
-      return `usage:${card.name}:${credit.name}:${currentPeriod(credit.frequency)}`;
-    }
+  if (!q) {
+    box.innerHTML = "";
+    return;
+  }
 
-    function isUsed(card, credit) {
-      return localStorage.getItem(usageKey(card, credit)) === "true";
-    }
+  const wallet = getWallet();
+  const matches = cards
+    .filter(c => !wallet.includes(c.name))
+    .filter(c => `${c.name} ${c.issuer} ${c.ecosystem}`.toLowerCase().includes(q))
+    .slice(0,8);
 
-    function toggleCredit(cardName, creditName) {
-      const card = cards.find(c => c.name === cardName);
-      const credit = card.credits.find(c => c.name === creditName);
-      const key = usageKey(card, credit);
-      localStorage.setItem(key, localStorage.getItem(key) === "true" ? "false" : "true");
-      renderWallet();
-    }
+  box.innerHTML = matches.length ? matches.map(card => `
+    <div class="search-item" onclick="addToWallet('${card.name}')">
+      ${cardFace(card,true)}
+      <div>
+        <strong>${card.name}</strong>
+        <div class="muted">${card.issuer} · ${card.ecosystem}</div>
+      </div>
+    </div>
+  `).join("") : `<div class="muted">No matching cards found.</div>`;
+}
 
-    function annualPossible(credit) {
-      if (credit.frequency === "monthly") return credit.value * 12;
-      if (credit.frequency === "quarterly") return credit.value * 4;
-      if (credit.frequency === "semiannual") return credit.value * 2;
-      return credit.value;
-    }
+function currentPeriod(freq) {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = d.getMonth() + 1;
+  if (freq === "monthly") return `${y}-${String(m).padStart(2,"0")}`;
+  if (freq === "quarterly") return `${y}-Q${Math.ceil(m/3)}`;
+  if (freq === "semiannual") return `${y}-${m <= 6 ? "H1" : "H2"}`;
+  return `${y}`;
+}
 
-    function renderWallet() {
-      const wallet = getWallet();
-      const box = document.getElementById("walletList");
+function usageKey(card, credit, period = currentPeriod(credit.frequency)) {
+  return `credit:${card.name}:${credit.name}:${period}`;
+}
 
-      if (!wallet.length) {
-        box.innerHTML = `<div class="card"><p>No cards saved yet. Add one above.</p></div>`;
-        return;
-      }
+function isCreditUsed(card, credit, period) {
+  return localStorage.getItem(usageKey(card,credit,period)) === "true";
+}
 
-      box.innerHTML = wallet.map(name => {
-        const card = cards.find(c => c.name === name);
-        if (!card) return "";
+function toggleCredit(cardName, creditName) {
+  const card = cards.find(c => c.name === cardName);
+  const credit = card.credits.find(c => c.name === creditName);
+  const key = usageKey(card,credit);
+  localStorage.setItem(key, localStorage.getItem(key) === "true" ? "false" : "true");
+  renderWallet();
+}
 
-        const trackable = card.credits.filter(c => c.trackable);
-        const annualAvailable = trackable.reduce((s,c) => s + annualPossible(c), 0);
-        const usedNow = trackable.reduce((s,c) => s + (isUsed(card,c) ? c.value : 0), 0);
-        const pct = Math.min(100, Math.round((usedNow / Math.max(card.annualFee,1)) * 100));
-        const net = card.annualFee - usedNow;
+function periodsYTD(freq) {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = d.getMonth() + 1;
 
-        return `
-          <div class="wallet-card">
-            <button style="float:right" onclick="removeFromWallet('${card.name}')">🗑</button>
+  if (freq === "monthly") {
+    return Array.from({length:m},(_,i)=>`${y}-${String(i+1).padStart(2,"0")}`);
+  }
+
+  if (freq === "quarterly") {
+    return Array.from({length:Math.ceil(m/3)},(_,i)=>`${y}-Q${i+1}`);
+  }
+
+  if (freq === "semiannual") {
+    return m <= 6 ? [`${y}-H1`] : [`${y}-H1`,`${y}-H2`];
+  }
+
+  return [`${y}`];
+}
+
+function possibleAnnual(credit) {
+  if (credit.frequency === "monthly") return credit.value * 12;
+  if (credit.frequency === "quarterly") return credit.value * 4;
+  if (credit.frequency === "semiannual") return credit.value * 2;
+  return credit.value;
+}
+
+function earnedToDate(credit) {
+  return periodsYTD(credit.frequency).length * credit.value;
+}
+
+function usedYTD(card, credit) {
+  return periodsYTD(credit.frequency).reduce((sum,p) => sum + (isCreditUsed(card,credit,p) ? credit.value : 0),0);
+}
+
+function logoFor(credit) {
+  const l = (credit.logo || credit.name || "").toLowerCase();
+  if (l.includes("uber")) return "Uber";
+  if (l.includes("dunkin")) return "D";
+  if (l.includes("resy")) return "R";
+  if (l.includes("dining")) return "🍽";
+  if (l.includes("hotel") || l.includes("hilton")) return "🏨";
+  if (l.includes("airline") || l.includes("flight")) return "✈️";
+  if (l.includes("stream")) return "▶";
+  if (l.includes("saks")) return "S";
+  if (l.includes("clear")) return "CLEAR";
+  return "💳";
+}
+
+function renderWallet() {
+  const wallet = getWallet();
+  const box = document.getElementById("walletList");
+
+  if (!wallet.length) {
+    box.innerHTML = `<div class="card"><h3>No cards saved yet</h3><p class="muted">Search above and add your cards to start tracking credits.</p></div>`;
+    return;
+  }
+
+  box.innerHTML = wallet.map(name => {
+    const card = cards.find(c => c.name === name);
+    if (!card) return "";
+
+    const trackable = (card.credits || []).filter(c => c.trackable);
+    const earned = trackable.reduce((s,c) => s + earnedToDate(c),0);
+    const used = trackable.reduce((s,c) => s + usedYTD(card,c),0);
+    const annualPossible = trackable.reduce((s,c) => s + possibleAnnual(c),0);
+    const pct = Math.min(100, Math.round((used / Math.max(card.annualFee,1)) * 100));
+    const netCost = card.annualFee - used;
+
+    return `
+      <div class="wallet-hero">
+        <button class="btn small ghost" style="float:right;" onclick="removeFromWallet('${card.name}')">Remove</button>
+        <div class="card-layout">
+          ${cardFace(card)}
+          <div>
             <h3>${card.name}</h3>
             <p>${card.issuer} · Annual fee: ${money(card.annualFee)}</p>
-            <p>Annual fee offset: ${pct}%</p>
-            <div class="progress"><div class="bar" style="width:${pct}%"></div></div>
-            <div class="grid grid-3">
-              <div><small>Available yearly</small><br><strong>${money(annualAvailable)}</strong></div>
-              <div><small>Used current period</small><br><strong>${money(usedNow)}</strong></div>
-              <div><small>Net cost</small><br><strong>${money(net)}</strong></div>
-            </div>
           </div>
-          <div class="card">
-            <h3>Current Credit Reminders</h3>
-            ${trackable.map(c => `
-              <div class="credit-row ${isUsed(card,c) ? "used" : ""}" onclick="toggleCredit('${card.name}','${c.name}')">
-                <div>
-                  <strong>${c.name}</strong>
-                  <div class="small">${money(c.value)} · ${c.frequency} · Reset: ${c.reset}</div>
-                </div>
-                <div>${isUsed(card,c) ? "✅ Used" : "⭕ Open"}</div>
-              </div>
-            `).join("")}
-          </div>
-        `;
-      }).join("");
-    }
+        </div>
 
-    init();
-  </script>
+        <p><strong>Annual fee offset:</strong> ${pct}%</p>
+        <div class="progress"><div class="bar" style="width:${pct}%"></div></div>
+
+        <div class="grid grid-3">
+          <div><small>Available YTD</small><br><strong>${money(earned)}</strong></div>
+          <div><small>Used YTD</small><br><strong>${money(used)}</strong></div>
+          <div><small>${netCost <= 0 ? "Net Positive" : "Net Cost"}</small><br><strong>${money(Math.abs(netCost))}</strong></div>
+        </div>
+
+        <p class="muted" style="color:rgba(255,255,255,.75);">Full yearly credit potential: ${money(annualPossible)}</p>
+      </div>
+
+      <div class="card">
+        <h3>Current Credit Reminders</h3>
+        ${trackable.length ? trackable.map(credit => {
+          const usedNow = isCreditUsed(card,credit,currentPeriod(credit.frequency));
+          return `
+            <div class="credit-row ${usedNow ? "used" : ""}" onclick="toggleCredit('${card.name}','${credit.name}')">
+              <div style="display:flex;gap:12px;align-items:center;">
+                <div class="credit-logo">${logoFor(credit)}</div>
+                <div>
+                  <strong class="credit-name">${credit.name}</strong>
+                  <div class="muted">${money(credit.value)} · ${credit.frequency} · Reset: ${credit.reset}</div>
+                </div>
+              </div>
+              <strong>${usedNow ? "Used" : "Open"}</strong>
+            </div>
+          `;
+        }).join("") : `<p class="muted">No trackable credits for this card yet.</p>`}
+      </div>
+    `;
+  }).join("");
+}
+
+function renderTrips() {
+  document.getElementById("tripList").innerHTML = trips.map(trip => `
+    <div class="card trip-card">
+      <div class="trip-image" style="background-image:url('${trip.image}')">
+        <div class="trip-overlay">
+          <div>
+            <span class="pill dark">${trip.difficulty}</span>
+            <span class="pill dark">${trip.cpp}</span>
+            <h3 style="color:white;margin-top:12px;">${trip.name}</h3>
+            <p>${trip.destination}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="trip-content">
+        <div class="grid grid-3">
+          <div class="stat"><small>${trip.pointType}</small><strong>${number(trip.points)}</strong></div>
+          <div class="stat"><small>Cash Value</small><strong>${money(trip.cashValue)}</strong></div>
+          <div class="stat"><small>Out of Pocket Cost</small><strong>${money(trip.outOfPocket)}</strong></div>
+        </div>
+
+        <h3>How it was booked</h3>
+        <p>${trip.notes}</p>
+
+        <h3>How to earn it</h3>
+        <p>${trip.earnPath}</p>
+
+        <div class="button-row">
+          ${trip.youtubeLink ? `<button class="btn" onclick="window.open('${trip.youtubeLink}','_blank')">Watch Breakdown</button>` : `<button class="btn ghost">Video Coming Soon</button>`}
+          <button class="btn green" onclick="window.location.href='mailto:tripppierce1323@gmail.com?subject=Book%20a%20TravelWithTripp%20Call'">Book a Call</button>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function init() {
+  initInputs();
+  renderBonuses();
+  renderWallet();
+  renderTrips();
+}
+
+init();
+</script>
 </body>
 </html>
