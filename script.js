@@ -3,7 +3,7 @@ function toggleMenu() {
 }
 
 function loadPage(page) {
-  fetch("pages/" + page)
+  fetch("pages/" + page + "?v=" + Date.now())
     .then((res) => res.text())
     .then((data) => {
       document.getElementById("content").innerHTML = data;
