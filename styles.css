@@ -98,3 +98,85 @@ button {
   top: 18px;
   left: 18px;
 }
+
+/* Better logo */
+.logoCircle {
+  width: 90px;
+  height: 90px;
+  border: 3px solid gold;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  position: relative;
+}
+
+.logoPlane {
+  position: absolute;
+  top: 18px;
+  left: 27px;
+  font-size: 36px;
+  color: white;
+  transform: rotate(-15deg);
+}
+
+.logoWave {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  width: 45px;
+  height: 14px;
+  border-bottom: 4px solid gold;
+  border-radius: 50%;
+}
+
+/* Card graphics that always work */
+.fakeCard {
+  width: 100%;
+  max-width: 420px;
+  height: 220px;
+  border-radius: 18px;
+  margin: 25px auto;
+  padding: 28px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+.fakeCard p {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.fakeCard span {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.goldCard {
+  background: linear-gradient(135deg, #caa84a, #f7dc85, #9b792d);
+  color: #111;
+}
+
+.platinumCard {
+  background: linear-gradient(135deg, #d8d8d8, #ffffff, #999);
+  color: #111;
+}
+
+.ventureCard {
+  background: linear-gradient(135deg, #031b44, #0c5a7a);
+}
+
+.sapphireCard {
+  background: linear-gradient(135deg, #123c8c, #061a3a);
+}
+
+.reserveCard {
+  background: linear-gradient(135deg, #111, #27364a);
+}
+
+.biltCard {
+  background: linear-gradient(135deg, #111, #333);
+}
