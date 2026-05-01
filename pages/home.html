@@ -1,13 +1,7 @@
-<section class="luxury-home">
-  
-  <!-- BACKGROUND IMAGE -->
-  <div 
-    class="hero-bg"
-    style="background-image: url('https://i.ibb.co/dwbbyphJ/IMG-0482.jpg');">
-  </div>
+<section class="home-page">
+  <div class="hero-image"></div>
 
-  <!-- HERO TEXT -->
-  <div class="hero-content">
+  <section class="home-hero">
     <p class="eyebrow">TURN SPENDING INTO UNFORGETTABLE EXPERIENCES</p>
 
     <h1>
@@ -15,40 +9,38 @@
       <span>Better trips.</span>
     </h1>
 
-    <p class="hero-copy">
+    <p class="hero-text">
       Learn how to earn more points, unlock elite benefits, and travel the world
       for less using credit card rewards.
     </p>
-  </div>
+  </section>
 
-  <!-- FEATURE STRIP -->
-  <div class="feature-strip">
-    <div>
-      <div class="icon">💳</div>
+  <section class="feature-strip">
+    <div class="feature">
+      <div class="feature-icon">▭</div>
       <h3>Top Cards</h3>
       <p>Handpicked cards that maximize every purchase.</p>
     </div>
 
-    <div>
-      <div class="icon">🎁</div>
+    <div class="feature">
+      <div class="feature-icon">◇</div>
       <h3>Exclusive Bonuses</h3>
       <p>Access the best welcome offers and limited-time deals.</p>
     </div>
 
-    <div>
-      <div class="icon">🌎</div>
+    <div class="feature">
+      <div class="feature-icon">◎</div>
       <h3>Luxury Travel</h3>
       <p>Book unforgettable experiences with points and miles.</p>
     </div>
 
-    <div>
-      <div class="icon">👑</div>
+    <div class="feature">
+      <div class="feature-icon">♕</div>
       <h3>Elite Perks</h3>
       <p>Unlock airport lounge access, upgrades, and more.</p>
     </div>
-  </div>
+  </section>
 
-  <!-- EXPLORE SECTION -->
   <section class="explore-section">
     <p class="eyebrow center">START EXPLORING</p>
 
@@ -58,42 +50,59 @@
     </h2>
 
     <div class="explore-grid">
-
-      <div class="explore-card" onclick="location.href='wallet.html'">
+      <div class="explore-card" onclick="loadPage('wallet.html')">
+        <div class="card-img placeholder wallet-img"></div>
+        <div class="circle-icon">▭</div>
         <h3>My Wallet</h3>
         <p>See the exact cards I use and how they fit together.</p>
+        <span>Explore →</span>
       </div>
 
-      <div class="explore-card" onclick="location.href='bonuses.html'">
+      <div class="explore-card" onclick="loadPage('bonuses.html')">
+        <div class="card-img placeholder offers-img"></div>
+        <div class="circle-icon">◇</div>
         <h3>Best Offers</h3>
         <p>Find the highest welcome bonuses available right now.</p>
+        <span>Explore →</span>
       </div>
 
-      <div class="explore-card" onclick="location.href='trips.html'">
+      <div class="explore-card" onclick="loadPage('trips.html')">
+        <div class="card-img placeholder trips-img"></div>
+        <div class="circle-icon">✈</div>
         <h3>Trip Itineraries</h3>
         <p>Real trips booked with points and step-by-step guides.</p>
+        <span>Explore →</span>
       </div>
 
-      <div class="explore-card" onclick="location.href='calculator.html'">
+      <div class="explore-card" onclick="loadPage('calculator.html')">
+        <div class="card-img placeholder calculator-img"></div>
+        <div class="circle-icon">▦</div>
         <h3>Credit Card Calculator</h3>
         <p>Calculate points, value, and rewards instantly.</p>
+        <span>Explore →</span>
       </div>
 
-      <div class="explore-card" onclick="location.href='tracker.html'">
+      <div class="explore-card" onclick="loadPage('tracker.html')">
+        <div class="card-img placeholder tracker-img"></div>
+        <div class="circle-icon">▥</div>
         <h3>Credit Tracker</h3>
         <p>Track spending, credits, and bonus progress.</p>
+        <span>Explore →</span>
       </div>
 
-      <div class="explore-card" onclick="location.href='about.html'">
+      <div class="explore-card" onclick="loadPage('about.html')">
+        <div class="card-img placeholder about-img"></div>
+        <div class="circle-icon">▢</div>
         <h3>About Me</h3>
         <p>My story, mission, and why I created TravelWithTripp.</p>
+        <span>Explore →</span>
       </div>
-
     </div>
 
     <p class="footer-tagline">
       TRUSTED STRATEGIES. REAL RESULTS. LUXURY EXPERIENCES.
     </p>
-  </section>
 
+    <p class="signature">Tripp</p>
+  </section>
 </section>
