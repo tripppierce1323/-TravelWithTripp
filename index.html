@@ -1,33 +1,672 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TravelWithTripp</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --green: #0f4a38;
+      --green2: #123f31;
+      --gold: #d7b84a;
+      --cream: #f8f5ef;
+      --text: #14213d;
+      --muted: #667085;
+      --border: #e5e7eb;
+      --orange: #c4623f;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial;
-      background: #f5f5f5;
-      padding: 20px;
-      text-align: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
     }
-    h1 {
-      color: #1e5f4d;
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    button {
-      background: #d4a62a;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 800;
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+
+    .tag {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      background: white;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav button {
+      white-space: nowrap;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    nav button.active {
+      background: var(--green);
       color: white;
+    }
+
+    main {
+      padding: 18px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(15,74,56,.95), rgba(15,74,56,.7)),
+        url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      border-radius: 28px;
+      padding: 34px 24px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 44px;
+      line-height: 1;
+      margin: 12px 0;
+    }
+
+    h2 {
+      color: var(--green);
+      font-size: 32px;
+      margin: 10px 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    .gold { color: var(--gold); }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      margin: 16px 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,.04);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 700px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #cfd8d3;
+      border-radius: 14px;
       font-size: 16px;
+    }
+
+    label {
+      font-weight: 700;
+      display: block;
+      margin: 10px 0 6px;
+    }
+
+    .btn {
+      border: none;
+      background: var(--gold);
+      color: #111;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .btn.secondary {
+      background: var(--green);
+      color: white;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--green);
+      margin: 4px 4px 4px 0;
+    }
+
+    .stat {
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .stat small {
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--green);
+      font-size: 22px;
+      margin-top: 5px;
+    }
+
+    .hide { display: none; }
+
+    .wallet-card {
+      background: linear-gradient(135deg, #0e3d30, #175f49);
+      color: white;
+      border-radius: 24px;
+      padding: 20px;
+      margin: 16px 0;
+    }
+
+    .progress {
+      height: 10px;
+      background: rgba(255,255,255,.25);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+
+    .bar {
+      height: 100%;
+      background: var(--gold);
+      width: 0%;
+    }
+
+    .credit-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      margin: 10px 0;
+      background: white;
+    }
+
+    .credit-row.used {
+      opacity: .65;
+      text-decoration: line-through;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .trip-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
-  <h1>TravelWithTripp</h1>
-  <p>Smarter rewards. Better trips.</p>
+  <header>
+    <div>
+      <div class="brand"><div class="logo">✈</div><div>TravelWithTripp</div></div>
+      <div class="tag">SMARTER REWARDS</div>
+    </div>
+  </header>
 
-  <button>Build My Setup</button>
+  <nav>
+    <button class="active" onclick="showPage('home', this)">Home</button>
+    <button onclick="showPage('builder', this)">Setup Builder</button>
+    <button onclick="showPage('bonuses', this)">Bonuses</button>
+    <button onclick="showPage('wallet', this)">Wallet</button>
+    <button onclick="showPage('trips', this)">Trip Templates</button>
+  </nav>
+
+  <main>
+    <section id="home">
+      <div class="hero">
+        <span class="pill">TRAVELWITHTRIPP</span>
+        <h1>Smarter rewards. <span class="gold">Better trips.</span></h1>
+        <p>Optimize your cards, track credits, and see how everyday spending can become real travel.</p>
+        <button class="btn" onclick="showPage('builder')">Build my setup →</button>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card"><h3>Find your best card setup</h3><p>Compare 1, 2, and 3-card setups based on your monthly spending.</p></div>
+        <div class="card"><h3>Track card credits</h3><p>Monthly, quarterly, semiannual, and annual credits are tracked by period.</p></div>
+        <div class="card"><h3>Welcome bonus rankings</h3><p>See points, estimated value, annual fee, and net first-year value.</p></div>
+        <div class="card"><h3>Trip templates</h3><p>See how points turn into real redemptions.</p></div>
+      </div>
+    </section>
+
+    <section id="builder" class="hide">
+      <h2>Find the perfect card combo</h2>
+      <p class="small">Enter monthly spend. Values are estimates.</p>
+
+      <div class="card">
+        <div class="grid grid-2" id="spendInputs"></div>
+
+        <label>Goal</label>
+        <select id="goal">
+          <option value="travel">Team Travel Points</option>
+          <option value="cash">Team Cash Back</option>
+        </select>
+
+        <button class="btn secondary" onclick="calculateSetups()">Calculate setups</button>
+      </div>
+
+      <div id="setupResults"></div>
+    </section>
+
+    <section id="bonuses" class="hide">
+      <h2>Today’s top offers</h2>
+      <p class="small">Ranked by net first-year bonus value after annual fee.</p>
+      <div id="bonusList"></div>
+    </section>
+
+    <section id="wallet" class="hide">
+      <h2>Your saved cards</h2>
+      <p class="small">Track credits by month, quarter, half-year, or year.</p>
+
+      <div class="card">
+        <label>Add card to wallet</label>
+        <select id="walletSelect"></select>
+        <button class="btn secondary" onclick="addToWallet()">Add to wallet</button>
+      </div>
+
+      <div id="walletList"></div>
+    </section>
+
+    <section id="trips" class="hide">
+      <h2>Real redemptions, real value</h2>
+      <div id="tripList"></div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 TravelWithTripp · Estimates only. Not financial advice.
+  </footer>
+
+  <script>
+    const cards = [
+      {
+        name: "American Express Gold",
+        issuer: "American Express",
+        annualFee: 325,
+        bonusPoints: 90000,
+        bonusValue: 1800,
+        multipliers: { dining: 4, groceries: 4, gas: 1, travel: 3, rent: 1, online: 1, other: 1 },
+        pointValue: .02,
+        credits: [
+          { name: "Uber Cash", value: 10, frequency: "monthly", reset: "1st of month", trackable: true },
+          { name: "Dining Credit", value: 10, frequency: "monthly", reset: "1st of month", trackable: true },
+          { name: "Dunkin Credit", value: 7, frequency: "monthly", reset: "1st of month", trackable: true },
+          { name: "Resy Credit", value: 50, frequency: "semiannual", reset: "Jan & Jul", trackable: true }
+        ]
+      },
+      {
+        name: "Chase Sapphire Preferred",
+        issuer: "Chase",
+        annualFee: 95,
+        bonusPoints: 75000,
+        bonusValue: 1350,
+        multipliers: { dining: 3, groceries: 1, gas: 1, travel: 2, rent: 1, online: 3, other: 1 },
+        pointValue: .018,
+        credits: [
+          { name: "Annual Hotel Credit", value: 50, frequency: "annual", reset: "cardmember year", trackable: true }
+        ]
+      },
+      {
+        name: "Capital One Venture X",
+        issuer: "Capital One",
+        annualFee: 395,
+        bonusPoints: 75000,
+        bonusValue: 1350,
+        multipliers: { dining: 2, groceries: 2, gas: 2, travel: 2, rent: 2, online: 2, other: 2 },
+        pointValue: .018,
+        credits: [
+          { name: "Annual Travel Credit", value: 300, frequency: "annual", reset: "cardmember year", trackable: true },
+          { name: "10,000 Anniversary Miles", value: 100, frequency: "annual", reset: "anniversary", trackable: false }
+        ]
+      },
+      {
+        name: "Chase Freedom Unlimited",
+        issuer: "Chase",
+        annualFee: 0,
+        bonusPoints: 20000,
+        bonusValue: 300,
+        multipliers: { dining: 3, groceries: 1.5, gas: 1.5, travel: 1.5, rent: 1.5, online: 1.5, other: 1.5 },
+        pointValue: .01,
+        credits: []
+      },
+      {
+        name: "Blue Cash Preferred",
+        issuer: "American Express",
+        annualFee: 95,
+        bonusPoints: 0,
+        bonusValue: 300,
+        multipliers: { dining: 1, groceries: 6, gas: 3, travel: 1, rent: 1, online: 1, other: 1 },
+        pointValue: .01,
+        credits: []
+      }
+    ];
+
+    const categories = [
+      ["dining", "Dining"],
+      ["groceries", "Groceries"],
+      ["gas", "Gas"],
+      ["travel", "Travel"],
+      ["rent", "Rent"],
+      ["online", "Online shopping"],
+      ["other", "Other"]
+    ];
+
+    const trips = [
+      {
+        name: "Tokyo in Business Class",
+        destination: "Tokyo, Japan",
+        points: 150000,
+        cash: 8500,
+        oop: 250,
+        difficulty: "Intermediate",
+        cpp: "5.5¢/pt",
+        image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80",
+        notes: "Transfer Chase Ultimate Rewards to Virgin Atlantic or another partner for premium flights."
+      },
+      {
+        name: "Maldives Overwater Villa",
+        destination: "Maldives",
+        points: 220000,
+        cash: 9800,
+        oop: 1100,
+        difficulty: "Advanced",
+        cpp: "4.4¢/pt",
+        image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1200&q=80",
+        notes: "Use hotel points and airline miles to reduce the largest costs."
+      }
+    ];
+
+    function showPage(id, btn) {
+      document.querySelectorAll("main section").forEach(s => s.classList.add("hide"));
+      document.getElementById(id).classList.remove("hide");
+
+      document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+      if (btn) btn.classList.add("active");
+    }
+
+    function money(n) {
+      return "$" + Math.round(n).toLocaleString();
+    }
+
+    function points(n) {
+      return Math.round(n).toLocaleString();
+    }
+
+    function init() {
+      const spendBox = document.getElementById("spendInputs");
+      spendBox.innerHTML = categories.map(([key, label]) => `
+        <div>
+          <label>${label}</label>
+          <input id="${key}" type="number" inputmode="decimal" placeholder="$0 per month" value="0" />
+        </div>
+      `).join("");
+
+      document.getElementById("bonusList").innerHTML = [...cards]
+        .sort((a,b) => (b.bonusValue - b.annualFee) - (a.bonusValue - a.annualFee))
+        .map((card, i) => `
+          <div class="card">
+            <span class="pill">#${i+1}</span>
+            <h3>${card.name}</h3>
+            <p class="small">${card.issuer}</p>
+            <div class="grid grid-2">
+              <div class="stat"><small>Bonus points</small><strong>${points(card.bonusPoints)}</strong></div>
+              <div class="stat"><small>Est. value</small><strong>${money(card.bonusValue)}</strong></div>
+              <div class="stat"><small>Annual fee</small><strong>${money(card.annualFee)}</strong></div>
+              <div class="stat"><small>Net year 1</small><strong>${money(card.bonusValue - card.annualFee)}</strong></div>
+            </div>
+            <button class="btn">Link coming soon</button>
+          </div>
+        `).join("");
+
+      document.getElementById("walletSelect").innerHTML = cards.map(c => `<option value="${c.name}">${c.name}</option>`).join("");
+      renderWallet();
+
+      document.getElementById("tripList").innerHTML = trips.map(t => `
+        <div class="card">
+          <img class="trip-img" src="${t.image}" onerror="this.style.display='none'" />
+          <p><span class="pill">${t.difficulty}</span><span class="pill">${t.cpp}</span></p>
+          <h3>${t.name}</h3>
+          <p class="small">${t.destination}</p>
+          <div class="grid grid-3">
+            <div class="stat"><small>Points</small><strong>${points(t.points)}</strong></div>
+            <div class="stat"><small>Cash value</small><strong>${money(t.cash)}</strong></div>
+            <div class="stat"><small>OOP</small><strong>${money(t.oop)}</strong></div>
+          </div>
+          <p>${t.notes}</p>
+        </div>
+      `).join("");
+    }
+
+    function calculateSetups() {
+      const spend = {};
+      categories.forEach(([key]) => spend[key] = Number(document.getElementById(key).value || 0) * 12);
+
+      const scored = cards.map(card => {
+        let pts = 0;
+        categories.forEach(([key]) => {
+          pts += spend[key] * (card.multipliers[key] || 1);
+        });
+        const value = pts * card.pointValue;
+        return {
+          card,
+          points: pts,
+          value,
+          netFirst: value + card.bonusValue - card.annualFee,
+          netOngoing: value - card.annualFee
+        };
+      }).sort((a,b) => b.netFirst - a.netFirst);
+
+      const best1 = [scored[0]];
+      const best2 = scored.slice(0,2);
+      const best3 = scored.slice(0,3);
+
+      renderSetup("Best 1-card setup", best1);
+      renderSetup("Best 2-card setup", best2, true);
+      renderSetup("Best 3-card setup", best3, true);
+    }
+
+    function renderSetup(title, setup, append=false) {
+      const totalPoints = setup.reduce((s,x) => s + x.points, 0);
+      const totalValue = setup.reduce((s,x) => s + x.value, 0);
+      const totalFees = setup.reduce((s,x) => s + x.card.annualFee, 0);
+      const totalBonus = setup.reduce((s,x) => s + x.card.bonusValue, 0);
+      const netFirst = totalValue + totalBonus - totalFees;
+      const netOngoing = totalValue - totalFees;
+
+      const html = `
+        <div class="card">
+          <h3>${title}</h3>
+          <p>${setup.map(x => x.card.name).join(" + ")}</p>
+          <div class="grid grid-2">
+            <div class="stat"><small>Annual points</small><strong>${points(totalPoints)}</strong></div>
+            <div class="stat"><small>Est. rewards value</small><strong>${money(totalValue)}</strong></div>
+            <div class="stat"><small>Annual fees</small><strong>${money(totalFees)}</strong></div>
+            <div class="stat"><small>Welcome bonus value</small><strong>${money(totalBonus)}</strong></div>
+            <div class="stat"><small>Net first year</small><strong>${money(netFirst)}</strong></div>
+            <div class="stat"><small>Net ongoing</small><strong>${money(netOngoing)}</strong></div>
+          </div>
+          <p class="small">Why this won: strongest estimated net value based on your spend and current assumptions.</p>
+        </div>
+      `;
+
+      if (append) document.getElementById("setupResults").innerHTML += html;
+      else document.getElementById("setupResults").innerHTML = html;
+    }
+
+    function getWallet() {
+      return JSON.parse(localStorage.getItem("wallet") || "[]");
+    }
+
+    function saveWallet(w) {
+      localStorage.setItem("wallet", JSON.stringify(w));
+    }
+
+    function addToWallet() {
+      const name = document.getElementById("walletSelect").value;
+      const wallet = getWallet();
+      if (!wallet.includes(name)) wallet.push(name);
+      saveWallet(wallet);
+      renderWallet();
+    }
+
+    function removeFromWallet(name) {
+      saveWallet(getWallet().filter(x => x !== name));
+      renderWallet();
+    }
+
+    function currentPeriod(freq) {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = d.getMonth() + 1;
+      if (freq === "monthly") return `${y}-${String(m).padStart(2,"0")}`;
+      if (freq === "quarterly") return `${y}-Q${Math.ceil(m / 3)}`;
+      if (freq === "semiannual") return `${y}-${m <= 6 ? "H1" : "H2"}`;
+      return `${y}`;
+    }
+
+    function usageKey(card, credit) {
+      return `usage:${card.name}:${credit.name}:${currentPeriod(credit.frequency)}`;
+    }
+
+    function isUsed(card, credit) {
+      return localStorage.getItem(usageKey(card, credit)) === "true";
+    }
+
+    function toggleCredit(cardName, creditName) {
+      const card = cards.find(c => c.name === cardName);
+      const credit = card.credits.find(c => c.name === creditName);
+      const key = usageKey(card, credit);
+      localStorage.setItem(key, localStorage.getItem(key) === "true" ? "false" : "true");
+      renderWallet();
+    }
+
+    function annualPossible(credit) {
+      if (credit.frequency === "monthly") return credit.value * 12;
+      if (credit.frequency === "quarterly") return credit.value * 4;
+      if (credit.frequency === "semiannual") return credit.value * 2;
+      return credit.value;
+    }
+
+    function renderWallet() {
+      const wallet = getWallet();
+      const box = document.getElementById("walletList");
+
+      if (!wallet.length) {
+        box.innerHTML = `<div class="card"><p>No cards saved yet. Add one above.</p></div>`;
+        return;
+      }
+
+      box.innerHTML = wallet.map(name => {
+        const card = cards.find(c => c.name === name);
+        if (!card) return "";
+
+        const trackable = card.credits.filter(c => c.trackable);
+        const annualAvailable = trackable.reduce((s,c) => s + annualPossible(c), 0);
+        const usedNow = trackable.reduce((s,c) => s + (isUsed(card,c) ? c.value : 0), 0);
+        const pct = Math.min(100, Math.round((usedNow / Math.max(card.annualFee,1)) * 100));
+        const net = card.annualFee - usedNow;
+
+        return `
+          <div class="wallet-card">
+            <button style="float:right" onclick="removeFromWallet('${card.name}')">🗑</button>
+            <h3>${card.name}</h3>
+            <p>${card.issuer} · Annual fee: ${money(card.annualFee)}</p>
+            <p>Annual fee offset: ${pct}%</p>
+            <div class="progress"><div class="bar" style="width:${pct}%"></div></div>
+            <div class="grid grid-3">
+              <div><small>Available yearly</small><br><strong>${money(annualAvailable)}</strong></div>
+              <div><small>Used current period</small><br><strong>${money(usedNow)}</strong></div>
+              <div><small>Net cost</small><br><strong>${money(net)}</strong></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Current Credit Reminders</h3>
+            ${trackable.map(c => `
+              <div class="credit-row ${isUsed(card,c) ? "used" : ""}" onclick="toggleCredit('${card.name}','${c.name}')">
+                <div>
+                  <strong>${c.name}</strong>
+                  <div class="small">${money(c.value)} · ${c.frequency} · Reset: ${c.reset}</div>
+                </div>
+                <div>${isUsed(card,c) ? "✅ Used" : "⭕ Open"}</div>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }).join("");
+    }
+
+    init();
+  </script>
 </body>
 </html>
