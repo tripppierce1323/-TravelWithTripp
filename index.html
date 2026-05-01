@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TravelWithTripp</title>
 
   <link rel="stylesheet" href="styles.css" />
@@ -10,37 +10,20 @@
 
 <body>
 
+  <!-- MENU -->
+  <div id="menu" class="menu">
+    <a onclick="loadPage('home.html')">Home</a>
+    <a onclick="loadPage('wallet.html')">My Wallet</a>
+    <a onclick="loadPage('bonuses.html')">Best Welcome Offers</a>
+    <a onclick="loadPage('trips.html')">Trip Itineraries</a>
+    <a onclick="loadPage('calculator.html')">Credit Card Calculator</a>
+    <a onclick="loadPage('tracker.html')">Credit Tracker</a>
+    <a onclick="loadPage('about.html')">About Me</a>
+  </div>
+
   <!-- MAIN CONTENT -->
   <div id="content"></div>
 
-  <!-- SIMPLE NAV MENU (OPTIONAL) -->
-  <div id="menu" class="menu">
-    <a href="#" onclick="loadPage('home.html')">Home</a>
-    <a href="#" onclick="loadPage('wallet.html')">My Wallet</a>
-    <a href="#" onclick="loadPage('bonuses.html')">Best Welcome Offers</a>
-    <a href="#" onclick="loadPage('trips.html')">Trip Itineraries</a>
-    <a href="#" onclick="loadPage('calculator.html')">Calculator</a>
-    <a href="#" onclick="loadPage('tracker.html')">Tracker</a>
-    <a href="#" onclick="loadPage('about.html')">About Me</a>
-  </div>
-
-  <script>
-    function loadPage(page) {
-      fetch("pages/" + page)
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById("content").innerHTML = html;
-          window.scrollTo(0, 0);
-        });
-    }
-
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("open");
-    }
-
-    // Load homepage by default
-    loadPage("home.html");
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
