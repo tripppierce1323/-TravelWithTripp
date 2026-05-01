@@ -12,10 +12,10 @@ function App() {
       {cards.map((card) => (
         <div key={card.name} className="card">
           <img
-            src={card.image}
-            alt={card.name}
-            style={{ width: "100%", borderRadius: "12px" }}
-          />
+  src={card.image}
+  alt={card.name}
+  style={{ width: "300px", height: "auto", borderRadius: "12px" }}
+/>
 
           <div style={{ padding: "10px" }}>
             <h3>{card.name}</h3>
