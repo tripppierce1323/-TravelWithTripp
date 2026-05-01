@@ -9,7 +9,6 @@ body {
   color: white;
 }
 
-/* Background */
 .app {
   min-height: 100vh;
   background:
@@ -17,13 +16,94 @@ body {
     linear-gradient(180deg, #062c64 0%, #061a3a 50%, #020b1c 100%);
 }
 
+/* TOP NAV */
+.topNav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(2, 11, 28, 0.65);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.brand span {
+  color: #f5c96b;
+}
+
+.menuBtn {
+  background: none;
+  box-shadow: none;
+  font-size: 30px;
+  padding: 0;
+}
+
+.menu {
+  position: absolute;
+  top: 65px;
+  right: 20px;
+  width: 260px;
+  display: none;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 18px;
+  background: rgba(2, 11, 28, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.menu.open {
+  display: flex;
+}
+
+.menu button {
+  text-align: left;
+  background: transparent;
+  box-shadow: none;
+  padding: 13px;
+  border-radius: 12px;
+}
+
+.menu button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* PAGES */
+.page {
+  display: none;
+  padding: 45px 20px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page.active {
+  display: block;
+}
+
+.page h2 {
+  text-align: center;
+  font-size: clamp(34px, 7vw, 56px);
+  margin-bottom: 25px;
+}
+
+.page p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+}
+
 /* HERO */
 .hero {
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 55px 0 40px;
 }
 
-/* LOGO */
 .logoCircle {
   width: 90px;
   height: 90px;
@@ -52,7 +132,6 @@ body {
   border-radius: 50%;
 }
 
-/* TITLE */
 h1 {
   font-size: clamp(42px, 10vw, 70px);
   margin: 0;
@@ -64,7 +143,6 @@ h1 span {
   color: #f5c96b;
 }
 
-/* TAGLINE */
 .tagline {
   margin-top: 16px;
   color: #f5c96b;
@@ -72,7 +150,6 @@ h1 span {
   font-size: clamp(16px, 3vw, 24px);
 }
 
-/* MAIN TEXT */
 h2 {
   margin-top: 28px;
   font-size: clamp(32px, 6vw, 50px);
@@ -82,67 +159,61 @@ h2 {
 .subtext {
   margin-top: 14px;
   font-size: 18px;
-  max-width: 500px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  color: rgba(255, 255, 255, 0.85);
 }
 
-/* CARDS SECTION */
-.cardsSection {
-  padding: 20px;
+.homeButtons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
-.cardsSection h3 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-/* GRID */
-.cardsGrid {
+/* CARDS / GLASS */
+.grid {
   display: grid;
-  gap: 25px;
-  max-width: 1100px;
+  gap: 22px;
+}
+
+.glassCard {
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.glassCard h3 {
+  margin-top: 0;
+  color: #f5c96b;
+}
+
+/* CALCULATOR */
+.calculatorBox {
+  max-width: 500px;
   margin: 0 auto;
 }
 
-/* CARD BOX */
-.cardBox {
-  border-radius: 20px;
-  padding: 25px 20px;
-  text-align: center;
-}
-
-/* DARK STYLE */
-.darkCard {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-/* TEXT */
-.darkCard h4 {
-  color: white;
-  text-align: left;
-}
-
-.bonus {
-  font-weight: 700;
-  margin: 15px 0;
-  color: rgba(255,255,255,0.85);
-}
-
-/* IMAGE */
-.cardBox img {
-  width: 100%;
-  max-width: 400px;
-  margin: 15px auto;
+label {
   display: block;
-  border-radius: 14px;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: 800;
 }
 
-/* BUTTON */
+input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* BUTTONS */
 button {
   border: none;
   background: linear-gradient(135deg, #0a2a66, #021432);
@@ -152,7 +223,7 @@ button {
   font-size: 16px;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
 button:hover {
@@ -160,15 +231,8 @@ button:hover {
   transition: 0.2s;
 }
 
-/* RESPONSIVE */
 @media (min-width: 768px) {
-  .cardsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1100px) {
-  .cardsGrid {
+  .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
