@@ -277,3 +277,40 @@ body {
     font-size: 16px;
   }
 }
+/* Fix Home Screen card image/text alignment */
+.home-card img,
+.feature-card img,
+.tool-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center 42%;
+  display: block;
+}
+
+.home-card:nth-of-type(2) img,
+.feature-card:nth-of-type(2) img,
+.tool-card:nth-of-type(2) img {
+  object-position: center 38%;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding-top: 34px;
+}
+
+.card-icon {
+  top: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.home-card h2,
+.feature-card h2,
+.tool-card h2 {
+  margin-top: 12px;
+  line-height: 0.95;
+}
