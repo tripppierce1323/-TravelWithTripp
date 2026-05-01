@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>TravelWithTripp</title>
 
   <link rel="stylesheet" href="styles.css" />
@@ -10,19 +11,33 @@
 
 <body>
 
-  <!-- MENU -->
-  <div id="menu" class="menu">
-    <a onclick="loadPage('home.html')">Home</a>
-    <a onclick="loadPage('wallet.html')">My Wallet</a>
-    <a onclick="loadPage('bonuses.html')">Best Welcome Offers</a>
-    <a onclick="loadPage('trips.html')">Trip Itineraries</a>
-    <a onclick="loadPage('calculator.html')">Credit Card Calculator</a>
-    <a onclick="loadPage('tracker.html')">Credit Tracker</a>
-    <a onclick="loadPage('about.html')">About Me</a>
-  </div>
+  <!-- FIXED SITE HEADER: stays on every page -->
+  <header class="main-header">
+    <div class="brand">
+      <div class="logo-mark">✈</div>
 
-  <!-- MAIN CONTENT -->
-  <div id="content"></div>
+      <div>
+        <div class="brand-name">TravelWith<span>Tripp</span></div>
+        <div class="brand-subtitle">SMARTER REWARDS. BETTER TRIPS.</div>
+      </div>
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- FIXED HAMBURGER MENU: stays on every page -->
+  <nav id="menu" class="menu">
+    <a onclick="loadPage('home.html')">Home</a>
+    <a onclick="loadPage('about.html')">About Me</a>
+    <a onclick="loadPage('wallet.html')">My Wallet</a>
+    <a onclick="loadPage('calculator.html')">Credit Card Calculator</a>
+    <a onclick="loadPage('bonuses.html')">Best Welcome Offers</a>
+    <a onclick="loadPage('tracker.html')">Credit Tracker</a>
+    <a onclick="loadPage('trips.html')">Trip Itineraries</a>
+  </nav>
+
+  <!-- ONLY THIS CONTENT CHANGES -->
+  <main id="content"></main>
 
   <script src="script.js"></script>
 </body>
