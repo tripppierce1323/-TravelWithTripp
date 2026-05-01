@@ -1,97 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TravelWithTripp</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+.logoCircle {
+  width: 90px;
+  height: 90px;
+  border: 3px solid gold;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  position: relative;
+}
 
-  <body>
-    <div class="app">
-      <section class="hero">
-        <div class="brandLogo">
-          <div class="logoCircle">
-            <div class="logoPlane">✈</div>
-            <div class="logoWave"></div>
-          </div>
-        </div>
+.logoPlane {
+  position: absolute;
+  top: 18px;
+  left: 27px;
+  font-size: 36px;
+  color: white;
+  transform: rotate(-15deg);
+}
 
-        <h1>TravelWith<span>Tripp</span></h1>
-        <p class="tagline">Luxury Travel • Smart Rewards</p>
-
-        <h2>Smarter rewards.<br />Better trips.</h2>
-
-        <p class="subtext">
-          Turn everyday spend into luxury travel experiences.
-        </p>
-      </section>
-
-      <section class="cardsSection">
-        <h3>Featured Travel Cards</h3>
-
-        <div class="cardsGrid">
-          <div class="cardBox">
-            <h4>Amex Gold</h4>
-            <div class="fakeCard goldCard">
-              <p>AMERICAN EXPRESS</p>
-              <span>GOLD</span>
-            </div>
-            <p class="bonus">4x dining & groceries</p>
-            <a href="#" target="_blank"><button>Apply Now</button></a>
-          </div>
-
-          <div class="cardBox">
-            <h4>Amex Platinum</h4>
-            <div class="fakeCard platinumCard">
-              <p>AMERICAN EXPRESS</p>
-              <span>PLATINUM</span>
-            </div>
-            <p class="bonus">Luxury travel perks</p>
-            <a href="#" target="_blank"><button>Apply Now</button></a>
-          </div>
-
-          <div class="cardBox">
-            <h4>Capital One Venture X</h4>
-            <div class="fakeCard ventureCard">
-              <p>CAPITAL ONE</p>
-              <span>VENTURE X</span>
-            </div>
-            <p class="bonus">2x everywhere • premium travel</p>
-            <a href="#" target="_blank"><button>Apply Now</button></a>
-          </div>
-
-          <div class="cardBox">
-            <h4>Chase Sapphire Preferred</h4>
-            <div class="fakeCard sapphireCard">
-              <p>CHASE</p>
-              <span>SAPPHIRE PREFERRED</span>
-            </div>
-            <p class="bonus">Best starter travel card</p>
-            <a href="#" target="_blank"><button>Apply Now</button></a>
-          </div>
-
-          <div class="cardBox">
-            <h4>Chase Sapphire Reserve</h4>
-            <div class="fakeCard reserveCard">
-              <p>CHASE</p>
-              <span>SAPPHIRE RESERVE</span>
-            </div>
-            <p class="bonus">$300 travel credit • lounge access</p>
-            <a href="#" target="_blank"><button>Apply Now</button></a>
-          </div>
-
-          <div class="cardBox">
-            <h4>Bilt Mastercard</h4>
-            <div class="fakeCard biltCard">
-              <p>BILT</p>
-              <span>MASTERCARD</span>
-            </div>
-            <p class="bonus">Earn points on rent</p>
-            <a href="#" target="_blank"><button>Apply Now</button></a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </body>
-</html>
+.logoWave {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  width: 45px;
+  height: 14px;
+  border-bottom: 4px solid gold;
+  border-radius: 50%;
+}
