@@ -2,40 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TravelWithTripp</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="logo">TravelWith<span>Tripp</span></div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <button class="menu-icon" onclick="toggleMenu()">☰</button>
   </header>
 
-  <!-- MENU -->
   <nav id="menu" class="menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="wallet.html">My Wallet</a>
-    <a href="calculator.html">Credit Card Calculator</a>
-    <a href="bonuses.html">Welcome Bonuses</a>
-    <a href="tracker.html">Credit Tracker</a>
-    <a href="trips.html">Trip Itineraries</a>
+    <a onclick="loadPage('home.html')">Home</a>
+    <a onclick="loadPage('about.html')">About Me</a>
+    <a onclick="loadPage('wallet.html')">My Wallet</a>
+    <a onclick="loadPage('calculator.html')">Credit Card Calculator</a>
+    <a onclick="loadPage('bonuses.html')">Welcome Bonuses</a>
+    <a onclick="loadPage('tracker.html')">Credit Tracker</a>
+    <a onclick="loadPage('trips.html')">Trip Itineraries</a>
   </nav>
 
-  <!-- HOME CONTENT -->
-  <main id="content">
-    <!-- PASTE YOUR HOME.HTML CONTENT HERE -->
-  </main>
+  <main id="content"></main>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("open");
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
