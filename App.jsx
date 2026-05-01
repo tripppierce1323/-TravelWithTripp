@@ -1,4 +1,6 @@
-import "./index.css";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./styles.css";
 
 const cards = [
   {
@@ -13,7 +15,7 @@ const cards = [
     image:
       "https://icm.aexp-static.com/Internet/internationalcardshop/en_us/images/cards/platinum-card.png",
     bonus: "Luxury travel perks",
-    rewards: "Airport lounges • Hotel credits • 5x flights",
+    rewards: "5x flights • Lounge access • Hotel credits",
   },
   {
     name: "Chase Sapphire Preferred",
@@ -39,13 +41,13 @@ const cards = [
   {
     name: "Bilt Mastercard",
     image:
-      "https://www.biltrewards.com/_next/image?url=https%3A%2F%2Fassets.biltrewards.com%2Fimages%2Fcard%2Fbilt-mastercard.png&w=640&q=75",
+      "https://assets.biltrewards.com/images/card/bilt-mastercard.png",
     bonus: "Earn points on rent",
     rewards: "Rent • Dining • Travel partners",
   },
 ];
 
-export default function App() {
+function App() {
   return (
     <div className="app">
       <section className="hero">
@@ -81,8 +83,7 @@ export default function App() {
       <section className="cardsSection">
         <h3>Featured Travel Cards</h3>
         <p className="sectionText">
-          Compare cards that can help unlock flights, hotels, lounges, and
-          luxury trips.
+          Compare cards that unlock flights, hotels, lounges, and luxury travel.
         </p>
 
         <div className="cardsGrid">
@@ -105,3 +106,6 @@ export default function App() {
     </div>
   );
 }
+
+// 🔥 THIS IS WHAT FIXES THE BLANK SCREEN
+createRoot(document.getElementById("root")).render(<App />);
