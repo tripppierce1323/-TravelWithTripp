@@ -1,1 +1,61 @@
-body{font-family:Arial;}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont;
+  background: linear-gradient(180deg, #0f2f2a, #071a16);
+  color: white;
+}
+
+.header {
+  text-align: center;
+  padding: 30px;
+}
+
+.header h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.header p {
+  color: #cbb26a;
+  letter-spacing: 2px;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h2 {
+  font-size: 36px;
+}
+
+.cards {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  color: black;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content strong {
+  color: #0f2f2a;
+}
