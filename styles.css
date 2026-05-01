@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +6,9 @@
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: #03121f;
-  color: white;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #fff;
 }
 
 /* HEADER */
@@ -16,10 +17,10 @@ body {
   top: 0;
   z-index: 1000;
   background: #03121f;
-  padding: 18px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 14px 18px;
 }
 
 .brand {
@@ -29,251 +30,195 @@ body {
 }
 
 .logo-mark {
-  color: #d8aa43;
-  font-size: 26px;
+  color: gold;
+  font-size: 20px;
 }
 
 .brand-name {
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .brand-name span {
-  color: #d8aa43;
+  color: gold;
 }
 
 .brand-subtitle {
-  font-size: 12px;
-  letter-spacing: 1px;
-  opacity: 0.75;
+  font-size: 10px;
+  opacity: 0.7;
 }
 
+/* HAMBURGER */
 .hamburger {
+  font-size: 22px;
   background: none;
   border: none;
-  color: #d8aa43;
-  font-size: 32px;
-  cursor: pointer;
+  color: gold;
 }
 
 /* MENU */
 .menu {
   position: fixed;
-  top: 82px;
-  right: 18px;
-  z-index: 9999;
-  display: none;
-  width: 280px;
-  padding: 22px;
-  background: rgba(3, 18, 31, 0.96);
-  border: 1px solid rgba(216, 170, 67, 0.35);
-  border-radius: 24px;
-  backdrop-filter: blur(12px);
+  top: 60px;
+  right: 0;
+  background: #03121f;
+  width: 220px;
+  transform: translateX(100%);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+  z-index: 999;
 }
 
 .menu.open {
-  display: block;
+  transform: translateX(0);
 }
 
 .menu a {
-  display: block;
-  padding: 14px 0;
   color: white;
   text-decoration: none;
-  font-size: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 15px;
 }
 
 /* CONTENT */
 #content {
-  background: #03121f;
+  padding: 10px;
 }
 
 /* HERO */
 .hero {
   position: relative;
-  min-height: 620px;
+  height: 520px;
+  border-radius: 20px;
   overflow: hidden;
 }
 
-.hero img,
-.hero-img {
+.hero img {
   width: 100%;
-  height: 620px;
+  height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  padding: 90px 28px 40px;
-  background: linear-gradient(
-    180deg,
-    rgba(3, 18, 31, 0.15),
-    rgba(3, 18, 31, 0.45)
-  );
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.hero-overlay .sub,
-.hero-overlay > p:first-child {
-  color: #d8aa43;
+.hero h1 {
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.hero h1 span {
+  color: gold;
+}
+
+.hero p {
+  margin-top: 10px;
   font-size: 14px;
-  letter-spacing: 5px;
-  font-weight: 700;
-  line-height: 1.5;
-  margin-bottom: 22px;
-}
-
-.hero-overlay h1 {
-  font-family: Georgia, serif;
-  font-size: 54px;
-  line-height: 0.98;
-  font-weight: 400;
-  margin-bottom: 28px;
-}
-
-.hero-overlay h1 span {
-  color: #d8aa43;
-}
-
-.hero-overlay .desc,
-.hero-overlay > p:last-child {
-  font-size: 19px;
-  line-height: 1.55;
-  max-width: 620px;
+  opacity: 0.85;
 }
 
 /* SECTION TITLE */
 .section-title {
   text-align: center;
-  padding: 48px 22px 26px;
+  margin: 30px 0 10px;
 }
 
-.section-title p {
-  color: #d8aa43;
-  letter-spacing: 6px;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 16px;
+.section-title small {
+  color: gold;
+  letter-spacing: 2px;
+  font-size: 11px;
 }
 
 .section-title h2 {
-  font-family: Georgia, serif;
-  font-size: 38px;
-  line-height: 1.1;
-  font-weight: 400;
+  margin-top: 10px;
+  font-size: 22px;
 }
 
-.underline {
-  width: 70px;
-  height: 4px;
-  background: #d8aa43;
-  margin: 22px auto 0;
-}
-
-/* CARDS */
-.cards {
-  padding: 0 20px 40px;
+/* GRID */
+.grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 15px;
+  margin-top: 10px;
 }
 
+/* CARD */
 .card {
-  position: relative;
+  border-radius: 22px;
   overflow: hidden;
-  border-radius: 26px;
-  border: 1px solid rgba(216, 170, 67, 0.25);
   background: #03121f;
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.38);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
+/* IMAGE HALF */
 .card img {
   width: 100%;
-  display: block;
+  height: 200px;
   object-fit: cover;
 }
 
-/* TEXT ONLY — image already has navy/icon */
-.card-text {
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  bottom: 42px;
+/* NAVY HALF */
+.card-content {
+  position: relative;
+  background: linear-gradient(180deg, #06223a, #03121f);
+  padding: 60px 20px 25px;
   text-align: center;
-  z-index: 2;
 }
 
-.card-text h3 {
-  font-family: Georgia, serif;
-  font-size: 38px;
-  font-weight: 400;
-  line-height: 1.05;
-  margin-bottom: 18px;
-}
-
-.card-text p {
-  font-size: 19px;
-  line-height: 1.35;
-  color: #f4f4f4;
-  margin: 0 auto 18px;
-  max-width: 620px;
-}
-
-.card-text span {
-  color: #d8aa43;
+/* ICON CENTER (THIS FIXES ALIGNMENT BUG) */
+.card-icon {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #03121f;
+  border: 2px solid gold;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gold;
   font-size: 22px;
-  font-weight: 800;
+}
+
+/* TEXT */
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 12px;
+  color: gold;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 /* FOOTER */
 .footer {
-  padding: 38px 20px 60px;
   text-align: center;
+  margin: 40px 0 20px;
+  font-size: 11px;
+  opacity: 0.6;
 }
 
-.footer p {
-  color: rgba(255, 255, 255, 0.72);
-  letter-spacing: 4px;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.signature {
-  margin-top: 12px;
-  color: #d8aa43;
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 30px;
-}
-
-/* DESKTOP */
-@media (min-width: 850px) {
-  .cards {
-    max-width: 1180px;
-    margin: 0 auto;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .hero-overlay {
-    padding-left: 70px;
-  }
-
-  .hero-overlay h1 {
-    font-size: 72px;
-  }
-
-  .card-text h3 {
-    font-size: 30px;
-  }
-
-  .card-text p {
-    font-size: 16px;
-  }
+.footer .signature {
+  margin-top: 8px;
+  color: gold;
+  font-size: 20px;
 }
