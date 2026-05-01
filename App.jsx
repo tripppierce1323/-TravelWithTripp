@@ -1,3 +1,4 @@
+const { useState } = React;
 import { cards } from "./data/cards";
 
 export default function App() {
@@ -20,3 +21,5 @@ export default function App() {
     </div>
   );
 }
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
