@@ -1,198 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TravelWithTripp</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>TravelWithTripp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-  <body>
-    <div class="app">
-      <header class="topNav">
-        <div class="brand">TravelWith<span>Tripp</span></div>
+<body>
 
-        <button class="menuBtn" onclick="toggleMenu()">☰</button>
+<!-- HEADER -->
+<div class="header">
+  <h1>TravelWith<span>Tripp</span></h1>
 
-        <nav id="menu" class="menu">
-          <button onclick="showPage('home')">Home</button>
-          <button onclick="showPage('about')">About Me</button>
-          <button onclick="showPage('wallet')">My Wallet</button>
-          <button onclick="showPage('calculator')">Credit Card Calculator</button>
-          <button onclick="showPage('bonuses')">Current Welcome Bonuses</button>
-          <button onclick="showPage('tracker')">Credit Tracker</button>
-          <button onclick="showPage('trips')">Trip Itineraries</button>
-        </nav>
-      </header>
+  <!-- Hamburger Menu -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
 
-      <!-- HOME -->
-      <section id="home" class="page active">
-        <div class="hero">
-          <div class="logoCircle">
-            <div class="logoPlane">✈</div>
-            <div class="logoWave"></div>
-          </div>
+<!-- MENU -->
+<div id="menu" class="menu">
+  <a onclick="loadPage('home.html')">Home</a>
+  <a onclick="loadPage('about.html')">About Me</a>
+  <a onclick="loadPage('wallet.html')">My Wallet</a>
+  <a onclick="loadPage('calculator.html')">Credit Card Calculator</a>
+  <a onclick="loadPage('bonuses.html')">Welcome Bonuses</a>
+  <a onclick="loadPage('tracker.html')">Credit Tracker</a>
+  <a onclick="loadPage('trips.html')">Trip Itineraries</a>
+</div>
 
-          <h1>TravelWith<span>Tripp</span></h1>
-          <p class="tagline">Luxury Travel • Smart Rewards</p>
+<!-- PAGE CONTENT -->
+<div id="content"></div>
 
-          <h2>Smarter rewards.<br />Better trips.</h2>
+<script src="script.js"></script>
 
-          <p class="subtext">
-            Helping everyday people turn credit card points, smart spending,
-            and travel strategy into unforgettable luxury trips.
-          </p>
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("open");
+}
+</script>
 
-          <div class="homeButtons">
-            <button onclick="showPage('calculator')">Try the Calculator</button>
-            <button onclick="showPage('wallet')">See My Wallet</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section id="about" class="page">
-        <h2>About Me</h2>
-        <p>
-          I’m Tripp. I love personal finance, credit card rewards, and using
-          points to travel better for less. This site is where I organize my
-          favorite cards, travel strategies, points breakdowns, and trip plans.
-        </p>
-      </section>
-
-      <!-- WALLET -->
-      <section id="wallet" class="page">
-        <h2>My Wallet</h2>
-
-        <div class="glassCard">
-          <h3>Current Strategy</h3>
-          <p>
-            A simple setup focused on dining, groceries, travel, flexible points,
-            and premium travel redemptions.
-          </p>
-        </div>
-
-        <div class="grid">
-          <div class="glassCard">
-            <h3>Dining / Groceries</h3>
-            <p>Best card for everyday food spend.</p>
-          </div>
-
-          <div class="glassCard">
-            <h3>Travel</h3>
-            <p>Cards used for flights, hotels, and protections.</p>
-          </div>
-
-          <div class="glassCard">
-            <h3>Catch-All</h3>
-            <p>Card used when no bonus category applies.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- CALCULATOR -->
-      <section id="calculator" class="page">
-        <h2>Credit Card Calculator</h2>
-
-        <div class="glassCard calculatorBox">
-          <label>Monthly Spend</label>
-          <input id="monthlySpend" type="number" placeholder="Example: 2500" />
-
-          <label>Points Per Dollar</label>
-          <input id="pointsRate" type="number" placeholder="Example: 3" />
-
-          <label>Point Value in Cents</label>
-          <input id="pointValue" type="number" placeholder="Example: 1.5" />
-
-          <button onclick="calculateRewards()">Calculate</button>
-
-          <h3 id="calcResult">$0 estimated yearly value</h3>
-        </div>
-      </section>
-
-      <!-- BONUSES -->
-      <section id="bonuses" class="page">
-        <h2>Current Welcome Bonuses</h2>
-
-        <div class="grid">
-          <div class="glassCard">
-            <h3>Premium Travel Cards</h3>
-            <p>Track high-value offers and transfer partner opportunities.</p>
-          </div>
-
-          <div class="glassCard">
-            <h3>Starter Cards</h3>
-            <p>Good beginner cards for building a rewards setup.</p>
-          </div>
-
-          <div class="glassCard">
-            <h3>Hotel Cards</h3>
-            <p>Free night certificates, elite status, and hotel points.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- TRACKER -->
-      <section id="tracker" class="page">
-        <h2>Credit Tracker</h2>
-
-        <div class="glassCard">
-          <h3>Coming Soon</h3>
-          <p>
-            Track cards opened, annual fees, credit limits, welcome bonuses,
-            renewal dates, and downgrade options.
-          </p>
-        </div>
-      </section>
-
-      <!-- TRIPS -->
-      <section id="trips" class="page">
-        <h2>Trip Itineraries</h2>
-
-        <div class="grid">
-          <div class="glassCard">
-            <h3>Maldives</h3>
-            <p>Luxury points trip breakdown and resort experience.</p>
-          </div>
-
-          <div class="glassCard">
-            <h3>Iceland Ring Road</h3>
-            <p>Camper van route, hot springs, waterfalls, and itinerary.</p>
-          </div>
-
-          <div class="glassCard">
-            <h3>Egypt & Greece</h3>
-            <p>Future trip plans with flights, hotels, and activities.</p>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <script>
-      function toggleMenu() {
-        document.getElementById("menu").classList.toggle("open");
-      }
-
-      function showPage(pageId) {
-        document.querySelectorAll(".page").forEach((page) => {
-          page.classList.remove("active");
-        });
-
-        document.getElementById(pageId).classList.add("active");
-        document.getElementById("menu").classList.remove("open");
-        window.scrollTo(0, 0);
-      }
-
-      function calculateRewards() {
-        const spend = Number(document.getElementById("monthlySpend").value);
-        const rate = Number(document.getElementById("pointsRate").value);
-        const value = Number(document.getElementById("pointValue").value);
-
-        const yearlyValue = spend * 12 * rate * (value / 100);
-
-        document.getElementById("calcResult").innerText =
-          "$" + yearlyValue.toFixed(2) + " estimated yearly value";
-      }
-    </script>
-  </body>
+</body>
 </html>
