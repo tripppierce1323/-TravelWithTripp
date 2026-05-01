@@ -1,5 +1,5 @@
 const { useState } = React;
-import { cards } from "./data/cards";
+const { cards } = window;
 
 export default function App() {
   return (
