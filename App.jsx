@@ -11,12 +11,18 @@ function App() {
 
       {cards.map((card) => (
         <div key={card.name} className="card">
-          <img src={card.image} alt={card.name} style={{ width: "100%", borderRadius: "12px" }} />
+          <img
+            src={card.image}
+            alt={card.name}
+            style={{ width: "100%", borderRadius: "12px" }}
+          />
 
           <div style={{ padding: "10px" }}>
             <h3>{card.name}</h3>
             <p>{card.issuer}</p>
-            <p><strong>Welcome Bonus:</strong> {card.bonus}</p>
+            <p>
+              <strong>Welcome Bonus:</strong> {card.bonus}
+            </p>
           </div>
         </div>
       ))}
