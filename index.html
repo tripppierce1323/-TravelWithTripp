@@ -1,21 +1,200 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>TravelWithTripp</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+* {
+  box-sizing: border-box;
+}
 
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: #061a3a;
+  color: white;
+}
 
-  <link rel="stylesheet" href="styles.css" />
-</head>
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(28, 85, 160, 0.7), transparent 35%),
+    linear-gradient(180deg, #062c64 0%, #061a3a 45%, #020b1c 100%);
+}
 
-<body>
-  <div id="root"></div>
+.hero {
+  text-align: center;
+  padding: 56px 22px 44px;
+}
 
-  <script src="cards.js"></script>
-  <script type="text/babel" src="App.jsx"></script>
-</body>
-</html>
+.logoMark {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.logoCircle {
+  width: 120px;
+  height: 100px;
+  position: relative;
+  color: #f5c96b;
+  font-size: 38px;
+}
+
+.logoCircle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid white;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.plane {
+  position: absolute;
+  right: 15px;
+  top: 4px;
+}
+
+.palm {
+  position: absolute;
+  left: 19px;
+  top: 45px;
+  font-size: 25px;
+}
+
+.wave {
+  position: absolute;
+  right: 18px;
+  bottom: 2px;
+  color: #f5c96b;
+}
+
+h1 {
+  font-size: clamp(42px, 12vw, 76px);
+  line-height: 1;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+h1 span {
+  color: #f5c96b;
+}
+
+.tagline {
+  margin-top: 22px;
+  color: #f5c96b;
+  letter-spacing: 6px;
+  font-size: clamp(18px, 4vw, 30px);
+}
+
+.goldLine {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goldLine span {
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f5c96b, transparent);
+  box-shadow: 0 0 18px #f5c96b;
+}
+
+h2 {
+  font-size: clamp(42px, 10vw, 70px);
+  line-height: 1.15;
+  margin: 28px 0 24px;
+  font-weight: 900;
+}
+
+.subtext {
+  font-size: clamp(20px, 4vw, 32px);
+  line-height: 1.4;
+  max-width: 760px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cardsSection {
+  padding: 20px 20px 70px;
+}
+
+.cardsSection h3 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.sectionText {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 28px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cardsGrid {
+  display: grid;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cardBox {
+  background: white;
+  color: #061a3a;
+  border-radius: 28px;
+  padding: 26px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.cardBox h4 {
+  font-size: 26px;
+  text-align: left;
+  margin: 0 0 22px;
+}
+
+.cardImageWrap {
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardImageWrap img {
+  width: 85%;
+  max-width: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.22));
+}
+
+.bonus {
+  font-size: 21px;
+  font-weight: 800;
+  margin: 18px 0 6px;
+}
+
+.rewards {
+  color: #5d6a7a;
+  margin: 0 0 22px;
+}
+
+button {
+  border: none;
+  background: linear-gradient(135deg, #082b68, #031b44);
+  color: white;
+  padding: 15px 28px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(6, 44, 100, 0.3);
+}
+
+@media (min-width: 800px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
