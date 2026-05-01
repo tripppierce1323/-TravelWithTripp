@@ -1,4 +1,4 @@
-export const cards = [
+window.cards = [
   {
     name: "Amex Gold",
     issuer: "American Express",
