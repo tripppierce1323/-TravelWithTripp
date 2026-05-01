@@ -3,61 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>TravelWithTripp</title>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="brand">
-    <div class="brand-row">
-      <span class="plane-icon">✈</span>
+  <!-- FIXED SITE HEADER: stays on every page -->
+  <header class="main-header">
+    <div class="brand">
+      <div class="logo-mark">✈</div>
+
       <div>
-        <div class="logo-text">TravelWith<span>Tripp</span></div>
-        <div class="tagline">SMARTER REWARDS. BETTER TRIPS.</div>
+        <div class="brand-name">TravelWith<span>Tripp</span></div>
+        <div class="brand-subtitle">SMARTER REWARDS. BETTER TRIPS.</div>
       </div>
     </div>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
-  </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </header>
 
-  <nav class="nav-menu" id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="pages/wallet.html">Wallet</a>
-    <a href="pages/bonuses.html">Bonuses</a>
-    <a href="pages/trips.html">Trips</a>
-    <a href="pages/calculator.html">Calculator</a>
-    <a href="pages/tracker.html">Tracker</a>
-    <a href="pages/about.html">About</a>
+  <!-- FIXED HAMBURGER MENU: stays on every page -->
+  <nav id="menu" class="menu">
+    <a onclick="loadPage('home.html')">Home</a>
+    <a onclick="loadPage('about.html')">About Me</a>
+    <a onclick="loadPage('wallet.html')">My Wallet</a>
+    <a onclick="loadPage('calculator.html')">Credit Card Calculator</a>
+    <a onclick="loadPage('bonuses.html')">Best Welcome Offers</a>
+    <a onclick="loadPage('tracker.html')">Credit Tracker</a>
+    <a onclick="loadPage('trips.html')">Trip Itineraries</a>
   </nav>
-</header>
 
-<main class="home-grid">
+  <!-- ONLY THIS CONTENT CHANGES -->
+  <main id="content"></main>
 
-  <a href="pages/bonuses.html" class="home-card">
-    <img src="https://i.ibb.co/zhKgpxBZ/89-F7-BACB-100-D-4-DC0-B04-D-A0-EC79846-FFE.png" alt="Best Welcome Offers" />
-
-    <div class="card-body">
-      <div class="card-icon">🎁</div>
-      <h2>Best Welcome<br>Offers</h2>
-      <p>Find the highest welcome bonuses available right now.</p>
-      <div class="explore">Explore →</div>
-    </div>
-  </a>
-
-  <a href="pages/calculator.html" class="home-card">
-    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" alt="Credit Card Calculator" />
-
-    <div class="card-body">
-      <div class="card-icon">🧮</div>
-      <h2>Credit Card<br>Calculator</h2>
-      <p>Calculate points, value, and rewards instantly.</p>
-      <div class="explore">Explore →</div>
-    </div>
-  </a>
-
-</main>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
