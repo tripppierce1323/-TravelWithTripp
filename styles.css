@@ -116,3 +116,23 @@ body {
     padding: 40px;
   }
 }
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* SECOND BUTTON STYLE */
+.btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+}
