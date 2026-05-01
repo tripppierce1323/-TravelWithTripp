@@ -9,6 +9,7 @@ body {
   color: white;
 }
 
+/* Background */
 .app {
   min-height: 100vh;
   background:
@@ -16,11 +17,13 @@ body {
     linear-gradient(180deg, #062c64 0%, #061a3a 45%, #020b1c 100%);
 }
 
+/* HERO */
 .hero {
   text-align: center;
   padding: 56px 22px 44px;
 }
 
+/* Logo */
 .logoMark {
   display: flex;
   justify-content: center;
@@ -64,6 +67,7 @@ body {
   color: #f5c96b;
 }
 
+/* Title */
 h1 {
   font-size: clamp(42px, 12vw, 76px);
   line-height: 1;
@@ -76,6 +80,7 @@ h1 span {
   color: #f5c96b;
 }
 
+/* Tagline */
 .tagline {
   margin-top: 22px;
   color: #f5c96b;
@@ -83,6 +88,7 @@ h1 span {
   font-size: clamp(18px, 4vw, 30px);
 }
 
+/* Gold divider */
 .goldLine {
   height: 80px;
   display: flex;
@@ -97,6 +103,7 @@ h1 span {
   box-shadow: 0 0 18px #f5c96b;
 }
 
+/* Main headline */
 h2 {
   font-size: clamp(42px, 10vw, 70px);
   line-height: 1.15;
@@ -104,6 +111,7 @@ h2 {
   font-weight: 900;
 }
 
+/* Subtext */
 .subtext {
   font-size: clamp(20px, 4vw, 32px);
   line-height: 1.4;
@@ -112,6 +120,7 @@ h2 {
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Cards section */
 .cardsSection {
   padding: 20px 20px 70px;
 }
@@ -129,6 +138,7 @@ h2 {
   color: rgba(255, 255, 255, 0.75);
 }
 
+/* Grid */
 .cardsGrid {
   display: grid;
   gap: 24px;
@@ -136,6 +146,7 @@ h2 {
   margin: 0 auto;
 }
 
+/* Card box */
 .cardBox {
   background: white;
   color: #061a3a;
@@ -145,12 +156,14 @@ h2 {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
 }
 
+/* Card title */
 .cardBox h4 {
   font-size: 26px;
   text-align: left;
   margin: 0 0 22px;
 }
 
+/* Image */
 .cardImageWrap {
   min-height: 190px;
   display: flex;
@@ -165,6 +178,7 @@ h2 {
   filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.22));
 }
 
+/* Text */
 .bonus {
   font-size: 21px;
   font-weight: 800;
@@ -176,6 +190,7 @@ h2 {
   margin: 0 0 22px;
 }
 
+/* Button */
 button {
   border: none;
   background: linear-gradient(135deg, #082b68, #031b44);
@@ -185,8 +200,10 @@ button {
   font-size: 18px;
   font-weight: 800;
   box-shadow: 0 10px 24px rgba(6, 44, 100, 0.3);
+  cursor: pointer;
 }
 
+/* Responsive */
 @media (min-width: 800px) {
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
