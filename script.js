@@ -79,13 +79,16 @@ function runCalculator() {
     topCategoryEl.textContent = formatCategory(topCategories[0][0]);
   }
 
+  const usedCards = new Set();
   const recommendations = [];
 
   topCategories.forEach(([category, monthlySpend]) => {
     const topCardsForCategory = creditCards
+      .filter(card => !usedCards.has(card.name))
       .map(card => {
         const multiplier = getCardMultiplier(card, category);
         const pointValue = card.pointValue || 0.01;
+
         const effectiveRate = multiplier * pointValue;
 
         const yearlyPoints = monthlySpend * multiplier * 12;
@@ -111,6 +114,9 @@ function runCalculator() {
         return b.grossValue - a.grossValue;
       })
       .slice(0, 3);
+
+    // Prevent duplicates across categories
+    topCardsForCategory.forEach(card => usedCards.add(card.name));
 
     recommendations.push(...topCardsForCategory);
   });
@@ -150,8 +156,10 @@ function displayCardResults(cards) {
 
         <p><strong>Issuer:</strong> ${card.issuer}</p>
         <p><strong>Annual Fee:</strong> $${card.annualFee || 0}</p>
-        <p><strong>Points Value:</strong> ${(card.pointValue * 100).toFixed(1)}¢ per point</p>
+        <p><strong>Points Value:</strong> ${((card.pointValue || 0.01) * 100).toFixed(1)}¢ per point</p>
+
         <p><strong>Why:</strong> ${card.why || "Update manually"}</p>
+
         <p><strong>Current Welcome Bonus:</strong> ${card.welcomeBonus || "Update manually"}</p>
 
         <span class="score-pill">
@@ -186,5 +194,7 @@ function formatCategory(category) {
     other: "Other"
   };
 
+  return names[category] || category;
+}
   return names[category] || category;
 }
