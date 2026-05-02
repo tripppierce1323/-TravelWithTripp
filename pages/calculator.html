@@ -1,4 +1,3 @@
-<!-- CREDIT CARD CALCULATOR PAGE -->
 <section class="page-hero">
   <small>CREDIT CARD CALCULATOR</small>
   <h1>Find the Best Card for Your Spending</h1>
@@ -9,34 +8,51 @@
 </section>
 
 <section class="calc-page">
-
   <div class="calc-box">
 
-    <label>Dining</label>
-    <input type="number" id="dining" placeholder="500" />
+    <div class="calc-grid">
+      <div>
+        <label>Dining</label>
+        <input type="number" id="dining" placeholder="500" />
+      </div>
 
-    <label>Groceries</label>
-    <input type="number" id="groceries" placeholder="700" />
+      <div>
+        <label>Groceries</label>
+        <input type="number" id="groceries" placeholder="700" />
+      </div>
 
-    <label>Gas</label>
-    <input type="number" id="gas" placeholder="250" />
+      <div>
+        <label>Gas</label>
+        <input type="number" id="gas" placeholder="250" />
+      </div>
 
-    <label>Rent / Mortgage</label>
-    <input type="number" id="rent" placeholder="1800" />
+      <div>
+        <label>Rent / Mortgage</label>
+        <input type="number" id="rent" placeholder="1800" />
+      </div>
 
-    <label>Hotels</label>
-    <input type="number" id="hotels" placeholder="300" />
+      <div>
+        <label>Hotels</label>
+        <input type="number" id="hotels" placeholder="300" />
+      </div>
 
-    <label>Flights</label>
-    <input type="number" id="flights" placeholder="250" />
+      <div>
+        <label>Flights</label>
+        <input type="number" id="flights" placeholder="250" />
+      </div>
 
-    <label>Other</label>
-    <input type="number" id="other" placeholder="1000" />
+      <div>
+        <label>Other</label>
+        <input type="number" id="other" placeholder="1000" />
+      </div>
 
-    <label>Point Value (CPP)</label>
-    <input type="number" id="pointValue" placeholder="0.02" step="0.01" />
+      <div>
+        <label>Point Value</label>
+        <input type="number" id="pointValue" placeholder="0.02" step="0.01" />
+      </div>
+    </div>
 
-    <button onclick="runCalculator()">Find My Best Cards</button>
+    <button class="calc-button" onclick="runCalculator()">Find My Best Cards</button>
 
     <div class="calc-summary">
       <h2>Your Profile</h2>
@@ -47,101 +63,4 @@
   </div>
 
   <div id="results" class="recommendations"></div>
-
 </section>
-
-<script>
-  function getVal(id) {
-    return Number(document.getElementById(id)?.value) || 0;
-  }
-
-  function runCalculator() {
-
-    const spend = {
-      dining: getVal("dining"),
-      groceries: getVal("groceries"),
-      gas: getVal("gas"),
-      rent: getVal("rent"),
-      hotels: getVal("hotels"),
-      flights: getVal("flights"),
-      other: getVal("other")
-    };
-
-    const pointValue = getVal("pointValue") || 0.02;
-
-    // Top category
-    const top = Object.entries(spend).sort((a,b)=>b[1]-a[1])[0];
-    document.getElementById("topCategory").textContent =
-      top[1] > 0 ? format(top[0]) : "-";
-
-    // Score cards from cards.js
-    const ranked = creditCards.map(card => {
-
-      const monthly =
-        spend.dining * card.rewards.dining +
-        spend.groceries * card.rewards.groceries +
-        spend.gas * card.rewards.gas +
-        spend.rent * card.rewards.rent +
-        spend.hotels * card.rewards.hotels +
-        spend.flights * card.rewards.flights +
-        spend.other * card.rewards.other;
-
-      const yearly = monthly * 12;
-      const value = yearly * pointValue;
-
-      return { ...card, value };
-
-    }).sort((a,b)=>b.value - a.value);
-
-    document.getElementById("bestValue").textContent =
-      "$" + ranked[0].value.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-
-    displayCards(ranked.slice(0,3), spend);
-  }
-
-  function displayCards(cards, spend) {
-    const container = document.getElementById("results");
-    container.innerHTML = "";
-
-    cards.forEach((card, i) => {
-
-      container.innerHTML += `
-        <div class="recommendation-card">
-          <small>RECOMMENDATION #${i+1}</small>
-          <h3>${card.name}</h3>
-
-          <p><strong>Issuer:</strong> ${card.issuer}</p>
-          <p><strong>Annual Fee:</strong> $${card.annualFee}</p>
-          <p><strong>Best For:</strong> ${card.bestFor}</p>
-          <p><strong>Why:</strong> ${card.why}</p>
-
-          <span class="score-pill">
-            $${card.value.toLocaleString(undefined, {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2
-            })} / year value
-          </span>
-
-          <ul class="benefits">
-            ${card.benefits.map(b => `<li>${b}</li>`).join("")}
-          </ul>
-        </div>
-      `;
-    });
-  }
-
-  function format(cat) {
-    return {
-      dining:"Dining",
-      groceries:"Groceries",
-      gas:"Gas",
-      rent:"Rent / Mortgage",
-      hotels:"Hotels",
-      flights:"Flights",
-      other:"Other"
-    }[cat];
-  }
-</script>
