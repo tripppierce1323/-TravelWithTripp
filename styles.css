@@ -242,8 +242,12 @@ body {
 
 
 
-/* CALCULATOR */
-.calculator-card {
+/* CALCULATOR (UPDATED) */
+.calc-page {
+  padding: 10px;
+}
+
+.calc-box {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 22px;
@@ -251,14 +255,22 @@ body {
   margin-top: 15px;
 }
 
-.calculator-card label {
+/* GRID FIX (this fixes your layout issue) */
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* INPUTS */
+.calc-box label {
   display: block;
-  margin: 16px 0 6px;
+  margin-bottom: 6px;
   font-size: 13px;
   color: gold;
 }
 
-.calculator-card input {
+.calc-box input {
   width: 100%;
   padding: 14px;
   border-radius: 14px;
@@ -266,47 +278,94 @@ body {
   font-size: 16px;
 }
 
-.calculator-card button {
+/* BUTTON */
+.calc-button {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 22px;
   padding: 15px;
   border: none;
   border-radius: 16px;
   background: gold;
   color: #03121f;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-.calculator-results {
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.15);
-}
-
-.calculator-results h2 {
-  font-size: 22px;
-  margin-bottom: 12px;
-}
-
-.calculator-results p {
-  margin: 10px 0;
-  font-size: 15px;
-}
-
-.calculator-results span {
-  color: gold;
-  font-weight: 700;
-}
-
-/* CALCULATOR TIP */
-.calculator-tip {
-  margin-top: 20px;
-  padding: 16px;
+/* SUMMARY */
+.calc-summary {
+  margin-top: 22px;
+  padding: 18px;
   border-radius: 18px;
-  background: rgba(255, 215, 0, 0.08);
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  background: rgba(255,215,0,0.08);
+  border: 1px solid rgba(255,215,0,0.25);
 }
+
+.calc-summary h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.calc-summary p {
+  font-size: 15px;
+  margin: 8px 0;
+}
+
+.calc-summary span {
+  color: gold;
+  font-weight: 800;
+}
+
+/* RESULTS */
+.recommendations {
+  margin-top: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.recommendation-card {
+  border-radius: 22px;
+  padding: 18px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.recommendation-card small {
+  color: gold;
+  letter-spacing: 1.5px;
+  font-size: 10px;
+}
+
+.recommendation-card h3 {
+  margin: 8px 0;
+  font-size: 22px;
+}
+
+.recommendation-card p {
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 8px 0;
+}
+
+.score-pill {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,215,0,0.15);
+  color: gold;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.benefits {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+.benefits li {
+  margin-bottom: 7px;
+  font-size: 14px;
+}}
 
 .calculator-tip h3 {
   font-size: 16px;
