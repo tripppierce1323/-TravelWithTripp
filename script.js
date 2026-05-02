@@ -27,10 +27,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Credit Card Calculator
 
-// Credit Card Calculator
-
 function getCalcValue(id) {
   return Number(document.getElementById(id)?.value) || 0;
+}
+
+function getCardMultiplier(card, category) {
+  const baseMultiplier = card.baseMultiplier || 1;
+
+  // If a card has rotating categories, only give 5x to the categories listed.
+  if (card.rotatingCategories) {
+    if (card.rotatingCategories.includes(category)) {
+      return card.rotatingMultiplier || 5;
+    }
+
+    // Otherwise use the normal category reward if listed, or base.
+    return card.rewards?.[category] || baseMultiplier;
+  }
+
+  return card.rewards?.[category] || baseMultiplier;
 }
 
 function runCalculator() {
@@ -56,23 +70,20 @@ function runCalculator() {
 
   const ranked = creditCards
     .map(card => {
-      const monthlyPoints =
-        spend.dining * card.rewards.dining +
-        spend.groceries * card.rewards.groceries +
-        spend.gas * card.rewards.gas +
-        spend.rent * card.rewards.rent +
-        spend.hotels * card.rewards.hotels +
-        spend.flights * card.rewards.flights +
-        spend.other * card.rewards.other;
+      let monthlyPoints = 0;
+
+      Object.keys(spend).forEach(category => {
+        monthlyPoints += spend[category] * getCardMultiplier(card, category);
+      });
 
       const yearlyPoints = monthlyPoints * 12;
-
-      // Uses each card's own ecosystem point value
       const pointValue = card.pointValue || 0.01;
+
+      // Gross value is now the ranking value.
       const yearlyValue = yearlyPoints * pointValue;
 
-      // Optional: subtract annual fee for net value
-      const netYearlyValue = yearlyValue - card.annualFee;
+      // Still calculate net value for display only.
+      const netYearlyValue = yearlyValue - (card.annualFee || 0);
 
       return {
         ...card,
@@ -81,10 +92,10 @@ function runCalculator() {
         netYearlyValue
       };
     })
-    .sort((a, b) => b.netYearlyValue - a.netYearlyValue);
+    .sort((a, b) => b.yearlyValue - a.yearlyValue);
 
   document.getElementById("bestValue").textContent =
-    "$" + ranked[0].netYearlyValue.toLocaleString(undefined, {
+    "$" + ranked[0].yearlyValue.toLocaleString(undefined, {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     });
@@ -105,20 +116,20 @@ function displayCardResults(cards) {
         <p><strong>Issuer:</strong> ${card.issuer}</p>
         <p><strong>Ecosystem:</strong> ${card.ecosystem || "N/A"}</p>
         <p><strong>Annual Fee:</strong> $${card.annualFee}</p>
-        <p><strong>Point Value Used:</strong> ${(card.pointValue * 100).toFixed(1)}¢ per point</p>
+        <p><strong>Point Value Used:</strong> ${((card.pointValue || 0.01) * 100).toFixed(1)}¢ per point</p>
         <p><strong>Best For:</strong> ${card.bestFor}</p>
         <p><strong>Why:</strong> ${card.why}</p>
 
         <span class="score-pill">
-          Net Estimated Value: $${card.netYearlyValue.toLocaleString(undefined, {
+          Gross Estimated Value: $${card.yearlyValue.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
           })} / year
         </span>
 
         <p>
-          <strong>Gross Rewards Value:</strong>
-          $${card.yearlyValue.toLocaleString(undefined, {
+          <strong>Net Value After Annual Fee:</strong>
+          $${card.netYearlyValue.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
           })} / year
