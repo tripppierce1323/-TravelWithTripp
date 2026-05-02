@@ -22,7 +22,7 @@ const creditCards = [
     annualFee: 695,
     pointValue: 0.02,
     bestFor: "Flights + Luxury Travel",
-    rewards: { dining: 1, groceries: 1, gas: 1, rent: 1, hotels: 5, flights: 5, other: 1 },
+    rewards: { dining: 1, groceries: 1, gas: 1, rent: 1, hotels: 2.5, flights: 5, other: 1 },
     benefits: ["5x flights", "5x prepaid hotels through Amex Travel", "Airport lounge access", "Premium travel credits"],
     why: "Best for frequent flyers who value airport and luxury travel perks."
   },
@@ -192,7 +192,7 @@ const creditCards = [
     annualFee: 95,
     pointValue: 0.02,
     bestFor: "Travel + Dining",
-    rewards: { dining: 3, groceries: 1, gas: 1, rent: 1, hotels: 5, flights: 5, other: 1 },
+    rewards: { dining: 3, groceries: 1, gas: 1, rent: 1, hotels: 2.5, flights: 2.5, other: 1 },
     benefits: ["5x Chase Travel", "3x dining", "Transfer partners like Hyatt and United", "Great beginner travel card"],
     why: "Best starter card for flexible travel points."
   },
@@ -203,7 +203,7 @@ const creditCards = [
     annualFee: 795,
     pointValue: 0.02,
     bestFor: "Premium Travel",
-    rewards: { dining: 3, groceries: 1, gas: 1, rent: 1, hotels: 8, flights: 8, other: 1 },
+    rewards: { dining: 3, groceries: 1, gas: 1, rent: 1, hotels: 4, flights: 4, other: 1 },
     benefits: ["Premium travel rewards", "Airport lounge access", "Travel credits", "Strong travel protection"],
     why: "Best for premium travelers who use Chase benefits often."
   },
@@ -497,7 +497,7 @@ const creditCards = [
     annualFee: 395,
     pointValue: 0.018,
     bestFor: "Premium Travel + Catch-All",
-    rewards: { dining: 2, groceries: 2, gas: 2, rent: 2, hotels: 10, flights: 5, other: 2 },
+    rewards: { dining: 2, groceries: 2, gas: 2, rent: 2, hotels: 4, flights: 2.5, other: 2 },
     benefits: ["2x on everything", "10x hotels through Capital One Travel", "5x flights through Capital One Travel", "Airport lounge access"],
     why: "Best premium card for simple 2x earning."
   },
@@ -508,7 +508,7 @@ const creditCards = [
     annualFee: 95,
     pointValue: 0.018,
     bestFor: "Simple Travel Rewards",
-    rewards: { dining: 2, groceries: 2, gas: 2, rent: 2, hotels: 5, flights: 5, other: 2 },
+    rewards: { dining: 2, groceries: 2, gas: 2, rent: 2, hotels: 2.5, flights: 2.5, other: 2 },
     benefits: ["2x on every purchase", "Simple miles earning", "Travel transfer partners", "Good mid-tier travel card"],
     why: "Best for simple travel rewards without tracking categories."
   },
@@ -519,7 +519,7 @@ const creditCards = [
     annualFee: 0,
     pointValue: 0.018,
     bestFor: "No-Fee Travel",
-    rewards: { dining: 1.25, groceries: 1.25, gas: 1.25, rent: 1.25, hotels: 5, flights: 1.25, other: 1.25 },
+    rewards: { dining: 1.25, groceries: 1.25, gas: 1.25, rent: 1.25, hotels: 1.25, flights: 1.25, other: 1.25 },
     benefits: ["No annual fee", "Travel miles", "Simple rewards", "Beginner-friendly"],
     why: "Best no-fee Capital One travel card."
   },
@@ -573,7 +573,7 @@ const creditCards = [
     annualFee: 595,
     pointValue: 0.018,
     bestFor: "Premium Citi Travel",
-    rewards: { dining: 3, groceries: 1.5, gas: 1.5, rent: 1.5, hotels: 6, flights: 6, other: 1.5 },
+    rewards: { dining: 3, groceries: 1.5, gas: 1.5, rent: 1.5, hotels: 3, flights: 3, other: 1.5 },
     benefits: ["Premium Citi travel card", "ThankYou transfer partners", "Travel benefits"],
     why: "Best premium Citi option for travel-focused users."
   },
