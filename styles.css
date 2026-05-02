@@ -212,3 +212,89 @@ body {
   color: gold;
   font-size: 20px;
 }
+
+
+/* PAGE HERO */
+.page-hero {
+  padding: 30px 10px 20px;
+  text-align: center;
+}
+
+.page-hero small {
+  color: gold;
+  letter-spacing: 2px;
+  font-size: 11px;
+}
+
+.page-hero h1 {
+  margin-top: 10px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.page-hero p {
+  margin-top: 12px;
+  font-size: 15px;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+
+
+
+/* CALCULATOR */
+.calculator-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 22px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.calculator-card label {
+  display: block;
+  margin: 16px 0 6px;
+  font-size: 13px;
+  color: gold;
+}
+
+.calculator-card input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+}
+
+.calculator-card button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 16px;
+  background: gold;
+  color: #03121f;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.calculator-results {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.calculator-results h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.calculator-results p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.calculator-results span {
+  color: gold;
+  font-weight: 700;
+}
