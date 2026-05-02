@@ -47,7 +47,7 @@ function runCalculator() {
     other: getCalcValue("other")
   };
 
-  const pointValue = getCalcValue("pointValue") || 0.02;
+const pointValue = 0.02;
 
   const top = Object.entries(spend).sort((a, b) => b[1] - a[1])[0];
 
