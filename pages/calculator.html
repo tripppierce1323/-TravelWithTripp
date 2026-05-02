@@ -1,59 +1,147 @@
-<!-- CALCULATOR PAGE -->
+<!-- CREDIT CARD CALCULATOR PAGE -->
 <section class="page-hero">
   <small>CREDIT CARD CALCULATOR</small>
   <h1>Find the Best Card for Your Spending</h1>
   <p>
-    Estimate how many points you can earn from your monthly spending and compare
-    the value of different credit card setups.
+    Enter your monthly spending and get personalized card recommendations based
+    on your highest categories.
   </p>
 </section>
 
-<section class="calculator-card">
+<section class="calc-page">
 
-  <label>Monthly Dining Spend</label>
-  <input type="number" id="dining" placeholder="Example: 500" />
+  <div class="calc-box">
 
-  <label>Monthly Grocery Spend</label>
-  <input type="number" id="groceries" placeholder="Example: 700" />
+    <label>Dining</label>
+    <input type="number" id="dining" placeholder="500" />
 
-  <label>Monthly Gas Spend</label>
-  <input type="number" id="gas" placeholder="Example: 250" />
+    <label>Groceries</label>
+    <input type="number" id="groceries" placeholder="700" />
 
-  <label>Monthly Travel Spend</label>
-  <input type="number" id="travel" placeholder="Example: 300" />
+    <label>Gas</label>
+    <input type="number" id="gas" placeholder="250" />
 
-  <label>Monthly Other Spend</label>
-  <input type="number" id="other" placeholder="Example: 1000" />
+    <label>Rent / Mortgage</label>
+    <input type="number" id="rent" placeholder="1800" />
 
-  <label>Point Value Per Point</label>
-  <input type="number" id="cpp" placeholder="Example: 0.02" step="0.01" />
+    <label>Hotels</label>
+    <input type="number" id="hotels" placeholder="300" />
 
-  <button onclick="calculateRewards()">Calculate Rewards</button>
+    <label>Flights</label>
+    <input type="number" id="flights" placeholder="250" />
 
-  <div class="calculator-results">
-    <h2>Your Estimated Rewards</h2>
-    
-    <div class="calculator-tip">
-  <h3>💡 Optimization Tip</h3>
-  <p id="cardSuggestion">
-    Enter your spending to see the best setup for you.
-  </p>
-</div>
+    <label>Other</label>
+    <input type="number" id="other" placeholder="1000" />
 
-    <p>
-      Estimated Monthly Points:
-      <span id="monthlyPoints">0</span>
-    </p>
+    <label>Point Value (CPP)</label>
+    <input type="number" id="pointValue" placeholder="0.02" step="0.01" />
 
-    <p>
-      Estimated Yearly Points:
-      <span id="yearlyPoints">0</span>
-    </p>
+    <button onclick="runCalculator()">Find My Best Cards</button>
 
-    <p>
-      Estimated Yearly Value:
-      <span id="yearlyValue">$0</span>
-    </p>
+    <div class="calc-summary">
+      <h2>Your Profile</h2>
+      <p>Top Category: <span id="topCategory">-</span></p>
+      <p>Best Annual Value: <span id="bestValue">$0</span></p>
+    </div>
+
   </div>
 
+  <div id="results" class="recommendations"></div>
+
 </section>
+
+<script>
+  function getVal(id) {
+    return Number(document.getElementById(id)?.value) || 0;
+  }
+
+  function runCalculator() {
+
+    const spend = {
+      dining: getVal("dining"),
+      groceries: getVal("groceries"),
+      gas: getVal("gas"),
+      rent: getVal("rent"),
+      hotels: getVal("hotels"),
+      flights: getVal("flights"),
+      other: getVal("other")
+    };
+
+    const pointValue = getVal("pointValue") || 0.02;
+
+    // Top category
+    const top = Object.entries(spend).sort((a,b)=>b[1]-a[1])[0];
+    document.getElementById("topCategory").textContent =
+      top[1] > 0 ? format(top[0]) : "-";
+
+    // Score cards from cards.js
+    const ranked = creditCards.map(card => {
+
+      const monthly =
+        spend.dining * card.rewards.dining +
+        spend.groceries * card.rewards.groceries +
+        spend.gas * card.rewards.gas +
+        spend.rent * card.rewards.rent +
+        spend.hotels * card.rewards.hotels +
+        spend.flights * card.rewards.flights +
+        spend.other * card.rewards.other;
+
+      const yearly = monthly * 12;
+      const value = yearly * pointValue;
+
+      return { ...card, value };
+
+    }).sort((a,b)=>b.value - a.value);
+
+    document.getElementById("bestValue").textContent =
+      "$" + ranked[0].value.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+    displayCards(ranked.slice(0,3), spend);
+  }
+
+  function displayCards(cards, spend) {
+    const container = document.getElementById("results");
+    container.innerHTML = "";
+
+    cards.forEach((card, i) => {
+
+      container.innerHTML += `
+        <div class="recommendation-card">
+          <small>RECOMMENDATION #${i+1}</small>
+          <h3>${card.name}</h3>
+
+          <p><strong>Issuer:</strong> ${card.issuer}</p>
+          <p><strong>Annual Fee:</strong> $${card.annualFee}</p>
+          <p><strong>Best For:</strong> ${card.bestFor}</p>
+          <p><strong>Why:</strong> ${card.why}</p>
+
+          <span class="score-pill">
+            $${card.value.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            })} / year value
+          </span>
+
+          <ul class="benefits">
+            ${card.benefits.map(b => `<li>${b}</li>`).join("")}
+          </ul>
+        </div>
+      `;
+    });
+  }
+
+  function format(cat) {
+    return {
+      dining:"Dining",
+      groceries:"Groceries",
+      gas:"Gas",
+      rent:"Rent / Mortgage",
+      hotels:"Hotels",
+      flights:"Flights",
+      other:"Other"
+    }[cat];
+  }
+</script>
