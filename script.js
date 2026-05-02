@@ -1,39 +1,57 @@
 // Load pages into the main content area
 function loadPage(page) {
   fetch("pages/" + page)
-    .then(res => res.text())
-    .then(data => {
+    .then(function(res) {
+      return res.text();
+    })
+    .then(function(data) {
       document.getElementById("content").innerHTML = data;
 
-      // Close menu after clicking (mobile fix)
-      document.getElementById("menu").classList.remove("open");
+      var menu = document.getElementById("menu");
+      if (menu) {
+        menu.classList.remove("open");
+      }
 
-      // Scroll to top on page change
-      window.scrollTo({ top: 0, behavior: "instant" });
+      window.scrollTo({ top: 0, behavior: "auto" });
     });
 }
 
 // Toggle hamburger menu
 function toggleMenu() {
-  document.getElementById("menu").classList.toggle("open");
+  var menu = document.getElementById("menu");
+  if (menu) {
+    menu.classList.toggle("open");
+  }
 }
 
 // Load home page by default
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
   loadPage("home.html");
 });
 
 
 
+// ==============================
 // Credit Card Calculator
+// ==============================
 
 function getCalcValue(id) {
-  const el = document.getElementById(id);
-  return el ? Number(el.value) || 0 : 0;
+  var input = document.getElementById(id);
+  return input ? Number(input.value) || 0 : 0;
 }
 
 function getCardMultiplier(card, category) {
   if (!card || !card.rewards) return 1;
+
+  // Rotating category protection
+  if (card.rotatingCategories) {
+    if (card.rotatingCategories.indexOf(category) !== -1) {
+      return card.rotatingMultiplier || 5;
+    }
+
+    return card.rewards[category] || card.baseMultiplier || 1;
+  }
+
   return card.rewards[category] || 1;
 }
 
@@ -43,13 +61,7 @@ function runCalculator() {
     return;
   }
 
-  const results = document.getElementById("results");
-  const topCategoryEl = document.getElementById("topCategory");
-  const bestValueEl = document.getElementById("bestValue");
-
-  if (!results) return;
-
-  const spend = {
+  var spend = {
     dining: getCalcValue("dining"),
     groceries: getCalcValue("groceries"),
     gas: getCalcValue("gas"),
@@ -59,7 +71,7 @@ function runCalculator() {
     other: getCalcValue("other")
   };
 
-  const totalSpend =
+  var totalSpend =
     spend.dining +
     spend.groceries +
     spend.gas +
@@ -68,17 +80,22 @@ function runCalculator() {
     spend.flights +
     spend.other;
 
+  var results = document.getElementById("results");
+  var topCategoryEl = document.getElementById("topCategory");
+  var bestValueEl = document.getElementById("bestValue");
+
+  if (!results) return;
+
   if (totalSpend <= 0) {
-    results.innerHTML = "<p class='empty-results'>Enter your monthly spending to see recommendations.</p>";
+    results.innerHTML = "<p style='text-align:center; color:#ccc; margin-top:20px;'>Enter your monthly spending to see your best card recommendations.</p>";
+
     if (topCategoryEl) topCategoryEl.textContent = "-";
     if (bestValueEl) bestValueEl.textContent = "$0.00";
+
     return;
   }
 
-  const topCategories = Object.keys(spend)
-    .filter(function(category) {
-      return spend[category] > 0;
-    })
+  var topCategories = Object.keys(spend)
     .sort(function(a, b) {
       return spend[b] - spend[a];
     })
@@ -88,28 +105,28 @@ function runCalculator() {
     topCategoryEl.textContent = formatCategory(topCategories[0]);
   }
 
-  let recommendations = [];
-  let usedCards = [];
+  var usedCards = [];
+  var recommendations = [];
 
   topCategories.forEach(function(category) {
-    const monthlySpend = spend[category];
+    var monthlySpend = spend[category];
 
-    const rankedCards = creditCards
+    var categoryCards = creditCards
       .filter(function(card) {
         return usedCards.indexOf(card.name) === -1;
       })
       .map(function(card) {
-        const multiplier = getCardMultiplier(card, category);
-        const pointValue = card.pointValue || 0.01;
-        const effectiveRate = multiplier * pointValue;
+        var multiplier = getCardMultiplier(card, category);
+        var pointValue = card.pointValue || 0.01;
 
-        const yearlyPoints = monthlySpend * multiplier * 12;
-        const grossValue = yearlyPoints * pointValue;
-        const netValue = grossValue - (card.annualFee || 0);
+        var effectiveRate = multiplier * pointValue;
+        var yearlyPoints = monthlySpend * multiplier * 12;
+        var grossValue = yearlyPoints * pointValue;
+        var netValue = grossValue - (card.annualFee || 0);
 
         return Object.assign({}, card, {
-          category: category,
-          categoryName: formatCategory(category),
+          recommendedCategory: category,
+          recommendedCategoryName: formatCategory(category),
           multiplier: multiplier,
           pointValue: pointValue,
           effectiveRate: effectiveRate,
@@ -127,11 +144,10 @@ function runCalculator() {
       })
       .slice(0, 3);
 
-    rankedCards.forEach(function(card) {
+    categoryCards.forEach(function(card) {
       usedCards.push(card.name);
+      recommendations.push(card);
     });
-
-    recommendations = recommendations.concat(rankedCards);
   });
 
   if (bestValueEl && recommendations.length > 0) {
@@ -147,44 +163,47 @@ function runCalculator() {
 }
 
 function displayCardResults(cards) {
-  const results = document.getElementById("results");
+  var results = document.getElementById("results");
   if (!results) return;
 
   results.innerHTML = "";
 
   cards.forEach(function(card, index) {
-    results.innerHTML +=
-      "<div class='recommendation-card'>" +
-        "<small>" + card.categoryName.toUpperCase() + " RECOMMENDATION #" + ((index % 3) + 1) + "</small>" +
-        "<h3>" + card.name + "</h3>" +
+    results.innerHTML += `
+      <div class="recommendation-card">
+        <small>${card.recommendedCategoryName.toUpperCase()} RECOMMENDATION #${(index % 3) + 1}</small>
 
-        "<p><strong>Issuer:</strong> " + (card.issuer || "N/A") + "</p>" +
-        "<p><strong>Annual Fee:</strong> $" + (card.annualFee || 0) + "</p>" +
-        "<p><strong>Points Value:</strong> " + ((card.pointValue || 0.01) * 100).toFixed(1) + "¢ per point</p>" +
-        "<p><strong>Why:</strong> " + (card.why || "Update manually") + "</p>" +
-        "<p><strong>Current Welcome Bonus:</strong> " + (card.welcomeBonus || "Update manually") + "</p>" +
+        <h3>${card.name}</h3>
 
-        "<span class='score-pill'>" +
-          card.multiplier + "x on " + card.categoryName + " • " +
-          (card.effectiveRate * 100).toFixed(1) + "¢ per $1" +
-        "</span>" +
+        <p><strong>Issuer:</strong> ${card.issuer || "N/A"}</p>
 
-        "<p><strong>Net Value After Fee:</strong> $" +
-          card.netValue.toLocaleString(undefined, {
+        <p><strong>Annual Fee:</strong> $${card.annualFee || 0}</p>
+
+        <p><strong>Points Value:</strong> ${((card.pointValue || 0.01) * 100).toFixed(1)}¢ per point</p>
+
+        <p><strong>Why:</strong> ${card.why || "Update manually"}</p>
+
+        <p><strong>Current Welcome Bonus:</strong> ${card.welcomeBonus || "Update manually"}</p>
+
+        <p>
+          <strong>Net Value After Fee:</strong>
+          $${card.netValue.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
-          }) +
-        " / year</p>" +
+          })} / year
+        </p>
 
-        "<p><strong>Estimated Yearly Points Earned:</strong> " +
-          Math.round(card.yearlyPoints).toLocaleString() +
-        " points / year</p>" +
-      "</div>";
+        <p>
+          <strong>Estimated Yearly Points Earned:</strong>
+          ${Math.round(card.yearlyPoints).toLocaleString()} points / year
+        </p>
+      </div>
+    `;
   });
 }
 
 function formatCategory(category) {
-  const names = {
+  var names = {
     dining: "Dining",
     groceries: "Groceries",
     gas: "Gas",
@@ -195,5 +214,4 @@ function formatCategory(category) {
   };
 
   return names[category] || category;
-}  return names[category] || category;
 }
