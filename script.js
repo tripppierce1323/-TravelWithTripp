@@ -43,6 +43,11 @@ function getCalcValue(id) {
 function getCardMultiplier(card, category) {
   if (!card || !card.rewards) return 1;
 
+  // Only Bilt cards earn points on rent / mortgage
+  if (category === "rent") {
+    return card.name.toLowerCase().includes("bilt") ? (card.rewards.rent || 1) : 0;
+  }
+
   // Rotating category protection
   if (card.rotatingCategories) {
     if (card.rotatingCategories.indexOf(category) !== -1) {
