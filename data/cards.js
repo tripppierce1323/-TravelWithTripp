@@ -51,7 +51,7 @@ const creditCards = [
     pointValue: 0.01,
     bestFor: "Groceries + Gas",
     rewards: { dining: 1, groceries: 6, gas: 3, rent: 1, hotels: 1, flights: 1, other: 1 },
-    benefits: ["High cash back at U.S. supermarkets", "Gas rewards", "Streaming rewards", "Great family spending card"],
+    benefits: ["6x cash back at U.S. supermarkets", "3x Gas", "Streaming rewards", "Great family spending card"],
     why: "Best for grocery-heavy households that prefer cash back."
   },
   {
@@ -62,7 +62,7 @@ const creditCards = [
     pointValue: 0.01,
     bestFor: "Groceries + Gas + Online Shopping",
     rewards: { dining: 1, groceries: 3, gas: 3, rent: 1, hotels: 1, flights: 1, other: 1 },
-    benefits: ["No annual fee", "Groceries rewards", "Gas rewards", "Online retail rewards"],
+    benefits: ["No annual fee", "3x Groceries", "3x Gas", "Online retail rewards"],
     why: "Best no-fee Amex for everyday cash back."
   },
   
