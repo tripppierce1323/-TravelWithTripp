@@ -62,6 +62,13 @@ function runCalculator() {
     flights: getCalcValue("flights"),
     other: getCalcValue("other")
   };
+  
+  const totalSpend = Object.values(spend).reduce((sum, val) => sum + val, 0);
+
+if (totalSpend === 0) {
+  alert("Please enter at least one spending category to calculate results.");
+  return;
+}
 
   const top = Object.entries(spend).sort((a, b) => b[1] - a[1])[0];
 
