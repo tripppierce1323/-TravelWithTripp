@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 // Credit Card Calculator
+
 function calculateRewards() {
   const dining = Number(document.getElementById("dining")?.value) || 0;
   const groceries = Number(document.getElementById("groceries")?.value) || 0;
@@ -54,4 +56,23 @@ function calculateRewards() {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     });
+
+  // 🔥 Smart Recommendation Logic
+  let suggestion = "";
+
+  if (dining > groceries && dining > travel) {
+    suggestion =
+      "You spend heavily on dining → Consider Amex Gold (4x dining + groceries).";
+  } else if (travel > dining && travel > groceries) {
+    suggestion =
+      "You spend most on travel → Consider Chase Sapphire Preferred or Reserve.";
+  } else if (groceries > dining) {
+    suggestion =
+      "High grocery spend → Amex Gold or Blue Cash Preferred could be strong.";
+  } else {
+    suggestion =
+      "Balanced spending → A 2x catch-all card like Capital One Venture works well.";
+  }
+
+  document.getElementById("cardSuggestion").textContent = suggestion;
 }
