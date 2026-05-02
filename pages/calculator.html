@@ -1,1 +1,52 @@
-h
+<!-- CALCULATOR PAGE -->
+<section class="page-hero">
+  <small>CREDIT CARD CALCULATOR</small>
+  <h1>Find the Best Card for Your Spending</h1>
+  <p>
+    Estimate how many points you can earn from your monthly spending and compare
+    the value of different credit card setups.
+  </p>
+</section>
+
+<section class="calculator-card">
+
+  <label>Monthly Dining Spend</label>
+  <input type="number" id="dining" placeholder="Example: 500" />
+
+  <label>Monthly Grocery Spend</label>
+  <input type="number" id="groceries" placeholder="Example: 700" />
+
+  <label>Monthly Gas Spend</label>
+  <input type="number" id="gas" placeholder="Example: 250" />
+
+  <label>Monthly Travel Spend</label>
+  <input type="number" id="travel" placeholder="Example: 300" />
+
+  <label>Monthly Other Spend</label>
+  <input type="number" id="other" placeholder="Example: 1000" />
+
+  <label>Point Value Per Point</label>
+  <input type="number" id="cpp" placeholder="Example: 0.02" step="0.01" />
+
+  <button onclick="calculateRewards()">Calculate Rewards</button>
+
+  <div class="calculator-results">
+    <h2>Your Estimated Rewards</h2>
+
+    <p>
+      Estimated Monthly Points:
+      <span id="monthlyPoints">0</span>
+    </p>
+
+    <p>
+      Estimated Yearly Points:
+      <span id="yearlyPoints">0</span>
+    </p>
+
+    <p>
+      Estimated Yearly Value:
+      <span id="yearlyValue">$0</span>
+    </p>
+  </div>
+
+</section>
