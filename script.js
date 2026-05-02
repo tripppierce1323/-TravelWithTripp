@@ -28,18 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
 // Credit Card Calculator
 
 function getCalcValue(id) {
-  return Number(document.getElementById(id)?.value) || 0;
+  const el = document.getElementById(id);
+  return el ? Number(el.value) || 0 : 0;
 }
 
 function getCardMultiplier(card, category) {
-  return card.rewards?.[category] ?? 1;
+  if (!card || !card.rewards) return 1;
+  return card.rewards[category] || 1;
 }
 
 function runCalculator() {
-  if (typeof creditCards === "undefined") {
+  if (typeof creditCards === "undefined" || !Array.isArray(creditCards)) {
     alert("Card data is missing. Make sure data/cards.js is loaded before script.js.");
     return;
   }
+
+  const results = document.getElementById("results");
+  const topCategoryEl = document.getElementById("topCategory");
+  const bestValueEl = document.getElementById("bestValue");
+
+  if (!results) return;
 
   const spend = {
     dining: getCalcValue("dining"),
@@ -51,88 +59,85 @@ function runCalculator() {
     other: getCalcValue("other")
   };
 
-  const results = document.getElementById("results");
-  const topCategoryEl = document.getElementById("topCategory");
-  const bestValueEl = document.getElementById("bestValue");
+  const totalSpend =
+    spend.dining +
+    spend.groceries +
+    spend.gas +
+    spend.rent +
+    spend.hotels +
+    spend.flights +
+    spend.other;
 
-  if (!results) return;
-
-  const totalSpend = Object.values(spend).reduce((sum, val) => sum + val, 0);
-
-  if (totalSpend === 0) {
-    results.innerHTML = `
-      <p style="text-align:center; color:#ccc; margin-top:20px;">
-        Enter your monthly spending to see your best card recommendations.
-      </p>
-    `;
+  if (totalSpend <= 0) {
+    results.innerHTML = "<p class='empty-results'>Enter your monthly spending to see recommendations.</p>";
     if (topCategoryEl) topCategoryEl.textContent = "-";
     if (bestValueEl) bestValueEl.textContent = "$0.00";
     return;
   }
 
-  const topCategories = Object.entries(spend)
-    .filter(([_, value]) => value > 0)
-    .sort((a, b) => b[1] - a[1])
+  const topCategories = Object.keys(spend)
+    .filter(function(category) {
+      return spend[category] > 0;
+    })
+    .sort(function(a, b) {
+      return spend[b] - spend[a];
+    })
     .slice(0, 5);
 
   if (topCategoryEl) {
-    topCategoryEl.textContent = formatCategory(topCategories[0][0]);
+    topCategoryEl.textContent = formatCategory(topCategories[0]);
   }
 
-  const usedCards = new Set();
-  const recommendations = [];
+  let recommendations = [];
+  let usedCards = [];
 
-  topCategories.forEach(([category, monthlySpend]) => {
-    const topCardsForCategory = creditCards
-      .filter(card => !usedCards.has(card.name))
-      .map(card => {
+  topCategories.forEach(function(category) {
+    const monthlySpend = spend[category];
+
+    const rankedCards = creditCards
+      .filter(function(card) {
+        return usedCards.indexOf(card.name) === -1;
+      })
+      .map(function(card) {
         const multiplier = getCardMultiplier(card, category);
         const pointValue = card.pointValue || 0.01;
-
         const effectiveRate = multiplier * pointValue;
 
         const yearlyPoints = monthlySpend * multiplier * 12;
         const grossValue = yearlyPoints * pointValue;
         const netValue = grossValue - (card.annualFee || 0);
 
-        return {
-          ...card,
-          category,
+        return Object.assign({}, card, {
+          category: category,
           categoryName: formatCategory(category),
-          multiplier,
-          pointValue,
-          effectiveRate,
-          yearlyPoints,
-          grossValue,
-          netValue
-        };
+          multiplier: multiplier,
+          pointValue: pointValue,
+          effectiveRate: effectiveRate,
+          yearlyPoints: yearlyPoints,
+          grossValue: grossValue,
+          netValue: netValue
+        });
       })
-      .sort((a, b) => {
+      .sort(function(a, b) {
         if (b.effectiveRate !== a.effectiveRate) {
           return b.effectiveRate - a.effectiveRate;
         }
+
         return b.grossValue - a.grossValue;
       })
       .slice(0, 3);
 
-    // Prevent duplicates across categories
-    topCardsForCategory.forEach(card => usedCards.add(card.name));
+    rankedCards.forEach(function(card) {
+      usedCards.push(card.name);
+    });
 
-    recommendations.push(...topCardsForCategory);
+    recommendations = recommendations.concat(rankedCards);
   });
 
-  if (!recommendations.length) {
-    results.innerHTML = `
-      <p style="text-align:center; color:#ccc; margin-top:20px;">
-        No card recommendations found.
-      </p>
-    `;
-    return;
-  }
-
-  if (bestValueEl) {
+  if (bestValueEl && recommendations.length > 0) {
     bestValueEl.textContent =
-      "$" + recommendations[0].grossValue.toLocaleString(undefined, {
+      "$" +
+      recommendations[0].grossValue.toLocaleString(undefined, {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
       });
@@ -147,39 +152,34 @@ function displayCardResults(cards) {
 
   results.innerHTML = "";
 
-  cards.forEach((card, index) => {
-    results.innerHTML += `
-      <div class="recommendation-card">
-        <small>${card.categoryName.toUpperCase()} RECOMMENDATION #${(index % 3) + 1}</small>
+  cards.forEach(function(card, index) {
+    results.innerHTML +=
+      "<div class='recommendation-card'>" +
+        "<small>" + card.categoryName.toUpperCase() + " RECOMMENDATION #" + ((index % 3) + 1) + "</small>" +
+        "<h3>" + card.name + "</h3>" +
 
-        <h3>${card.name}</h3>
+        "<p><strong>Issuer:</strong> " + (card.issuer || "N/A") + "</p>" +
+        "<p><strong>Annual Fee:</strong> $" + (card.annualFee || 0) + "</p>" +
+        "<p><strong>Points Value:</strong> " + ((card.pointValue || 0.01) * 100).toFixed(1) + "¢ per point</p>" +
+        "<p><strong>Why:</strong> " + (card.why || "Update manually") + "</p>" +
+        "<p><strong>Current Welcome Bonus:</strong> " + (card.welcomeBonus || "Update manually") + "</p>" +
 
-        <p><strong>Issuer:</strong> ${card.issuer}</p>
-        <p><strong>Annual Fee:</strong> $${card.annualFee || 0}</p>
-        <p><strong>Points Value:</strong> ${((card.pointValue || 0.01) * 100).toFixed(1)}¢ per point</p>
+        "<span class='score-pill'>" +
+          card.multiplier + "x on " + card.categoryName + " • " +
+          (card.effectiveRate * 100).toFixed(1) + "¢ per $1" +
+        "</span>" +
 
-        <p><strong>Why:</strong> ${card.why || "Update manually"}</p>
-
-        <p><strong>Current Welcome Bonus:</strong> ${card.welcomeBonus || "Update manually"}</p>
-
-        <span class="score-pill">
-          ${card.multiplier}x on ${card.categoryName} • ${(card.effectiveRate * 100).toFixed(1)}¢ per $1
-        </span>
-
-        <p>
-          <strong>Net Value After Fee:</strong>
-          $${card.netValue.toLocaleString(undefined, {
+        "<p><strong>Net Value After Fee:</strong> $" +
+          card.netValue.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
-          })} / year
-        </p>
+          }) +
+        " / year</p>" +
 
-        <p>
-          <strong>Estimated Yearly Points Earned:</strong>
-          ${Math.round(card.yearlyPoints).toLocaleString()} points / year
-        </p>
-      </div>
-    `;
+        "<p><strong>Estimated Yearly Points Earned:</strong> " +
+          Math.round(card.yearlyPoints).toLocaleString() +
+        " points / year</p>" +
+      "</div>";
   });
 }
 
@@ -195,6 +195,5 @@ function formatCategory(category) {
   };
 
   return names[category] || category;
-}
-  return names[category] || category;
+}  return names[category] || category;
 }
