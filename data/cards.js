@@ -225,7 +225,7 @@ const creditCards = [
     annualFee: 0,
     pointValue: 0.02,
     bestFor: "Rotating Categories",
-    rewards: { dining: 3, groceries: 1, gas: 1, rent: 1, hotels: 5, flights: 5, other: 1 },
+    rewards: { dining: 2, groceries: 1, gas: 1, rent: 1, hotels: 2, flights: 2, other: 1 },
     benefits: ["No annual fee", "Rotating 5x categories", "3x dining", "Pairs well with Sapphire cards"],
     why: "Best for maximizing rotating bonus categories."
   },
@@ -469,7 +469,7 @@ const creditCards = [
     annualFee: 0,
     pointValue: 0.01,
     bestFor: "Amazon + Whole Foods",
-    rewards: { dining: 2, groceries: 2, gas: 2, rent: 1, hotels: 5, flights: 5, other: 1 },
+    rewards: { dining: 2, groceries: 2, gas: 2, rent: 1, hotels: 1, flights: 1, other: 5 },
     benefits: ["High Amazon earning", "Whole Foods rewards", "No annual fee with Prime"],
     why: "Best for heavy Amazon and Whole Foods shoppers."
   },
@@ -480,7 +480,7 @@ const creditCards = [
     annualFee: 0,
     pointValue: 0.01,
     bestFor: "Amazon",
-    rewards: { dining: 2, groceries: 2, gas: 2, rent: 1, hotels: 3, flights: 3, other: 1 },
+    rewards: { dining: 1, groceries: 2, gas: 2, rent: 1, hotels: 3, flights: 1, other: 2 },
     benefits: ["Amazon rewards", "No annual fee", "Useful retail card"],
     why: "Best for Amazon shoppers without Prime."
   },
@@ -535,7 +535,7 @@ const creditCards = [
     annualFee: 0,
     pointValue: 0.01,
     bestFor: "Dining + Groceries + Entertainment",
-    rewards: { dining: 3, groceries: 3, gas: 1, rent: 1, hotels: 5, flights: 5, other: 1 },
+    rewards: { dining: 3, groceries: 3, gas: 1, rent: 1, hotels: 1, flights: 1, other: 1 },
     benefits: ["3x dining", "3x groceries", "3x entertainment", "No annual fee"],
     why: "Best Capital One card for dining and groceries."
   },
@@ -606,7 +606,7 @@ const creditCards = [
     annualFee: 0,
     pointValue: 0.018,
     bestFor: "Top Monthly Category",
-    rewards: { dining: 5, groceries: 5, gas: 5, rent: 1, hotels: 1, flights: 1, other: 1 },
+    rewards: { dining: 1, groceries: 1, gas: 1, rent: 1, hotels: 1, flights: 1, other: 1 },
     benefits: ["5x eligible top spend category", "No annual fee", "Great category optimizer"],
     why: "Best for one high monthly spending category."
   },
