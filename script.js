@@ -31,192 +31,186 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// ==============================
-// Credit Card Calculator
-// ==============================
+// =============================
+// CALCULATOR ENGINE
+// =============================
 
-function getCalcValue(id) {
-  var input = document.getElementById(id);
-  return input ? Number(input.value) || 0 : 0;
+function getValue(id) {
+  return Number(document.getElementById(id)?.value) || 0;
 }
 
-function getCardMultiplier(card, category) {
-  if (!card || !card.rewards) return 1;
+function getSelectedFilters() {
+  const filters = document.querySelectorAll(".card-filter:checked");
+  return Array.from(filters).map(f => f.value);
+}
 
-  // Only Bilt cards earn points on rent / mortgage
-  if (category === "rent") {
-    return card.name.toLowerCase().includes("bilt") ? (card.rewards.rent || 1) : 0;
+function getTopCategory(spend) {
+  let max = 0;
+  let top = "other";
+
+  for (let key in spend) {
+    if (spend[key] > max) {
+      max = spend[key];
+      top = key;
+    }
   }
 
-  // Rotating category protection
-  if (card.rotatingCategories) {
-    if (card.rotatingCategories.indexOf(category) !== -1) {
-      return card.rotatingMultiplier || 5;
+  return top;
+}
+
+function adjustCredits(credits, style) {
+  if (!credits || credits.length === 0) return 0;
+
+  let multiplier = 0.7;
+  if (style === "conservative") multiplier = 0.5;
+  if (style === "aggressive") multiplier = 0.9;
+
+  return credits.reduce((sum, c) => sum + (c.value * multiplier), 0);
+}
+
+function passesFilter(card, selectedFilters) {
+  if (selectedFilters.length === 0) return true;
+
+  return selectedFilters.some(f =>
+    card.tags.includes(f) ||
+    card.issuerTag === f ||
+    card.brand === f ||
+    card.type === f
+  );
+}
+
+function calculateCardValue(card, spend, creditStyle, topCategory) {
+
+  let total = 0;
+
+  for (let category in spend) {
+
+    let multiplier = card.rewards[category] || 1;
+
+    // RENT RULE (ONLY BILT)
+    if (category === "rent" && card.issuerTag !== "bilt") {
+      multiplier = 0;
     }
 
-    return card.rewards[category] || card.baseMultiplier || 1;
+    total += spend[category] * multiplier * card.pointValue;
   }
 
-  return card.rewards[category] || 1;
+  let creditValue = adjustCredits(card.credits || [], creditStyle);
+
+  let bonus = 0;
+
+  // TOP CATEGORY BOOST
+  if (card.tags.includes(topCategory)) {
+    bonus += 150;
+  }
+
+  // GOAL BOOST
+  const goal = document.getElementById("travelGoal").value;
+
+  if (goal === "luxuryTravel" && card.tags.includes("luxuryTravel")) {
+    bonus += 200;
+  }
+
+  if (goal === "cashBack" && card.type === "cashback") {
+    bonus += 150;
+  }
+
+  if (goal === "simpleSetup" && card.beginnerFriendly) {
+    bonus += 100;
+  }
+
+  // PENALTY FOR HIGH FEES
+  let penalty = 0;
+  if (card.annualFee > 500) penalty += 150;
+
+  let net = total + creditValue + bonus - card.annualFee - penalty;
+
+  return {
+    card,
+    total,
+    creditValue,
+    net
+  };
+}
+
+function renderResults(results, spend, topCategory) {
+
+  const container = document.getElementById("resultsContent");
+
+  if (!results.length) {
+    container.innerHTML = "<p>No cards matched your filters.</p>";
+    return;
+  }
+
+  const best = results[0];
+
+  container.innerHTML = `
+    <div class="result-hero">
+      <h2>Best Overall Card</h2>
+
+      <div class="result-card">
+        <img src="${best.card.imageUrl || 'images/default-card.jpg'}" />
+
+        <h3>${best.card.name}</h3>
+        <p class="value">$${Math.round(best.net)} / year</p>
+
+        <p><strong>Best For:</strong> ${best.card.bestFor}</p>
+
+        <div class="why">
+          <strong>Why this card:</strong>
+          <p>${best.card.why}</p>
+        </div>
+
+        <div class="bad">
+          <strong>Keep in mind:</strong>
+          <p>${best.card.weaknesses.join(", ")}</p>
+        </div>
+
+        <div class="actions">
+          <a href="${best.card.applyUrl}" target="_blank" class="apply-btn">Apply Now</a>
+          ${best.card.youtubeUrl ? `<a href="${best.card.youtubeUrl}" target="_blank" class="video-btn">Watch Video</a>` : ""}
+        </div>
+      </div>
+    </div>
+
+    <div class="other-cards">
+      <h2>Top Matches</h2>
+
+      ${results.slice(1,6).map(r => `
+        <div class="mini-card">
+          <img src="${r.card.imageUrl || 'images/default-card.jpg'}" />
+          <h4>${r.card.name}</h4>
+          <p>$${Math.round(r.net)}</p>
+        </div>
+      `).join("")}
+    </div>
+  `;
 }
 
 function runCalculator() {
-  if (typeof creditCards === "undefined" || !Array.isArray(creditCards)) {
-    alert("Card data is missing. Make sure data/cards.js is loaded before script.js.");
-    return;
-  }
 
-  var spend = {
-    dining: getCalcValue("dining"),
-    groceries: getCalcValue("groceries"),
-    gas: getCalcValue("gas"),
-    rent: getCalcValue("rent"),
-    hotels: getCalcValue("hotels"),
-    flights: getCalcValue("flights"),
-    other: getCalcValue("other")
+  const spend = {
+    dining: getValue("dining"),
+    groceries: getValue("groceries"),
+    gas: getValue("gas"),
+    flightsDirect: getValue("flightsDirect"),
+    hotelsDirect: getValue("hotelsDirect"),
+    travelPortal: getValue("travelPortal"),
+    rent: getValue("rent"),
+    other: getValue("other")
   };
 
-  var totalSpend =
-    spend.dining +
-    spend.groceries +
-    spend.gas +
-    spend.rent +
-    spend.hotels +
-    spend.flights +
-    spend.other;
+  const creditStyle = document.getElementById("creditStyle").value;
+  const maxFee = Number(document.getElementById("annualFeeSlider").value);
+  const filters = getSelectedFilters();
 
-  var results = document.getElementById("results");
-  var topCategoryEl = document.getElementById("topCategory");
-  var bestValueEl = document.getElementById("bestValue");
+  const topCategory = getTopCategory(spend);
 
-  if (!results) return;
+  let results = creditCards
+    .filter(card => card.annualFee <= maxFee)
+    .filter(card => passesFilter(card, filters))
+    .map(card => calculateCardValue(card, spend, creditStyle, topCategory))
+    .sort((a, b) => b.net - a.net);
 
-  if (totalSpend <= 0) {
-    results.innerHTML = "<p style='text-align:center; color:#ccc; margin-top:20px;'>Enter your monthly spending to see your best card recommendations.</p>";
-
-    if (topCategoryEl) topCategoryEl.textContent = "-";
-    if (bestValueEl) bestValueEl.textContent = "$0.00";
-
-    return;
-  }
-
-  var topCategories = Object.keys(spend)
-    .sort(function(a, b) {
-      return spend[b] - spend[a];
-    })
-    .slice(0, 5);
-
-  if (topCategoryEl) {
-    topCategoryEl.textContent = formatCategory(topCategories[0]);
-  }
-
-  var usedCards = [];
-  var recommendations = [];
-
-  topCategories.forEach(function(category) {
-    var monthlySpend = spend[category];
-
-    var categoryCards = creditCards
-      .filter(function(card) {
-        return usedCards.indexOf(card.name) === -1;
-      })
-      .map(function(card) {
-        var multiplier = getCardMultiplier(card, category);
-        var pointValue = card.pointValue || 0.01;
-
-        var effectiveRate = multiplier * pointValue;
-        var yearlyPoints = monthlySpend * multiplier * 12;
-        var grossValue = yearlyPoints * pointValue;
-        var netValue = grossValue - (card.annualFee || 0);
-
-        return Object.assign({}, card, {
-          recommendedCategory: category,
-          recommendedCategoryName: formatCategory(category),
-          multiplier: multiplier,
-          pointValue: pointValue,
-          effectiveRate: effectiveRate,
-          yearlyPoints: yearlyPoints,
-          grossValue: grossValue,
-          netValue: netValue
-        });
-      })
-      .sort(function(a, b) {
-        if (b.effectiveRate !== a.effectiveRate) {
-          return b.effectiveRate - a.effectiveRate;
-        }
-
-        return b.grossValue - a.grossValue;
-      })
-      .slice(0, 3);
-
-    categoryCards.forEach(function(card) {
-      usedCards.push(card.name);
-      recommendations.push(card);
-    });
-  });
-
-  if (bestValueEl && recommendations.length > 0) {
-    bestValueEl.textContent =
-      "$" +
-      recommendations[0].grossValue.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-  }
-
-  displayCardResults(recommendations);
-}
-
-function displayCardResults(cards) {
-  var results = document.getElementById("results");
-  if (!results) return;
-
-  results.innerHTML = "";
-
-  cards.forEach(function(card, index) {
-    results.innerHTML += `
-      <div class="recommendation-card">
-        <small>${card.recommendedCategoryName.toUpperCase()} RECOMMENDATION #${(index % 3) + 1}</small>
-
-        <h3>${card.name}</h3>
-
-        <p><strong>Issuer:</strong> ${card.issuer || "N/A"}</p>
-
-        <p><strong>Annual Fee:</strong> $${card.annualFee || 0}</p>
-
-        <p><strong>Points Value:</strong> ${((card.pointValue || 0.01) * 100).toFixed(1)}¢ per point</p>
-
-        <p><strong>Why:</strong> ${card.why || "Update manually"}</p>
-
-        <p><strong>Current Welcome Bonus:</strong> ${card.welcomeBonus || "Update manually"}</p>
-
-        <p>
-          <strong>Net Value After Fee:</strong>
-          $${card.netValue.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-          })} / year
-        </p>
-
-        <p>
-          <strong>Estimated Yearly Points Earned:</strong>
-          ${Math.round(card.yearlyPoints).toLocaleString()} points / year
-        </p>
-      </div>
-    `;
-  });
-}
-
-function formatCategory(category) {
-  var names = {
-    dining: "Dining",
-    groceries: "Groceries",
-    gas: "Gas",
-    rent: "Rent / Mortgage",
-    hotels: "Hotels",
-    flights: "Flights",
-    other: "Other"
-  };
-
-  return names[category] || category;
+  renderResults(results, spend, topCategory);
 }
