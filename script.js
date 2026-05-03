@@ -162,28 +162,73 @@ function calculateRecommendationScore(card, spend, selectedTopCategories, goal) 
   let bonus = 0;
   let penalty = 0;
 
-  // If user picked categories, prioritize those heavily
   selectedTopCategories.forEach(category => {
     const multiplier = getCategoryMultiplier(card, category);
+    const realReturn = multiplier * card.pointValue;
 
-    if (multiplier >= 5) bonus += 350;
-    else if (multiplier >= 3) bonus += 250;
-    else if (multiplier >= 2) bonus += 125;
-    else if (multiplier === 0) penalty += 200;
+    if (realReturn >= 0.06) bonus += 400;
+    else if (realReturn >= 0.04) bonus += 300;
+    else if (realReturn >= 0.03) bonus += 200;
+    else if (realReturn >= 0.02) bonus += 100;
+    else penalty += 100;
+
+    const everydayCategories = ["dining", "groceries", "gas", "other"];
+
+    if (everydayCategories.includes(category)) {
+      if (card.type === "flexible" || card.type === "cashback") {
+        bonus += 250;
+      }
+
+      if (card.type === "hotel" || card.type === "airline") {
+        penalty += 250;
+      }
+    }
+
+    if (category === "rent") {
+      if (card.issuerTag === "bilt") bonus += 600;
+      else penalty += 500;
+    }
+
+    if (category === "hotelsDirect") {
+      if (card.type === "hotel") bonus += 300;
+      if (card.type === "flexible") bonus += 150;
+    }
+
+    if (category === "flightsDirect") {
+      if (card.type === "airline") bonus += 300;
+      if (card.type === "flexible") bonus += 150;
+    }
   });
 
-  // If no category picked, detect highest spend category from monthly inputs
   if (selectedTopCategories.length === 0 && hasAnySpend(spend)) {
     const topCategory = getTopCategoryFromSpend(spend);
     const multiplier = getCategoryMultiplier(card, topCategory);
+    const realReturn = multiplier * card.pointValue;
 
-    if (multiplier >= 5) bonus += 300;
-    else if (multiplier >= 3) bonus += 200;
-    else if (multiplier >= 2) bonus += 100;
-    else if (multiplier === 0) penalty += 150;
+    if (realReturn >= 0.06) bonus += 350;
+    else if (realReturn >= 0.04) bonus += 250;
+    else if (realReturn >= 0.03) bonus += 150;
+    else if (realReturn >= 0.02) bonus += 75;
+    else penalty += 75;
+
+    const everydayCategories = ["dining", "groceries", "gas", "other"];
+
+    if (everydayCategories.includes(topCategory)) {
+      if (card.type === "flexible" || card.type === "cashback") {
+        bonus += 200;
+      }
+
+      if (card.type === "hotel" || card.type === "airline") {
+        penalty += 200;
+      }
+    }
+
+    if (topCategory === "rent") {
+      if (card.issuerTag === "bilt") bonus += 600;
+      else penalty += 500;
+    }
   }
 
-  // Goal scoring
   if (goal === "luxuryTravel" && (card.premium || card.tags?.includes("luxuryTravel"))) bonus += 300;
   if (goal === "freeFlights" && card.type === "airline") bonus += 300;
   if (goal === "freeHotels" && card.type === "hotel") bonus += 300;
@@ -191,22 +236,12 @@ function calculateRecommendationScore(card, spend, selectedTopCategories, goal) 
   if (goal === "simpleSetup" && card.beginnerFriendly) bonus += 250;
   if (goal === "maximizePoints" && card.type === "flexible") bonus += 300;
 
-  // Rent rule boost
-  if (selectedTopCategories.includes("rent") && card.issuerTag === "bilt") {
-    bonus += 500;
-  }
-
-  // Travel portal caution:
-  // Portal cards should not dominate unless user actually selects/enters travel portal spend.
   const userCaresAboutPortal =
     selectedTopCategories.includes("travelPortal") || spend.travelPortal > 0;
 
   if (!userCaresAboutPortal && (card.rewards?.travelPortal || 0) >= 5) {
     penalty += 100;
   }
-
-  // Annual fee is NOT subtracted and NOT scored.
-  // Slider is the only annual-fee control.
 
   const finalScore = score + bonus - penalty;
 
@@ -314,7 +349,6 @@ function runCalculator() {
     return;
   }
 
-  // Monthly spend entered by user, converted to yearly.
   const spend = {
     dining: getValue("dining") * 12,
     groceries: getValue("groceries") * 12,
@@ -352,7 +386,6 @@ document.addEventListener("input", function(e) {
   }
 });
 
-// Expose functions for inline HTML
 window.runCalculator = runCalculator;
 window.loadPage = loadPage;
 window.toggleMenu = toggleMenu;
