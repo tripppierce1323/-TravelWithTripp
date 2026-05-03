@@ -1,4 +1,7 @@
-// Load pages into the main content area
+// =============================
+// PAGE LOADING (SPA STYLE)
+// =============================
+
 function loadPage(page) {
   fetch("pages/" + page)
     .then(function(res) {
@@ -7,16 +10,17 @@ function loadPage(page) {
     .then(function(data) {
       document.getElementById("content").innerHTML = data;
 
+      // Close menu on mobile
       var menu = document.getElementById("menu");
       if (menu) {
         menu.classList.remove("open");
       }
 
+      // Scroll to top
       window.scrollTo({ top: 0, behavior: "auto" });
     });
 }
 
-// Toggle hamburger menu
 function toggleMenu() {
   var menu = document.getElementById("menu");
   if (menu) {
@@ -24,11 +28,10 @@ function toggleMenu() {
   }
 }
 
-// Load home page by default
+// Load home page first
 document.addEventListener("DOMContentLoaded", function() {
   loadPage("home.html");
 });
-
 
 
 // =============================
@@ -72,7 +75,7 @@ function passesFilter(card, selectedFilters) {
   if (selectedFilters.length === 0) return true;
 
   return selectedFilters.some(f =>
-    card.tags.includes(f) ||
+    (card.tags && card.tags.includes(f)) ||
     card.issuerTag === f ||
     card.brand === f ||
     card.type === f
@@ -87,7 +90,7 @@ function calculateCardValue(card, spend, creditStyle, topCategory) {
 
     let multiplier = card.rewards[category] || 1;
 
-    // RENT RULE (ONLY BILT)
+    // RENT RULE → ONLY BILT EARNS
     if (category === "rent" && card.issuerTag !== "bilt") {
       multiplier = 0;
     }
@@ -100,14 +103,14 @@ function calculateCardValue(card, spend, creditStyle, topCategory) {
   let bonus = 0;
 
   // TOP CATEGORY BOOST
-  if (card.tags.includes(topCategory)) {
+  if (card.tags && card.tags.includes(topCategory)) {
     bonus += 150;
   }
 
   // GOAL BOOST
-  const goal = document.getElementById("travelGoal").value;
+  const goal = document.getElementById("travelGoal")?.value;
 
-  if (goal === "luxuryTravel" && card.tags.includes("luxuryTravel")) {
+  if (goal === "luxuryTravel" && card.tags?.includes("luxuryTravel")) {
     bonus += 200;
   }
 
@@ -133,14 +136,19 @@ function calculateCardValue(card, spend, creditStyle, topCategory) {
   };
 }
 
-function renderResults(results, spend, topCategory) {
+function renderResults(results) {
 
   const container = document.getElementById("resultsContent");
+
+  if (!container) return;
 
   if (!results.length) {
     container.innerHTML = "<p>No cards matched your filters.</p>";
     return;
   }
+
+  // Remove placeholder
+  document.querySelector(".results-placeholder")?.remove();
 
   const best = results[0];
 
@@ -163,7 +171,7 @@ function renderResults(results, spend, topCategory) {
 
         <div class="bad">
           <strong>Keep in mind:</strong>
-          <p>${best.card.weaknesses.join(", ")}</p>
+          <p>${(best.card.weaknesses || []).join(", ")}</p>
         </div>
 
         <div class="actions">
@@ -189,6 +197,11 @@ function renderResults(results, spend, topCategory) {
 
 function runCalculator() {
 
+  if (typeof creditCards === "undefined") {
+    alert("Card data is missing. Make sure data/cards.js is loaded.");
+    return;
+  }
+
   const spend = {
     dining: getValue("dining"),
     groceries: getValue("groceries"),
@@ -200,8 +213,8 @@ function runCalculator() {
     other: getValue("other")
   };
 
-  const creditStyle = document.getElementById("creditStyle").value;
-  const maxFee = Number(document.getElementById("annualFeeSlider").value);
+  const creditStyle = document.getElementById("creditStyle")?.value || "balanced";
+  const maxFee = Number(document.getElementById("annualFeeSlider")?.value) || 895;
   const filters = getSelectedFilters();
 
   const topCategory = getTopCategory(spend);
@@ -212,8 +225,22 @@ function runCalculator() {
     .map(card => calculateCardValue(card, spend, creditStyle, topCategory))
     .sort((a, b) => b.net - a.net);
 
-  renderResults(results, spend, topCategory);
+  renderResults(results);
 }
+
+
+// =============================
+// EVENT LISTENERS
+// =============================
+
+// Button click (fix for dynamic page load)
+document.addEventListener("click", function (e) {
+  if (e.target && e.target.id === "runCalculatorBtn") {
+    runCalculator();
+  }
+});
+
+// Slider UI update
 document.addEventListener("input", function (e) {
   if (e.target.id === "annualFeeSlider") {
     document.getElementById("feeValue").textContent = "$" + e.target.value;
