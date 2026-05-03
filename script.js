@@ -214,3 +214,8 @@ function runCalculator() {
 
   renderResults(results, spend, topCategory);
 }
+document.addEventListener("input", function (e) {
+  if (e.target.id === "annualFeeSlider") {
+    document.getElementById("feeValue").textContent = "$" + e.target.value;
+  }
+});
