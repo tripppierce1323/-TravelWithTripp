@@ -1,61 +1,191 @@
-<section class="page-hero">
-  <small>CREDIT CARD CALCULATOR</small>
-  <h1>Find the Best Card for Your Spending</h1>
-  <p>
-    Enter your monthly spending and get personalized card recommendations based
-    on your highest categories.
-  </p>
-</section>
+<!-- CREDIT CARD CALCULATOR -->
+<section class="calculator-page">
 
-<section class="calc-page">
-  <div class="calc-box">
+  <!-- HERO -->
+  <div class="calc-hero">
+    <p class="eyebrow">TRAVELWITHTRIPP CARD FINDER</p>
+    <h1>Find the best credit card for your spending.</h1>
+    <p>
+      Enter your yearly spending, choose your filters, and get a personalized card strategy.
+    </p>
+  </div>
 
-    <div class="calc-grid">
-      <div>
-        <label>Dining</label>
-        <input type="number" id="dining" placeholder="500" />
+  <!-- CALCULATOR WRAPPER -->
+  <div class="calc-layout">
+
+    <!-- LEFT SIDE: INPUTS -->
+    <div class="calc-panel">
+
+      <h2>Your Yearly Spending</h2>
+      <p class="section-subtitle">Use yearly estimates for the best results.</p>
+
+      <div class="spend-grid">
+        <label>
+          Dining
+          <input id="dining" type="number" placeholder="0" />
+        </label>
+
+        <label>
+          Groceries
+          <input id="groceries" type="number" placeholder="0" />
+        </label>
+
+        <label>
+          Gas
+          <input id="gas" type="number" placeholder="0" />
+        </label>
+
+        <label>
+          Direct Flights
+          <input id="flightsDirect" type="number" placeholder="0" />
+        </label>
+
+        <label>
+          Direct Hotels
+          <input id="hotelsDirect" type="number" placeholder="0" />
+        </label>
+
+        <label>
+          Travel Portal
+          <input id="travelPortal" type="number" placeholder="0" />
+        </label>
+
+        <label>
+          Rent / Mortgage
+          <input id="rent" type="number" placeholder="0" />
+        </label>
+
+        <label>
+          Other Spending
+          <input id="other" type="number" placeholder="0" />
+        </label>
       </div>
 
-      <div>
-        <label>Groceries</label>
-        <input type="number" id="groceries" placeholder="700" />
+      <!-- TRAVEL GOAL -->
+      <h2>Your Goal</h2>
+
+      <select id="travelGoal" class="calc-select">
+        <option value="bestOverall">Best overall value</option>
+        <option value="luxuryTravel">Luxury travel</option>
+        <option value="freeFlights">Free flights</option>
+        <option value="freeHotels">Free hotel nights</option>
+        <option value="cashBack">Cash back</option>
+        <option value="simpleSetup">Keep it simple</option>
+        <option value="maximizePoints">Maximize points</option>
+      </select>
+
+      <!-- CREDIT STYLE -->
+      <h2>Credit Value Style</h2>
+
+      <select id="creditStyle" class="calc-select">
+        <option value="balanced">Balanced credit value</option>
+        <option value="conservative">Conservative credit value</option>
+        <option value="aggressive">Aggressive credit value</option>
+      </select>
+
+      <!-- ANNUAL FEE SLIDER -->
+      <h2>Max Annual Fee</h2>
+
+      <div class="fee-slider-box">
+        <div class="fee-slider-top">
+          <span>$0</span>
+          <strong id="feeValue">$895</strong>
+          <span>$895</span>
+        </div>
+
+        <input
+          id="annualFeeSlider"
+          type="range"
+          min="0"
+          max="895"
+          value="895"
+          step="5"
+        />
+
+        <p class="slider-note">
+          Starts at $895 so no cards are filtered out by default.
+        </p>
       </div>
 
-      <div>
-        <label>Gas</label>
-        <input type="number" id="gas" placeholder="250" />
+      <!-- FILTERS -->
+      <h2>Filters</h2>
+      <p class="section-subtitle">Select one or multiple filters.</p>
+
+      <div class="filter-group">
+        <h3>Card Type</h3>
+        <div class="filter-pills">
+          <label><input type="checkbox" value="airline" class="card-filter" /> Airline Cards</label>
+          <label><input type="checkbox" value="hotel" class="card-filter" /> Hotel Cards</label>
+          <label><input type="checkbox" value="flexible" class="card-filter" /> Flexible Points</label>
+          <label><input type="checkbox" value="cashback" class="card-filter" /> Cash Back</label>
+        </div>
       </div>
 
-      <div>
-        <label>Rent / Mortgage</label>
-        <input type="number" id="rent" placeholder="1800" />
+      <div class="filter-group">
+        <h3>Banks</h3>
+        <div class="filter-pills">
+          <label><input type="checkbox" value="amex" class="card-filter" /> Amex</label>
+          <label><input type="checkbox" value="chase" class="card-filter" /> Chase</label>
+          <label><input type="checkbox" value="capitalone" class="card-filter" /> Capital One</label>
+          <label><input type="checkbox" value="citi" class="card-filter" /> Citi</label>
+          <label><input type="checkbox" value="wellsfargo" class="card-filter" /> Wells Fargo</label>
+          <label><input type="checkbox" value="bilt" class="card-filter" /> Bilt</label>
+        </div>
       </div>
 
-      <div>
-        <label>Hotels</label>
-        <input type="number" id="hotels" placeholder="300" />
+      <div class="filter-group">
+        <h3>Brands</h3>
+        <div class="filter-pills">
+          <label><input type="checkbox" value="hilton" class="card-filter" /> Hilton</label>
+          <label><input type="checkbox" value="marriott" class="card-filter" /> Marriott</label>
+          <label><input type="checkbox" value="hyatt" class="card-filter" /> Hyatt</label>
+          <label><input type="checkbox" value="ihg" class="card-filter" /> IHG</label>
+          <label><input type="checkbox" value="delta" class="card-filter" /> Delta</label>
+          <label><input type="checkbox" value="united" class="card-filter" /> United</label>
+          <label><input type="checkbox" value="southwest" class="card-filter" /> Southwest</label>
+          <label><input type="checkbox" value="american" class="card-filter" /> American Airlines</label>
+        </div>
       </div>
 
-      <div>
-        <label>Flights</label>
-        <input type="number" id="flights" placeholder="250" />
-      </div>
+      <button class="calc-main-btn" onclick="runCalculator()">
+        Find My Best Cards
+      </button>
 
-      <div>
-        <label>Other</label>
-        <input type="number" id="other" placeholder="1000" />
-      </div>
     </div>
 
-    <button class="calc-button" onclick="runCalculator()">Find My Best Cards</button>
+    <!-- RIGHT SIDE: RESULTS -->
+    <div class="results-panel" id="resultsPanel">
 
-    <div class="calc-summary">
-      <h2>Your Profile</h2>
-      <p>Top Category: <span id="topCategory">-</span></p>
-      <p>Best Annual Value: <span id="bestValue">$0</span></p>
+      <div class="results-placeholder">
+        <h2>Your results will appear here.</h2>
+        <p>
+          Enter your spending and click “Find My Best Cards” to see your personalized strategy.
+        </p>
+      </div>
+
+      <!-- JS WILL FILL THIS -->
+      <div id="resultsContent"></div>
+
     </div>
 
   </div>
 
-  <div id="results" class="recommendations"></div>
+  <!-- PRO LOCKED SECTION -->
+  <div class="pro-box">
+    <div>
+      <p class="eyebrow">COMING LATER</p>
+      <h2>TravelWithTripp Pro</h2>
+      <p>
+        Store your cards, track credits, monitor annual fees, and get alerts before renewals.
+      </p>
+    </div>
+
+    <div class="pro-features">
+      <span>Card Wallet</span>
+      <span>Credit Tracker</span>
+      <span>Renewal Alerts</span>
+      <span>Best Card to Use</span>
+    </div>
+  </div>
+
 </section>
