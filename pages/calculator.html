@@ -6,62 +6,31 @@
     <p class="eyebrow">TRAVELWITHTRIPP CARD FINDER</p>
     <h1>Find the best credit card for your spending.</h1>
     <p>
-      Enter your yearly spending, choose your filters, and get a personalized card strategy.
+      Enter your monthly spending, choose your filters, and get a personalized card strategy.
     </p>
   </div>
 
   <!-- CALCULATOR WRAPPER -->
   <div class="calc-layout">
 
-    <!-- LEFT SIDE: INPUTS -->
+    <!-- LEFT SIDE -->
     <div class="calc-panel">
 
-      <h2>Your Yearly Spending</h2>
-      <p class="section-subtitle">Use yearly estimates for the best results.</p>
+      <h2>Your Monthly Spending</h2>
+      <p class="section-subtitle">Enter your average monthly spending.</p>
 
       <div class="spend-grid">
-        <label>
-          Dining
-          <input id="dining" type="number" placeholder="0" />
-        </label>
-
-        <label>
-          Groceries
-          <input id="groceries" type="number" placeholder="0" />
-        </label>
-
-        <label>
-          Gas
-          <input id="gas" type="number" placeholder="0" />
-        </label>
-
-        <label>
-          Direct Flights
-          <input id="flightsDirect" type="number" placeholder="0" />
-        </label>
-
-        <label>
-          Direct Hotels
-          <input id="hotelsDirect" type="number" placeholder="0" />
-        </label>
-
-        <label>
-          Travel Portal
-          <input id="travelPortal" type="number" placeholder="0" />
-        </label>
-
-        <label>
-          Rent / Mortgage
-          <input id="rent" type="number" placeholder="0" />
-        </label>
-
-        <label>
-          Other Spending
-          <input id="other" type="number" placeholder="0" />
-        </label>
+        <label>Dining <input id="dining" type="number" placeholder="0" /></label>
+        <label>Groceries <input id="groceries" type="number" placeholder="0" /></label>
+        <label>Gas <input id="gas" type="number" placeholder="0" /></label>
+        <label>Direct Flights <input id="flightsDirect" type="number" placeholder="0" /></label>
+        <label>Direct Hotels <input id="hotelsDirect" type="number" placeholder="0" /></label>
+        <label>Travel Portal <input id="travelPortal" type="number" placeholder="0" /></label>
+        <label>Rent / Mortgage <input id="rent" type="number" placeholder="0" /></label>
+        <label>Other Spending <input id="other" type="number" placeholder="0" /></label>
       </div>
 
-      <!-- TRAVEL GOAL -->
+      <!-- GOAL -->
       <h2>Your Goal</h2>
 
       <select id="travelGoal" class="calc-select">
@@ -74,16 +43,7 @@
         <option value="maximizePoints">Maximize points</option>
       </select>
 
-      <!-- CREDIT STYLE -->
-      <h2>Credit Value Style</h2>
-
-      <select id="creditStyle" class="calc-select">
-        <option value="balanced">Balanced credit value</option>
-        <option value="conservative">Conservative credit value</option>
-        <option value="aggressive">Aggressive credit value</option>
-      </select>
-
-      <!-- ANNUAL FEE SLIDER -->
+      <!-- ANNUAL FEE -->
       <h2>Max Annual Fee</h2>
 
       <div class="fee-slider-box">
@@ -111,6 +71,7 @@
       <h2>Filters</h2>
       <p class="section-subtitle">Select one or multiple filters.</p>
 
+      <!-- CARD TYPE -->
       <div class="filter-group">
         <h3>Card Type</h3>
         <div class="filter-pills">
@@ -121,6 +82,7 @@
         </div>
       </div>
 
+      <!-- BANKS -->
       <div class="filter-group">
         <h3>Banks</h3>
         <div class="filter-pills">
@@ -128,11 +90,11 @@
           <label><input type="checkbox" value="chase" class="card-filter" /> Chase</label>
           <label><input type="checkbox" value="capitalone" class="card-filter" /> Capital One</label>
           <label><input type="checkbox" value="citi" class="card-filter" /> Citi</label>
-          <label><input type="checkbox" value="wellsfargo" class="card-filter" /> Wells Fargo</label>
           <label><input type="checkbox" value="bilt" class="card-filter" /> Bilt</label>
         </div>
       </div>
 
+      <!-- BRANDS -->
       <div class="filter-group">
         <h3>Brands</h3>
         <div class="filter-pills">
@@ -147,12 +109,14 @@
         </div>
       </div>
 
-      <button id="runCalculatorBtn" class="calc-main-btn" type="button">
-  Find My Best Cards
-</button>
+      <!-- BUTTON -->
+      <button class="calc-main-btn" type="button" onclick="runCalculator()">
+        Find My Best Cards
+      </button>
+
     </div>
 
-    <!-- RIGHT SIDE: RESULTS -->
+    <!-- RIGHT SIDE RESULTS -->
     <div class="results-panel" id="resultsPanel">
 
       <div class="results-placeholder">
@@ -162,14 +126,13 @@
         </p>
       </div>
 
-      <!-- JS WILL FILL THIS -->
       <div id="resultsContent"></div>
 
     </div>
 
   </div>
 
-  <!-- PRO LOCKED SECTION -->
+  <!-- PRO SECTION -->
   <div class="pro-box">
     <div>
       <p class="eyebrow">COMING LATER</p>
