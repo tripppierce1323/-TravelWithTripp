@@ -1,5 +1,5 @@
 // =============================
-// PAGE LOADING (SPA STYLE)
+// PAGE LOADING
 // =============================
 
 function loadPage(page) {
@@ -10,13 +10,11 @@ function loadPage(page) {
     .then(function(data) {
       document.getElementById("content").innerHTML = data;
 
-      // Close menu on mobile
       var menu = document.getElementById("menu");
       if (menu) {
         menu.classList.remove("open");
       }
 
-      // Scroll to top
       window.scrollTo({ top: 0, behavior: "auto" });
     });
 }
@@ -28,14 +26,13 @@ function toggleMenu() {
   }
 }
 
-// Load home page first
 document.addEventListener("DOMContentLoaded", function() {
   loadPage("home.html");
 });
 
 
 // =============================
-// CALCULATOR ENGINE
+// CALCULATOR HELPERS
 // =============================
 
 function getValue(id) {
@@ -61,16 +58,6 @@ function getTopCategory(spend) {
   return top;
 }
 
-function adjustCredits(credits, style) {
-  if (!credits || credits.length === 0) return 0;
-
-  let multiplier = 0.7;
-  if (style === "conservative") multiplier = 0.5;
-  if (style === "aggressive") multiplier = 0.9;
-
-  return credits.reduce((sum, c) => sum + (c.value * multiplier), 0);
-}
-
 function passesFilter(card, selectedFilters) {
   if (selectedFilters.length === 0) return true;
 
@@ -82,15 +69,54 @@ function passesFilter(card, selectedFilters) {
   );
 }
 
-function calculateCardValue(card, spend, creditStyle, topCategory) {
+function passesGoalFilter(card, goal) {
+  if (goal === "bestOverall") return true;
 
+  if (goal === "luxuryTravel") {
+    return card.tags?.includes("luxuryTravel") || card.premium === true;
+  }
+
+  if (goal === "freeFlights") {
+    return card.type === "airline" ||
+      card.tags?.includes("flights") ||
+      card.tags?.includes("travel");
+  }
+
+  if (goal === "freeHotels") {
+    return card.type === "hotel" ||
+      card.tags?.includes("hotel");
+  }
+
+  if (goal === "cashBack") {
+    return card.type === "cashback" ||
+      card.tags?.includes("cashback");
+  }
+
+  if (goal === "simpleSetup") {
+    return card.beginnerFriendly === true ||
+      card.tags?.includes("everyday");
+  }
+
+  if (goal === "maximizePoints") {
+    return card.type === "flexible" ||
+      card.tags?.includes("flexible");
+  }
+
+  return true;
+}
+
+
+// =============================
+// CALCULATOR ENGINE
+// =============================
+
+function calculateCardValue(card, spend, topCategory) {
   let total = 0;
 
   for (let category in spend) {
-
     let multiplier = card.rewards[category] || 1;
 
-    // RENT RULE → ONLY BILT EARNS
+    // Rent / mortgage should only earn on Bilt cards
     if (category === "rent" && card.issuerTag !== "bilt") {
       multiplier = 0;
     }
@@ -98,56 +124,43 @@ function calculateCardValue(card, spend, creditStyle, topCategory) {
     total += spend[category] * multiplier * card.pointValue;
   }
 
-  let creditValue = adjustCredits(card.credits || [], creditStyle);
-
   let bonus = 0;
 
-  // TOP CATEGORY BOOST
+  // Boost cards that match the user’s highest spend category
   if (card.tags && card.tags.includes(topCategory)) {
     bonus += 150;
   }
 
-  // GOAL BOOST
-  const goal = document.getElementById("travelGoal")?.value;
-
-  if (goal === "luxuryTravel" && card.tags?.includes("luxuryTravel")) {
-    bonus += 200;
+  // Small boost for beginner-friendly cards
+  if (card.beginnerFriendly) {
+    bonus += 50;
   }
 
-  if (goal === "cashBack" && card.type === "cashback") {
-    bonus += 150;
-  }
-
-  if (goal === "simpleSetup" && card.beginnerFriendly) {
-    bonus += 100;
-  }
-
-  // PENALTY FOR HIGH FEES
+  // Penalty for very high annual fees
   let penalty = 0;
-  if (card.annualFee > 500) penalty += 150;
+  if (card.annualFee > 500) {
+    penalty += 150;
+  }
 
-  let net = total + creditValue + bonus - card.annualFee - penalty;
+  const net = total + bonus - card.annualFee - penalty;
 
   return {
-    card,
-    total,
-    creditValue,
-    net
+    card: card,
+    total: total,
+    net: net
   };
 }
 
 function renderResults(results) {
-
   const container = document.getElementById("resultsContent");
-
   if (!container) return;
 
   if (!results.length) {
+    document.querySelector(".results-placeholder")?.remove();
     container.innerHTML = "<p>No cards matched your filters.</p>";
     return;
   }
 
-  // Remove placeholder
   document.querySelector(".results-placeholder")?.remove();
 
   const best = results[0];
@@ -184,11 +197,11 @@ function renderResults(results) {
     <div class="other-cards">
       <h2>Top Matches</h2>
 
-      ${results.slice(1,6).map(r => `
+      ${results.slice(1, 6).map(r => `
         <div class="mini-card">
           <img src="${r.card.imageUrl || 'images/default-card.jpg'}" />
           <h4>${r.card.name}</h4>
-          <p>$${Math.round(r.net)}</p>
+          <p>$${Math.round(r.net)} / year</p>
         </div>
       `).join("")}
     </div>
@@ -196,33 +209,35 @@ function renderResults(results) {
 }
 
 function runCalculator() {
+  const cardsData = window.creditCards || creditCards;
 
-  if (typeof creditCards === "undefined") {
+  if (!cardsData) {
     alert("Card data is missing. Make sure data/cards.js is loaded.");
     return;
   }
 
+  // User enters monthly spend. Calculator converts it to yearly value.
   const spend = {
-    dining: getValue("dining"),
-    groceries: getValue("groceries"),
-    gas: getValue("gas"),
-    flightsDirect: getValue("flightsDirect"),
-    hotelsDirect: getValue("hotelsDirect"),
-    travelPortal: getValue("travelPortal"),
-    rent: getValue("rent"),
-    other: getValue("other")
+    dining: getValue("dining") * 12,
+    groceries: getValue("groceries") * 12,
+    gas: getValue("gas") * 12,
+    flightsDirect: getValue("flightsDirect") * 12,
+    hotelsDirect: getValue("hotelsDirect") * 12,
+    travelPortal: getValue("travelPortal") * 12,
+    rent: getValue("rent") * 12,
+    other: getValue("other") * 12
   };
 
-  const creditStyle = document.getElementById("creditStyle")?.value || "balanced";
   const maxFee = Number(document.getElementById("annualFeeSlider")?.value) || 895;
   const filters = getSelectedFilters();
-
+  const goal = document.getElementById("travelGoal")?.value || "bestOverall";
   const topCategory = getTopCategory(spend);
 
-  let results = creditCards
+  const results = cardsData
     .filter(card => card.annualFee <= maxFee)
     .filter(card => passesFilter(card, filters))
-    .map(card => calculateCardValue(card, spend, creditStyle, topCategory))
+    .filter(card => passesGoalFilter(card, goal))
+    .map(card => calculateCardValue(card, spend, topCategory))
     .sort((a, b) => b.net - a.net);
 
   renderResults(results);
@@ -233,16 +248,13 @@ function runCalculator() {
 // EVENT LISTENERS
 // =============================
 
-// Button click (fix for dynamic page load)
-document.addEventListener("click", function (e) {
-  if (e.target && e.target.id === "runCalculatorBtn") {
-    runCalculator();
-  }
-});
-
-// Slider UI update
-document.addEventListener("input", function (e) {
+document.addEventListener("input", function(e) {
   if (e.target.id === "annualFeeSlider") {
     document.getElementById("feeValue").textContent = "$" + e.target.value;
   }
 });
+
+// Expose functions for inline HTML onclick
+window.runCalculator = runCalculator;
+window.loadPage = loadPage;
+window.toggleMenu = toggleMenu;
