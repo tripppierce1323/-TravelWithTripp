@@ -466,7 +466,7 @@ const creditCards = [
     premium: true,
     beginnerFriendly: false,
     business: false
-  }
+  },
   // =====================
   // CHASE ULTIMATE REWARDS
   // =====================
