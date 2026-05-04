@@ -3238,6 +3238,866 @@ const creditCards = [
     beginnerFriendly: true,
     business: false
   },
+  // =====================
+  // CITI THANKYOU POINTS
+  // =====================
 
+  {
+    name: "Citi Strata Elite Card",
+    issuer: "Citi",
+    issuerTag: "citi",
+    ecosystem: "Citi ThankYou Points",
+    annualFee: 595,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "citi",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Premium Citi Travel",
+
+    rewards: {
+      dining: 3,
+      groceries: 1.5,
+      gas: 1.5,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 6,
+      other: 1.5
+    },
+
+    multipliers: [
+      "6x Citi Travel",
+      "3x dining",
+      "3x flights",
+      "3x hotels",
+      "1.5x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is Citi’s premium travel option. I would mainly look at it if you are intentionally building around Citi ThankYou points.",
+    bestPairing: "Pairs well with Citi Double Cash and Citi Custom Cash.",
+
+    goodFor: [
+      "Premium Citi setup",
+      "Travel",
+      "Citi ThankYou points"
+    ],
+
+    notGoodFor: [
+      "Beginners",
+      "Low annual fee setups",
+      "People who want Chase or Amex transfer partners"
+    ],
+
+    featuredCard: false,
+
+    tags: ["citi", "flexible", "premium", "travel"],
+
+    benefits: [
+      "Premium Citi travel card",
+      "ThankYou transfer partners",
+      "Travel benefits"
+    ],
+
+    why: "Best premium Citi option for travel-focused users.",
+
+    weaknesses: [
+      "High annual fee",
+      "More advanced than basic travel cards"
+    ],
+
+    premium: true,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  {
+    name: "Citi Strata Premier Card",
+    issuer: "Citi",
+    issuerTag: "citi",
+    ecosystem: "Citi ThankYou Points",
+    annualFee: 95,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "citi",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Travel + Everyday",
+
+    rewards: {
+      dining: 3,
+      groceries: 3,
+      gas: 3,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 3,
+      other: 1
+    },
+
+    multipliers: [
+      "3x dining",
+      "3x supermarkets",
+      "3x gas",
+      "3x travel",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "Very underrated all-around card because it covers several major everyday categories in one card.",
+    bestPairing: "Pairs well with Citi Double Cash and Citi Custom Cash.",
+
+    goodFor: [
+      "Dining",
+      "Groceries",
+      "Gas",
+      "Travel",
+      "Citi ThankYou points"
+    ],
+
+    notGoodFor: [
+      "Premium lounge perks",
+      "People who want the Chase ecosystem"
+    ],
+
+    featuredCard: true,
+
+    tags: ["citi", "flexible", "travel", "dining", "groceries", "gas"],
+
+    benefits: [
+      "3x travel",
+      "3x dining",
+      "3x supermarkets",
+      "3x gas"
+    ],
+
+    why: "Best all-around Citi travel card.",
+
+    weaknesses: [
+      "Not as simple as a flat 2x card"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Citi Double Cash Card",
+    issuer: "Citi",
+    issuerTag: "citi",
+    ecosystem: "Citi ThankYou Points",
+    annualFee: 0,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "citi",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Catch-All Spend",
+
+    rewards: {
+      dining: 2,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 2,
+      other: 2
+    },
+
+    multipliers: [
+      "2x total earning on purchases"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A great catch-all card, especially inside a Citi setup with Strata Premier.",
+    bestPairing: "Pairs well with Citi Strata Premier.",
+
+    goodFor: [
+      "Everyday spend",
+      "No annual fee",
+      "Simple earning",
+      "Citi setups"
+    ],
+
+    notGoodFor: [
+      "Bonus category maximizers",
+      "Premium travel perks"
+    ],
+
+    featuredCard: false,
+
+    tags: ["citi", "flexible", "cashback", "noAnnualFee", "everyday"],
+
+    benefits: [
+      "2x total earning",
+      "No annual fee",
+      "Excellent catch-all card"
+    ],
+
+    why: "Best Citi catch-all card.",
+
+    weaknesses: [
+      "Best when paired with a premium Citi transfer card"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Citi Custom Cash Card",
+    issuer: "Citi",
+    issuerTag: "citi",
+    ecosystem: "Citi ThankYou Points",
+    annualFee: 0,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "citi",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Top Monthly Category",
+
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 1,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "5x eligible top monthly category",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "Great as a one-category optimizer. I would not use it as my only card, but it can be powerful in a Citi setup.",
+    bestPairing: "Pairs well with Citi Strata Premier and Citi Double Cash.",
+
+    goodFor: [
+      "One high monthly category",
+      "No annual fee",
+      "Category optimization"
+    ],
+
+    notGoodFor: [
+      "Simple one-card setups",
+      "People who do not want to think about categories"
+    ],
+
+    featuredCard: false,
+
+    tags: ["citi", "flexible", "cashback", "noAnnualFee", "category"],
+
+    benefits: [
+      "5x eligible top spend category",
+      "No annual fee",
+      "Great category optimizer"
+    ],
+
+    why: "Best for one high monthly spending category.",
+
+    weaknesses: [
+      "Requires category strategy to maximize"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Citi Rewards+ Card",
+    issuer: "Citi",
+    issuerTag: "citi",
+    ecosystem: "Citi ThankYou Points",
+    annualFee: 0,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "citi",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Small Purchases",
+
+    rewards: {
+      dining: 1,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 1,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "2x supermarkets",
+      "2x gas",
+      "Rounds up points on purchases",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is more of a supporting Citi card than a card I would usually recommend by itself.",
+    bestPairing: "Pairs well with Citi Strata Premier.",
+
+    goodFor: [
+      "Small purchases",
+      "No annual fee",
+      "Citi setups"
+    ],
+
+    notGoodFor: [
+      "Standalone travel setup",
+      "Premium benefits"
+    ],
+
+    featuredCard: false,
+
+    tags: ["citi", "flexible", "noAnnualFee"],
+
+    benefits: [
+      "Rounds up points on purchases",
+      "No annual fee",
+      "Useful with other Citi cards"
+    ],
+
+    why: "Best as a supporting Citi card.",
+
+    weaknesses: [
+      "Not usually the best standalone card"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  // =====================
+  // CITI AMERICAN AIRLINES
+  // =====================
+
+  {
+    name: "American Airlines AAdvantage MileUp Card",
+    issuer: "Citi / American Airlines",
+    issuerTag: "citi",
+    ecosystem: "American AAdvantage",
+    annualFee: 0,
+    pointValue: 0.014,
+    type: "airline",
+    brand: "american",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "No-Fee American Airlines",
+
+    rewards: {
+      dining: 1,
+      groceries: 2,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "2x American Airlines purchases",
+      "2x groceries",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A no-fee American Airlines starter card, but it does not have the bigger AA perks that occasional flyers may care about.",
+    bestPairing: "Pairs well with Citi Strata Premier or Citi Double Cash.",
+
+    goodFor: [
+      "No annual fee",
+      "Starter American Airlines card",
+      "Casual AA flyers"
+    ],
+
+    notGoodFor: [
+      "Free checked bags",
+      "Premium AA perks",
+      "Everyday spending"
+    ],
+
+    featuredCard: false,
+
+    tags: ["citi", "airline", "american", "noAnnualFee"],
+
+    benefits: [
+      "No annual fee",
+      "AAdvantage miles",
+      "Good starter AA card"
+    ],
+
+    why: "Best no-fee American Airlines card.",
+
+    weaknesses: [
+      "Limited AA travel perks"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Citi AAdvantage Platinum Select World Elite Mastercard",
+    issuer: "Citi / American Airlines",
+    issuerTag: "citi",
+    ecosystem: "American AAdvantage",
+    annualFee: 99,
+    pointValue: 0.014,
+    type: "airline",
+    brand: "american",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "American Airlines",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "2x American Airlines purchases",
+      "2x restaurants",
+      "2x gas",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is the AA card I would compare first if you fly American occasionally and value checked bag benefits.",
+    bestPairing: "Pairs well with Citi Strata Premier.",
+
+    goodFor: [
+      "Occasional American Airlines flyers",
+      "Free checked bag",
+      "Preferred boarding"
+    ],
+
+    notGoodFor: [
+      "People who rarely fly American",
+      "Premium lounge perks"
+    ],
+
+    featuredCard: false,
+
+    tags: ["citi", "airline", "american"],
+
+    benefits: [
+      "Free checked bag",
+      "Preferred boarding",
+      "AAdvantage miles",
+      "Good AA travel card"
+    ],
+
+    why: "Best for occasional American Airlines flyers.",
+
+    weaknesses: [
+      "Not a strong everyday card"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Citi AAdvantage Executive World Elite Mastercard",
+    issuer: "Citi / American Airlines",
+    issuerTag: "citi",
+    ecosystem: "American AAdvantage",
+    annualFee: 595,
+    pointValue: 0.014,
+    type: "airline",
+    brand: "american",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Premium American Airlines",
+
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 4,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "4x American Airlines purchases",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This card is mainly about Admirals Club access. I would only consider it if you fly American enough to really value the lounge benefit.",
+    bestPairing: "Pairs well with Citi Strata Premier or Citi Double Cash.",
+
+    goodFor: [
+      "American Airlines loyalists",
+      "Admirals Club access",
+      "Premium AA perks"
+    ],
+
+    notGoodFor: [
+      "Casual American flyers",
+      "Everyday spending",
+      "Low annual fee setups"
+    ],
+
+    featuredCard: false,
+
+    tags: ["citi", "airline", "american", "premium"],
+
+    benefits: [
+      "Admirals Club access",
+      "Premium AA benefits",
+      "Free checked bag",
+      "Priority perks"
+    ],
+
+    why: "Best for loyal American Airlines flyers who value lounge access.",
+
+    weaknesses: [
+      "High annual fee",
+      "Weak everyday earning"
+    ],
+
+    premium: true,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  // =====================
+  // BILT
+  // =====================
+
+  {
+    name: "Bilt Mastercard",
+    issuer: "Bilt",
+    issuerTag: "bilt",
+    ecosystem: "Bilt Rewards",
+    annualFee: 0,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "bilt",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Rent",
+
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 1,
+      rent: 1,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 2,
+      other: 1
+    },
+
+    multipliers: [
+      "1x rent",
+      "3x dining",
+      "2x travel",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "Best card for renters because earning points on rent is rare. I would mainly recommend it when rent is part of the strategy.",
+    bestPairing: "Pairs well with a dining, grocery, or premium travel card.",
+
+    goodFor: [
+      "Rent",
+      "Dining",
+      "Transfer partners",
+      "No annual fee"
+    ],
+
+    notGoodFor: [
+      "Non-renters",
+      "People who want the highest grocery earning"
+    ],
+
+    featuredCard: true,
+
+    tags: ["bilt", "flexible", "rent", "noAnnualFee"],
+
+    benefits: [
+      "Earn points on rent",
+      "No annual fee",
+      "3x dining",
+      "Transfer partners"
+    ],
+
+    why: "Best for renters who want points on rent payments.",
+
+    weaknesses: [
+      "Best value depends heavily on rent spend"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Bilt Blue Card",
+    issuer: "Bilt",
+    issuerTag: "bilt",
+    ecosystem: "Bilt Rewards",
+    annualFee: 0,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "bilt",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Rent + Starter Bilt",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 1,
+      rent: 1,
+      flightsDirect: 1,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "1x rent",
+      "2x dining",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A starter Bilt option. I would only prioritize this if rent rewards are the main reason you want it.",
+    bestPairing: "Pairs well with a stronger dining, grocery, or travel card.",
+
+    goodFor: [
+      "Rent",
+      "Starter Bilt users",
+      "No annual fee"
+    ],
+
+    notGoodFor: [
+      "Non-renters",
+      "Maximizing everyday categories"
+    ],
+
+    featuredCard: false,
+
+    tags: ["bilt", "flexible", "rent", "noAnnualFee", "beginner"],
+
+    benefits: [
+      "No annual fee",
+      "Bilt rewards",
+      "Designed for rent rewards"
+    ],
+
+    why: "Best starter Bilt option as Bilt transitions to its new lineup.",
+
+    weaknesses: [
+      "Limited upside compared to higher-tier Bilt options"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Bilt Obsidian Card",
+    issuer: "Bilt",
+    issuerTag: "bilt",
+    ecosystem: "Bilt Rewards",
+    annualFee: 95,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "bilt",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Rent + Dining",
+
+    rewards: {
+      dining: 3,
+      groceries: 2,
+      gas: 1,
+      rent: 1,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 2,
+      other: 1
+    },
+
+    multipliers: [
+      "1x rent",
+      "3x dining",
+      "2x groceries",
+      "2x travel",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A mid-tier Bilt option. It should really only move up in recommendations when the user selects rent.",
+    bestPairing: "Pairs well with a grocery, airline, or hotel card depending on your strategy.",
+
+    goodFor: [
+      "Rent",
+      "Dining",
+      "Bilt transfer partners"
+    ],
+
+    notGoodFor: [
+      "Non-renters",
+      "People who do not need rent rewards"
+    ],
+
+    featuredCard: false,
+
+    tags: ["bilt", "flexible", "rent", "dining"],
+
+    benefits: [
+      "Bilt rewards",
+      "Mid-tier Bilt option",
+      "Rent-focused rewards"
+    ],
+
+    why: "Best mid-tier Bilt option if the new lineup fits your rent strategy.",
+
+    weaknesses: [
+      "Only worth it if the annual fee fits your rent strategy"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  {
+    name: "Bilt Palladium Card",
+    issuer: "Bilt",
+    issuerTag: "bilt",
+    ecosystem: "Bilt Rewards",
+    annualFee: 495,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "bilt",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Premium Bilt",
+
+    rewards: {
+      dining: 4,
+      groceries: 2,
+      gas: 1,
+      rent: 1,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 3,
+      other: 1
+    },
+
+    multipliers: [
+      "1x rent",
+      "4x dining",
+      "2x groceries",
+      "3x travel",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This should only be a premium Bilt/rent strategy card. It should not outrank cards like Amex Gold or Citi Strata Premier for normal dining and grocery filters.",
+    bestPairing: "Pairs well with a premium travel or hotel card.",
+
+    goodFor: [
+      "Rent",
+      "Premium Bilt users",
+      "Dining",
+      "Travel"
+    ],
+
+    notGoodFor: [
+      "Non-renters",
+      "Low annual fee setups",
+      "People only optimizing groceries"
+    ],
+
+    featuredCard: false,
+
+    tags: ["bilt", "flexible", "rent", "premium", "travel"],
+
+    benefits: [
+      "Premium Bilt option",
+      "Bilt rewards",
+      "Travel and rent-focused benefits"
+    ],
+
+    why: "Best premium Bilt option if you use the higher-tier benefits.",
+
+    weaknesses: [
+      "High annual fee for a rent-focused setup"
+    ],
+
+    premium: true,
+    beginnerFriendly: false,
+    business: false
+  }
 ];
   
