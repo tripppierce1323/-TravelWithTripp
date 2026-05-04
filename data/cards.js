@@ -1045,4 +1045,826 @@ const creditCards = [
     premium: true,
     beginnerFriendly: false,
     business: false
-  },];
+  },  
+  
+  // =====================
+  // CHASE ULTIMATE REWARDS
+  // =====================
+
+  {
+    name: "Chase Sapphire Preferred",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Chase Ultimate Rewards",
+    annualFee: 95,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "chase",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Travel + Dining",
+
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 5,
+      other: 1
+    },
+
+    multipliers: [
+      "5x Chase Travel",
+      "3x dining",
+      "2x travel",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "One of the best starter travel cards. I like it because Chase points are easy to understand and Hyatt transfers can be extremely valuable.",
+
+    bestPairing: "Pairs well with Chase Freedom Unlimited and Chase Freedom Flex.",
+
+    goodFor: [
+      "Beginner travel points",
+      "Dining",
+      "Hyatt transfers",
+      "Chase ecosystem"
+    ],
+
+    notGoodFor: [
+      "Premium lounge perks",
+      "People who want the highest grocery earning"
+    ],
+
+    featuredCard: true,
+
+    tags: ["chase", "flexible", "travel", "dining", "beginner"],
+
+    benefits: [
+      "5x Chase Travel",
+      "3x dining",
+      "Transfer partners like Hyatt and United",
+      "Great beginner travel card"
+    ],
+
+    why: "Best starter card for flexible travel points.",
+
+    weaknesses: [
+      "Best travel earning requires Chase Travel portal",
+      "Not the strongest catch-all card"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Chase Sapphire Reserve",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Chase Ultimate Rewards",
+    annualFee: 795,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "chase",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Premium Travel",
+
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 4,
+      hotelsDirect: 4,
+      travelPortal: 8,
+      other: 1
+    },
+
+    multipliers: [
+      "High earning through Chase Travel",
+      "Strong dining earning",
+      "Strong travel earning",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is for people who want premium travel perks and actually use the benefits. I would not pick it just because it sounds premium.",
+
+    bestPairing: "Pairs well with Chase Freedom Unlimited and Chase Freedom Flex.",
+
+    goodFor: [
+      "Premium travel",
+      "Travel protection",
+      "Dining",
+      "Chase points"
+    ],
+
+    notGoodFor: [
+      "Low annual fee setups",
+      "People who do not travel often",
+      "Simple beginner setups"
+    ],
+
+    featuredCard: true,
+
+    tags: ["chase", "flexible", "premium", "travel", "luxuryTravel"],
+
+    benefits: [
+      "Premium travel rewards",
+      "Airport lounge access",
+      "Travel credits",
+      "Strong travel protection"
+    ],
+
+    why: "Best for premium travelers who use Chase benefits often.",
+
+    weaknesses: [
+      "High annual fee",
+      "Best multipliers depend on Chase Travel portal"
+    ],
+
+    premium: true,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  {
+    name: "Chase Freedom Unlimited",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Chase Ultimate Rewards",
+    annualFee: 0,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "chase",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Everyday Spend",
+
+    rewards: {
+      dining: 3,
+      groceries: 1.5,
+      gas: 1.5,
+      rent: 0,
+      flightsDirect: 1.5,
+      hotelsDirect: 1.5,
+      travelPortal: 5,
+      other: 1.5
+    },
+
+    multipliers: [
+      "5x Chase Travel",
+      "3x dining",
+      "3x drugstores",
+      "1.5x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "One of the best no-fee support cards. It gets much better when paired with a Sapphire card because the points become more powerful.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Sapphire Reserve.",
+
+    goodFor: [
+      "Everyday spend",
+      "No annual fee",
+      "Chase setups",
+      "Simple earning"
+    ],
+
+    notGoodFor: [
+      "Standalone premium travel perks",
+      "People who want a single premium card"
+    ],
+
+    featuredCard: true,
+
+    tags: ["chase", "flexible", "cashback", "noAnnualFee", "everyday"],
+
+    benefits: [
+      "No annual fee",
+      "1.5x on everyday purchases",
+      "3x dining",
+      "Pairs well with Sapphire cards"
+    ],
+
+    why: "Best Chase catch-all card.",
+
+    weaknesses: [
+      "Works best when paired with a Sapphire card"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Chase Freedom Flex",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Chase Ultimate Rewards",
+    annualFee: 0,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "chase",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Rotating Categories",
+
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 1,
+      hotelsDirect: 1,
+      travelPortal: 5,
+      other: 1
+    },
+
+    multipliers: [
+      "5x rotating categories",
+      "5x Chase Travel",
+      "3x dining",
+      "3x drugstores",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "Great if you like maximizing categories, but it takes more effort than the Freedom Unlimited because you have to track rotating categories.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Sapphire Reserve.",
+
+    goodFor: [
+      "Rotating categories",
+      "No annual fee",
+      "Chase points",
+      "Dining"
+    ],
+
+    notGoodFor: [
+      "People who do not want to track categories",
+      "Simple one-card setups"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "flexible", "cashback", "noAnnualFee", "rotating"],
+
+    benefits: [
+      "No annual fee",
+      "Rotating 5x categories",
+      "3x dining",
+      "Pairs well with Sapphire cards"
+    ],
+
+    why: "Best for maximizing rotating bonus categories.",
+
+    weaknesses: [
+      "Rotating categories require activation and tracking"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Chase Freedom Rise",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Chase Ultimate Rewards",
+    annualFee: 0,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "chase",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Building Credit",
+
+    rewards: {
+      dining: 1.5,
+      groceries: 1.5,
+      gas: 1.5,
+      rent: 0,
+      flightsDirect: 1.5,
+      hotelsDirect: 1.5,
+      travelPortal: 1.5,
+      other: 1.5
+    },
+
+    multipliers: [
+      "1.5x on purchases",
+      "Simple earning structure"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A simple Chase starter card for people building credit. This is not really a premium travel strategy card.",
+
+    bestPairing: "Can eventually pair with Chase Sapphire Preferred.",
+
+    goodFor: [
+      "Building credit",
+      "No annual fee",
+      "Simple rewards"
+    ],
+
+    notGoodFor: [
+      "Premium travel",
+      "Maximizing travel redemptions"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "flexible", "cashback", "noAnnualFee", "beginner"],
+
+    benefits: [
+      "No annual fee",
+      "Designed for newer credit users",
+      "Simple earning"
+    ],
+
+    why: "Best Chase starter card for building credit.",
+
+    weaknesses: [
+      "Not a premium travel card"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  // =====================
+  // CHASE MARRIOTT
+  // =====================
+
+  {
+    name: "Marriott Bonvoy Bold",
+    issuer: "Chase / Marriott",
+    issuerTag: "chase",
+    ecosystem: "Marriott Bonvoy",
+    annualFee: 0,
+    pointValue: 0.008,
+    type: "hotel",
+    brand: "marriott",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "No-Fee Marriott",
+
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 3,
+      travelPortal: 2,
+      other: 1
+    },
+
+    multipliers: [
+      "3x Marriott purchases",
+      "2x travel",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A basic no-fee Marriott card. Good only if you want a simple Marriott starter card without paying an annual fee.",
+
+    bestPairing: "Pairs well with a flexible travel card like Chase Sapphire Preferred.",
+
+    goodFor: [
+      "No annual fee",
+      "Starter Marriott card",
+      "Casual Marriott stays"
+    ],
+
+    notGoodFor: [
+      "High Marriott earning",
+      "Flexible point maximizers",
+      "Premium hotel perks"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "hotel", "marriott", "noAnnualFee"],
+
+    benefits: [
+      "No annual fee",
+      "Marriott points",
+      "Starter Marriott card",
+      "Travel rewards"
+    ],
+
+    why: "Best no-fee Marriott card.",
+
+    weaknesses: [
+      "Low earning compared to paid Marriott cards"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Marriott Bonvoy Boundless",
+    issuer: "Chase / Marriott",
+    issuerTag: "chase",
+    ecosystem: "Marriott Bonvoy",
+    annualFee: 95,
+    pointValue: 0.008,
+    type: "hotel",
+    brand: "marriott",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Marriott Hotels",
+
+    rewards: {
+      dining: 3,
+      groceries: 3,
+      gas: 3,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 6,
+      travelPortal: 2,
+      other: 2
+    },
+
+    multipliers: [
+      "6x Marriott purchases",
+      "3x dining",
+      "3x groceries",
+      "3x gas",
+      "2x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is probably the Marriott card I would start with if you want a simple paid Marriott card because the free night can help justify the annual fee.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+
+    goodFor: [
+      "Marriott travelers",
+      "Annual free night",
+      "Starter hotel strategy"
+    ],
+
+    notGoodFor: [
+      "People who do not stay with Marriott",
+      "Flexible points first strategies"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "hotel", "marriott"],
+
+    benefits: [
+      "Free night certificate",
+      "Marriott points",
+      "Elite night credits",
+      "Good mid-tier Marriott card"
+    ],
+
+    why: "Best starter Marriott card with an annual free night.",
+
+    weaknesses: [
+      "Best only if you stay with Marriott"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Marriott Bonvoy Bountiful",
+    issuer: "Chase / Marriott",
+    issuerTag: "chase",
+    ecosystem: "Marriott Bonvoy",
+    annualFee: 250,
+    pointValue: 0.008,
+    type: "hotel",
+    brand: "marriott",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Marriott + Everyday Spend",
+
+    rewards: {
+      dining: 4,
+      groceries: 4,
+      gas: 4,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 6,
+      travelPortal: 2,
+      other: 2
+    },
+
+    multipliers: [
+      "6x Marriott purchases",
+      "4x dining",
+      "4x groceries",
+      "4x gas",
+      "2x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This card can earn well in common categories, but I would only prioritize it if you specifically value Marriott points.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred or Marriott Boundless.",
+
+    goodFor: [
+      "Marriott loyalists",
+      "Dining",
+      "Groceries",
+      "Gas"
+    ],
+
+    notGoodFor: [
+      "Casual Marriott users",
+      "People who prefer flexible points"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "hotel", "marriott"],
+
+    benefits: [
+      "Marriott points",
+      "Bonus categories",
+      "Elite night credits",
+      "Mid-premium Marriott card"
+    ],
+
+    why: "Best for Marriott loyalists with everyday spending.",
+
+    weaknesses: [
+      "No-fee or $95 Marriott cards may be better for casual users"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  // =====================
+  // CHASE HYATT
+  // =====================
+
+  {
+    name: "World of Hyatt Credit Card",
+    issuer: "Chase / Hyatt",
+    issuerTag: "chase",
+    ecosystem: "World of Hyatt",
+    annualFee: 95,
+    pointValue: 0.02,
+    type: "hotel",
+    brand: "hyatt",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Hyatt Hotels",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 4,
+      travelPortal: 2,
+      other: 1
+    },
+
+    multipliers: [
+      "4x Hyatt purchases",
+      "2x dining",
+      "2x flights purchased directly",
+      "2x gym memberships",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "Hyatt points can be extremely valuable. I like this card most for people who already use Hyatt or want to build a Chase/Hyatt strategy.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred and Chase Freedom Unlimited.",
+
+    goodFor: [
+      "Hyatt travelers",
+      "Free night certificate",
+      "Hotel redemption value"
+    ],
+
+    notGoodFor: [
+      "People who do not stay with Hyatt",
+      "People who want broad hotel coverage"
+    ],
+
+    featuredCard: true,
+
+    tags: ["chase", "hotel", "hyatt"],
+
+    benefits: [
+      "Hyatt points",
+      "Free night certificate",
+      "Elite night credits",
+      "Great hotel redemption value"
+    ],
+
+    why: "Best for Hyatt travelers.",
+
+    weaknesses: [
+      "Best only if you use Hyatt"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  // =====================
+  // CHASE IHG
+  // =====================
+
+  {
+    name: "IHG One Rewards Traveler",
+    issuer: "Chase / IHG",
+    issuerTag: "chase",
+    ecosystem: "IHG One Rewards",
+    annualFee: 0,
+    pointValue: 0.005,
+    type: "hotel",
+    brand: "ihg",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "No-Fee IHG",
+
+    rewards: {
+      dining: 3,
+      groceries: 3,
+      gas: 3,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 5,
+      travelPortal: 2,
+      other: 2
+    },
+
+    multipliers: [
+      "5x IHG purchases",
+      "3x dining",
+      "3x groceries",
+      "3x gas",
+      "2x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A decent no-fee hotel starter card, but I would usually prefer Chase flexible points unless you specifically stay with IHG.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+
+    goodFor: [
+      "No annual fee",
+      "Casual IHG stays",
+      "Starter hotel card"
+    ],
+
+    notGoodFor: [
+      "Flexible points",
+      "Premium hotel perks"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "hotel", "ihg", "noAnnualFee"],
+
+    benefits: [
+      "No annual fee",
+      "IHG points",
+      "Starter hotel card",
+      "Good for casual IHG stays"
+    ],
+
+    why: "Best no-fee IHG card.",
+
+    weaknesses: [
+      "IHG points are less flexible than Chase points"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "IHG One Rewards Premier",
+    issuer: "Chase / IHG",
+    issuerTag: "chase",
+    ecosystem: "IHG One Rewards",
+    annualFee: 99,
+    pointValue: 0.005,
+    type: "hotel",
+    brand: "ihg",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "IHG Hotels",
+
+    rewards: {
+      dining: 5,
+      groceries: 5,
+      gas: 5,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 10,
+      travelPortal: 3,
+      other: 3
+    },
+
+    multipliers: [
+      "10x IHG purchases",
+      "5x dining",
+      "5x groceries",
+      "5x gas",
+      "3x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is the IHG card I would look at if you actually stay with IHG because the free night and status perks can make it worthwhile.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
+
+    goodFor: [
+      "IHG travelers",
+      "Anniversary free night",
+      "IHG status benefits"
+    ],
+
+    notGoodFor: [
+      "People who do not stay with IHG",
+      "Flexible point maximizers"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "hotel", "ihg"],
+
+    benefits: [
+      "IHG points",
+      "Anniversary free night",
+      "Strong hotel earning",
+      "IHG status benefits"
+    ],
+
+    why: "Best for IHG travelers.",
+
+    weaknesses: [
+      "Best only if you stay with IHG"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+];
+  
