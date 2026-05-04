@@ -1865,6 +1865,1379 @@ const creditCards = [
     beginnerFriendly: false,
     business: false
   },
+    // =====================
+  // CHASE UNITED
+  // =====================
+
+  {
+    name: "United Gateway Card",
+    issuer: "Chase / United",
+    issuerTag: "chase",
+    ecosystem: "United MileagePlus",
+    annualFee: 0,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "united",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "No-Fee United",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "2x United purchases",
+      "2x gas",
+      "2x local transit",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A simple no-fee United starter card, but it lacks the bigger United perks most travelers care about.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+
+    goodFor: [
+      "No annual fee",
+      "Starter United card",
+      "Casual United flyers"
+    ],
+
+    notGoodFor: [
+      "Free checked bags",
+      "United lounge perks",
+      "Premium airline benefits"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "united", "noAnnualFee"],
+
+    benefits: [
+      "No annual fee",
+      "United miles",
+      "Good starter United card"
+    ],
+
+    why: "Best no-fee United card.",
+
+    weaknesses: [
+      "Limited United perks"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "United Explorer Card",
+    issuer: "Chase / United",
+    issuerTag: "chase",
+    ecosystem: "United MileagePlus",
+    annualFee: 95,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "united",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "United Flights",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "2x United purchases",
+      "2x dining",
+      "2x hotel stays",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is the United card I would look at first for occasional United flyers because the checked bag benefit can matter quickly.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
+
+    goodFor: [
+      "Occasional United flyers",
+      "Free checked bag",
+      "Priority boarding"
+    ],
+
+    notGoodFor: [
+      "People who rarely fly United",
+      "Everyday spending optimization"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "united"],
+
+    benefits: [
+      "Free checked bag",
+      "Priority boarding",
+      "United miles",
+      "Good beginner airline card"
+    ],
+
+    why: "Best for occasional United flyers.",
+
+    weaknesses: [
+      "Not strong for everyday spending"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "United Quest Card",
+    issuer: "Chase / United",
+    issuerTag: "chase",
+    ecosystem: "United MileagePlus",
+    annualFee: 250,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "united",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "United Loyalists",
+
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "3x United purchases",
+      "3x dining",
+      "3x select streaming services",
+      "2x other travel",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This starts making sense for more frequent United flyers who can use the credits and checked bag benefits.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
+
+    goodFor: [
+      "Frequent United flyers",
+      "United credits",
+      "Free checked bags"
+    ],
+
+    notGoodFor: [
+      "Casual United flyers",
+      "Simple low-fee setups"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "united"],
+
+    benefits: [
+      "United travel credits",
+      "Free checked bags",
+      "3x United purchases",
+      "Good for frequent United flyers"
+    ],
+
+    why: "Best for frequent United travelers.",
+
+    weaknesses: [
+      "Best only if you fly United regularly"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  {
+    name: "United Club Card",
+    issuer: "Chase / United",
+    issuerTag: "chase",
+    ecosystem: "United MileagePlus",
+    annualFee: 695,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "united",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Premium United",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 4,
+      hotelsDirect: 2,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "4x United purchases",
+      "2x dining",
+      "2x other travel",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is really about United Club access. I would only consider it if you fly United often enough to value the lounge membership.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
+
+    goodFor: [
+      "United loyalists",
+      "United Club access",
+      "Premium United perks"
+    ],
+
+    notGoodFor: [
+      "Casual United flyers",
+      "Everyday spending",
+      "Low annual fee setups"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "united", "premium"],
+
+    benefits: [
+      "United Club membership",
+      "Free checked bags",
+      "Premium United perks",
+      "Strong airline benefits"
+    ],
+
+    why: "Best for United flyers who value lounge access.",
+
+    weaknesses: [
+      "High annual fee",
+      "Weak everyday earning"
+    ],
+
+    premium: true,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  // =====================
+  // CHASE SOUTHWEST
+  // =====================
+
+  {
+    name: "Southwest Rapid Rewards Plus",
+    issuer: "Chase / Southwest",
+    issuerTag: "chase",
+    ecosystem: "Southwest Rapid Rewards",
+    annualFee: 69,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "southwest",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Southwest Starter",
+
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "2x Southwest purchases",
+      "2x Rapid Rewards hotel and car rental partners",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A low-fee Southwest starter card, but I would compare it against the higher Southwest cards if you fly them often.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+
+    goodFor: [
+      "Southwest beginners",
+      "Low annual fee",
+      "Anniversary points"
+    ],
+
+    notGoodFor: [
+      "Premium Southwest perks",
+      "Everyday spending"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "southwest"],
+
+    benefits: [
+      "Southwest points",
+      "Anniversary points",
+      "Low annual fee",
+      "Good starter Southwest card"
+    ],
+
+    why: "Best low-fee Southwest card.",
+
+    weaknesses: [
+      "Limited premium Southwest perks"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Southwest Rapid Rewards Premier",
+    issuer: "Chase / Southwest",
+    issuerTag: "chase",
+    ecosystem: "Southwest Rapid Rewards",
+    annualFee: 99,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "southwest",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Southwest Flyers",
+
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "3x Southwest purchases",
+      "2x Rapid Rewards hotel and car rental partners",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A middle-tier Southwest card for people who fly Southwest regularly but do not need every premium perk.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred or Freedom Unlimited.",
+
+    goodFor: [
+      "Southwest flyers",
+      "Anniversary points",
+      "No foreign transaction fees"
+    ],
+
+    notGoodFor: [
+      "People who rarely fly Southwest",
+      "Premium Southwest perks"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "southwest"],
+
+    benefits: [
+      "Southwest points",
+      "Anniversary points",
+      "Better Southwest earning",
+      "No foreign transaction fees"
+    ],
+
+    why: "Best middle-tier Southwest card.",
+
+    weaknesses: [
+      "Best only if you fly Southwest"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  {
+    name: "Southwest Rapid Rewards Priority",
+    issuer: "Chase / Southwest",
+    issuerTag: "chase",
+    ecosystem: "Southwest Rapid Rewards",
+    annualFee: 149,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "southwest",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Frequent Southwest",
+
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "3x Southwest purchases",
+      "2x Rapid Rewards hotel and car rental partners",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is probably the best personal Southwest card if you fly them enough to use the travel credit and upgraded boarding benefits.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+
+    goodFor: [
+      "Frequent Southwest flyers",
+      "Southwest travel credit",
+      "Upgraded boarding"
+    ],
+
+    notGoodFor: [
+      "People who rarely fly Southwest",
+      "Everyday spending optimization"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "southwest"],
+
+    benefits: [
+      "Southwest travel credit",
+      "Anniversary points",
+      "Upgraded boarding benefits",
+      "Best personal Southwest card"
+    ],
+
+    why: "Best for frequent Southwest flyers.",
+
+    weaknesses: [
+      "Best only if you fly Southwest often"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  // =====================
+  // CHASE AIRLINE PARTNERS
+  // =====================
+
+  {
+    name: "Aeroplan Card",
+    issuer: "Chase / Air Canada",
+    issuerTag: "chase",
+    ecosystem: "Air Canada Aeroplan",
+    annualFee: 95,
+    pointValue: 0.017,
+    type: "airline",
+    brand: "aircanada",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Star Alliance Travel",
+
+    rewards: {
+      dining: 3,
+      groceries: 3,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "3x Air Canada purchases",
+      "3x dining",
+      "3x groceries",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is more advanced than a normal beginner travel card, but Aeroplan can be very powerful if you understand airline redemptions.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred or Amex Membership Rewards cards.",
+
+    goodFor: [
+      "Star Alliance redemptions",
+      "Advanced points users",
+      "Dining and groceries"
+    ],
+
+    notGoodFor: [
+      "Beginners who want simplicity",
+      "People who do not understand airline partners"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "aircanada", "aeroplan"],
+
+    benefits: [
+      "Aeroplan points",
+      "Star Alliance redemptions",
+      "Good travel partners"
+    ],
+
+    why: "Best for people who understand airline transfer redemptions.",
+
+    weaknesses: [
+      "More advanced than beginner travel cards"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  {
+    name: "British Airways Visa Signature Card",
+    issuer: "Chase / British Airways",
+    issuerTag: "chase",
+    ecosystem: "Avios",
+    annualFee: 95,
+    pointValue: 0.015,
+    type: "airline",
+    brand: "britishairways",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Avios Flights",
+
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "3x British Airways purchases",
+      "2x hotel accommodations",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "Useful for Avios users, but too niche for most beginners unless you already know how you want to redeem Avios.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+
+    goodFor: [
+      "Avios users",
+      "Partner airline redemptions",
+      "British Airways purchases"
+    ],
+
+    notGoodFor: [
+      "Most beginners",
+      "People who do not use Avios"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "avios", "britishairways"],
+
+    benefits: [
+      "Avios points",
+      "British Airways purchases",
+      "Partner airline redemptions"
+    ],
+
+    why: "Best for Avios users and partner redemptions.",
+
+    weaknesses: [
+      "Best if you understand Avios redemptions"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  {
+    name: "Aer Lingus Visa Signature Card",
+    issuer: "Chase / Aer Lingus",
+    issuerTag: "chase",
+    ecosystem: "Avios",
+    annualFee: 95,
+    pointValue: 0.015,
+    type: "airline",
+    brand: "aerlingus",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Avios Flights",
+
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "3x Aer Lingus purchases",
+      "2x hotel accommodations",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A niche Avios card. I would only look at this if Aer Lingus or Avios redemptions are part of your strategy.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+
+    goodFor: [
+      "Avios users",
+      "Aer Lingus flyers",
+      "Partner airline redemptions"
+    ],
+
+    notGoodFor: [
+      "Most beginners",
+      "People who do not use Avios"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "avios", "aerlingus"],
+
+    benefits: [
+      "Avios points",
+      "Aer Lingus purchases",
+      "Partner airline redemptions"
+    ],
+
+    why: "Best for Avios users flying Aer Lingus.",
+
+    weaknesses: [
+      "Niche airline card for most users"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  {
+    name: "Iberia Visa Signature Card",
+    issuer: "Chase / Iberia",
+    issuerTag: "chase",
+    ecosystem: "Avios",
+    annualFee: 95,
+    pointValue: 0.015,
+    type: "airline",
+    brand: "iberia",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Avios Flights",
+
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "3x Iberia purchases",
+      "2x hotel accommodations",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "Another niche Avios card. Powerful for the right person, but not where I would start for most beginners.",
+
+    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+
+    goodFor: [
+      "Avios users",
+      "Iberia flyers",
+      "Partner airline redemptions"
+    ],
+
+    notGoodFor: [
+      "Most beginners",
+      "Simple travel setups"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "airline", "avios", "iberia"],
+
+    benefits: [
+      "Avios points",
+      "Iberia purchases",
+      "Partner airline redemptions"
+    ],
+
+    why: "Best for Avios users flying Iberia.",
+
+    weaknesses: [
+      "Niche airline card for most users"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  // =====================
+  // CHASE CASH / RETAIL
+  // =====================
+
+  {
+    name: "Prime Visa",
+    issuer: "Chase / Amazon",
+    issuerTag: "chase",
+    ecosystem: "Cash Back",
+    annualFee: 0,
+    pointValue: 0.01,
+    type: "cashback",
+    brand: "amazon",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Amazon + Whole Foods",
+
+    rewards: {
+      dining: 2,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 1,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 5
+    },
+
+    multipliers: [
+      "5% back at Amazon with eligible Prime membership",
+      "5% back at Whole Foods with eligible Prime membership",
+      "2% back at restaurants",
+      "2% back at gas stations",
+      "1% back elsewhere"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A great retail card if you spend heavily at Amazon or Whole Foods. It is not really a travel strategy card.",
+
+    bestPairing: "Pairs well with a flexible travel card.",
+
+    goodFor: [
+      "Amazon",
+      "Whole Foods",
+      "No annual fee with Prime"
+    ],
+
+    notGoodFor: [
+      "Travel points",
+      "People who do not shop at Amazon"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "cashback", "amazon", "noAnnualFee"],
+
+    benefits: [
+      "High Amazon earning",
+      "Whole Foods rewards",
+      "No annual fee with Prime"
+    ],
+
+    why: "Best for heavy Amazon and Whole Foods shoppers.",
+
+    weaknesses: [
+      "Best value depends on Amazon/Whole Foods spending"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Amazon Visa",
+    issuer: "Chase / Amazon",
+    issuerTag: "chase",
+    ecosystem: "Cash Back",
+    annualFee: 0,
+    pointValue: 0.01,
+    type: "cashback",
+    brand: "amazon",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Amazon",
+
+    rewards: {
+      dining: 1,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 1,
+      hotelsDirect: 3,
+      travelPortal: 1,
+      other: 2
+    },
+
+    multipliers: [
+      "3% back at Amazon",
+      "2% back at restaurants",
+      "2% back at gas stations",
+      "1% back elsewhere"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "Useful if you shop at Amazon but do not have Prime. Prime members should usually look at the Prime Visa instead.",
+
+    bestPairing: "Pairs well with a flexible travel card.",
+
+    goodFor: [
+      "Amazon shoppers without Prime",
+      "No annual fee",
+      "Simple cash back"
+    ],
+
+    notGoodFor: [
+      "Prime members",
+      "Travel points strategy"
+    ],
+
+    featuredCard: false,
+
+    tags: ["chase", "cashback", "amazon", "noAnnualFee"],
+
+    benefits: [
+      "Amazon rewards",
+      "No annual fee",
+      "Useful retail card"
+    ],
+
+    why: "Best for Amazon shoppers without Prime.",
+
+    weaknesses: [
+      "Prime Visa is better for Prime members"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  // =====================
+  // CAPITAL ONE MILES
+  // =====================
+
+  {
+    name: "Capital One Venture X",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Capital One Miles",
+    annualFee: 395,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "capitalone",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Premium Travel + Catch-All",
+
+    rewards: {
+      dining: 2,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 10,
+      other: 2
+    },
+
+    multipliers: [
+      "2x everything",
+      "10x hotels through Capital One Travel",
+      "5x flights through Capital One Travel"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "One of the easiest premium travel cards to justify if you use the travel credit and want simple 2x earning.",
+
+    bestPairing: "Pairs well with Capital One Savor.",
+
+    goodFor: [
+      "Simple 2x earning",
+      "Premium travel",
+      "Lounge access",
+      "Capital One miles"
+    ],
+
+    notGoodFor: [
+      "People who avoid travel portals",
+      "People who want the best dining/grocery card"
+    ],
+
+    featuredCard: true,
+
+    tags: ["capitalone", "flexible", "premium", "travel", "luxuryTravel", "everyday"],
+
+    benefits: [
+      "2x on everything",
+      "10x hotels through Capital One Travel",
+      "5x flights through Capital One Travel",
+      "Airport lounge access"
+    ],
+
+    why: "Best premium card for simple 2x earning.",
+
+    weaknesses: [
+      "Top travel multipliers require Capital One Travel portal"
+    ],
+
+    premium: true,
+    beginnerFriendly: false,
+    business: false
+  },
+
+  {
+    name: "Capital One Venture Rewards",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Capital One Miles",
+    annualFee: 95,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "capitalone",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Simple Travel Rewards",
+
+    rewards: {
+      dining: 2,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 5,
+      other: 2
+    },
+
+    multipliers: [
+      "2x everything",
+      "5x hotels through Capital One Travel"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A simple travel card for people who do not want to track categories. Venture X is worth comparing if you travel enough to use the credits.",
+
+    bestPairing: "Pairs well with Capital One Savor.",
+
+    goodFor: [
+      "Simple rewards",
+      "Travel miles",
+      "Everyday spend"
+    ],
+
+    notGoodFor: [
+      "Premium perks",
+      "Category maximizers"
+    ],
+
+    featuredCard: false,
+
+    tags: ["capitalone", "flexible", "travel", "everyday"],
+
+    benefits: [
+      "2x on every purchase",
+      "Simple miles earning",
+      "Travel transfer partners",
+      "Good mid-tier travel card"
+    ],
+
+    why: "Best for simple travel rewards without tracking categories.",
+
+    weaknesses: [
+      "Fewer premium perks than Venture X"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Capital One VentureOne",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Capital One Miles",
+    annualFee: 0,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "capitalone",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "No-Fee Travel",
+
+    rewards: {
+      dining: 1.25,
+      groceries: 1.25,
+      gas: 1.25,
+      rent: 0,
+      flightsDirect: 1.25,
+      hotelsDirect: 1.25,
+      travelPortal: 5,
+      other: 1.25
+    },
+
+    multipliers: [
+      "1.25x everything",
+      "5x hotels and rental cars through Capital One Travel"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A no-fee travel card, but the earning rate is much weaker than the Venture Rewards or Venture X.",
+
+    bestPairing: "Pairs well with Capital One Savor.",
+
+    goodFor: [
+      "No annual fee",
+      "Beginner travel rewards",
+      "Simple rewards"
+    ],
+
+    notGoodFor: [
+      "High earning",
+      "Premium travel perks"
+    ],
+
+    featuredCard: false,
+
+    tags: ["capitalone", "flexible", "travel", "noAnnualFee", "beginner"],
+
+    benefits: [
+      "No annual fee",
+      "Travel miles",
+      "Simple rewards",
+      "Beginner-friendly"
+    ],
+
+    why: "Best no-fee Capital One travel card.",
+
+    weaknesses: [
+      "Lower everyday earning than Venture Rewards"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  // =====================
+  // CAPITAL ONE CASH BACK
+  // =====================
+
+  {
+    name: "Capital One Savor",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Cash Back",
+    annualFee: 0,
+    pointValue: 0.01,
+    type: "cashback",
+    brand: "capitalone",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Dining + Groceries + Entertainment",
+
+    rewards: {
+      dining: 3,
+      groceries: 3,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 1,
+      hotelsDirect: 1,
+      travelPortal: 5,
+      other: 1
+    },
+
+    multipliers: [
+      "3% dining",
+      "3% groceries",
+      "3% entertainment",
+      "1% everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "A really strong no-fee card for dining and groceries, especially if you want simple cash back or want to pair it with Venture X.",
+
+    bestPairing: "Pairs well with Capital One Venture X.",
+
+    goodFor: [
+      "Dining",
+      "Groceries",
+      "Entertainment",
+      "No annual fee"
+    ],
+
+    notGoodFor: [
+      "Premium travel perks",
+      "People who want Amex or Chase points"
+    ],
+
+    featuredCard: true,
+
+    tags: ["capitalone", "cashback", "dining", "groceries", "noAnnualFee"],
+
+    benefits: [
+      "3x dining",
+      "3x groceries",
+      "3x entertainment",
+      "No annual fee"
+    ],
+
+    why: "Best Capital One card for dining and groceries.",
+
+    weaknesses: [
+      "Cash back value is simpler but less flexible than transferable points"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Capital One Quicksilver",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Cash Back",
+    annualFee: 0,
+    pointValue: 0.01,
+    type: "cashback",
+    brand: "capitalone",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Simple Cash Back",
+
+    rewards: {
+      dining: 1.5,
+      groceries: 1.5,
+      gas: 1.5,
+      rent: 0,
+      flightsDirect: 1.5,
+      hotelsDirect: 1.5,
+      travelPortal: 1.5,
+      other: 1.5
+    },
+
+    multipliers: [
+      "1.5% cash back on purchases"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "Simple and beginner-friendly, but not the strongest card if you are trying to maximize categories or travel points.",
+
+    bestPairing: "Pairs well with Capital One Savor or Venture X.",
+
+    goodFor: [
+      "Simple cash back",
+      "No annual fee",
+      "Beginners"
+    ],
+
+    notGoodFor: [
+      "Maximizing travel points",
+      "High category earning"
+    ],
+
+    featuredCard: false,
+
+    tags: ["capitalone", "cashback", "noAnnualFee", "everyday", "beginner"],
+
+    benefits: [
+      "Flat cash back",
+      "No annual fee",
+      "Simple rewards",
+      "Easy beginner card"
+    ],
+
+    why: "Best for simple cash back on everything.",
+
+    weaknesses: [
+      "Not optimized for travel points"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    name: "Capital One QuicksilverOne",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Cash Back",
+    annualFee: 39,
+    pointValue: 0.01,
+    type: "cashback",
+    brand: "capitalone",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Fair Credit Cash Back",
+
+    rewards: {
+      dining: 1.5,
+      groceries: 1.5,
+      gas: 1.5,
+      rent: 0,
+      flightsDirect: 1.5,
+      hotelsDirect: 1.5,
+      travelPortal: 1.5,
+      other: 1.5
+    },
+
+    multipliers: [
+      "1.5% cash back on purchases"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-04",
+
+    myReview: "This is mainly for people building credit. If you can qualify for no-fee cards with similar earning, those may be better.",
+
+    bestPairing: "Pairs well with a future no-fee or travel card once credit improves.",
+
+    goodFor: [
+      "Fair credit",
+      "Building credit",
+      "Simple cash back"
+    ],
+
+    notGoodFor: [
+      "People who qualify for stronger no-fee cards",
+      "Travel rewards maximizers"
+    ],
+
+    featuredCard: false,
+
+    tags: ["capitalone", "cashback", "everyday", "beginner"],
+
+    benefits: [
+      "Flat cash back",
+      "For fair credit",
+      "Simple rewards"
+    ],
+
+    why: "Best for users building credit who still want cash back.",
+
+    weaknesses: [
+      "Annual fee despite basic earning structure"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
 
 ];
   
