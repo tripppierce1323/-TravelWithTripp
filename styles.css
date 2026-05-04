@@ -465,3 +465,86 @@ body {
   color: #5f6b76;
   font-weight: 600;
 }
+
+/* FINAL CALCULATOR CLEANUP */
+
+.result-hero h2,
+.other-cards h2 {
+  color: #102033;
+  margin-bottom: 14px;
+}
+
+.result-card h3 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.result-card p {
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 8px;
+}
+
+.slider-note {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  margin-top: 16px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.apply-btn,
+.video-btn {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.apply-btn {
+  background: #f3d08a;
+  color: #102033;
+}
+
+.video-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .calculator-container {
+    padding: 35px 18px;
+    border-radius: 18px;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .run-button {
+    grid-column: 1;
+  }
+
+  .result-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .other-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .apply-btn,
+  .video-btn {
+    text-align: center;
+  }
+}
