@@ -32,12 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // =============================
-// CALCULATOR HELPERS
+// SEARCH / RECOMMENDATION HELPERS
 // =============================
-
-function getValue(id) {
-  return Number(document.getElementById(id)?.value) || 0;
-}
 
 function getSelectedFilters() {
   const filters = document.querySelectorAll(".card-filter:checked");
@@ -49,81 +45,6 @@ function getSelectedTopCategories() {
   return Array.from(categories).map(c => c.value);
 }
 
-function getTopCategoryFromSpend(spend) {
-  let max = 0;
-  let top = "other";
-
-  for (let key in spend) {
-    if (spend[key] > max) {
-      max = spend[key];
-      top = key;
-    }
-  }
-
-  return top;
-}
-
-function hasAnySpend(spend) {
-  return Object.values(spend).some(value => value > 0);
-}
-
-function passesFilter(card, selectedFilters) {
-  if (selectedFilters.length === 0) return true;
-
-  return selectedFilters.some(f =>
-    (card.tags && card.tags.includes(f)) ||
-    card.issuerTag === f ||
-    card.brand === f ||
-    card.type === f
-  );
-}
-
-function passesGoalFilter(card, goal) {
-  if (goal === "bestOverall") return true;
-
-  if (goal === "luxuryTravel") {
-    return card.tags?.includes("luxuryTravel") || card.premium === true;
-  }
-
-  if (goal === "freeFlights") {
-    return card.type === "airline" ||
-      card.tags?.includes("flights") ||
-      card.tags?.includes("travel");
-  }
-
-  if (goal === "freeHotels") {
-    return card.type === "hotel" ||
-      card.tags?.includes("hotel");
-  }
-
-  if (goal === "cashBack") {
-    return card.type === "cashback" ||
-      card.tags?.includes("cashback");
-  }
-
-  if (goal === "simpleSetup") {
-    return card.beginnerFriendly === true ||
-      card.tags?.includes("everyday");
-  }
-
-  if (goal === "maximizePoints") {
-    return card.type === "flexible" ||
-      card.tags?.includes("flexible");
-  }
-
-  return true;
-}
-
-function getCategoryMultiplier(card, category) {
-  if (!card.rewards) return 1;
-
-  if (category === "rent" && card.issuerTag !== "bilt") {
-    return 0;
-  }
-
-  return card.rewards[category] || 1;
-}
-
 function categoryLabel(category) {
   const labels = {
     dining: "Dining",
@@ -133,129 +54,150 @@ function categoryLabel(category) {
     hotelsDirect: "Hotels",
     travelPortal: "Travel Portal",
     rent: "Rent / Mortgage",
-    other: "Everyday Spend"
+    other: "Everyday Spend",
+    travel: "Travel",
+    hotels: "Hotels",
+    flights: "Flights",
+    cashback: "Cash Back",
+    flexible: "Flexible Points",
+    airline: "Airline Cards",
+    hotel: "Hotel Cards",
+    beginner: "Beginner Friendly",
+    premium: "Premium Travel"
   };
 
   return labels[category] || category;
 }
 
+function passesFilter(card, selectedFilters) {
+  if (selectedFilters.length === 0) return true;
 
-// =============================
-// SCORING ENGINE
-// =============================
-
-function calculateSpendRewards(card, spend) {
-  let spendRewards = 0;
-
-  for (let category in spend) {
-    const multiplier = getCategoryMultiplier(card, category);
-    spendRewards += spend[category] * multiplier * card.pointValue;
-  }
-
-  return spendRewards;
+  return selectedFilters.some(f =>
+    card.issuerTag === f ||
+    card.brand === f ||
+    card.type === f ||
+    card.tags?.includes(f)
+  );
 }
 
-function calculateRecommendationScore(card, spend, selectedTopCategories, goal) {
-  const spendRewards = calculateSpendRewards(card, spend);
+function passesGoalFilter(card, goal) {
+  if (goal === "bestOverall") return true;
 
-  let score = spendRewards;
-  let bonus = 0;
-  let penalty = 0;
+  if (goal === "luxuryTravel") {
+    return card.premium || card.tags?.includes("luxuryTravel");
+  }
 
-  selectedTopCategories.forEach(category => {
-    const multiplier = getCategoryMultiplier(card, category);
-    const realReturn = multiplier * card.pointValue;
+  if (goal === "freeFlights") {
+    return card.type === "airline" || card.tags?.includes("flights") || card.tags?.includes("travel");
+  }
 
-    if (realReturn >= 0.06) bonus += 400;
-    else if (realReturn >= 0.04) bonus += 300;
-    else if (realReturn >= 0.03) bonus += 200;
-    else if (realReturn >= 0.02) bonus += 100;
-    else penalty += 100;
+  if (goal === "freeHotels") {
+    return card.type === "hotel";
+  }
 
-    const everydayCategories = ["dining", "groceries", "gas", "other"];
+  if (goal === "cashBack") {
+    return card.type === "cashback";
+  }
 
-    if (everydayCategories.includes(category)) {
-      if (card.type === "flexible" || card.type === "cashback") {
-        bonus += 250;
-      }
+  if (goal === "simpleSetup") {
+    return card.beginnerFriendly || card.tags?.includes("everyday");
+  }
 
-      if (card.type === "hotel" || card.type === "airline") {
-        penalty += 250;
-      }
-    }
+  if (goal === "maximizePoints") {
+    return card.type === "flexible";
+  }
 
-    if (category === "rent") {
-      if (card.issuerTag === "bilt") bonus += 600;
-      else penalty += 500;
-    }
+  return true;
+}
 
-    if (category === "hotelsDirect") {
-      if (card.type === "hotel") bonus += 300;
-      if (card.type === "flexible") bonus += 150;
-    }
 
-    if (category === "flightsDirect") {
-      if (card.type === "airline") bonus += 300;
-      if (card.type === "flexible") bonus += 150;
-    }
+// =============================
+// RECOMMENDATION SCORING
+// =============================
+
+function getCategoryScore(card, category) {
+  if (!card.rewards) return 0;
+
+  let score = 0;
+
+  // Rent should only recommend Bilt
+  if (category === "rent") {
+    return card.brand === "bilt" ? 100 : 0;
+  }
+
+  const multiplier = card.rewards[category] || 0;
+  const realValue = multiplier * (card.pointValue || 0.01);
+
+  score += multiplier * 10;
+  score += realValue * 500;
+
+  const everydayCategories = ["dining", "groceries", "gas", "other"];
+
+  if (everydayCategories.includes(category)) {
+    if (card.type === "flexible") score += 25;
+    if (card.type === "cashback") score += 20;
+    if (card.type === "hotel") score -= 25;
+    if (card.type === "airline") score -= 20;
+  }
+
+  if (category === "flightsDirect") {
+    if (card.type === "flexible") score += 25;
+    if (card.type === "airline") score += 20;
+  }
+
+  if (category === "hotelsDirect") {
+    if (card.type === "hotel") score += 25;
+    if (card.type === "flexible") score += 20;
+  }
+
+  if (category === "travelPortal") {
+    if (card.type === "flexible") score += 25;
+  }
+
+  return score;
+}
+
+function getGoalScore(card, goal) {
+  let score = 0;
+
+  if (goal === "luxuryTravel" && (card.premium || card.tags?.includes("luxuryTravel"))) score += 50;
+  if (goal === "freeFlights" && card.type === "airline") score += 50;
+  if (goal === "freeHotels" && card.type === "hotel") score += 50;
+  if (goal === "cashBack" && card.type === "cashback") score += 50;
+  if (goal === "simpleSetup" && card.beginnerFriendly) score += 50;
+  if (goal === "maximizePoints" && card.type === "flexible") score += 50;
+
+  return score;
+}
+
+function calculateRecommendationScore(card, selectedCategories, goal) {
+  let score = 0;
+
+  if (selectedCategories.length === 0) {
+    score += 20;
+
+    if (card.type === "flexible") score += 35;
+    if (card.beginnerFriendly) score += 20;
+    if (card.tags?.includes("everyday")) score += 15;
+  }
+
+  selectedCategories.forEach(category => {
+    score += getCategoryScore(card, category);
   });
 
-  if (selectedTopCategories.length === 0 && hasAnySpend(spend)) {
-    const topCategory = getTopCategoryFromSpend(spend);
-    const multiplier = getCategoryMultiplier(card, topCategory);
-    const realReturn = multiplier * card.pointValue;
+  score += getGoalScore(card, goal);
 
-    if (realReturn >= 0.06) bonus += 350;
-    else if (realReturn >= 0.04) bonus += 250;
-    else if (realReturn >= 0.03) bonus += 150;
-    else if (realReturn >= 0.02) bonus += 75;
-    else penalty += 75;
+  if (card.type === "flexible") score += 10;
+  if (card.beginnerFriendly) score += 5;
 
-    const everydayCategories = ["dining", "groceries", "gas", "other"];
-
-    if (everydayCategories.includes(topCategory)) {
-      if (card.type === "flexible" || card.type === "cashback") {
-        bonus += 200;
-      }
-
-      if (card.type === "hotel" || card.type === "airline") {
-        penalty += 200;
-      }
-    }
-
-    if (topCategory === "rent") {
-      if (card.issuerTag === "bilt") bonus += 600;
-      else penalty += 500;
-    }
-  }
-
-  if (goal === "luxuryTravel" && (card.premium || card.tags?.includes("luxuryTravel"))) bonus += 300;
-  if (goal === "freeFlights" && card.type === "airline") bonus += 300;
-  if (goal === "freeHotels" && card.type === "hotel") bonus += 300;
-  if (goal === "cashBack" && card.type === "cashback") bonus += 300;
-  if (goal === "simpleSetup" && card.beginnerFriendly) bonus += 250;
-  if (goal === "maximizePoints" && card.type === "flexible") bonus += 300;
-
-  const userCaresAboutPortal =
-    selectedTopCategories.includes("travelPortal") || spend.travelPortal > 0;
-
-  if (!userCaresAboutPortal && (card.rewards?.travelPortal || 0) >= 5) {
-    penalty += 100;
-  }
-
-  const finalScore = score + bonus - penalty;
-
-  let matchScore = 70 + Math.round((bonus - penalty) / 20);
+  let matchScore = Math.round(score);
   if (matchScore > 99) matchScore = 99;
   if (matchScore < 50) matchScore = 50;
 
   return {
     card,
-    spendRewards,
-    score: finalScore,
-    matchScore,
-    bonus,
-    penalty
+    score,
+    matchScore
   };
 }
 
@@ -264,7 +206,30 @@ function calculateRecommendationScore(card, spend, selectedTopCategories, goal) 
 // RESULTS RENDERING
 // =============================
 
-function renderResults(results, selectedTopCategories) {
+function renderCard(cardResult) {
+  const card = cardResult.card;
+
+  return `
+    <div class="mini-card">
+      <img src="${card.imageUrl || 'images/default-card.jpg'}" />
+
+      <h4>${card.name}</h4>
+
+      <p><strong>${cardResult.matchScore}% match</strong></p>
+      <p><strong>Best For:</strong> ${card.bestFor}</p>
+      <p><strong>Annual Fee:</strong> $${card.annualFee}</p>
+
+      <p>${card.why}</p>
+
+      <div class="actions">
+        <a href="${card.applyUrl}" target="_blank" class="apply-btn">Apply Now</a>
+        ${card.youtubeUrl ? `<a href="${card.youtubeUrl}" target="_blank" class="video-btn">Watch Video</a>` : ""}
+      </div>
+    </div>
+  `;
+}
+
+function renderResults(results, selectedCategories) {
   const container = document.getElementById("resultsContent");
   if (!container) return;
 
@@ -277,27 +242,45 @@ function renderResults(results, selectedTopCategories) {
 
   const best = results[0];
 
-  const selectedCategoryText = selectedTopCategories.length
-    ? selectedTopCategories.map(categoryLabel).join(", ")
-    : "Based on your monthly spending";
+  let categorySections = "";
+
+  selectedCategories.forEach(category => {
+    const categoryResults = results
+      .filter(r => getCategoryScore(r.card, category) > 0)
+      .sort((a, b) => getCategoryScore(b.card, category) - getCategoryScore(a.card, category))
+      .slice(0, 4);
+
+    if (categoryResults.length) {
+      categorySections += `
+        <div class="other-cards">
+          <h2>Best for ${categoryLabel(category)}</h2>
+          ${categoryResults.map(renderCard).join("")}
+        </div>
+      `;
+    }
+  });
+
+  if (!selectedCategories.length) {
+    categorySections = `
+      <div class="other-cards">
+        <h2>Top Recommended Cards</h2>
+        ${results.slice(1, 7).map(renderCard).join("")}
+      </div>
+    `;
+  }
 
   container.innerHTML = `
     <div class="result-hero">
-      <h2>Best Overall Card</h2>
+      <h2>Best Overall Match</h2>
 
       <div class="result-card">
         <img src="${best.card.imageUrl || 'images/default-card.jpg'}" />
 
         <h3>${best.card.name}</h3>
 
-        <p class="value">
-          $${Math.round(best.spendRewards)} / year estimated rewards
-        </p>
-
         <p><strong>Match Score:</strong> ${best.matchScore}%</p>
         <p><strong>Annual Fee:</strong> $${best.card.annualFee}</p>
         <p><strong>Best For:</strong> ${best.card.bestFor}</p>
-        <p><strong>Matched Categories:</strong> ${selectedCategoryText}</p>
 
         <div class="why">
           <strong>Why this card:</strong>
@@ -310,7 +293,7 @@ function renderResults(results, selectedTopCategories) {
         </div>
 
         <p class="slider-note">
-          Estimated rewards are based on spend only. Annual fee and credits are not included in this estimate.
+          Recommendations are based on your selected filters and categories, not estimated yearly spend.
         </p>
 
         <div class="actions">
@@ -320,25 +303,13 @@ function renderResults(results, selectedTopCategories) {
       </div>
     </div>
 
-    <div class="other-cards">
-      <h2>Top Matches</h2>
-
-      ${results.slice(1, 7).map(r => `
-        <div class="mini-card">
-          <img src="${r.card.imageUrl || 'images/default-card.jpg'}" />
-          <h4>${r.card.name}</h4>
-          <p>${r.matchScore}% match</p>
-          <p>$${Math.round(r.spendRewards)} / year rewards</p>
-          <p>Annual Fee: $${r.card.annualFee}</p>
-        </div>
-      `).join("")}
-    </div>
+    ${categorySections}
   `;
 }
 
 
 // =============================
-// MAIN CALCULATOR
+// MAIN SEARCH ENGINE
 // =============================
 
 function runCalculator() {
@@ -349,18 +320,7 @@ function runCalculator() {
     return;
   }
 
-  const spend = {
-    dining: getValue("dining") * 12,
-    groceries: getValue("groceries") * 12,
-    gas: getValue("gas") * 12,
-    flightsDirect: getValue("flightsDirect") * 12,
-    hotelsDirect: getValue("hotelsDirect") * 12,
-    travelPortal: getValue("travelPortal") * 12,
-    rent: getValue("rent") * 12,
-    other: getValue("other") * 12
-  };
-
-  const selectedTopCategories = getSelectedTopCategories();
+  const selectedCategories = getSelectedTopCategories();
   const maxFee = Number(document.getElementById("annualFeeSlider")?.value) || 895;
   const selectedFilters = getSelectedFilters();
   const goal = document.getElementById("travelGoal")?.value || "bestOverall";
@@ -369,10 +329,10 @@ function runCalculator() {
     .filter(card => card.annualFee <= maxFee)
     .filter(card => passesFilter(card, selectedFilters))
     .filter(card => passesGoalFilter(card, goal))
-    .map(card => calculateRecommendationScore(card, spend, selectedTopCategories, goal))
+    .map(card => calculateRecommendationScore(card, selectedCategories, goal))
     .sort((a, b) => b.score - a.score);
 
-  renderResults(results, selectedTopCategories);
+  renderResults(results, selectedCategories);
 }
 
 
