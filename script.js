@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // =============================
-// SEARCH / RECOMMENDATION HELPERS
+// FILTER HELPERS
 // =============================
 
 function getSelectedFilters() {
@@ -52,32 +52,93 @@ function categoryLabel(category) {
     gas: "Gas",
     flightsDirect: "Flights",
     hotelsDirect: "Hotels",
-    travelPortal: "Travel Portal",
     rent: "Rent / Mortgage",
-    other: "Everyday Spend",
-    travel: "Travel",
-    hotels: "Hotels",
-    flights: "Flights",
-    cashback: "Cash Back",
-    flexible: "Flexible Points",
-    airline: "Airline Cards",
-    hotel: "Hotel Cards",
-    beginner: "Beginner Friendly",
-    premium: "Premium Travel"
+    other: "Everyday Spend"
   };
 
   return labels[category] || category;
 }
 
+function hasFilter(selectedFilters, filter) {
+  return selectedFilters.includes(filter);
+}
+
+function hasAnyBrandFilter(selectedFilters) {
+  const brands = [
+    "delta",
+    "united",
+    "american",
+    "southwest",
+    "hilton",
+    "marriott",
+    "hyatt",
+    "ihg",
+    "bilt"
+  ];
+
+  return selectedFilters.some(f => brands.includes(f));
+}
+
+function hasHotelBrandFilter(selectedFilters) {
+  return selectedFilters.some(f =>
+    ["hilton", "marriott", "hyatt", "ihg"].includes(f)
+  );
+}
+
+function hasAirlineBrandFilter(selectedFilters) {
+  return selectedFilters.some(f =>
+    ["delta", "united", "american", "southwest"].includes(f)
+  );
+}
+
+function clearCardFilters() {
+  document.querySelectorAll(".card-filter, .top-category-filter").forEach(input => {
+    input.checked = false;
+  });
+
+  const goal = document.getElementById("travelGoal");
+  if (goal) goal.value = "bestOverall";
+
+  const slider = document.getElementById("annualFeeSlider");
+  if (slider) slider.value = 895;
+
+  const feeValue = document.getElementById("feeValue");
+  if (feeValue) feeValue.textContent = "$895";
+
+  const container = document.getElementById("resultsContent");
+  if (container) {
+    container.innerHTML = `
+      <div class="results-placeholder">
+        <h2>Find Your Best Cards</h2>
+        <p>
+          Select your categories and filters, then click
+          <strong>"Find My Cards"</strong> to get personalized recommendations.
+        </p>
+      </div>
+    `;
+  }
+}
+
+
+// =============================
+// FILTER LOGIC
+// =============================
+
 function passesFilter(card, selectedFilters) {
   if (selectedFilters.length === 0) return true;
 
-  return selectedFilters.some(f =>
-    card.issuerTag === f ||
-    card.brand === f ||
-    card.type === f ||
-    card.tags?.includes(f)
-  );
+  return selectedFilters.some(f => {
+    if (f === "beginner") return card.beginnerFriendly === true;
+    if (f === "premium") return card.premium === true;
+    if (f === "business") return card.business === true;
+
+    return (
+      card.issuerTag === f ||
+      card.brand === f ||
+      card.type === f ||
+      card.tags?.includes(f)
+    );
+  });
 }
 
 function passesGoalFilter(card, goal) {
@@ -110,48 +171,94 @@ function passesGoalFilter(card, goal) {
   return true;
 }
 
+function shouldShowBusinessCards(card, selectedFilters) {
+  if (!card.business) return true;
+  return selectedFilters.includes("business");
+}
+
 
 // =============================
-// RECOMMENDATION SCORING
+// SCORING LOGIC
 // =============================
 
-function getCategoryScore(card, category) {
+function getCategoryScore(card, category, selectedFilters, goal) {
   if (!card.rewards) return 0;
 
   let score = 0;
 
-  // Rent should only recommend Bilt
+  // Bilt / rent rule
   if (category === "rent") {
-    return card.brand === "bilt" ? 100 : 0;
+    if (card.brand === "bilt") return 120;
+    return 0;
   }
 
   const multiplier = card.rewards[category] || 0;
   const realValue = multiplier * (card.pointValue || 0.01);
 
   score += multiplier * 10;
-  score += realValue * 500;
+  score += realValue * 400;
 
   const everydayCategories = ["dining", "groceries", "gas", "other"];
+  const isEverydayCategory = everydayCategories.includes(category);
 
-  if (everydayCategories.includes(category)) {
-    if (card.type === "flexible") score += 25;
-    if (card.type === "cashback") score += 20;
-    if (card.type === "hotel") score -= 25;
-    if (card.type === "airline") score -= 20;
+  // Flexible points should win normal everyday categories
+  if (isEverydayCategory && card.type === "flexible") {
+    score += 30;
   }
 
+  // Cashback should also be strong for everyday spend
+  if (isEverydayCategory && card.type === "cashback") {
+    score += 25;
+  }
+
+  // Hotel cards should not dominate normal everyday categories
+  if (isEverydayCategory && card.type === "hotel") {
+    if (!hasFilter(selectedFilters, "hotel") && !hasHotelBrandFilter(selectedFilters)) {
+      score -= 60;
+    }
+  }
+
+  // Airline cards should not dominate normal everyday categories
+  if (isEverydayCategory && card.type === "airline") {
+    if (!hasFilter(selectedFilters, "airline") && !hasAirlineBrandFilter(selectedFilters)) {
+      score -= 55;
+    }
+  }
+
+  // Bilt should not rank high outside rent
+  if (card.brand === "bilt" && category !== "rent") {
+    if (!hasFilter(selectedFilters, "bilt")) {
+      score -= 75;
+    }
+  }
+
+  // Flights logic
   if (category === "flightsDirect") {
     if (card.type === "flexible") score += 25;
-    if (card.type === "airline") score += 20;
+    if (card.type === "airline") score += 30;
   }
 
+  // Hotels logic
   if (category === "hotelsDirect") {
-    if (card.type === "hotel") score += 25;
+    if (card.type === "hotel") score += 30;
     if (card.type === "flexible") score += 20;
   }
 
-  if (category === "travelPortal") {
-    if (card.type === "flexible") score += 25;
+  // Travel portal exists in data but gets lower internal value
+  const portalMultiplier = card.rewards.travelPortal || 0;
+  if (["flightsDirect", "hotelsDirect"].includes(category)) {
+    score += portalMultiplier * 2;
+  }
+
+  // Premium cards only get help when relevant
+  const premiumRelevant =
+    goal === "luxuryTravel" ||
+    hasFilter(selectedFilters, "premium") ||
+    category === "flightsDirect" ||
+    category === "hotelsDirect";
+
+  if (card.premium && !premiumRelevant && isEverydayCategory) {
+    score -= 35;
   }
 
   return score;
@@ -160,17 +267,17 @@ function getCategoryScore(card, category) {
 function getGoalScore(card, goal) {
   let score = 0;
 
-  if (goal === "luxuryTravel" && (card.premium || card.tags?.includes("luxuryTravel"))) score += 50;
+  if (goal === "luxuryTravel" && (card.premium || card.tags?.includes("luxuryTravel"))) score += 55;
   if (goal === "freeFlights" && card.type === "airline") score += 50;
   if (goal === "freeHotels" && card.type === "hotel") score += 50;
-  if (goal === "cashBack" && card.type === "cashback") score += 50;
+  if (goal === "cashBack" && card.type === "cashback") score += 55;
   if (goal === "simpleSetup" && card.beginnerFriendly) score += 50;
-  if (goal === "maximizePoints" && card.type === "flexible") score += 50;
+  if (goal === "maximizePoints" && card.type === "flexible") score += 55;
 
   return score;
 }
 
-function calculateRecommendationScore(card, selectedCategories, goal) {
+function calculateRecommendationScore(card, selectedCategories, selectedFilters, goal) {
   let score = 0;
 
   if (selectedCategories.length === 0) {
@@ -182,29 +289,45 @@ function calculateRecommendationScore(card, selectedCategories, goal) {
   }
 
   selectedCategories.forEach(category => {
-    score += getCategoryScore(card, category);
+    score += getCategoryScore(card, category, selectedFilters, goal);
   });
 
   score += getGoalScore(card, goal);
 
+  // General boosts
   if (card.type === "flexible") score += 10;
   if (card.beginnerFriendly) score += 5;
 
-  let matchScore = Math.round(score);
-  if (matchScore > 99) matchScore = 99;
-  if (matchScore < 50) matchScore = 50;
+  // Featured card tie-breaker
+  if (card.featuredCard) score += 7;
 
   return {
     card,
     score,
-    matchScore
+    matchLabel: getMatchLabel(score)
   };
+}
+
+function getMatchLabel(score) {
+  if (score >= 115) return "Excellent Match";
+  if (score >= 80) return "Strong Match";
+  return "Good Match";
 }
 
 
 // =============================
-// RESULTS RENDERING
+// RENDER HELPERS
 // =============================
+
+function renderList(items) {
+  if (!items || !items.length) return "";
+
+  return `
+    <ul>
+      ${items.map(item => `<li>${item}</li>`).join("")}
+    </ul>
+  `;
+}
 
 function renderCard(cardResult) {
   const card = cardResult.card;
@@ -215,19 +338,107 @@ function renderCard(cardResult) {
 
       <h4>${card.name}</h4>
 
-      <p><strong>${cardResult.matchScore}% match</strong></p>
-      <p><strong>Best For:</strong> ${card.bestFor}</p>
+      <p><strong>${cardResult.matchLabel}</strong></p>
       <p><strong>Annual Fee:</strong> $${card.annualFee}</p>
+      <p><strong>Best For:</strong> ${card.bestFor}</p>
 
-      <p>${card.why}</p>
+      <div class="card-detail-block">
+        <strong>Top Multipliers</strong>
+        ${renderList(card.multipliers || card.benefits || [])}
+      </div>
+
+      <div class="card-detail-block">
+        <strong>Current Welcome Bonus</strong>
+        <p>${card.welcomeBonus || "Check the current welcome bonus before applying."}</p>
+      </div>
+
+      <div class="card-detail-block">
+        <strong>My Review</strong>
+        <p>${card.myReview || card.why}</p>
+      </div>
+
+      <div class="card-detail-block">
+        <strong>Good For</strong>
+        ${renderList(card.goodFor || [])}
+      </div>
+
+      <div class="card-detail-block">
+        <strong>Not Good For</strong>
+        ${renderList(card.notGoodFor || card.weaknesses || [])}
+      </div>
+
+      <div class="card-detail-block">
+        <strong>Best Pairing</strong>
+        <p>${card.bestPairing || "Pairs well with a strong everyday earning card."}</p>
+      </div>
 
       <div class="actions">
         <a href="${card.applyUrl}" target="_blank" class="apply-btn">Apply Now</a>
-        ${card.youtubeUrl ? `<a href="${card.youtubeUrl}" target="_blank" class="video-btn">Watch Video</a>` : ""}
+        ${card.youtubeUrl ? `<a href="${card.youtubeUrl}" target="_blank" class="video-btn">Watch My Review</a>` : ""}
       </div>
     </div>
   `;
 }
+
+function renderBestCard(cardResult) {
+  const card = cardResult.card;
+
+  return `
+    <div class="result-card">
+      <img src="${card.imageUrl || 'images/default-card.jpg'}" />
+
+      <h3>${card.name}</h3>
+
+      <p><strong>${cardResult.matchLabel}</strong></p>
+      <p><strong>Annual Fee:</strong> $${card.annualFee}</p>
+      <p><strong>Best For:</strong> ${card.bestFor}</p>
+
+      <div class="why">
+        <strong>Top Multipliers</strong>
+        ${renderList(card.multipliers || card.benefits || [])}
+      </div>
+
+      <div class="why">
+        <strong>Current Welcome Bonus</strong>
+        <p>${card.welcomeBonus || "Check the current welcome bonus before applying."}</p>
+      </div>
+
+      <div class="why">
+        <strong>My Review</strong>
+        <p>${card.myReview || card.why}</p>
+      </div>
+
+      <div class="why">
+        <strong>Good For</strong>
+        ${renderList(card.goodFor || [])}
+      </div>
+
+      <div class="bad">
+        <strong>Not Good For</strong>
+        ${renderList(card.notGoodFor || card.weaknesses || [])}
+      </div>
+
+      <div class="why">
+        <strong>Best Pairing</strong>
+        <p>${card.bestPairing || "Pairs well with a strong everyday earning card."}</p>
+      </div>
+
+      <p class="slider-note">
+        Recommendations are based on your selected filters and categories, not estimated yearly spend.
+      </p>
+
+      <div class="actions">
+        <a href="${card.applyUrl}" target="_blank" class="apply-btn">Apply Now</a>
+        ${card.youtubeUrl ? `<a href="${card.youtubeUrl}" target="_blank" class="video-btn">Watch My Review</a>` : ""}
+      </div>
+    </div>
+  `;
+}
+
+
+// =============================
+// RESULTS RENDERING
+// =============================
 
 function renderResults(results, selectedCategories) {
   const container = document.getElementById("resultsContent");
@@ -240,15 +451,24 @@ function renderResults(results, selectedCategories) {
     return;
   }
 
+  const usedCards = new Set();
   const best = results[0];
+  usedCards.add(best.card.name);
 
   let categorySections = "";
 
   selectedCategories.forEach(category => {
     const categoryResults = results
-      .filter(r => getCategoryScore(r.card, category) > 0)
-      .sort((a, b) => getCategoryScore(b.card, category) - getCategoryScore(a.card, category))
+      .filter(r => r.card.name !== best.card.name)
+      .filter(r => !usedCards.has(r.card.name))
+      .filter(r => getCategoryScore(r.card, category, getSelectedFilters(), document.getElementById("travelGoal")?.value || "bestOverall") > 0)
+      .sort((a, b) =>
+        getCategoryScore(b.card, category, getSelectedFilters(), document.getElementById("travelGoal")?.value || "bestOverall") -
+        getCategoryScore(a.card, category, getSelectedFilters(), document.getElementById("travelGoal")?.value || "bestOverall")
+      )
       .slice(0, 4);
+
+    categoryResults.forEach(r => usedCards.add(r.card.name));
 
     if (categoryResults.length) {
       categorySections += `
@@ -261,10 +481,14 @@ function renderResults(results, selectedCategories) {
   });
 
   if (!selectedCategories.length) {
+    const topCards = results
+      .filter(r => r.card.name !== best.card.name)
+      .slice(0, 4);
+
     categorySections = `
       <div class="other-cards">
         <h2>Top Recommended Cards</h2>
-        ${results.slice(1, 7).map(renderCard).join("")}
+        ${topCards.map(renderCard).join("")}
       </div>
     `;
   }
@@ -272,35 +496,7 @@ function renderResults(results, selectedCategories) {
   container.innerHTML = `
     <div class="result-hero">
       <h2>Best Overall Match</h2>
-
-      <div class="result-card">
-        <img src="${best.card.imageUrl || 'images/default-card.jpg'}" />
-
-        <h3>${best.card.name}</h3>
-
-        <p><strong>Match Score:</strong> ${best.matchScore}%</p>
-        <p><strong>Annual Fee:</strong> $${best.card.annualFee}</p>
-        <p><strong>Best For:</strong> ${best.card.bestFor}</p>
-
-        <div class="why">
-          <strong>Why this card:</strong>
-          <p>${best.card.why}</p>
-        </div>
-
-        <div class="bad">
-          <strong>Keep in mind:</strong>
-          <p>${(best.card.weaknesses || []).join(", ")}</p>
-        </div>
-
-        <p class="slider-note">
-          Recommendations are based on your selected filters and categories, not estimated yearly spend.
-        </p>
-
-        <div class="actions">
-          <a href="${best.card.applyUrl}" target="_blank" class="apply-btn">Apply Now</a>
-          ${best.card.youtubeUrl ? `<a href="${best.card.youtubeUrl}" target="_blank" class="video-btn">Watch Video</a>` : ""}
-        </div>
-      </div>
+      ${renderBestCard(best)}
     </div>
 
     ${categorySections}
@@ -313,23 +509,28 @@ function renderResults(results, selectedCategories) {
 // =============================
 
 function runCalculator() {
-  const cardsData = window.creditCards || creditCards;
-
-  if (!cardsData) {
-    alert("Card data is missing. Make sure data/cards.js is loaded.");
-    return;
-  }
+  const personalCards = window.creditCards || (typeof creditCards !== "undefined" ? creditCards : []);
+  const businessCards = window.businessCreditCards || [];
 
   const selectedCategories = getSelectedTopCategories();
   const maxFee = Number(document.getElementById("annualFeeSlider")?.value) || 895;
   const selectedFilters = getSelectedFilters();
   const goal = document.getElementById("travelGoal")?.value || "bestOverall";
 
+  const cardsData = [...personalCards, ...businessCards];
+
+  if (!cardsData.length) {
+    alert("Card data is missing. Make sure data/cards.js and data/businesscards.js are loaded.");
+    return;
+  }
+
   const results = cardsData
     .filter(card => card.annualFee <= maxFee)
+    .filter(card => shouldShowBusinessCards(card, selectedFilters))
     .filter(card => passesFilter(card, selectedFilters))
     .filter(card => passesGoalFilter(card, goal))
-    .map(card => calculateRecommendationScore(card, selectedCategories, goal))
+    .map(card => calculateRecommendationScore(card, selectedCategories, selectedFilters, goal))
+    .filter(result => result.score > 0)
     .sort((a, b) => b.score - a.score);
 
   renderResults(results, selectedCategories);
@@ -347,5 +548,6 @@ document.addEventListener("input", function(e) {
 });
 
 window.runCalculator = runCalculator;
+window.clearCardFilters = clearCardFilters;
 window.loadPage = loadPage;
 window.toggleMenu = toggleMenu;
