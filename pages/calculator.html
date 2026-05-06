@@ -1,29 +1,24 @@
 <div class="calculator-container">
 
-  <!-- HEADER -->
   <div class="calculator-header">
     <h1>Find Your Best Credit Cards</h1>
     <p>Select what matters most and we’ll recommend the best cards for you.</p>
   </div>
 
-  <!-- FILTER SECTION -->
   <div class="filters">
 
-    <!-- TOP CATEGORIES -->
     <div class="filter-group">
-      <h3>What do you spend the most on?</h3>
+      <h3>What do you want to earn rewards on?</h3>
 
       <label><input type="checkbox" class="top-category-filter" value="dining"> Dining</label>
       <label><input type="checkbox" class="top-category-filter" value="groceries"> Groceries</label>
       <label><input type="checkbox" class="top-category-filter" value="gas"> Gas</label>
       <label><input type="checkbox" class="top-category-filter" value="flightsDirect"> Flights</label>
       <label><input type="checkbox" class="top-category-filter" value="hotelsDirect"> Hotels</label>
-      <label><input type="checkbox" class="top-category-filter" value="travelPortal"> Travel Portal</label>
       <label><input type="checkbox" class="top-category-filter" value="rent"> Rent / Mortgage</label>
       <label><input type="checkbox" class="top-category-filter" value="other"> Everyday Spend</label>
     </div>
 
-    <!-- GOAL -->
     <div class="filter-group">
       <h3>Your Goal</h3>
 
@@ -38,7 +33,6 @@
       </select>
     </div>
 
-    <!-- ANNUAL FEE -->
     <div class="filter-group">
       <h3>Max Annual Fee: <span id="feeValue">$895</span></h3>
 
@@ -52,7 +46,6 @@
       />
     </div>
 
-    <!-- CARD TYPE -->
     <div class="filter-group">
       <h3>Card Type</h3>
 
@@ -60,9 +53,11 @@
       <label><input type="checkbox" class="card-filter" value="cashback"> Cash Back</label>
       <label><input type="checkbox" class="card-filter" value="airline"> Airline Cards</label>
       <label><input type="checkbox" class="card-filter" value="hotel"> Hotel Cards</label>
+      <label><input type="checkbox" class="card-filter" value="business"> Business Cards</label>
+      <label><input type="checkbox" class="card-filter" value="beginner"> Beginner Friendly</label>
+      <label><input type="checkbox" class="card-filter" value="premium"> Premium Cards</label>
     </div>
 
-    <!-- ISSUER -->
     <div class="filter-group">
       <h3>Issuers</h3>
 
@@ -73,7 +68,6 @@
       <label><input type="checkbox" class="card-filter" value="bilt"> Bilt</label>
     </div>
 
-    <!-- BRANDS -->
     <div class="filter-group">
       <h3>Airlines / Hotels</h3>
 
@@ -88,14 +82,13 @@
       <label><input type="checkbox" class="card-filter" value="ihg"> IHG</label>
     </div>
 
-    <!-- BUTTON -->
     <div class="run-button">
       <button onclick="runCalculator()">Find My Cards</button>
+      <button onclick="clearCardFilters()" class="clear-btn">Clear Filters</button>
     </div>
 
   </div>
 
-  <!-- RESULTS -->
   <div id="resultsContent">
 
     <div class="results-placeholder">
