@@ -578,7 +578,7 @@ const creditCards = [
       "Simple beginner setups"
     ],
 
-    featuredCard: false,
+    featuredCard: true,
 
     tags: ["amex", "airline", "delta"],
 
@@ -800,7 +800,7 @@ const creditCards = [
       "Flexible travel points"
     ],
 
-    featuredCard: false,
+    featuredCard: true,
 
     tags: ["amex", "hotel", "hilton"],
 
