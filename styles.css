@@ -271,7 +271,7 @@ body {
 
 
 /* ============================= */
-/* CREDIT CARD SEARCH (UPDATED) */
+/* CREDIT CARD SEARCH / FINDER */
 /* ============================= */
 
 .calculator-container {
@@ -350,8 +350,6 @@ body {
   outline: none;
 }
 
-/* SLIDER */
-
 #annualFeeSlider {
   width: 100%;
   accent-color: #b08a4a;
@@ -362,7 +360,7 @@ body {
   color: #b08a4a;
 }
 
-/* BUTTON */
+/* BUTTONS */
 
 .run-button {
   grid-column: 1 / -1;
@@ -379,11 +377,23 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: 0.2s ease;
+  margin: 5px;
 }
 
 .run-button button:hover {
   background: #b08a4a;
   transform: translateY(-2px);
+}
+
+.clear-btn {
+  background: transparent !important;
+  color: #102033 !important;
+  border: 2px solid #102033 !important;
+}
+
+.clear-btn:hover {
+  background: #102033 !important;
+  color: #ffffff !important;
 }
 
 /* RESULTS */
@@ -401,6 +411,12 @@ body {
   margin-bottom: 40px;
 }
 
+.result-hero h2,
+.other-cards h2 {
+  color: #102033;
+  margin-bottom: 14px;
+}
+
 .result-card {
   background: linear-gradient(135deg, #102033, #1f3654);
   color: #ffffff;
@@ -415,12 +431,44 @@ body {
   border-radius: 14px;
 }
 
+.result-card h3 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.result-card p {
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 8px;
+}
+
 .why,
 .bad {
   margin-top: 18px;
   padding: 16px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.08);
+}
+
+.result-card ul {
+  color: rgba(255, 255, 255, 0.86);
+  margin-left: 18px;
+  margin-top: 8px;
+}
+
+.result-card li {
+  margin-bottom: 6px;
+}
+
+.result-card .why strong,
+.result-card .bad strong {
+  color: #f3d08a;
+}
+
+.slider-note {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  margin-top: 16px;
 }
 
 /* MINI CARDS */
@@ -464,32 +512,36 @@ body {
   font-size: 0.9rem;
   color: #5f6b76;
   font-weight: 600;
+  margin-bottom: 6px;
 }
 
-/* FINAL CALCULATOR CLEANUP */
+.card-detail-block {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(16, 32, 51, 0.12);
+}
 
-.result-hero h2,
-.other-cards h2 {
+.card-detail-block strong {
+  display: block;
+  margin-bottom: 6px;
   color: #102033;
-  margin-bottom: 14px;
 }
 
-.result-card h3 {
-  color: #ffffff;
-  font-size: 2rem;
-  margin-bottom: 12px;
+.card-detail-block ul,
+.mini-card ul {
+  margin-left: 18px;
+  margin-top: 8px;
+  color: #5f6b76;
+  font-weight: 600;
 }
 
-.result-card p {
-  color: rgba(255, 255, 255, 0.86);
-  margin-bottom: 8px;
-}
-
-.slider-note {
-  color: rgba(255, 255, 255, 0.75);
+.card-detail-block li,
+.mini-card li {
+  margin-bottom: 5px;
   font-size: 0.9rem;
-  margin-top: 16px;
 }
+
+/* ACTIONS */
 
 .actions {
   display: flex;
@@ -517,6 +569,8 @@ body {
   color: #ffffff;
 }
 
+/* MOBILE */
+
 @media (max-width: 900px) {
   .calculator-container {
     padding: 35px 18px;
@@ -529,6 +583,11 @@ body {
 
   .run-button {
     grid-column: 1;
+  }
+
+  .run-button button {
+    width: 100%;
+    display: block;
   }
 
   .result-card h3 {
