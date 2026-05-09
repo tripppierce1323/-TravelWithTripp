@@ -883,6 +883,155 @@ const businessCreditCards = [
     business: true
   }
 
+  // =====================
+  // AMEX MARRIOTT BUSINESS
+  // Add before closing ];
+  // =====================
+
+  {
+    name: "Marriott Bonvoy Business American Express Card",
+    issuer: "Amex / Marriott",
+    issuerTag: "amex",
+    ecosystem: "Marriott Bonvoy",
+    annualFee: 125,
+    pointValue: 0.008,
+    type: "hotel",
+    brand: "marriott",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Marriott Business Travel",
+
+    rewards: {
+      dining: 4,
+      groceries: 1,
+      gas: 4,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 6,
+      travelPortal: 2,
+      other: 2
+    },
+
+    multipliers: [
+      "6x Marriott purchases",
+      "4x restaurants",
+      "4x gas stations",
+      "4x wireless telephone services",
+      "2x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-09",
+
+    myReview: "This is the main Marriott business card to consider if you stay with Marriott and value annual free night certificates.",
+    bestPairing: "Pairs well with Amex Business Gold, Blue Business Plus, or a flexible travel card.",
+
+    goodFor: [
+      "Marriott business travelers",
+      "Annual free night certificate",
+      "Business hotel stays",
+      "Marriott loyalists"
+    ],
+
+    notGoodFor: [
+      "People who rarely stay at Marriott",
+      "Users wanting flexible points",
+      "Cash back setups"
+    ],
+
+    featuredCard: true,
+    tags: ["amex", "business", "hotel", "marriott", "travel"],
+    benefits: [
+      "Marriott points",
+      "Annual free night certificate",
+      "Elite night credits",
+      "Business hotel rewards"
+    ],
+    why: "Best Marriott business card for business owners who stay with Marriott.",
+    weaknesses: [
+      "Marriott points are less flexible than transferable points",
+      "Best value depends on Marriott stays"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: true
+  },
+    // =====================
+  // CHASE HYATT BUSINESS
+  // Add before closing ];
+  // =====================
+
+  {
+    name: "World of Hyatt Business Credit Card",
+    issuer: "Chase / Hyatt",
+    issuerTag: "chase",
+    ecosystem: "World of Hyatt",
+    annualFee: 199,
+    pointValue: 0.02,
+    type: "hotel",
+    brand: "hyatt",
+    imageUrl: "",
+    youtubeUrl: "",
+    applyUrl: "#",
+    bestFor: "Hyatt Business Travel",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 4,
+      travelPortal: 2,
+      other: 1
+    },
+
+    multipliers: [
+      "4x Hyatt purchases",
+      "2x select business categories",
+      "2x fitness clubs and gym memberships",
+      "1x everything else"
+    ],
+
+    welcomeBonus: "Check the current welcome bonus before applying.",
+    lastUpdated: "2026-05-09",
+
+    myReview: "Hyatt points are extremely valuable, but this card is best for actual Hyatt loyalists rather than casual travelers.",
+    bestPairing: "Pairs well with Chase Sapphire Preferred, Sapphire Reserve, or Ink Business Preferred.",
+
+    goodFor: [
+      "Hyatt loyalists",
+      "Business hotel stays",
+      "High-value hotel redemptions",
+      "Chase ecosystem users"
+    ],
+
+    notGoodFor: [
+      "People who do not stay at Hyatt",
+      "Simple cash back users",
+      "Broad hotel flexibility"
+    ],
+
+    featuredCard: true,
+    tags: ["chase", "business", "hotel", "hyatt", "travel"],
+    benefits: [
+      "Hyatt points",
+      "Elite night credit opportunities",
+      "Strong redemption value",
+      "Business hotel benefits"
+    ],
+    why: "Best for business owners who regularly stay with Hyatt.",
+    weaknesses: [
+      "Hyatt footprint is smaller than Marriott or Hilton",
+      "Best only if you use Hyatt"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: true
+  },
 ];
 
 window.businessCreditCards = businessCreditCards;
