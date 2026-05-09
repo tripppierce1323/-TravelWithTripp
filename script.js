@@ -192,8 +192,13 @@ function passesGoalFilter(card, goal) {
 }
 
 function shouldShowBusinessCards(card, selectedFilters) {
-  if (!card.business) return true;
-  return selectedFilters.includes("business");
+  const businessSelected = selectedFilters.includes("business");
+
+  if (businessSelected) {
+    return true; // allow business cards into the pool
+  }
+
+  return card.business !== true; // hide business cards by default
 }
 
 
