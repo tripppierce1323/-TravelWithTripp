@@ -53,6 +53,7 @@
   line-height: 0.95;
   max-width: 620px;
   margin-top: 14px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.45);
 }
 
 .hero h1 span {
@@ -67,9 +68,45 @@
   color: rgba(255,255,255,0.86);
 }
 
+/* STATS ROW */
+
+.luxury-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 22px 0 10px;
+}
+
+.luxury-stats div {
+  text-align: center;
+  padding: 18px 12px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(215,170,69,0.18);
+  backdrop-filter: blur(12px);
+}
+
+.luxury-stats strong {
+  display: block;
+  color: var(--gold-light);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.luxury-stats span {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.72);
+  text-transform: uppercase;
+}
+
+/* SECTION TITLE */
+
 .section-title {
   text-align: center;
-  margin: 44px 0 24px;
+  margin: 26px 0 18px;
 }
 
 .section-title small {
@@ -86,6 +123,8 @@
   font-weight: 900;
   letter-spacing: -1px;
 }
+
+/* GRID */
 
 .grid {
   display: grid;
@@ -119,6 +158,11 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .image-card {
+  transform: scale(1.02);
 }
 
 .image-card::after {
@@ -145,7 +189,7 @@
 }
 
 .image-card-text p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.45;
   color: rgba(255,255,255,0.82);
   margin-bottom: 12px;
@@ -158,7 +202,17 @@
   text-decoration: none;
 }
 
+/* FOOTER */
+
+.footer-signature {
+  font-size: 36px;
+  color: var(--gold-light);
+}
+
+/* MOBILE */
+
 @media (max-width: 760px) {
+
   .hero {
     min-height: 430px;
     border-radius: 24px;
@@ -178,6 +232,10 @@
 
   .hero p {
     font-size: 16px;
+  }
+
+  .luxury-stats {
+    grid-template-columns: 1fr;
   }
 
   .grid {
@@ -200,7 +258,7 @@
   }
 
   .image-card-text p {
-    font-size: 12.5px;
+    font-size: 12px;
   }
 
   .image-card-text a {
@@ -213,6 +271,7 @@
 }
 
 @media (max-width: 480px) {
+
   .grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -223,13 +282,12 @@
 }
 </style>
 
-
 <!-- HERO -->
 <section class="hero">
   <img src="assets/images/hero-maldives.jpeg" alt="Luxury travel hero" />
 
   <div class="hero-overlay">
-    <p>TRAVELWITH<span>TRIPP</span></p>
+    <p>TRAVELWITHTRIPP</p>
 
     <h1>
       Turn points into<br />
@@ -243,63 +301,115 @@
   </div>
 </section>
 
+<!-- STATS -->
+<section class="luxury-stats">
+
+  <div>
+    <strong>$250K+</strong>
+    <span>Travel Value Redeemed</span>
+  </div>
+
+  <div>
+    <strong>10+</strong>
+    <span>Countries Visited With Points</span>
+  </div>
+
+  <div>
+    <strong>Luxury</strong>
+    <span>Travel Without Luxury Prices</span>
+  </div>
+
+</section>
+
 <!-- SECTION TITLE -->
 <div class="section-title">
+
   <small>START EXPLORING</small>
 
   <h2>
     Build your rewards strategy<br />
     faster and smarter
   </h2>
+
 </div>
 
 <!-- CARDS -->
 <section class="grid">
 
-  <div class="card image-card" onclick="loadPage('calculator.html')" style="background-image: url('assets/images/card-calculator.jpeg');">
+  <!-- CARD FINDER -->
+  <div
+    class="card image-card"
+    onclick="loadPage('calculator.html')"
+    style="background-image: url('assets/images/card-calculator.jpeg');"
+  >
     <div class="image-card-text">
       <h3>Card Finder</h3>
-      <p>Find the best cards for your goals, categories, and travel style.</p>
+      <p>Find your best rewards setup.</p>
       <a>Find Cards →</a>
     </div>
   </div>
 
-  <div class="card image-card" onclick="loadPage('wallet.html')" style="background-image: url('assets/images/card-wallet.jpeg');">
+  <!-- WALLET -->
+  <div
+    class="card image-card"
+    onclick="loadPage('wallet.html')"
+    style="background-image: url('assets/images/card-wallet.jpeg');"
+  >
     <div class="image-card-text">
       <h3>My Wallet</h3>
-      <p>See the exact cards I use and how they work together.</p>
+      <p>See the exact cards I use.</p>
       <a>Explore →</a>
     </div>
   </div>
 
-  <div class="card image-card" onclick="loadPage('bonuses.html')" style="background-image: url('assets/images/card-bonuses.jpeg');">
+  <!-- OFFERS -->
+  <div
+    class="card image-card"
+    onclick="loadPage('bonuses.html')"
+    style="background-image: url('assets/images/card-bonuses.jpeg');"
+  >
     <div class="image-card-text">
       <h3>Best Offers</h3>
-      <p>Track strong welcome bonuses and high-value signup offers.</p>
+      <p>Track the strongest card offers.</p>
       <a>View Offers →</a>
     </div>
   </div>
 
-  <div class="card image-card" onclick="loadPage('trips.html')" style="background-image: url('assets/images/card-trips.jpeg');">
+  <!-- TRIPS -->
+  <div
+    class="card image-card"
+    onclick="loadPage('trips.html')"
+    style="background-image: url('assets/images/card-trips.jpeg');"
+  >
     <div class="image-card-text">
       <h3>Trip Guides</h3>
-      <p>Real itineraries, points breakdowns, and luxury travel examples.</p>
+      <p>Luxury trips booked with points.</p>
       <a>See Trips →</a>
     </div>
   </div>
 
-  <div class="card image-card" onclick="loadPage('tracker.html')" style="background-image: url('assets/images/card-tracker.jpeg');">
+  <!-- TRACKER -->
+  <div
+    class="card image-card"
+    onclick="loadPage('tracker.html')"
+    style="background-image: url('assets/images/card-tracker.jpeg');"
+  >
     <div class="image-card-text">
       <h3>Credit Tracker</h3>
-      <p>Keep up with credits, perks, annual fees, and card benefits.</p>
+      <p>Track credits, perks, and fees.</p>
       <a>Track Value →</a>
     </div>
   </div>
 
-  <div class="card image-card" onclick="loadPage('about.html')" style="background-image: url('assets/images/card-about.jpeg');">
+  <!-- ABOUT -->
+  <div
+    class="card image-card"
+    onclick="loadPage('about.html')"
+    style="background-image: url('assets/images/card-about.jpeg');"
+  >
     <div class="image-card-text">
       <h3>About Tripp</h3>
-      <p>Learn the mission behind TravelWithTripp and my rewards strategy.</p>
+      <p>The story behind TravelWithTripp.</p>
       <a>Read More →</a>
     </div>
   </div>
@@ -308,7 +418,9 @@
 
 <!-- FOOTER -->
 <footer class="footer">
+
   <div class="footer-content">
+
     <p class="footer-tagline">
       Real Strategies • Better Points • Luxury Travel
     </p>
@@ -322,5 +434,7 @@
     <p class="footer-sub">
       Founder of TravelWithTripp
     </p>
+
   </div>
+
 </footer>
