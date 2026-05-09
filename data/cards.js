@@ -4098,7 +4098,7 @@ const creditCards = [
     premium: true,
     beginnerFriendly: false,
     business: false
-  }
+  },
   // =====================
 // DISCOVER IT
 // Add below Citi section
