@@ -1,27 +1,19 @@
 <style>
-/* ===================================================== */
-/* HOME PAGE ONLY — LUXURY LANDING PAGE */
-/* ===================================================== */
-
 .home-wrap {
-  padding: 18px 14px 40px;
+  padding: 18px 12px 40px;
 }
 
-/* HERO */
 .hero {
   position: relative;
   min-height: 520px;
   border-radius: 30px;
   overflow: hidden;
-  border: 1px solid rgba(215,170,69,0.28);
-  box-shadow: 0 25px 80px rgba(0,0,0,0.35);
-  background: #03121f;
+  border: 1px solid rgba(215,170,69,.25);
 }
 
 .hero img {
   width: 100%;
-  height: 100%;
-  min-height: 520px;
+  height: 520px;
   object-fit: cover;
   display: block;
 }
@@ -30,16 +22,14 @@
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(3,18,31,0.35), rgba(3,18,31,0.85)),
-    linear-gradient(90deg, rgba(3,18,31,0.88), rgba(3,18,31,0.25));
+  background: linear-gradient(90deg, rgba(3,18,31,.9), rgba(3,18,31,.25));
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
-  padding: 42px 34px;
+  padding: 36px 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,16 +38,14 @@
 .hero-kicker {
   color: var(--gold-light);
   letter-spacing: 4px;
-  font-size: 13px;
   font-weight: 900;
   margin-bottom: 16px;
 }
 
 .hero h1 {
   font-family: Georgia, serif;
-  font-size: clamp(44px, 8vw, 82px);
-  line-height: 0.96;
-  max-width: 720px;
+  font-size: clamp(48px, 9vw, 82px);
+  line-height: .95;
 }
 
 .hero h1 span {
@@ -65,56 +53,16 @@
 }
 
 .hero p {
-  margin-top: 22px;
-  max-width: 540px;
+  margin-top: 20px;
+  max-width: 560px;
   font-size: 18px;
   line-height: 1.55;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255,255,255,.88);
 }
 
-/* STATS */
-.home-stats {
-  margin: 22px 0 42px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid rgba(215,170,69,0.26);
-  border-radius: 26px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.035);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.25);
-}
-
-.stat-box {
-  text-align: center;
-  padding: 22px 12px;
-  border-right: 1px solid rgba(215,170,69,0.22);
-}
-
-.stat-box:last-child {
-  border-right: none;
-}
-
-.stat-box strong {
-  display: block;
-  color: var(--gold-light);
-  font-size: 28px;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
-}
-
-.stat-box span {
-  display: block;
-  color: rgba(255,255,255,0.74);
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  line-height: 1.4;
-}
-
-/* TITLE */
 .section-title {
   text-align: center;
-  margin: 38px 0 28px;
+  margin: 44px 0 28px;
 }
 
 .section-title small {
@@ -129,111 +77,72 @@
   font-size: clamp(34px, 6vw, 58px);
   line-height: 1.05;
   font-weight: 950;
-  color: #fff;
 }
 
-/* FEATURE GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
 
-.card {
+.image-card {
+  height: 430px;
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(215,170,69,0.28);
-  background: #061827;
-  box-shadow: 0 20px 55px rgba(0,0,0,0.28);
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(244,212,126,0.65);
-}
-
-.image-card {
-  min-height: 335px;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-image {
-  height: 145px;
+  border: 1px solid rgba(215,170,69,.28);
   background-size: cover;
   background-position: center;
   position: relative;
+  cursor: pointer;
+  box-shadow: 0 20px 55px rgba(0,0,0,.28);
 }
 
-.card-image::after {
-  content: "";
+.image-card:hover {
+  transform: translateY(-4px);
+  transition: .25s ease;
+}
+
+.image-card-text {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(3,18,31,0.05), rgba(3,18,31,0.45));
-}
-
-.card-content {
-  flex: 1;
-  background: linear-gradient(180deg, #06213a, #03121f);
-  padding: 0 18px 22px;
+  left: 14px;
+  right: 14px;
+  bottom: 22px;
   text-align: center;
-  position: relative;
-}
-
-.card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 2px solid rgba(215,170,69,0.75);
-  background: #061827;
-  color: var(--gold-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: -27px auto 12px;
-  font-size: 24px;
-  position: relative;
   z-index: 2;
 }
 
-.card-content h3 {
-  font-size: 25px;
+.image-card-text h3 {
+  font-size: 31px;
+  line-height: 1;
   font-weight: 950;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #fff;
 }
 
-.card-content p {
-  font-size: 15px;
-  line-height: 1.45;
-  color: rgba(255,255,255,0.76);
-  margin-bottom: 18px;
+.image-card-text p {
+  font-size: 16px;
+  line-height: 1.35;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 16px;
 }
 
-.card-content a {
+.image-card-text a {
   color: var(--gold-light);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 950;
   text-decoration: none;
 }
 
-/* FOOTER */
 .footer {
-  margin-top: 58px;
-  padding: 46px 18px 34px;
+  margin-top: 60px;
+  padding: 50px 18px 36px;
   text-align: center;
-  border-top: 1px solid rgba(215,170,69,0.22);
-  background:
-    radial-gradient(circle at top, rgba(215,170,69,0.12), transparent 35%),
-    rgba(0,0,0,0.18);
+  border-top: 1px solid rgba(215,170,69,.22);
 }
 
 .footer-tagline {
-  color: rgba(255,255,255,0.76);
+  color: rgba(255,255,255,.72);
   letter-spacing: 5px;
-  font-size: 13px;
   text-transform: uppercase;
   line-height: 1.6;
 }
@@ -241,7 +150,7 @@
 .footer-divider {
   width: 80px;
   height: 1px;
-  background: rgba(215,170,69,0.65);
+  background: rgba(215,170,69,.65);
   margin: 26px auto;
 }
 
@@ -250,69 +159,49 @@
   font-style: italic;
   color: var(--gold-light);
   font-size: 36px;
-  margin-bottom: 8px;
 }
 
 .footer-sub {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,.55);
   letter-spacing: 2px;
   font-size: 13px;
 }
 
 .social-links {
+  margin-top: 28px;
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin-top: 28px;
+  gap: 16px;
 }
 
 .social-links a {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 1px solid rgba(215,170,69,0.35);
+  border: 1px solid rgba(215,170,69,.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold-light);
-  background: rgba(255,255,255,0.04);
-  text-decoration: none;
-  transition: 0.2s ease;
+  background: rgba(255,255,255,.05);
 }
 
-.social-links a:hover {
-  transform: translateY(-3px);
-  background: rgba(215,170,69,0.14);
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  .hero {
-    min-height: 500px;
-  }
-
-  .hero img {
-    min-height: 500px;
-  }
+.social-links img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
 }
 
 @media (max-width: 520px) {
   .home-wrap {
-    padding: 14px 10px 34px;
+    padding: 14px 10px 36px;
   }
 
   .hero {
-    min-height: 490px;
-    border-radius: 26px;
+    min-height: 500px;
   }
 
   .hero img {
-    min-height: 490px;
+    height: 500px;
   }
 
   .hero-overlay {
@@ -323,57 +212,37 @@
     font-size: 48px;
   }
 
-  .hero p {
-    font-size: 16px;
-  }
-
-  .home-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-box {
-    border-right: none;
-    border-bottom: 1px solid rgba(215,170,69,0.22);
-  }
-
-  .stat-box:last-child {
-    border-bottom: none;
-  }
-
   .grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
   .image-card {
-    min-height: 330px;
+    height: 340px;
+    border-radius: 24px;
   }
 
-  .card-image {
-    height: 135px;
+  .image-card-text {
+    bottom: 18px;
+    left: 10px;
+    right: 10px;
   }
 
-  .card-content {
-    padding: 0 12px 18px;
+  .image-card-text h3 {
+    font-size: 25px;
   }
 
-  .card-content h3 {
-    font-size: 22px;
-  }
-
-  .card-content p {
+  .image-card-text p {
     font-size: 14px;
   }
 
-  .card-content a {
-    font-size: 17px;
+  .image-card-text a {
+    font-size: 18px;
   }
 }
 </style>
 
 <div class="home-wrap">
 
-  <!-- HERO -->
   <section class="hero">
     <img src="assets/images/hero-maldives.jpeg" alt="Luxury travel hero" />
 
@@ -392,25 +261,6 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="home-stats">
-    <div class="stat-box">
-      <strong>$250K+</strong>
-      <span>Travel Value Redeemed</span>
-    </div>
-
-    <div class="stat-box">
-      <strong>10+</strong>
-      <span>Countries Visited With Points</span>
-    </div>
-
-    <div class="stat-box">
-      <strong>Luxury</strong>
-      <span>Travel Without Luxury Prices</span>
-    </div>
-  </section>
-
-  <!-- SECTION TITLE -->
   <div class="section-title">
     <small>START EXPLORING</small>
 
@@ -420,63 +270,50 @@
     </h2>
   </div>
 
-  <!-- CARDS -->
   <section class="grid">
 
-    <div class="card image-card" onclick="loadPage('calculator.html')">
-      <div class="card-image" style="background-image: url('assets/images/card-calculator.jpeg');"></div>
-      <div class="card-content">
-        <div class="card-icon">⌕</div>
+    <div class="image-card" onclick="loadPage('calculator.html')" style="background-image: url('assets/images/card-calculator.jpeg');">
+      <div class="image-card-text">
         <h3>Card Finder</h3>
         <p>Find your best rewards setup.</p>
         <a>Find Cards →</a>
       </div>
     </div>
 
-    <div class="card image-card" onclick="loadPage('wallet.html')">
-      <div class="card-image" style="background-image: url('assets/images/card-wallet.jpeg');"></div>
-      <div class="card-content">
-        <div class="card-icon">▣</div>
+    <div class="image-card" onclick="loadPage('wallet.html')" style="background-image: url('assets/images/card-wallet.jpeg');">
+      <div class="image-card-text">
         <h3>My Wallet</h3>
         <p>See the exact cards I use.</p>
         <a>Explore →</a>
       </div>
     </div>
 
-    <div class="card image-card" onclick="loadPage('bonuses.html')">
-      <div class="card-image" style="background-image: url('assets/images/card-bonuses.jpeg');"></div>
-      <div class="card-content">
-        <div class="card-icon">🎁</div>
+    <div class="image-card" onclick="loadPage('bonuses.html')" style="background-image: url('assets/images/card-bonuses.jpeg');">
+      <div class="image-card-text">
         <h3>Best Offers</h3>
         <p>Track the strongest card offers.</p>
         <a>View Offers →</a>
       </div>
     </div>
 
-    <div class="card image-card" onclick="loadPage('trips.html')">
-      <div class="card-image" style="background-image: url('assets/images/card-trips.jpeg');"></div>
-      <div class="card-content">
-        <div class="card-icon">✈</div>
+    <div class="image-card" onclick="loadPage('trips.html')" style="background-image: url('assets/images/card-trips.jpeg');">
+      <div class="image-card-text">
         <h3>Trip Guides</h3>
         <p>Luxury trips booked with points.</p>
         <a>See Trips →</a>
       </div>
     </div>
 
-    <div class="card image-card" onclick="loadPage('tracker.html')">
-      <div class="card-image" style="background-image: url('assets/images/card-tracker.jpeg');"></div>
-      <div class="card-content">
-        <div class="card-icon">▥</div>
+    <div class="image-card" onclick="loadPage('tracker.html')" style="background-image: url('assets/images/card-tracker.jpeg');">
+      <div class="image-card-text">
         <h3>Credit Tracker</h3>
         <p>Track credits, perks, and fees.</p>
         <a>Track Value →</a>
       </div>
     </div>
 
-    <div class="card image-card" onclick="loadPage('about.html')">
-      <div class="card-image" style="background-image: url('assets/images/card-about.jpeg');"></div>
-      <div class="card-content">
-        <div class="card-icon">?</div>
+    <div class="image-card" onclick="loadPage('about.html')" style="background-image: url('assets/images/card-about.jpeg');">
+      <div class="image-card-text">
         <h3>About Tripp</h3>
         <p>The story behind TravelWithTripp.</p>
         <a>Read More →</a>
@@ -485,7 +322,6 @@
 
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <p class="footer-tagline">
       Real Strategies • Better Points • Luxury Travel
@@ -493,21 +329,17 @@
 
     <div class="footer-divider"></div>
 
-    <p class="footer-signature">
-      — Tripp Pierce
-    </p>
+    <p class="footer-signature">— Tripp Pierce</p>
 
-    <p class="footer-sub">
-      Founder of TravelWithTripp
-    </p>
+    <p class="footer-sub">Founder of TravelWithTripp</p>
 
     <div class="social-links">
-      <a href="YOUR_YOUTUBE_LINK_HERE" target="_blank" aria-label="YouTube">
-        ▶
+      <a href="YOUR_YOUTUBE_LINK_HERE" target="_blank">
+        <img src="assets/images/youtube-logo.png" alt="YouTube" />
       </a>
 
-      <a href="YOUR_INSTAGRAM_LINK_HERE" target="_blank" aria-label="Instagram">
-        ◎
+      <a href="YOUR_INSTAGRAM_LINK_HERE" target="_blank">
+        <img src="assets/images/instagram-logo.png" alt="Instagram" />
       </a>
     </div>
   </footer>
