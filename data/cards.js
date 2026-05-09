@@ -4099,5 +4099,102 @@ const creditCards = [
     beginnerFriendly: false,
     business: false
   }
+  // =====================
+// DISCOVER
+// Add below Citi section
+// =====================
+
+{
+  name: "Discover it Cash Back",
+  issuer: "Discover",
+  issuerTag: "discover",
+  ecosystem: "Cash Back",
+  annualFee: 0,
+  pointValue: 0.01,
+  type: "cashback",
+  brand: "discover",
+
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "Rotating Category Cash Back",
+
+  rewards: {
+    dining: 1,
+    groceries: 1,
+    gas: 1,
+    rent: 0,
+    flightsDirect: 1,
+    hotelsDirect: 1,
+    travelPortal: 1,
+    other: 1
+  },
+
+  rotatingCategories: true,
+
+  multipliers: [
+    "5% rotating quarterly categories",
+    "1% everything else",
+    "Cashback Match first year"
+  ],
+
+  welcomeBonus:
+    "Unlimited Cashback Match at the end of your first year.",
+
+  lastUpdated: "2026-05-09",
+
+  myReview:
+    "One of the best beginner cashback cards because of the first-year Cashback Match. The rotating categories require activation each quarter but can provide excellent value.",
+
+  bestPairing: [
+    "Chase Freedom Flex",
+    "Citi Double Cash",
+    "Capital One Savor"
+  ],
+
+  goodFor: [
+    "Beginners",
+    "No annual fee",
+    "Rotating category rewards",
+    "First-year cashback value"
+  ],
+
+  notGoodFor: [
+    "Travel transfer partners",
+    "Premium travel perks",
+    "Simple flat-rate earning"
+  ],
+
+  featuredCard: true,
+
+  tags: [
+    "discover",
+    "cashback",
+    "beginner",
+    "noAnnualFee",
+    "everyday"
+  ],
+
+  benefits: [
+    "No annual fee",
+    "Cashback Match first year",
+    "Strong rotating categories"
+  ],
+
+  why:
+    "Best beginner rotating-category cashback card.",
+
+  weaknesses: [
+    "Requires category activation",
+    "Limited travel benefits",
+    "Categories change quarterly"
+  ],
+
+  premium: false,
+  beginnerFriendly: true,
+  business: false
+},
+  
 ];
   
