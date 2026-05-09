@@ -4100,7 +4100,7 @@ const creditCards = [
     business: false
   }
   // =====================
-// DISCOVER
+// DISCOVER IT
 // Add below Citi section
 // =====================
 
