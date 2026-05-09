@@ -1,151 +1,17 @@
 <style>
+
 /* ===================================================== */
 /* HOME PAGE */
 /* ===================================================== */
 
-.home-wrapper {
-  width: 100%;
-  overflow-x: hidden;
-  padding-bottom: 40px;
+.home-dashboard {
+  margin-top: 34px;
 }
 
-/* HERO */
-
-.hero {
+.dashboard-image-wrap {
   position: relative;
-  overflow: hidden;
-  border-radius: 0;
-  margin-bottom: 24px;
-  border-top: 1px solid rgba(215,170,69,0.15);
-  border-bottom: 1px solid rgba(215,170,69,0.15);
-}
-
-.hero img {
-  width: 100%;
-  height: 560px;
-  object-fit: cover;
-  display: block;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(3,18,31,0.15),
-      rgba(3,18,31,0.75)
-    );
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  padding: 34px 24px;
-}
-
-.hero-content {
-  max-width: 540px;
-}
-
-.hero-tag {
-  color: #f0c96a;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 4px;
-  margin-bottom: 14px;
-}
-
-.hero h1 {
-  font-size: clamp(44px, 8vw, 78px);
-  line-height: 0.95;
-  margin-bottom: 18px;
-  font-family: Georgia, serif;
-  color: white;
-}
-
-.hero h1 span {
-  color: #f0c96a;
-}
-
-.hero p {
-  color: rgba(255,255,255,0.86);
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* STATS */
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 14px;
-  padding: 0 18px;
-  margin-bottom: 30px;
-}
-
-.stat-box {
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,0.05),
-      rgba(255,255,255,0.02)
-    );
-
-  border: 1px solid rgba(215,170,69,0.18);
-  border-radius: 24px;
-  padding: 24px 18px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
-
-.stat-box h2 {
-  color: #f0c96a;
-  font-size: 36px;
-  margin-bottom: 8px;
-  font-weight: 900;
-}
-
-.stat-box p {
-  color: rgba(255,255,255,0.72);
-  font-size: 12px;
-  letter-spacing: 3px;
-}
-
-/* SECTION TITLE */
-
-.section-title {
-  text-align: center;
-  margin: 40px 0 26px;
-  padding: 0 18px;
-}
-
-.section-title small {
-  color: #f0c96a;
-  letter-spacing: 5px;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.section-title h2 {
-  margin-top: 16px;
-  font-size: clamp(36px, 7vw, 60px);
-  line-height: 1.04;
-  font-weight: 900;
-}
-
-/* ===================================================== */
-/* DASHBOARD IMAGE */
-/* ===================================================== */
-
-.dashboard-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .dashboard-image {
@@ -153,267 +19,261 @@
   display: block;
 }
 
-/* CLICKABLE GRID */
+/* TEXT OVERLAYS */
 
-.dashboard-grid {
+.dashboard-label {
   position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  width: 42%;
+  text-align: center;
   z-index: 5;
 }
 
-.dashboard-card {
-  cursor: pointer;
+.dashboard-label h3 {
+  color: #fff;
+  font-size: 5vw;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 10px;
 }
 
-/* SOCIALS */
+.dashboard-label p {
+  color: rgba(255,255,255,0.82);
+  font-size: 2.5vw;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
 
-.social-section {
-  margin: 40px 18px 0;
-  padding: 36px 24px;
-  border-radius: 30px;
+.dashboard-label span {
+  color: #f4d47e;
+  font-size: 3.2vw;
+  font-weight: 800;
+}
 
+/* ROW 1 */
+
+.label-1 {
+  top: 17%;
+  left: 5%;
+}
+
+.label-2 {
+  top: 17%;
+  right: 5%;
+}
+
+/* ROW 2 */
+
+.label-3 {
+  top: 48%;
+  left: 5%;
+}
+
+.label-4 {
+  top: 48%;
+  right: 5%;
+}
+
+/* ROW 3 */
+
+.label-5 {
+  top: 79%;
+  left: 5%;
+}
+
+.label-6 {
+  top: 79%;
+  right: 5%;
+}
+
+
+/* FOLLOW SECTION */
+
+.follow-section {
+  margin-top: 40px;
+  padding: 50px 24px;
+  border-radius: 32px;
+  border: 1px solid rgba(215,170,69,0.18);
   background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,0.04),
-      rgba(255,255,255,0.02)
-    );
-
-  border: 1px solid rgba(215,170,69,0.16);
+    radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%),
+    rgba(255,255,255,0.03);
 
   text-align: center;
 }
 
-.social-section h3 {
-  font-size: 32px;
-  margin-bottom: 12px;
+.follow-section h2 {
+  font-size: 48px;
+  line-height: 1.05;
+  margin-bottom: 18px;
 }
 
-.social-section p {
-  color: rgba(255,255,255,0.72);
-  font-size: 17px;
+.follow-section p {
+  font-size: 22px;
   line-height: 1.5;
-  margin-bottom: 26px;
+  color: rgba(255,255,255,0.78);
+  max-width: 700px;
+  margin: auto;
 }
 
-.social-links {
+.social-icons {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 22px;
+  margin-top: 34px;
 }
 
-.social-links a {
-  width: 74px;
-  height: 74px;
+.social-icons a {
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
-
-  background: rgba(255,255,255,0.05);
-
-  border: 1px solid rgba(215,170,69,0.18);
-
+  border: 1px solid rgba(215,170,69,0.22);
   display: flex;
   align-items: center;
   justify-content: center;
-
+  background: rgba(255,255,255,0.03);
   transition: 0.25s ease;
 }
 
-.social-links a:hover {
+.social-icons a:hover {
   transform: translateY(-4px);
-  border-color: rgba(240,201,106,0.55);
+  border-color: rgba(244,212,126,0.55);
 }
 
-.social-links img {
+.social-icons img {
   width: 34px;
   height: 34px;
-  object-fit: contain;
 }
 
-/* FOOTER */
-
-.footer {
-  margin-top: 34px;
-  text-align: center;
-}
-
-.footer p {
-  color: rgba(255,255,255,0.5);
-  font-size: 12px;
-  letter-spacing: 2px;
-}
 
 /* MOBILE */
 
 @media (max-width: 768px) {
 
-  .hero img {
-    height: 500px;
+  .dashboard-label h3 {
+    font-size: 6vw;
   }
 
-  .hero-overlay {
-    padding: 24px 20px;
+  .dashboard-label p {
+    font-size: 3vw;
   }
 
-  .hero h1 {
-    font-size: 50px;
+  .dashboard-label span {
+    font-size: 3.8vw;
   }
 
-  .hero p {
-    font-size: 16px;
+  .follow-section h2 {
+    font-size: 16vw;
   }
 
-  .section-title h2 {
-    font-size: 34px;
+  .follow-section p {
+    font-size: 5vw;
   }
 
-  .stat-box h2 {
-    font-size: 30px;
+  .social-icons a {
+    width: 72px;
+    height: 72px;
   }
 
-  .social-links a {
-    width: 64px;
-    height: 64px;
-  }
-
-  .social-links img {
-    width: 28px;
-    height: 28px;
+  .social-icons img {
+    width: 30px;
+    height: 30px;
   }
 }
+
 </style>
 
-<div class="home-wrapper">
 
-  <!-- HERO -->
-  <section class="hero">
+
+<!-- SECTION TITLE -->
+
+<div class="section-title">
+
+  <small>START EXPLORING</small>
+
+  <h2>
+    Build your rewards strategy<br>
+    faster and smarter
+  </h2>
+
+</div>
+
+
+
+<!-- DASHBOARD -->
+
+<section class="home-dashboard">
+
+  <div class="dashboard-image-wrap">
 
     <img
-      src="assets/images/hero-maldives.jpeg"
-      alt="Luxury Travel"
+      class="dashboard-image"
+      src="assets/images/card-home-images.PNG"
+      alt="TravelWithTripp Dashboard"
     >
 
-    <div class="hero-overlay">
+    <!-- LABELS -->
 
-      <div class="hero-content">
-
-        <div class="hero-tag">
-          TRAVELWITHTRIPP
-        </div>
-
-        <h1>
-          Turn points into<br>
-          <span>luxury escapes.</span>
-        </h1>
-
-        <p>
-          Smarter credit card strategies,
-          better redemptions, and luxury
-          travel booked with points.
-        </p>
-
-      </div>
-
+    <div class="dashboard-label label-1">
+      <h3>Card Finder</h3>
+      <p>Find your best rewards setup.</p>
+      <span>Find Cards →</span>
     </div>
 
-  </section>
-
-  <!-- STATS -->
-  <section class="stats-grid">
-
-    <div class="stat-box">
-      <h2>$250K+</h2>
-      <p>TRAVEL VALUE REDEEMED</p>
+    <div class="dashboard-label label-2">
+      <h3>My Wallet</h3>
+      <p>See the exact cards I use.</p>
+      <span>Explore →</span>
     </div>
 
-    <div class="stat-box">
-      <h2>18+</h2>
-      <p>COUNTRIES VISITED</p>
+    <div class="dashboard-label label-3">
+      <h3>Best Offers</h3>
+      <p>Track the strongest card offers.</p>
+      <span>View Offers →</span>
     </div>
 
-  </section>
+    <div class="dashboard-label label-4">
+      <h3>Trip Guides</h3>
+      <p>Luxury trips booked with points.</p>
+      <span>See Trips →</span>
+    </div>
 
-  <!-- TITLE -->
-  <div class="section-title">
+    <div class="dashboard-label label-5">
+      <h3>Credit Tracker</h3>
+      <p>Track credits, perks, and fees.</p>
+      <span>Track Value →</span>
+    </div>
 
-    <small>START EXPLORING</small>
-
-    <h2>
-      Build your rewards strategy<br>
-      faster and smarter
-    </h2>
+    <div class="dashboard-label label-6">
+      <h3>About Tripp</h3>
+      <p>The story behind TravelWithTripp.</p>
+      <span>Read More →</span>
+    </div>
 
   </div>
 
-  <!-- DASHBOARD -->
-  <section class="dashboard-wrapper">
+</section>
 
-   <img
-  src="assets/images/card-home-images.PNG"
-  alt="TravelWithTripp cards"
-/>
 
-    <div class="dashboard-grid">
 
-      <div onclick="loadPage('calculator.html')" class="dashboard-card"></div>
+<!-- FOLLOW -->
 
-      <div onclick="loadPage('wallet.html')" class="dashboard-card"></div>
+<section class="follow-section">
 
-      <div onclick="loadPage('bonuses.html')" class="dashboard-card"></div>
+  <h2>Follow The Journey</h2>
 
-      <div onclick="loadPage('trips.html')" class="dashboard-card"></div>
+  <p>
+    Luxury travel, points strategies, and real redemptions.
+  </p>
 
-      <div onclick="loadPage('tracker.html')" class="dashboard-card"></div>
+  <div class="social-icons">
 
-      <div onclick="loadPage('about.html')" class="dashboard-card"></div>
+    <a href="YOUR_YOUTUBE_LINK" target="_blank">
+      <img src="assets/images/youtube-icon.png">
+    </a>
 
-    </div>
+    <a href="YOUR_INSTAGRAM_LINK" target="_blank">
+      <img src="assets/images/instagram-icon.png">
+    </a>
 
-  </section>
+  </div>
 
-  <!-- SOCIALS -->
-  <section class="social-section">
-
-    <h3>
-      Follow The Journey
-    </h3>
-
-    <p>
-      Luxury travel, points strategies,
-      and real redemptions.
-    </p>
-
-    <div class="social-links">
-
-      <a
-        href="YOUR-YOUTUBE-LINK"
-        target="_blank"
-      >
-        <img
-          src="assets/images/youtube-logo.png"
-          alt="YouTube"
-        >
-      </a>
-
-      <a
-        href="YOUR-INSTAGRAM-LINK"
-        target="_blank"
-      >
-        <img
-          src="assets/images/instagram-logo.png"
-          alt="Instagram"
-        >
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 TRAVELWITHTRIPP</p>
-  </footer>
-
-</div>
+</section>
