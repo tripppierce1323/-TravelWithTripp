@@ -483,6 +483,46 @@ function renderBestCard(cardResult) {
 // RESULTS RENDERING
 // =============================
 
+function getGroupLabel(card, selectedFilters) {
+  const issuerLabels = {
+    amex: "Amex Cards",
+    chase: "Chase Cards",
+    capitalone: "Capital One Cards",
+    citi: "Citi Cards",
+    bilt: "Bilt Cards"
+  };
+
+  const brandLabels = {
+    hilton: "Hilton Cards",
+    marriott: "Marriott Cards",
+    hyatt: "Hyatt Cards",
+    ihg: "IHG Cards",
+    delta: "Delta Cards",
+    united: "United Cards",
+    american: "American Airlines Cards",
+    southwest: "Southwest Cards",
+    aircanada: "Air Canada Cards",
+    britishairways: "British Airways Cards",
+    aerlingus: "Aer Lingus Cards",
+    iberia: "Iberia Cards"
+  };
+
+  const selectedBrands = selectedFilters.filter(f => brandLabels[f]);
+  const selectedIssuers = selectedFilters.filter(f => issuerLabels[f]);
+
+  if (card.business && selectedFilters.includes("business")) return "Business Cards";
+
+  if (selectedBrands.length > 0) {
+    return brandLabels[card.brand] || "Other Cards";
+  }
+
+  if (selectedIssuers.length > 0) {
+    return issuerLabels[card.issuerTag] || "Other Cards";
+  }
+
+  return "Top Recommended Cards";
+}
+
 function renderResults(results, selectedCategories) {
   const container = document.getElementById("resultsContent");
   if (!container) return;
@@ -499,6 +539,32 @@ function renderResults(results, selectedCategories) {
     return;
   }
 
+  const selectedFilters = getSelectedFilters();
+  const hasAnyFilter = selectedFilters.length > 0;
+
+  if (hasAnyFilter) {
+    const groups = {};
+
+    results.forEach(result => {
+      const label = getGroupLabel(result.card, selectedFilters);
+
+      if (!groups[label]) {
+        groups[label] = [];
+      }
+
+      groups[label].push(result);
+    });
+
+    container.innerHTML = Object.keys(groups).map(groupName => `
+      <div class="other-cards">
+        <h2>${groupName}</h2>
+        ${groups[groupName].map(renderCard).join("")}
+      </div>
+    `).join("");
+
+    return;
+  }
+
   const usedCards = new Set();
   const best = results[0];
   usedCards.add(best.card.name);
@@ -506,7 +572,6 @@ function renderResults(results, selectedCategories) {
   let categorySections = "";
 
   selectedCategories.forEach(category => {
-    const selectedFilters = getSelectedFilters();
     const goal = document.getElementById("travelGoal")?.value || "bestOverall";
 
     const categoryResults = results
@@ -553,7 +618,6 @@ function renderResults(results, selectedCategories) {
     ${categorySections}
   `;
 }
-
 
 // =============================
 // MAIN SEARCH ENGINE
