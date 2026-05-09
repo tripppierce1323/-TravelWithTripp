@@ -1032,6 +1032,317 @@ const businessCreditCards = [
     beginnerFriendly: false,
     business: true
   },
+  // =====================
+// AMEX DELTA BUSINESS
+// Add below Hilton/Marriott/Hyatt/IHG business cards
+// =====================
+{
+  name: "Delta SkyMiles Gold Business American Express Card",
+  issuer: "Amex / Delta",
+  issuerTag: "amex",
+  ecosystem: "Delta SkyMiles",
+  annualFee: 150,
+  pointValue: 0.013,
+  type: "airline",
+  brand: "delta",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "Starter Delta Business",
+
+  rewards: {
+    dining: 2,
+    groceries: 1,
+    gas: 1,
+    rent: 0,
+    flightsDirect: 2,
+    hotelsDirect: 1,
+    travelPortal: 1,
+    other: 1
+  },
+
+  multipliers: [
+    "2x Delta purchases",
+    "2x dining",
+    "2x U.S. shipping",
+    "1x everything else"
+  ],
+
+  tags: ["amex", "business", "airline", "delta"],
+
+  benefits: [
+    "First checked bag free",
+    "Priority boarding",
+    "Delta flight credit opportunity"
+  ],
+
+  welcomeBonus: "Check Amex for latest Delta Gold Business offer.",
+
+  why: "Best starter business card for occasional Delta flyers.",
+
+  myReview:
+    "This is the easiest Delta business card to justify if you fly Delta occasionally and value the free checked bag.",
+
+  goodFor: [
+    "Occasional Delta flyers",
+    "Business owners who fly Delta",
+    "Free checked bag"
+  ],
+
+  notGoodFor: [
+    "Premium lounge access",
+    "Everyday business spend",
+    "People who rarely fly Delta"
+  ],
+
+  bestPairing: [
+    "Amex Business Gold",
+    "Blue Business Plus"
+  ],
+
+  weaknesses: [
+    "Not strong for everyday spending",
+    "Limited premium perks"
+  ],
+
+  premium: false,
+  beginnerFriendly: true,
+  business: true,
+  featured: false
+},
+
+{
+  name: "Delta SkyMiles Platinum Business American Express Card",
+  issuer: "Amex / Delta",
+  issuerTag: "amex",
+  ecosystem: "Delta SkyMiles",
+  annualFee: 350,
+  pointValue: 0.013,
+  type: "airline",
+  brand: "delta",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "Delta Business Flyers",
+
+  rewards: {
+    dining: 1,
+    groceries: 1,
+    gas: 1.5,
+    rent: 0,
+    flightsDirect: 3,
+    hotelsDirect: 3,
+    travelPortal: 1,
+    other: 1
+  },
+
+  multipliers: [
+    "3x Delta purchases",
+    "3x hotels",
+    "1.5x eligible larger purchases",
+    "1x everything else"
+  ],
+
+  tags: ["amex", "business", "airline", "delta"],
+
+  benefits: [
+    "Companion certificate",
+    "First checked bag free",
+    "Priority boarding",
+    "MQD earning support"
+  ],
+
+  welcomeBonus: "Check Amex for latest Delta Platinum Business offer.",
+
+  why: "Best middle-tier Delta business card for flyers who can use the companion certificate.",
+
+  myReview:
+    "This is the Delta business card I’d compare first if you fly Delta enough to use the companion certificate but do not need the highest-tier Reserve card.",
+
+  goodFor: [
+    "Frequent Delta flyers",
+    "Companion certificate users",
+    "Business travel"
+  ],
+
+  notGoodFor: [
+    "Casual Delta flyers",
+    "People who want flexible points",
+    "Simple cash back setups"
+  ],
+
+  bestPairing: [
+    "Amex Gold",
+    "Blue Business Plus"
+  ],
+
+  weaknesses: [
+    "Only worth it if you use Delta benefits",
+    "Weak everyday earning compared to flexible points cards"
+  ],
+
+  premium: false,
+  beginnerFriendly: false,
+  business: true,
+  featured: false
+},
+{
+  name: "United Business Card",
+  issuer: "Chase / United",
+  issuerTag: "chase",
+  ecosystem: "United MileagePlus",
+  annualFee: 150,
+  pointValue: 0.013,
+  type: "airline",
+  brand: "united",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "United Business Flyers",
+
+  rewards: {
+    dining: 2,
+    groceries: 1,
+    gas: 2,
+    rent: 0,
+    flightsDirect: 2,
+    hotelsDirect: 2,
+    travelPortal: 1,
+    other: 1
+  },
+
+  multipliers: [
+    "2x United purchases",
+    "2x dining",
+    "2x gas stations",
+    "2x office supply stores"
+  ],
+
+  tags: [
+    "chase",
+    "business",
+    "airline",
+    "united"
+  ],
+
+  benefits: [
+    "Free checked bag",
+    "Priority boarding",
+    "United flight discounts"
+  ],
+
+  welcomeBonus: "Check Chase for latest United Business offer.",
+
+  why: "Best United business airline card for frequent flyers.",
+
+  myReview:
+    "Solid airline business card if you regularly fly United and want travel perks.",
+
+  goodFor: [
+    "United loyalists",
+    "Business travel",
+    "Airline perks"
+  ],
+
+  notGoodFor: [
+    "Everyday spend",
+    "Flexible points users"
+  ],
+
+  bestPairing: [
+    "Chase Sapphire Preferred"
+  ],
+
+  weaknesses: [
+    "Limited value outside United ecosystem"
+  ],
+
+  premium: false,
+  beginnerFriendly: true,
+  business: true,
+  featured: false
+},
+{
+  name: "IHG One Rewards Premier Business Card",
+  issuer: "Chase / IHG",
+  issuerTag: "chase",
+  ecosystem: "IHG One Rewards",
+  annualFee: 99,
+  pointValue: 0.005,
+  type: "hotel",
+  brand: "ihg",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "IHG Hotel Stays",
+
+  rewards: {
+    dining: 3,
+    groceries: 2,
+    gas: 5,
+    rent: 0,
+    flightsDirect: 3,
+    hotelsDirect: 10,
+    travelPortal: 2,
+    other: 3
+  },
+
+  multipliers: [
+    "10x IHG purchases",
+    "5x gas stations",
+    "5x travel",
+    "3x dining"
+  ],
+
+  tags: [
+    "chase",
+    "business",
+    "hotel",
+    "ihg",
+    "travel"
+  ],
+
+  benefits: [
+    "IHG Platinum status",
+    "Anniversary free night",
+    "Global Entry/TSA credit"
+  ],
+
+  welcomeBonus: "Check Chase for latest IHG Business offer.",
+
+  why: "Strong value for IHG loyalists with a low annual fee.",
+
+  myReview:
+    "The annual free night alone can offset the annual fee if you stay at IHG occasionally.",
+
+  goodFor: [
+    "IHG travelers",
+    "Road warriors",
+    "Lower annual fee hotel setup"
+  ],
+
+  notGoodFor: [
+    "Luxury hotel maximizers",
+    "Flexible points setups"
+  ],
+
+  bestPairing: [
+    "Ink Business Preferred"
+  ],
+
+  weaknesses: [
+    "IHG points are lower value"
+  ],
+
+  premium: false,
+  beginnerFriendly: true,
+  business: true,
+  featured: false
+},
 ];
 
 window.businessCreditCards = businessCreditCards;
