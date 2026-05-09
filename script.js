@@ -1,7 +1,3 @@
-Below replaces your entire script.js.
-
-1. Replace entire script.js with this
-
 // =====================================================
 // SECTION 1 — PAGE LOADING
 // Replaces: PAGE LOADING section
