@@ -1,46 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>TravelWithTripp</title>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- FIXED SITE HEADER: stays on every page -->
+  <!-- ===================================================== -->
+  <!-- GLOBAL HEADER -->
+  <!-- ===================================================== -->
+
   <header class="main-header">
+
     <div class="brand">
-      <div class="logo-mark">✈</div>
+
+      <div class="logo-mark">
+        ✦
+      </div>
 
       <div>
-        <div class="brand-name">TravelWith<span>Tripp</span></div>
-        <div class="brand-subtitle">SMARTER REWARDS. BETTER TRIPS.</div>
+
+        <div class="brand-name">
+          TravelWith<span>Tripp</span>
+        </div>
+
+        <div class="brand-subtitle">
+          LUXURY REWARDS & TRAVEL
+        </div>
+
       </div>
+
     </div>
 
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <button
+      class="hamburger"
+      onclick="toggleMenu()"
+      aria-label="Open navigation menu"
+    >
+      ☰
+    </button>
+
   </header>
 
-  <!-- FIXED HAMBURGER MENU: stays on every page -->
+  <!-- ===================================================== -->
+  <!-- SLIDE MENU -->
+  <!-- ===================================================== -->
+
   <nav id="menu" class="menu">
-    <a onclick="loadPage('home.html')">Home</a>
-    <a onclick="loadPage('about.html')">About Me</a>
-    <a onclick="loadPage('wallet.html')">My Wallet</a>
-    <a onclick="loadPage('calculator.html')">Credit Card Calculator</a>
-    <a onclick="loadPage('bonuses.html')">Best Welcome Offers</a>
-    <a onclick="loadPage('tracker.html')">Credit Tracker</a>
-    <a onclick="loadPage('trips.html')">Trip Itineraries</a>
+
+    <a onclick="loadPage('home.html')">
+      Home
+    </a>
+
+    <a onclick="loadPage('wallet.html')">
+      My Wallet
+    </a>
+
+    <a onclick="loadPage('bonuses.html')">
+      Welcome Offers
+    </a>
+
+    <a onclick="loadPage('calculator.html')">
+      Card Finder
+    </a>
+
+    <a onclick="loadPage('tracker.html')">
+      Credit Tracker
+    </a>
+
+    <a onclick="loadPage('trips.html')">
+      Trip Itineraries
+    </a>
+
+    <a onclick="loadPage('about.html')">
+      About
+    </a>
+
   </nav>
 
-  <!-- ONLY THIS CONTENT CHANGES -->
+  <!-- ===================================================== -->
+  <!-- PAGE CONTENT -->
+  <!-- ===================================================== -->
+
   <main id="content"></main>
 
-<script src="data/cards.js"></script>
-<script src="data/businesscards.js"></script>
-<script src="script.js"></script>
+  <!-- ===================================================== -->
+  <!-- DATA FILES -->
+  <!-- ===================================================== -->
+
+  <script src="data/cards.js"></script>
+  <script src="data/businesscards.js"></script>
+
+  <!-- ===================================================== -->
+  <!-- MAIN SCRIPT -->
+  <!-- ===================================================== -->
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>
