@@ -396,6 +396,33 @@ body {
   color: #ffffff !important;
 }
 
+/* ============================= */
+/* ANNUAL FEE RANGE SLIDERS */
+/* ============================= */
+
+.fee-range-values {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.fee-range-values strong {
+  color: #b08a4a;
+}
+
+.fee-slider-label {
+  margin-top: 12px;
+}
+
+.fee-slider-label input {
+  width: 100%;
+  margin-top: 8px;
+  accent-color: #b08a4a;
+}
+
 /* RESULTS */
 
 .results-placeholder {
