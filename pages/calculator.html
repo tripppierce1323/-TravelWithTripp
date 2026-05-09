@@ -35,19 +35,39 @@
       </select>
     </div>
 
-    <!-- ANNUAL FEE -->
-    <div class="filter-group">
-      <h3>Max Annual Fee: <span id="feeValue">$895</span></h3>
+    <!-- ANNUAL FEE RANGE -->
+<div class="filter-group">
+  <h3>Annual Fee Range</h3>
 
-      <input
-        type="range"
-        id="annualFeeSlider"
-        min="0"
-        max="895"
-        step="5"
-        value="895"
-      />
-    </div>
+  <div class="fee-range-values">
+    <span>Min: <strong id="minFeeValue">$0</strong></span>
+    <span>Max: <strong id="maxFeeValue">$895</strong></span>
+  </div>
+
+  <label class="fee-slider-label">
+    Minimum Annual Fee
+    <input
+      type="range"
+      id="minAnnualFeeSlider"
+      min="0"
+      max="895"
+      step="5"
+      value="0"
+    />
+  </label>
+
+  <label class="fee-slider-label">
+    Maximum Annual Fee
+    <input
+      type="range"
+      id="maxAnnualFeeSlider"
+      min="0"
+      max="895"
+      step="5"
+      value="895"
+    />
+  </label>
+</div>
 
     <!-- CARD TYPE -->
     <div class="filter-group">
