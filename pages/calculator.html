@@ -7,6 +7,7 @@
 
   <div class="filters">
 
+    <!-- REWARD CATEGORIES -->
     <div class="filter-group">
       <h3>What do you want to earn rewards on?</h3>
 
@@ -19,6 +20,7 @@
       <label><input type="checkbox" class="top-category-filter" value="other"> Everyday Spend</label>
     </div>
 
+    <!-- GOAL -->
     <div class="filter-group">
       <h3>Your Goal</h3>
 
@@ -33,6 +35,7 @@
       </select>
     </div>
 
+    <!-- ANNUAL FEE -->
     <div class="filter-group">
       <h3>Max Annual Fee: <span id="feeValue">$895</span></h3>
 
@@ -46,6 +49,7 @@
       />
     </div>
 
+    <!-- CARD TYPE -->
     <div class="filter-group">
       <h3>Card Type</h3>
 
@@ -58,6 +62,7 @@
       <label><input type="checkbox" class="card-filter" value="premium"> Premium Cards</label>
     </div>
 
+    <!-- ISSUERS -->
     <div class="filter-group">
       <h3>Issuers</h3>
 
@@ -68,13 +73,23 @@
       <label><input type="checkbox" class="card-filter" value="bilt"> Bilt</label>
     </div>
 
+    <!-- AIRLINES -->
     <div class="filter-group">
-      <h3>Airlines / Hotels</h3>
+      <h3>Airlines</h3>
 
       <label><input type="checkbox" class="card-filter" value="delta"> Delta</label>
       <label><input type="checkbox" class="card-filter" value="united"> United</label>
       <label><input type="checkbox" class="card-filter" value="american"> American Airlines</label>
       <label><input type="checkbox" class="card-filter" value="southwest"> Southwest</label>
+      <label><input type="checkbox" class="card-filter" value="aircanada"> Air Canada / Aeroplan</label>
+      <label><input type="checkbox" class="card-filter" value="britishairways"> British Airways</label>
+      <label><input type="checkbox" class="card-filter" value="aerlingus"> Aer Lingus</label>
+      <label><input type="checkbox" class="card-filter" value="iberia"> Iberia</label>
+    </div>
+
+    <!-- HOTELS -->
+    <div class="filter-group">
+      <h3>Hotels</h3>
 
       <label><input type="checkbox" class="card-filter" value="hilton"> Hilton</label>
       <label><input type="checkbox" class="card-filter" value="marriott"> Marriott</label>
@@ -82,6 +97,7 @@
       <label><input type="checkbox" class="card-filter" value="ihg"> IHG</label>
     </div>
 
+    <!-- BUTTONS -->
     <div class="run-button">
       <button onclick="runCalculator()">Find My Cards</button>
       <button onclick="clearCardFilters()" class="clear-btn">Clear Filters</button>
@@ -90,7 +106,6 @@
   </div>
 
   <div id="resultsContent">
-
     <div class="results-placeholder">
       <h2>Find Your Best Cards</h2>
       <p>
@@ -98,7 +113,6 @@
         <strong>"Find My Cards"</strong> to get personalized recommendations.
       </p>
     </div>
-
   </div>
 
 </div>
