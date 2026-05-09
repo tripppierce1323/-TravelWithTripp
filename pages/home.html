@@ -1,33 +1,7 @@
 <style>
-
 /* ===================================================== */
 /* HOME PAGE */
 /* ===================================================== */
-<!-- HERO -->
-<section class="hero">
-
-  <img
-    src="assets/images/hero-maldives.jpeg"
-    alt="Luxury travel hero"
-  />
-
-  <div class="hero-overlay">
-
-    <p>TRAVELWITHTRIPP</p>
-
-    <h1>
-      Turn points into<br>
-      <span>luxury escapes.</span>
-    </h1>
-
-    <p>
-      Smarter credit card strategies, better redemptions,
-      and real trips booked with points.
-    </p>
-
-  </div>
-
-</section>
 
 .home-dashboard {
   margin-top: 34px;
@@ -43,8 +17,6 @@
   width: 100%;
   display: block;
 }
-
-/* TEXT OVERLAYS */
 
 .dashboard-label {
   position: absolute;
@@ -74,44 +46,12 @@
   font-weight: 800;
 }
 
-/* ROW 1 */
-
-.label-1 {
-  top: 17%;
-  left: 5%;
-}
-
-.label-2 {
-  top: 17%;
-  right: 5%;
-}
-
-/* ROW 2 */
-
-.label-3 {
-  top: 48%;
-  left: 5%;
-}
-
-.label-4 {
-  top: 48%;
-  right: 5%;
-}
-
-/* ROW 3 */
-
-.label-5 {
-  top: 79%;
-  left: 5%;
-}
-
-.label-6 {
-  top: 79%;
-  right: 5%;
-}
-
-
-/* FOLLOW SECTION */
+.label-1 { top: 17%; left: 5%; }
+.label-2 { top: 17%; right: 5%; }
+.label-3 { top: 48%; left: 5%; }
+.label-4 { top: 48%; right: 5%; }
+.label-5 { top: 79%; left: 5%; }
+.label-6 { top: 79%; right: 5%; }
 
 .follow-section {
   margin-top: 40px;
@@ -121,7 +61,6 @@
   background:
     radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%),
     rgba(255,255,255,0.03);
-
   text-align: center;
 }
 
@@ -155,12 +94,6 @@
   align-items: center;
   justify-content: center;
   background: rgba(255,255,255,0.03);
-  transition: 0.25s ease;
-}
-
-.social-icons a:hover {
-  transform: translateY(-4px);
-  border-color: rgba(244,212,126,0.55);
 }
 
 .social-icons img {
@@ -168,30 +101,13 @@
   height: 34px;
 }
 
-
-/* MOBILE */
-
 @media (max-width: 768px) {
+  .dashboard-label h3 { font-size: 6vw; }
+  .dashboard-label p { font-size: 3vw; }
+  .dashboard-label span { font-size: 3.8vw; }
 
-  .dashboard-label h3 {
-    font-size: 6vw;
-  }
-
-  .dashboard-label p {
-    font-size: 3vw;
-  }
-
-  .dashboard-label span {
-    font-size: 3.8vw;
-  }
-
-  .follow-section h2 {
-    font-size: 16vw;
-  }
-
-  .follow-section p {
-    font-size: 5vw;
-  }
+  .follow-section h2 { font-size: 16vw; }
+  .follow-section p { font-size: 5vw; }
 
   .social-icons a {
     width: 72px;
@@ -203,30 +119,42 @@
     height: 30px;
   }
 }
-
 </style>
 
 
+<!-- HERO -->
+<section class="hero">
+  <img src="assets/images/hero-maldives.jpeg" alt="Luxury travel hero" />
+
+  <div class="hero-overlay">
+    <p>TRAVELWITHTRIPP</p>
+
+    <h1>
+      Turn points into<br>
+      <span>luxury escapes.</span>
+    </h1>
+
+    <p>
+      Smarter credit card strategies, better redemptions,
+      and real trips booked with points.
+    </p>
+  </div>
+</section>
+
 
 <!-- SECTION TITLE -->
-
 <div class="section-title">
-
   <small>START EXPLORING</small>
 
   <h2>
     Build your rewards strategy<br>
     faster and smarter
   </h2>
-
 </div>
 
 
-
 <!-- DASHBOARD -->
-
 <section class="home-dashboard">
-
   <div class="dashboard-image-wrap">
 
     <img
@@ -234,8 +162,6 @@
       src="assets/images/card-home-images.PNG"
       alt="TravelWithTripp Dashboard"
     >
-
-    <!-- LABELS -->
 
     <div class="dashboard-label label-1">
       <h3>Card Finder</h3>
@@ -274,15 +200,11 @@
     </div>
 
   </div>
-
 </section>
 
 
-
 <!-- FOLLOW -->
-
 <section class="follow-section">
-
   <h2>Follow The Journey</h2>
 
   <p>
@@ -290,15 +212,12 @@
   </p>
 
   <div class="social-icons">
-
     <a href="YOUR_YOUTUBE_LINK" target="_blank">
-      <img src="assets/images/youtube-icon.png">
+      <img src="assets/images/youtube-icon.png" alt="YouTube">
     </a>
 
     <a href="YOUR_INSTAGRAM_LINK" target="_blank">
-      <img src="assets/images/instagram-icon.png">
+      <img src="assets/images/instagram-icon.png" alt="Instagram">
     </a>
-
   </div>
-
 </section>
