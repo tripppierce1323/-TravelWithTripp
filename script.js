@@ -581,7 +581,7 @@ function runCalculator() {
     .filter(card => passesFilter(card, selectedFilters))
     .filter(card => passesGoalFilter(card, goal))
     .map(card => calculateRecommendationScore(card, selectedCategories, selectedFilters, goal))
-    .filter(result => result.score > 0)
+    .filter(result => selectedFilters.length > 0 || selectedCategories.length > 0 ? true : result.score > 0)
     .sort((a, b) => b.score - a.score);
 
   renderResults(results, selectedCategories);
