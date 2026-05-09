@@ -645,12 +645,32 @@ const maxFee = Number(document.getElementById("maxAnnualFeeSlider")?.value) || 8
 
 // =============================
 // EVENT LISTENERS
+// Replaces old single annual fee slider listener
 // =============================
 
 document.addEventListener("input", function(e) {
-  if (e.target.id === "annualFeeSlider") {
-    document.getElementById("feeValue").textContent = "$" + e.target.value;
+  const minSlider = document.getElementById("minAnnualFeeSlider");
+  const maxSlider = document.getElementById("maxAnnualFeeSlider");
+  const minFeeValue = document.getElementById("minFeeValue");
+  const maxFeeValue = document.getElementById("maxFeeValue");
+
+  if (!minSlider || !maxSlider) return;
+
+  let minFee = Number(minSlider.value);
+  let maxFee = Number(maxSlider.value);
+
+  if (e.target.id === "minAnnualFeeSlider" && minFee > maxFee) {
+    maxFee = minFee;
+    maxSlider.value = maxFee;
   }
+
+  if (e.target.id === "maxAnnualFeeSlider" && maxFee < minFee) {
+    minFee = maxFee;
+    minSlider.value = minFee;
+  }
+
+  if (minFeeValue) minFeeValue.textContent = "$" + minFee;
+  if (maxFeeValue) maxFeeValue.textContent = "$" + maxFee;
 });
 
 window.runCalculator = runCalculator;
