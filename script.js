@@ -63,22 +63,6 @@ function hasFilter(selectedFilters, filter) {
   return selectedFilters.includes(filter);
 }
 
-function hasAnyBrandFilter(selectedFilters) {
-  const brands = [
-    "delta",
-    "united",
-    "american",
-    "southwest",
-    "hilton",
-    "marriott",
-    "hyatt",
-    "ihg",
-    "bilt"
-  ];
-
-  return selectedFilters.some(f => brands.includes(f));
-}
-
 function hasHotelBrandFilter(selectedFilters) {
   return selectedFilters.some(f =>
     ["hilton", "marriott", "hyatt", "ihg"].includes(f)
@@ -87,7 +71,16 @@ function hasHotelBrandFilter(selectedFilters) {
 
 function hasAirlineBrandFilter(selectedFilters) {
   return selectedFilters.some(f =>
-    ["delta", "united", "american", "southwest"].includes(f)
+    [
+      "delta",
+      "united",
+      "american",
+      "southwest",
+      "aircanada",
+      "britishairways",
+      "aerlingus",
+      "iberia"
+    ].includes(f)
   );
 }
 
@@ -125,20 +118,71 @@ function clearCardFilters() {
 // =============================
 
 function passesFilter(card, selectedFilters) {
-  if (selectedFilters.length === 0) return true;
+  const issuerFilters = ["amex", "chase", "capitalone", "citi", "bilt"];
 
-  return selectedFilters.some(f => {
-    if (f === "beginner") return card.beginnerFriendly === true;
-    if (f === "premium") return card.premium === true;
-    if (f === "business") return card.business === true;
+  const typeFilters = [
+    "flexible",
+    "cashback",
+    "airline",
+    "hotel",
+    "business",
+    "beginner",
+    "premium"
+  ];
 
-    return (
-      card.issuerTag === f ||
-      card.brand === f ||
-      card.type === f ||
-      card.tags?.includes(f)
-    );
-  });
+  const brandFilters = [
+    "delta",
+    "united",
+    "american",
+    "southwest",
+    "hilton",
+    "marriott",
+    "hyatt",
+    "ihg",
+    "aircanada",
+    "britishairways",
+    "aerlingus",
+    "iberia"
+  ];
+
+  const selectedIssuers = selectedFilters.filter(f => issuerFilters.includes(f));
+  const selectedTypes = selectedFilters.filter(f => typeFilters.includes(f));
+  const selectedBrands = selectedFilters.filter(f => brandFilters.includes(f));
+
+  // Issuer filters are OR inside issuer group.
+  // Example: Amex + Chase means show cards from either Amex or Chase.
+  if (selectedIssuers.length > 0 && !selectedIssuers.includes(card.issuerTag)) {
+    return false;
+  }
+
+  // Brand filters are OR inside brand group.
+  // Example: Hilton + Marriott means show either Hilton or Marriott cards.
+  if (selectedBrands.length > 0 && !selectedBrands.includes(card.brand)) {
+    return false;
+  }
+
+  // Type filters are AND-style for special filters and OR-style for main card types.
+  const selectedMainTypes = selectedTypes.filter(f =>
+    ["flexible", "cashback", "airline", "hotel"].includes(f)
+  );
+
+  if (selectedMainTypes.length > 0 && !selectedMainTypes.includes(card.type)) {
+    return false;
+  }
+
+  if (selectedTypes.includes("business") && card.business !== true) {
+    return false;
+  }
+
+  if (selectedTypes.includes("beginner") && card.beginnerFriendly !== true) {
+    return false;
+  }
+
+  if (selectedTypes.includes("premium") && card.premium !== true) {
+    return false;
+  }
+
+  return true;
 }
 
 function passesGoalFilter(card, goal) {
@@ -149,7 +193,9 @@ function passesGoalFilter(card, goal) {
   }
 
   if (goal === "freeFlights") {
-    return card.type === "airline" || card.tags?.includes("flights") || card.tags?.includes("travel");
+    return card.type === "airline" ||
+      card.tags?.includes("flights") ||
+      card.tags?.includes("travel");
   }
 
   if (goal === "freeHotels") {
@@ -186,10 +232,9 @@ function getCategoryScore(card, category, selectedFilters, goal) {
 
   let score = 0;
 
-  // Bilt / rent rule
+  // Rent should only recommend Bilt.
   if (category === "rent") {
-    if (card.brand === "bilt") return 120;
-    return 0;
+    return card.brand === "bilt" ? 120 : 0;
   }
 
   const multiplier = card.rewards[category] || 0;
@@ -201,56 +246,48 @@ function getCategoryScore(card, category, selectedFilters, goal) {
   const everydayCategories = ["dining", "groceries", "gas", "other"];
   const isEverydayCategory = everydayCategories.includes(category);
 
-  // Flexible points should win normal everyday categories
   if (isEverydayCategory && card.type === "flexible") {
     score += 30;
   }
 
-  // Cashback should also be strong for everyday spend
   if (isEverydayCategory && card.type === "cashback") {
     score += 25;
   }
 
-  // Hotel cards should not dominate normal everyday categories
   if (isEverydayCategory && card.type === "hotel") {
     if (!hasFilter(selectedFilters, "hotel") && !hasHotelBrandFilter(selectedFilters)) {
       score -= 60;
     }
   }
 
-  // Airline cards should not dominate normal everyday categories
   if (isEverydayCategory && card.type === "airline") {
     if (!hasFilter(selectedFilters, "airline") && !hasAirlineBrandFilter(selectedFilters)) {
       score -= 55;
     }
   }
 
-  // Bilt should not rank high outside rent
   if (card.brand === "bilt" && category !== "rent") {
     if (!hasFilter(selectedFilters, "bilt")) {
       score -= 75;
     }
   }
 
-  // Flights logic
   if (category === "flightsDirect") {
     if (card.type === "flexible") score += 25;
     if (card.type === "airline") score += 30;
   }
 
-  // Hotels logic
   if (category === "hotelsDirect") {
     if (card.type === "hotel") score += 30;
     if (card.type === "flexible") score += 20;
   }
 
-  // Travel portal exists in data but gets lower internal value
+  // Travel portal multipliers are considered, but weighted lower.
   const portalMultiplier = card.rewards.travelPortal || 0;
   if (["flightsDirect", "hotelsDirect"].includes(category)) {
     score += portalMultiplier * 2;
   }
 
-  // Premium cards only get help when relevant
   const premiumRelevant =
     goal === "luxuryTravel" ||
     hasFilter(selectedFilters, "premium") ||
@@ -294,12 +331,10 @@ function calculateRecommendationScore(card, selectedCategories, selectedFilters,
 
   score += getGoalScore(card, goal);
 
-  // General boosts
   if (card.type === "flexible") score += 10;
   if (card.beginnerFriendly) score += 5;
 
-  // Featured card tie-breaker
-  if (card.featuredCard) score += 7;
+  if (card.featuredCard || card.featured) score += 7;
 
   return {
     card,
@@ -369,7 +404,11 @@ function renderCard(cardResult) {
 
       <div class="card-detail-block">
         <strong>Best Pairing</strong>
-        <p>${card.bestPairing || "Pairs well with a strong everyday earning card."}</p>
+        <p>${
+          Array.isArray(card.bestPairing)
+            ? card.bestPairing.join(", ")
+            : (card.bestPairing || "Pairs well with a strong everyday earning card.")
+        }</p>
       </div>
 
       <div class="actions">
@@ -420,7 +459,11 @@ function renderBestCard(cardResult) {
 
       <div class="why">
         <strong>Best Pairing</strong>
-        <p>${card.bestPairing || "Pairs well with a strong everyday earning card."}</p>
+        <p>${
+          Array.isArray(card.bestPairing)
+            ? card.bestPairing.join(", ")
+            : (card.bestPairing || "Pairs well with a strong everyday earning card.")
+        }</p>
       </div>
 
       <p class="slider-note">
@@ -447,7 +490,12 @@ function renderResults(results, selectedCategories) {
   document.querySelector(".results-placeholder")?.remove();
 
   if (!results.length) {
-    container.innerHTML = "<p>No cards matched your filters.</p>";
+    container.innerHTML = `
+      <div class="results-placeholder">
+        <h2>No cards found</h2>
+        <p>No cards matched your selected filters. Try removing one filter or choosing a different issuer or brand.</p>
+      </div>
+    `;
     return;
   }
 
@@ -458,13 +506,16 @@ function renderResults(results, selectedCategories) {
   let categorySections = "";
 
   selectedCategories.forEach(category => {
+    const selectedFilters = getSelectedFilters();
+    const goal = document.getElementById("travelGoal")?.value || "bestOverall";
+
     const categoryResults = results
       .filter(r => r.card.name !== best.card.name)
       .filter(r => !usedCards.has(r.card.name))
-      .filter(r => getCategoryScore(r.card, category, getSelectedFilters(), document.getElementById("travelGoal")?.value || "bestOverall") > 0)
+      .filter(r => getCategoryScore(r.card, category, selectedFilters, goal) > 0)
       .sort((a, b) =>
-        getCategoryScore(b.card, category, getSelectedFilters(), document.getElementById("travelGoal")?.value || "bestOverall") -
-        getCategoryScore(a.card, category, getSelectedFilters(), document.getElementById("travelGoal")?.value || "bestOverall")
+        getCategoryScore(b.card, category, selectedFilters, goal) -
+        getCategoryScore(a.card, category, selectedFilters, goal)
       )
       .slice(0, 4);
 
