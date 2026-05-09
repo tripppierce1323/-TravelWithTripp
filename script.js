@@ -406,7 +406,7 @@ function renderCard(cardResult) {
 
 // =============================
 // GROUPING LOGIC
-// New section
+// Replaces previous GROUPING LOGIC section
 // =============================
 
 function getGroupLabel(card, selectedFilters) {
@@ -436,23 +436,84 @@ function getGroupLabel(card, selectedFilters) {
   const selectedBrandFilters = selectedFilters.filter(f => brandLabels[f]);
   const selectedIssuerFilters = selectedFilters.filter(f => issuerLabels[f]);
 
-  // 1. If a hotel/airline brand is selected, group by brand.
+  // ====================================
+  // 1. BRAND FILTERS SELECTED
+  // Example: Hilton + Delta
+  // ====================================
+
   if (selectedBrandFilters.length > 0) {
     return brandLabels[card.brand] || "Other Cards";
   }
 
-  // 2. If an issuer is selected, group by issuer.
+  // ====================================
+  // 2. ISSUER FILTERS SELECTED
+  // Example: Amex or Chase
+  // Group by card family INSIDE issuer
+  // ====================================
+
   if (selectedIssuerFilters.length > 0) {
+
+    // Airline / hotel brands first
+    if (brandLabels[card.brand]) {
+      return brandLabels[card.brand];
+    }
+
+    // Flexible points
+    if (card.type === "flexible") {
+      return "Flexible Points Cards";
+    }
+
+    // Cashback
+    if (card.type === "cashback") {
+      return "Cash Back Cards";
+    }
+
+    // Generic airline cards
+    if (card.type === "airline") {
+      return "Airline Cards";
+    }
+
+    // Generic hotel cards
+    if (card.type === "hotel") {
+      return "Hotel Cards";
+    }
+
+    // Business cards
+    if (card.business) {
+      return "Business Cards";
+    }
+
     return issuerLabels[card.issuerTag] || "Other Cards";
   }
 
-  // 3. If no brand or issuer is selected, group by card type.
-  // Flexible first, then cash back, then branded cards.
-  if (card.type === "flexible") return "Flexible Points Cards";
-  if (card.type === "cashback") return "Cash Back Cards";
-  if (card.type === "airline") return "Airline Cards";
-  if (card.type === "hotel") return "Hotel Cards";
-  if (card.business) return "Business Cards";
+  // ====================================
+  // 3. DEFAULT GROUPING
+  // No issuer/brand selected
+  // ====================================
+
+  if (card.type === "flexible") {
+    return "Flexible Points Cards";
+  }
+
+  if (card.type === "cashback") {
+    return "Cash Back Cards";
+  }
+
+  if (brandLabels[card.brand]) {
+    return brandLabels[card.brand];
+  }
+
+  if (card.type === "airline") {
+    return "Airline Cards";
+  }
+
+  if (card.type === "hotel") {
+    return "Hotel Cards";
+  }
+
+  if (card.business) {
+    return "Business Cards";
+  }
 
   return "Other Cards";
 }
