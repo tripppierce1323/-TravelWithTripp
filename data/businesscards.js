@@ -1188,6 +1188,243 @@ const businessCreditCards = [
   business: true,
   featured: false
 },
+
+//
+//IHG
+//
+
+{
+  name: "IHG One Rewards Premier Business Card",
+  issuer: "Chase / IHG",
+  issuerTag: "chase",
+  ecosystem: "IHG One Rewards",
+  annualFee: 99,
+  pointValue: 0.005,
+  type: "hotel",
+  brand: "ihg",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "IHG Hotel Stays",
+
+  rewards: {
+    dining: 3,
+    groceries: 2,
+    gas: 5,
+    rent: 0,
+    flightsDirect: 3,
+    hotelsDirect: 10,
+    travelPortal: 2,
+    other: 3
+  },
+
+  multipliers: [
+    "10x IHG purchases",
+    "5x gas stations",
+    "5x travel",
+    "3x dining"
+  ],
+
+  tags: [
+    "chase",
+    "business",
+    "hotel",
+    "ihg",
+    "travel"
+  ],
+
+  benefits: [
+    "IHG Platinum status",
+    "Anniversary free night",
+    "Global Entry/TSA credit"
+  ],
+
+  welcomeBonus: "Check Chase for latest IHG Business offer.",
+
+  why: "Strong value for IHG loyalists with a low annual fee.",
+
+  myReview:
+    "The annual free night alone can offset the annual fee if you stay at IHG occasionally.",
+
+  goodFor: [
+    "IHG travelers",
+    "Road warriors",
+    "Lower annual fee hotel setup"
+  ],
+
+  notGoodFor: [
+    "Luxury hotel maximizers",
+    "Flexible points setups"
+  ],
+
+  bestPairing: [
+    "Ink Business Preferred"
+  ],
+
+  weaknesses: [
+    "IHG points are lower value"
+  ],
+
+  premium: false,
+  beginnerFriendly: true,
+  business: true,
+  featured: false
+},
+// =====================
+// SOUTHWEST BUSINESS
+// =====================
+
+{
+  name: "Southwest Rapid Rewards Premier Business Credit Card",
+  issuer: "Chase / Southwest",
+  issuerTag: "chase",
+  ecosystem: "Southwest Rapid Rewards",
+  annualFee: 99,
+  pointValue: 0.014,
+  type: "airline",
+  brand: "southwest",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "Southwest Business Flyers",
+
+  rewards: {
+    dining: 2,
+    groceries: 1,
+    gas: 1,
+    rent: 0,
+    flightsDirect: 3,
+    hotelsDirect: 2,
+    travelPortal: 1,
+    other: 1
+  },
+
+  multipliers: [
+    "3x Southwest purchases",
+    "2x Rapid Rewards hotel and car rental partners",
+    "2x local transit and commuting",
+    "1x everything else"
+  ],
+
+  tags: ["chase", "business", "airline", "southwest"],
+
+  benefits: [
+    "Companion Pass qualifying points",
+    "EarlyBird Check-In credits",
+    "Anniversary bonus points"
+  ],
+
+  welcomeBonus: "Check Chase for latest Southwest Premier Business offer.",
+
+  why: "Great for Southwest loyalists chasing Companion Pass.",
+
+  myReview:
+    "One of the easiest ways to help earn the Southwest Companion Pass for business owners.",
+
+  goodFor: [
+    "Southwest flyers",
+    "Domestic travel",
+    "Companion Pass strategy"
+  ],
+
+  notGoodFor: [
+    "Luxury travel",
+    "International premium flights"
+  ],
+
+  bestPairing: [
+    "Chase Sapphire Preferred"
+  ],
+
+  weaknesses: [
+    "Limited airline partner flexibility"
+  ],
+
+  premium: false,
+  beginnerFriendly: true,
+  business: true,
+  featured: false
+},
+
+{
+  name: "Southwest Rapid Rewards Performance Business Credit Card",
+  issuer: "Chase / Southwest",
+  issuerTag: "chase",
+  ecosystem: "Southwest Rapid Rewards",
+  annualFee: 199,
+  pointValue: 0.014,
+  type: "airline",
+  brand: "southwest",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "Frequent Southwest Travelers",
+
+  rewards: {
+    dining: 3,
+    groceries: 1,
+    gas: 2,
+    rent: 0,
+    flightsDirect: 4,
+    hotelsDirect: 3,
+    travelPortal: 1,
+    other: 1
+  },
+
+  multipliers: [
+    "4x Southwest purchases",
+    "3x Rapid Rewards hotel/car partners",
+    "2x social media and search advertising",
+    "2x internet/cable/phone"
+  ],
+
+  tags: ["chase", "business", "airline", "southwest", "premium"],
+
+  benefits: [
+    "Upgraded boardings",
+    "Wi-Fi credits",
+    "Companion Pass qualifying points"
+  ],
+
+  welcomeBonus: "Check Chase for latest Southwest Performance Business offer.",
+
+  why: "Best premium Southwest business card.",
+
+  myReview:
+    "Worth it for heavy Southwest travelers who value upgraded boarding and extra perks.",
+
+  goodFor: [
+    "Frequent Southwest flyers",
+    "Companion Pass users",
+    "Business travel"
+  ],
+
+  notGoodFor: [
+    "Luxury travel seekers",
+    "International airline partners"
+  ],
+
+  bestPairing: [
+    "Chase Sapphire Reserve"
+  ],
+
+  weaknesses: [
+    "Southwest-only ecosystem"
+  ],
+
+  premium: true,
+  beginnerFriendly: false,
+  business: true,
+  featured: false
+},
+
+// =====================
+// UNITED BUSINESS
+// =====================
+
 {
   name: "United Business Card",
   issuer: "Chase / United",
@@ -1265,81 +1502,306 @@ const businessCreditCards = [
   business: true,
   featured: false
 },
+
 {
-  name: "IHG One Rewards Premier Business Card",
-  issuer: "Chase / IHG",
+  name: "United Club Business Card",
+  issuer: "Chase / United",
   issuerTag: "chase",
-  ecosystem: "IHG One Rewards",
-  annualFee: 99,
-  pointValue: 0.005,
-  type: "hotel",
-  brand: "ihg",
+  ecosystem: "United MileagePlus",
+  annualFee: 695,
+  pointValue: 0.013,
+  type: "airline",
+  brand: "united",
   imageUrl: "",
   youtubeUrl: "",
   applyUrl: "#",
 
-  bestFor: "IHG Hotel Stays",
+  bestFor: "Premium United Travelers",
 
   rewards: {
-    dining: 3,
-    groceries: 2,
-    gas: 5,
+    dining: 2,
+    groceries: 1,
+    gas: 2,
     rent: 0,
-    flightsDirect: 3,
-    hotelsDirect: 10,
-    travelPortal: 2,
-    other: 3
+    flightsDirect: 7,
+    hotelsDirect: 2,
+    travelPortal: 1,
+    other: 1.5
   },
 
   multipliers: [
-    "10x IHG purchases",
-    "5x gas stations",
-    "5x travel",
-    "3x dining"
+    "7x United purchases",
+    "2x dining",
+    "2x travel",
+    "1.5x everything else"
   ],
 
-  tags: [
-    "chase",
-    "business",
-    "hotel",
-    "ihg",
-    "travel"
-  ],
+  tags: ["chase", "business", "airline", "united", "premium"],
 
   benefits: [
-    "IHG Platinum status",
-    "Anniversary free night",
-    "Global Entry/TSA credit"
+    "United Club membership",
+    "Premier Access",
+    "Free checked bags"
   ],
 
-  welcomeBonus: "Check Chase for latest IHG Business offer.",
+  welcomeBonus: "Check Chase for latest United Club Business offer.",
 
-  why: "Strong value for IHG loyalists with a low annual fee.",
+  why: "Best premium United business travel card.",
 
   myReview:
-    "The annual free night alone can offset the annual fee if you stay at IHG occasionally.",
+    "Best for business travelers heavily committed to United and Star Alliance travel.",
 
   goodFor: [
-    "IHG travelers",
-    "Road warriors",
-    "Lower annual fee hotel setup"
+    "United loyalists",
+    "Airport lounge access",
+    "Frequent business flyers"
   ],
 
   notGoodFor: [
-    "Luxury hotel maximizers",
-    "Flexible points setups"
+    "Casual travelers",
+    "Simple rewards setups"
   ],
 
   bestPairing: [
-    "Ink Business Preferred"
+    "Chase Sapphire Preferred"
   ],
 
   weaknesses: [
-    "IHG points are lower value"
+    "Very high annual fee"
+  ],
+
+  premium: true,
+  beginnerFriendly: false,
+  business: true,
+  featured: false
+},
+
+// =====================
+// AMERICAN AIRLINES BUSINESS
+// =====================
+
+{
+  name: "CitiBusiness AAdvantage Platinum Select Mastercard",
+  issuer: "Citi / American Airlines",
+  issuerTag: "citi",
+  ecosystem: "American Airlines AAdvantage",
+  annualFee: 99,
+  pointValue: 0.014,
+  type: "airline",
+  brand: "american",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "American Airlines Flyers",
+
+  rewards: {
+    dining: 1,
+    groceries: 1,
+    gas: 2,
+    rent: 0,
+    flightsDirect: 2,
+    hotelsDirect: 1,
+    travelPortal: 1,
+    other: 1
+  },
+
+  multipliers: [
+    "2x American Airlines purchases",
+    "2x gas stations",
+    "2x telecommunications",
+    "1x everything else"
+  ],
+
+  tags: ["citi", "business", "airline", "american"],
+
+  benefits: [
+    "First checked bag free",
+    "Preferred boarding",
+    "Companion certificate opportunity"
+  ],
+
+  welcomeBonus: "Check Citi for latest AA Business offer.",
+
+  why: "Best business card for American Airlines loyalists.",
+
+  myReview:
+    "Strong airline business card if you regularly fly American Airlines and value checked bag savings.",
+
+  goodFor: [
+    "American Airlines travelers",
+    "Business flights",
+    "Domestic travel"
+  ],
+
+  notGoodFor: [
+    "Flexible points users",
+    "Luxury travel redemptions"
+  ],
+
+  bestPairing: [
+    "Citi Strata Premier"
+  ],
+
+  weaknesses: [
+    "Limited outside AA ecosystem"
   ],
 
   premium: false,
   beginnerFriendly: true,
+  business: true,
+  featured: false
+},
+
+// =====================
+// WYNDHAM BUSINESS
+// =====================
+
+{
+  name: "Wyndham Rewards Earner Business Card",
+  issuer: "Barclays / Wyndham",
+  issuerTag: "barclays",
+  ecosystem: "Wyndham Rewards",
+  annualFee: 95,
+  pointValue: 0.011,
+  type: "hotel",
+  brand: "wyndham",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "Gas + Wyndham Stays",
+
+  rewards: {
+    dining: 5,
+    groceries: 1,
+    gas: 8,
+    rent: 0,
+    flightsDirect: 1,
+    hotelsDirect: 8,
+    travelPortal: 1,
+    other: 1
+  },
+
+  multipliers: [
+    "8x Wyndham purchases",
+    "8x gas",
+    "5x marketing/advertising/utilities",
+    "1x everything else"
+  ],
+
+  tags: ["business", "hotel", "wyndham"],
+
+  benefits: [
+    "Wyndham Diamond status",
+    "Strong gas rewards",
+    "Caesars status match potential"
+  ],
+
+  welcomeBonus: "Check Barclays for latest Wyndham Business offer.",
+
+  why: "One of the strongest gas rewards business cards available.",
+
+  myReview:
+    "Extremely underrated business card for gas spending and Wyndham/Caesars strategies.",
+
+  goodFor: [
+    "Road warriors",
+    "Gas spending",
+    "Wyndham stays"
+  ],
+
+  notGoodFor: [
+    "Luxury hotel seekers",
+    "Flexible points setups"
+  ],
+
+  bestPairing: [
+    "Chase Sapphire Preferred"
+  ],
+
+  weaknesses: [
+    "Smaller hotel footprint"
+  ],
+
+  premium: false,
+  beginnerFriendly: false,
+  business: true,
+ featured: true
+},
+
+// =====================
+// ALASKA BUSINESS
+// =====================
+
+{
+  name: "Alaska Airlines Visa Business Card",
+  issuer: "Bank of America / Alaska",
+  issuerTag: "boa",
+  ecosystem: "Alaska Mileage Plan",
+  annualFee: 70,
+  pointValue: 0.018,
+  type: "airline",
+  brand: "alaska",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
+
+  bestFor: "Alaska Mileage Plan",
+
+  rewards: {
+    dining: 2,
+    groceries: 1,
+    gas: 1,
+    rent: 0,
+    flightsDirect: 3,
+    hotelsDirect: 1,
+    travelPortal: 1,
+    other: 1
+  },
+
+  multipliers: [
+    "3x Alaska purchases",
+    "2x gas, EV charging, shipping",
+    "2x cable/streaming"
+  ],
+
+  tags: ["business", "airline", "alaska"],
+
+  benefits: [
+    "Companion fare",
+    "Free checked bag",
+    "Oneworld partner value"
+  ],
+
+  welcomeBonus: "Check Bank of America for latest Alaska Business offer.",
+
+  why: "Best for Alaska Airlines loyalists and Oneworld award travelers.",
+
+  myReview:
+    "Alaska miles can be extremely valuable for premium international flights.",
+
+  goodFor: [
+    "Oneworld travel",
+    "Alaska flyers",
+    "International award flights"
+  ],
+
+  notGoodFor: [
+    "Everyday cash back",
+    "People without Alaska usage"
+  ],
+
+  bestPairing: [
+    "Bilt Mastercard"
+  ],
+
+  weaknesses: [
+    "Smaller domestic footprint"
+  ],
+
+  premium: false,
+  beginnerFriendly: false,
   business: true,
   featured: false
 },
