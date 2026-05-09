@@ -296,7 +296,86 @@ const businessCreditCards = [
     beginnerFriendly: true,
     business: true
   },
+  //Hilton Amex Business//
+//.                     //
+{
+  name: "Hilton Honors American Express Business Card",
+  issuer: "Amex / Hilton",
+  issuerTag: "amex",
+  ecosystem: "Hilton Honors",
+  annualFee: 195,
+  pointValue: 0.005,
+  type: "hotel",
+  brand: "hilton",
+  imageUrl: "",
+  youtubeUrl: "",
+  applyUrl: "#",
 
+  bestFor: "Hilton Business Travel",
+
+  rewards: {
+    dining: 5,
+    groceries: 3,
+    gas: 3,
+    rent: 0,
+    flightsDirect: 5,
+    hotelsDirect: 12,
+    travelPortal: 3,
+    other: 3
+  },
+
+  tags: [
+    "amex",
+    "business",
+    "hotel",
+    "hilton",
+    "travel"
+  ],
+
+  benefits: [
+    "12x Hilton purchases",
+    "5x flights booked directly with airlines",
+    "5x dining",
+    "5x gas stations",
+    "Complimentary Hilton Gold status"
+  ],
+
+  welcomeBonus: "Check Amex for the latest elevated offer.",
+
+  why: "One of the best business hotel cards for Hilton loyalists who travel frequently.",
+
+  myReview:
+    "This is one of the strongest hotel business cards if you stay at Hilton properties often. The automatic Hilton Gold status and strong Hilton earning make it easy to justify.",
+
+  goodFor: [
+    "Hilton business travelers",
+    "Frequent hotel stays",
+    "Business travel expenses",
+    "Hilton loyalists"
+  ],
+
+  notGoodFor: [
+    "People who rarely stay at Hilton",
+    "Users wanting flexible points",
+    "Simple cashback setups"
+  ],
+
+  bestPairing: [
+    "Amex Gold",
+    "Amex Platinum",
+    "Blue Business Plus"
+  ],
+
+  weaknesses: [
+    "Hilton points are less flexible than Membership Rewards",
+    "Best value comes from Hilton stays"
+  ],
+
+  premium: false,
+  beginnerFriendly: false,
+  business: true,
+  featured: true
+},
   // =====================
   // CHASE INK BUSINESS
   // =====================
