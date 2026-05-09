@@ -1,3 +1,644 @@
+<style>
+/* ===================================================== */
+/* CARD FINDER PAGE ONLY */
+/* Add at top of calculator.html */
+/* ===================================================== */
+
+.finder-shell {
+  min-height: 100vh;
+  padding: 18px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top left, rgba(244,212,126,0.22), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(73,119,168,0.22), transparent 35%),
+    linear-gradient(135deg, #03121f 0%, #071b2d 45%, #102033 100%);
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.finder-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.finder-shell > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* HERO */
+
+.finder-hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 20px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
+  border: 1px solid rgba(244,212,126,0.22);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+  overflow: hidden;
+}
+
+.finder-hero-text small {
+  display: inline-block;
+  color: var(--gold-light);
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.finder-hero-text h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(44px, 8vw, 86px);
+  line-height: 0.92;
+  letter-spacing: -2px;
+}
+
+.finder-hero-text p {
+  max-width: 520px;
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+}
+
+.finder-plane {
+  justify-self: center;
+  width: 190px;
+  height: 190px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 72px;
+  color: var(--gold-light);
+  background:
+    radial-gradient(circle, rgba(244,212,126,0.28), rgba(244,212,126,0.06) 62%, transparent 70%);
+  border: 1px solid rgba(244,212,126,0.28);
+  box-shadow:
+    0 0 55px rgba(244,212,126,0.22),
+    inset 0 0 35px rgba(244,212,126,0.08);
+  animation: floatPlane 4s ease-in-out infinite;
+}
+
+@keyframes floatPlane {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+/* FILTER GRID */
+
+.finder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.finder-panel {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.105), rgba(255,255,255,0.045));
+  border: 1px solid rgba(244,212,126,0.18);
+  border-radius: 26px;
+  padding: 20px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.2);
+  backdrop-filter: blur(14px);
+}
+
+.finder-panel h3 {
+  font-size: 17px;
+  margin-bottom: 15px;
+  font-weight: 950;
+  color: #ffffff;
+}
+
+.earn-panel {
+  grid-column: span 2;
+}
+
+.full-width-panel {
+  grid-column: span 3;
+}
+
+/* ICON OPTIONS */
+
+.icon-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.icon-options label {
+  min-height: 86px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.09);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 850;
+  font-size: 14px;
+  color: rgba(255,255,255,0.86);
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-align: center;
+  padding: 10px;
+}
+
+.icon-options label span {
+  font-size: 24px;
+}
+
+.icon-options label:hover,
+.pill-options label:hover {
+  transform: translateY(-3px);
+  border-color: rgba(244,212,126,0.46);
+  background: rgba(244,212,126,0.12);
+}
+
+.icon-options input,
+.pill-options input {
+  display: none;
+}
+
+.icon-options label:has(input:checked),
+.pill-options label:has(input:checked) {
+  background: linear-gradient(135deg, rgba(244,212,126,0.95), rgba(184,137,50,0.95));
+  color: #071827;
+  border-color: rgba(244,212,126,0.9);
+  box-shadow: 0 14px 34px rgba(184,137,50,0.28);
+}
+
+.wide-option {
+  grid-column: span 3;
+}
+
+/* SELECT + SLIDERS */
+
+.finder-panel select {
+  width: 100%;
+  border: 1px solid rgba(244,212,126,0.18);
+  border-radius: 18px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 800;
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  outline: none;
+}
+
+.finder-panel select option {
+  color: #102033;
+}
+
+.dark-fee-values {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.dark-fee-values span {
+  color: rgba(255,255,255,0.72);
+}
+
+.dark-fee-values strong {
+  color: var(--gold-light);
+  font-size: 18px;
+}
+
+.fee-slider-label {
+  display: block;
+  margin-top: 14px;
+}
+
+.fee-slider-label span {
+  display: block;
+  color: rgba(255,255,255,0.76);
+  font-size: 13px;
+  font-weight: 850;
+  margin-bottom: 6px;
+}
+
+.fee-slider-label input {
+  width: 100%;
+  accent-color: var(--gold-light);
+}
+
+/* PILLS */
+
+.pill-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill-options label {
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.84);
+  font-weight: 850;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* BUTTONS */
+
+.finder-buttons {
+  grid-column: span 3;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.finder-buttons button {
+  border: none;
+  border-radius: 999px;
+  padding: 16px 30px;
+  font-size: 16px;
+  font-weight: 950;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.finder-buttons button:first-child {
+  background: linear-gradient(135deg, #f7d77d, #b88932);
+  color: #071827;
+  box-shadow: 0 16px 36px rgba(184,137,50,0.32);
+}
+
+.finder-clear {
+  background: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+}
+
+.finder-buttons button:hover {
+  transform: translateY(-3px);
+}
+
+/* TRUST ROW */
+
+.finder-trust-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.finder-trust-row div {
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.075);
+  border: 1px solid rgba(244,212,126,0.14);
+  text-align: center;
+}
+
+.finder-trust-row span {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.finder-trust-row strong {
+  display: block;
+  color: var(--gold-light);
+  font-size: 15px;
+}
+
+.finder-trust-row p {
+  margin-top: 4px;
+  color: rgba(255,255,255,0.65);
+  font-size: 13px;
+}
+
+/* RESULTS */
+
+#resultsContent {
+  margin-top: 22px;
+}
+
+.finder-placeholder,
+.results-placeholder {
+  text-align: center;
+  padding: 58px 22px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.105), rgba(255,255,255,0.045));
+  border-radius: 28px;
+  border: 1px solid rgba(244,212,126,0.18);
+  color: rgba(255,255,255,0.72);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+}
+
+.finder-placeholder h2,
+.results-placeholder h2 {
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.result-hero {
+  margin-bottom: 34px;
+}
+
+.result-hero h2,
+.other-cards h2 {
+  color: #ffffff;
+  margin-bottom: 16px;
+  font-size: 30px;
+  font-weight: 950;
+  letter-spacing: -0.6px;
+}
+
+/* RESULT CARDS */
+
+.result-card {
+  background:
+    radial-gradient(circle at top right, rgba(244,212,126,0.18), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05));
+  color: #ffffff;
+  border-radius: 32px;
+  padding: 30px;
+  border: 1px solid rgba(244,212,126,0.22);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+}
+
+.result-card img {
+  width: min(310px, 82%);
+  display: block;
+  margin: 0 auto 22px;
+  border-radius: 18px;
+  filter: drop-shadow(0 16px 28px rgba(0,0,0,0.34));
+}
+
+.result-card h3 {
+  color: #ffffff;
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.result-card p {
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.why,
+.bad {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.085);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.result-card ul {
+  color: rgba(255, 255, 255, 0.86);
+  margin-left: 18px;
+  margin-top: 8px;
+}
+
+.result-card li {
+  margin-bottom: 6px;
+}
+
+.result-card .why strong,
+.result-card .bad strong {
+  color: var(--gold-light);
+}
+
+.slider-note {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+  margin-top: 16px;
+}
+
+.other-cards {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.other-cards h2 {
+  grid-column: 1 / -1;
+}
+
+.mini-card {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(244,212,126,0.22);
+  border-radius: 26px;
+  padding: 18px;
+  transition: 0.22s ease;
+  color: #102033;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.16);
+}
+
+.mini-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.22);
+}
+
+.mini-card img {
+  width: 150px;
+  max-width: 85%;
+  display: block;
+  margin: 0 auto 16px;
+  border-radius: 14px;
+  filter: drop-shadow(0 10px 18px rgba(16,32,51,0.18));
+}
+
+.mini-card h4 {
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+  line-height: 1.18;
+  font-weight: 950;
+}
+
+.mini-card p {
+  font-size: 0.92rem;
+  color: #5f6b76;
+  font-weight: 650;
+  margin-bottom: 6px;
+}
+
+.card-detail-block {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(16, 32, 51, 0.11);
+}
+
+.card-detail-block strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #102033;
+  font-weight: 950;
+}
+
+.card-detail-block ul,
+.mini-card ul {
+  margin-left: 18px;
+  margin-top: 8px;
+  color: #5f6b76;
+  font-weight: 650;
+}
+
+.card-detail-block li,
+.mini-card li {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+/* ACTION BUTTONS */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.apply-btn,
+.video-btn {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 950;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.apply-btn {
+  background: linear-gradient(135deg, #f7d77d, #b88932);
+  color: #071827;
+}
+
+.video-btn {
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+}
+
+.apply-btn:hover,
+.video-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .finder-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .earn-panel,
+  .full-width-panel,
+  .finder-buttons {
+    grid-column: span 2;
+  }
+
+  .other-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .finder-shell {
+    padding: 12px;
+    border-radius: 26px;
+  }
+
+  .finder-hero {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .finder-plane {
+    width: 130px;
+    height: 130px;
+    font-size: 52px;
+  }
+
+  .finder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .earn-panel,
+  .full-width-panel,
+  .finder-buttons {
+    grid-column: span 1;
+  }
+
+  .icon-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wide-option {
+    grid-column: span 2;
+  }
+
+  .finder-buttons button {
+    width: 100%;
+  }
+
+  .finder-trust-row {
+    grid-template-columns: 1fr;
+  }
+
+  .other-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .apply-btn,
+  .video-btn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .finder-hero-text h1 {
+    font-size: 43px;
+  }
+
+  .icon-options {
+    grid-template-columns: 1fr;
+  }
+
+  .wide-option {
+    grid-column: span 1;
+  }
+}
+</style>
+
+
+///////////////
+///////////////
 <section class="finder-shell">
 
   <div class="finder-hero">
