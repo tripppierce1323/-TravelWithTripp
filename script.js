@@ -68,11 +68,17 @@ function clearCardFilters() {
   const goal = document.getElementById("travelGoal");
   if (goal) goal.value = "bestOverall";
 
-  const slider = document.getElementById("annualFeeSlider");
-  if (slider) slider.value = 895;
+  const minSlider = document.getElementById("minAnnualFeeSlider");
+if (minSlider) minSlider.value = 0;
 
-  const feeValue = document.getElementById("feeValue");
-  if (feeValue) feeValue.textContent = "$895";
+const maxSlider = document.getElementById("maxAnnualFeeSlider");
+if (maxSlider) maxSlider.value = 895;
+
+const minFeeValue = document.getElementById("minFeeValue");
+if (minFeeValue) minFeeValue.textContent = "$0";
+
+const maxFeeValue = document.getElementById("maxFeeValue");
+if (maxFeeValue) maxFeeValue.textContent = "$895";
 
   const container = document.getElementById("resultsContent");
   if (container) {
@@ -612,7 +618,8 @@ function runCalculator() {
   const businessCards = window.businessCreditCards || [];
 
   const selectedCategories = getSelectedTopCategories();
-  const maxFee = Number(document.getElementById("annualFeeSlider")?.value) || 895;
+  const minFee = Number(document.getElementById("minAnnualFeeSlider")?.value) || 0;
+const maxFee = Number(document.getElementById("maxAnnualFeeSlider")?.value) || 895;
   const selectedFilters = getSelectedFilters();
   const goal = document.getElementById("travelGoal")?.value || "bestOverall";
 
@@ -624,7 +631,7 @@ function runCalculator() {
   }
 
   const results = cardsData
-    .filter(card => card.annualFee <= maxFee)
+    .filter(card => card.annualFee >= minFee && card.annualFee <= maxFee)
     .filter(card => shouldShowBusinessCards(card, selectedFilters))
     .filter(card => passesFilter(card, selectedFilters))
     .filter(card => passesGoalFilter(card, goal))
