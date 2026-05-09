@@ -1,393 +1,161 @@
-<!-- ===================================================== -->
-<!-- CREDIT CARD FINDER -->
-<!-- calculator.html -->
-<!-- ===================================================== -->
+<section class="finder-shell">
 
-<section class="page-hero">
+  <div class="finder-hero">
 
-  <small>SMARTER REWARDS</small>
+    <div class="finder-hero-text">
+      <small>CARD FINDER</small>
 
-  <h1>
-    Find The Best<br />
-    Credit Cards For You
-  </h1>
+      <h1>
+        Find Your Best<br />
+        Credit Cards
+      </h1>
 
-  <p>
-    Discover the best travel and rewards cards based on your goals,
-    favorite brands, and spending habits.
-  </p>
+      <p>
+        Tell us what matters most and we’ll recommend the perfect cards for your travel style.
+      </p>
+    </div>
 
-</section>
-
-<div class="calculator-container">
-
-  <!-- ===================================================== -->
-  <!-- HEADER -->
-  <!-- ===================================================== -->
-
-  <div class="calculator-header">
-
-    <h1>
-      Luxury Travel Starts Here
-    </h1>
-
-    <p>
-      Build your perfect wallet with premium travel cards,
-      luxury perks, free flights, elite hotel stays,
-      and maximum rewards.
-    </p>
+    <div class="finder-plane">✈</div>
 
   </div>
 
-  <!-- ===================================================== -->
-  <!-- FILTERS -->
-  <!-- ===================================================== -->
+  <div class="finder-grid">
 
-  <div class="filters">
+    <div class="finder-panel earn-panel">
+      <h3>What do you want to earn?</h3>
 
-    <!-- ===================================================== -->
-    <!-- TOP SPEND CATEGORIES -->
-    <!-- ===================================================== -->
-
-    <div class="filter-group">
-
-      <h3>Top Spending Categories</h3>
-
-      <label>
-        <input type="checkbox" class="top-category-filter" value="dining">
-        Dining
-      </label>
-
-      <label>
-        <input type="checkbox" class="top-category-filter" value="groceries">
-        Groceries
-      </label>
-
-      <label>
-        <input type="checkbox" class="top-category-filter" value="gas">
-        Gas
-      </label>
-
-      <label>
-        <input type="checkbox" class="top-category-filter" value="flightsDirect">
-        Flights
-      </label>
-
-      <label>
-        <input type="checkbox" class="top-category-filter" value="hotelsDirect">
-        Hotels
-      </label>
-
-      <label>
-        <input type="checkbox" class="top-category-filter" value="rent">
-        Rent / Mortgage
-      </label>
-
-      <label>
-        <input type="checkbox" class="top-category-filter" value="other">
-        Everyday Spend
-      </label>
-
+      <div class="icon-options">
+        <label><input type="checkbox" class="top-category-filter" value="dining"><span>🍽️</span>Dining</label>
+        <label><input type="checkbox" class="top-category-filter" value="groceries"><span>🛒</span>Groceries</label>
+        <label><input type="checkbox" class="top-category-filter" value="gas"><span>⛽</span>Gas</label>
+        <label><input type="checkbox" class="top-category-filter" value="flightsDirect"><span>✈️</span>Flights</label>
+        <label><input type="checkbox" class="top-category-filter" value="hotelsDirect"><span>🏨</span>Hotels</label>
+        <label><input type="checkbox" class="top-category-filter" value="rent"><span>🏠</span>Rent / Mortgage</label>
+        <label class="wide-option"><input type="checkbox" class="top-category-filter" value="other"><span>🛍️</span>Everyday Spend</label>
+      </div>
     </div>
 
-    <!-- ===================================================== -->
-    <!-- GOAL -->
-    <!-- ===================================================== -->
-
-    <div class="filter-group">
-
+    <div class="finder-panel">
       <h3>Your Goal</h3>
 
       <select id="travelGoal">
-
-        <option value="bestOverall">
-          Best Overall
-        </option>
-
-        <option value="luxuryTravel">
-          Luxury Travel
-        </option>
-
-        <option value="freeFlights">
-          Free Flights
-        </option>
-
-        <option value="freeHotels">
-          Free Hotels
-        </option>
-
-        <option value="cashBack">
-          Cash Back
-        </option>
-
-        <option value="simpleSetup">
-          Simple Setup
-        </option>
-
-        <option value="maximizePoints">
-          Maximize Points
-        </option>
-
+        <option value="bestOverall">Best Overall</option>
+        <option value="luxuryTravel">Luxury Travel</option>
+        <option value="freeFlights">Free Flights</option>
+        <option value="freeHotels">Free Hotels</option>
+        <option value="cashBack">Cash Back</option>
+        <option value="simpleSetup">Simple Setup</option>
+        <option value="maximizePoints">Maximize Points</option>
       </select>
-
     </div>
 
-    <!-- ===================================================== -->
-    <!-- ANNUAL FEE -->
-    <!-- ===================================================== -->
-
-    <div class="filter-group">
-
+    <div class="finder-panel">
       <h3>Annual Fee Range</h3>
 
-      <div class="fee-range-values">
-
-        <span>
-          Min:
-          <strong id="minFeeValue">$0</strong>
-        </span>
-
-        <span>
-          Max:
-          <strong id="maxFeeValue">$895</strong>
-        </span>
-
+      <div class="fee-range-values dark-fee-values">
+        <span>Min: <strong id="minFeeValue">$0</strong></span>
+        <span>Max: <strong id="maxFeeValue">$895</strong></span>
       </div>
 
       <label class="fee-slider-label">
-
-        <span>Minimum Annual Fee</span>
-
-        <input
-          type="range"
-          id="minAnnualFeeSlider"
-          min="0"
-          max="895"
-          step="5"
-          value="0"
-        />
-
+        <span>Minimum</span>
+        <input type="range" id="minAnnualFeeSlider" min="0" max="895" step="5" value="0" />
       </label>
 
       <label class="fee-slider-label">
-
-        <span>Maximum Annual Fee</span>
-
-        <input
-          type="range"
-          id="maxAnnualFeeSlider"
-          min="0"
-          max="895"
-          step="5"
-          value="895"
-        />
-
+        <span>Maximum</span>
+        <input type="range" id="maxAnnualFeeSlider" min="0" max="895" step="5" value="895" />
       </label>
-
     </div>
 
-    <!-- ===================================================== -->
-    <!-- CARD TYPES -->
-    <!-- ===================================================== -->
-
-    <div class="filter-group">
-
+    <div class="finder-panel full-width-panel">
       <h3>Card Type</h3>
 
-      <label>
-        <input type="checkbox" class="card-filter" value="flexible">
-        Flexible Points
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="cashback">
-        Cash Back
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="airline">
-        Airline Cards
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="hotel">
-        Hotel Cards
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="business">
-        Business Cards
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="beginner">
-        Beginner Friendly
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="premium">
-        Premium Cards
-      </label>
-
+      <div class="pill-options">
+        <label><input type="checkbox" class="card-filter" value="flexible"> Flexible Points</label>
+        <label><input type="checkbox" class="card-filter" value="cashback"> Cash Back</label>
+        <label><input type="checkbox" class="card-filter" value="airline"> Airline Cards</label>
+        <label><input type="checkbox" class="card-filter" value="hotel"> Hotel Cards</label>
+        <label><input type="checkbox" class="card-filter" value="business"> Business Cards</label>
+        <label><input type="checkbox" class="card-filter" value="beginner"> Beginner</label>
+        <label><input type="checkbox" class="card-filter" value="premium"> Premium</label>
+      </div>
     </div>
 
-    <!-- ===================================================== -->
-    <!-- ISSUERS -->
-    <!-- ===================================================== -->
+    <div class="finder-panel full-width-panel">
+      <h3>Issuers</h3>
 
-    <div class="filter-group">
-
-      <h3>Card Issuers</h3>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="amex">
-        American Express
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="chase">
-        Chase
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="capitalone">
-        Capital One
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="citi">
-        Citi
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="bilt">
-        Bilt
-      </label>
-
+      <div class="pill-options">
+        <label><input type="checkbox" class="card-filter" value="amex"> Amex</label>
+        <label><input type="checkbox" class="card-filter" value="chase"> Chase</label>
+        <label><input type="checkbox" class="card-filter" value="capitalone"> Capital One</label>
+        <label><input type="checkbox" class="card-filter" value="citi"> Citi</label>
+        <label><input type="checkbox" class="card-filter" value="bilt"> Bilt</label>
+      </div>
     </div>
 
-    <!-- ===================================================== -->
-    <!-- AIRLINES -->
-    <!-- ===================================================== -->
+    <div class="finder-panel full-width-panel">
+      <h3>Airlines</h3>
 
-    <div class="filter-group">
-
-      <h3>Airline Programs</h3>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="delta">
-        Delta
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="united">
-        United
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="american">
-        American Airlines
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="southwest">
-        Southwest
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="aircanada">
-        Air Canada / Aeroplan
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="britishairways">
-        British Airways
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="aerlingus">
-        Aer Lingus
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="iberia">
-        Iberia
-      </label>
-
+      <div class="pill-options">
+        <label><input type="checkbox" class="card-filter" value="delta"> Delta</label>
+        <label><input type="checkbox" class="card-filter" value="united"> United</label>
+        <label><input type="checkbox" class="card-filter" value="american"> American</label>
+        <label><input type="checkbox" class="card-filter" value="southwest"> Southwest</label>
+        <label><input type="checkbox" class="card-filter" value="aircanada"> Aeroplan</label>
+        <label><input type="checkbox" class="card-filter" value="britishairways"> British Airways</label>
+        <label><input type="checkbox" class="card-filter" value="aerlingus"> Aer Lingus</label>
+        <label><input type="checkbox" class="card-filter" value="iberia"> Iberia</label>
+      </div>
     </div>
 
-    <!-- ===================================================== -->
-    <!-- HOTELS -->
-    <!-- ===================================================== -->
+    <div class="finder-panel full-width-panel">
+      <h3>Hotels</h3>
 
-    <div class="filter-group">
-
-      <h3>Hotel Programs</h3>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="hilton">
-        Hilton
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="marriott">
-        Marriott
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="hyatt">
-        Hyatt
-      </label>
-
-      <label>
-        <input type="checkbox" class="card-filter" value="ihg">
-        IHG
-      </label>
-
+      <div class="pill-options">
+        <label><input type="checkbox" class="card-filter" value="hilton"> Hilton</label>
+        <label><input type="checkbox" class="card-filter" value="marriott"> Marriott</label>
+        <label><input type="checkbox" class="card-filter" value="hyatt"> Hyatt</label>
+        <label><input type="checkbox" class="card-filter" value="ihg"> IHG</label>
+      </div>
     </div>
 
-    <!-- ===================================================== -->
-    <!-- BUTTONS -->
-    <!-- ===================================================== -->
-
-    <div class="run-button">
-
-      <button onclick="runCalculator()">
-        Find My Cards
-      </button>
-
-      <button
-        onclick="clearCardFilters()"
-        class="clear-btn"
-      >
-        Clear Filters
-      </button>
-
+    <div class="finder-buttons">
+      <button onclick="runCalculator()">Find My Best Cards →</button>
+      <button onclick="clearCardFilters()" class="finder-clear">Clear Filters</button>
     </div>
 
   </div>
 
-  <!-- ===================================================== -->
-  <!-- RESULTS -->
-  <!-- ===================================================== -->
+  <div class="finder-trust-row">
+    <div>
+      <span>🏅</span>
+      <strong>Expert Research</strong>
+      <p>Data-driven recommendations</p>
+    </div>
+
+    <div>
+      <span>🔒</span>
+      <strong>100% Free</strong>
+      <p>No hidden fees</p>
+    </div>
+
+    <div>
+      <span>💎</span>
+      <strong>Premium Insights</strong>
+      <p>Maximize every reward</p>
+    </div>
+  </div>
 
   <div id="resultsContent">
-
-    <div class="results-placeholder">
-
-      <h2>
-        Your Recommendations Will Appear Here
-      </h2>
-
+    <div class="results-placeholder finder-placeholder">
+      <h2>Top Card Right Now</h2>
       <p>
-        Select your goals, favorite programs,
-        and spending categories — then click
-        <strong>“Find My Cards”</strong>
-        to get personalized recommendations.
+        Choose your filters above, then click
+        <strong>Find My Best Cards</strong>
+        to see your recommendations.
       </p>
-
     </div>
-
   </div>
 
-</div>
+</section>
