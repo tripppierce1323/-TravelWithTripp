@@ -433,38 +433,28 @@ function getGroupLabel(card, selectedFilters) {
     bilt: "Bilt Cards"
   };
 
-  const typeLabels = {
-    flexible: "Flexible Points Cards",
-    cashback: "Cash Back Cards",
-    airline: "Airline Cards",
-    hotel: "Hotel Cards",
-    business: "Business Cards",
-    beginner: "Beginner Friendly Cards",
-    premium: "Premium Cards"
-  };
-
   const selectedBrandFilters = selectedFilters.filter(f => brandLabels[f]);
-  const selectedTypeFilters = selectedFilters.filter(f => typeLabels[f]);
   const selectedIssuerFilters = selectedFilters.filter(f => issuerLabels[f]);
 
+  // 1. If a hotel/airline brand is selected, group by brand.
   if (selectedBrandFilters.length > 0) {
     return brandLabels[card.brand] || "Other Cards";
   }
 
-  if (selectedTypeFilters.length > 0) {
-    if (card.business && selectedFilters.includes("business")) return "Business Cards";
-    if (card.premium && selectedFilters.includes("premium")) return "Premium Cards";
-    if (card.beginnerFriendly && selectedFilters.includes("beginner")) return "Beginner Friendly Cards";
-    return typeLabels[card.type] || "Other Cards";
-  }
-
+  // 2. If an issuer is selected, group by issuer.
   if (selectedIssuerFilters.length > 0) {
     return issuerLabels[card.issuerTag] || "Other Cards";
   }
 
+  // 3. If no brand or issuer is selected, group by card type.
+  // Flexible first, then cash back, then branded cards.
+  if (card.type === "flexible") return "Flexible Points Cards";
+  if (card.type === "cashback") return "Cash Back Cards";
+  if (card.type === "airline") return "Airline Cards";
+  if (card.type === "hotel") return "Hotel Cards";
   if (card.business) return "Business Cards";
-  if (brandLabels[card.brand]) return brandLabels[card.brand];
-  return typeLabels[card.type] || "Other Cards";
+
+  return "Other Cards";
 }
 
 
@@ -500,35 +490,36 @@ function renderResults(results, selectedCategories) {
   });
 
   const groupOrder = [
-    "Amex Cards",
-    "Chase Cards",
-    "Capital One Cards",
-    "Citi Cards",
-    "Bilt Cards",
+  "Flexible Points Cards",
+  "Cash Back Cards",
 
-    "Hilton Cards",
-    "Marriott Cards",
-    "Hyatt Cards",
-    "IHG Cards",
-    "Delta Cards",
-    "United Cards",
-    "American Airlines Cards",
-    "Southwest Cards",
-    "Air Canada / Aeroplan Cards",
-    "British Airways Cards",
-    "Aer Lingus Cards",
-    "Iberia Cards",
+  "Amex Cards",
+  "Chase Cards",
+  "Capital One Cards",
+  "Citi Cards",
+  "Bilt Cards",
 
-    "Flexible Points Cards",
-    "Cash Back Cards",
-    "Airline Cards",
-    "Hotel Cards",
-    "Business Cards",
-    "Beginner Friendly Cards",
-    "Premium Cards",
+  "Hilton Cards",
+  "Marriott Cards",
+  "Hyatt Cards",
+  "IHG Cards",
+  "Delta Cards",
+  "United Cards",
+  "American Airlines Cards",
+  "Southwest Cards",
+  "Air Canada / Aeroplan Cards",
+  "British Airways Cards",
+  "Aer Lingus Cards",
+  "Iberia Cards",
 
-    "Other Cards"
-  ];
+  "Airline Cards",
+  "Hotel Cards",
+  "Business Cards",
+  "Beginner Friendly Cards",
+  "Premium Cards",
+
+  "Other Cards"
+];
 
   const sortedGroupNames = Object.keys(groups).sort((a, b) => {
     const aIndex = groupOrder.indexOf(a);
