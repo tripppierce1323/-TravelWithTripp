@@ -278,102 +278,129 @@
 </style>
 
 
-<!-- HERO -->
-<section class="hero">
-  <img src="assets/images/hero-maldives.jpeg" alt="Luxury travel hero">
+/* ===================================================== */
+/* HERO SECTION */
+/* ===================================================== */
 
-  <div class="hero-overlay">
-    <p>TRAVELWITHTRIPP</p>
+.hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+}
 
-    <h1>
-      Turn points into<br>
-      <span>luxury escapes.</span>
-    </h1>
+.hero img {
+  width: 100%;
+  height: 92vh;
+  object-fit: cover;
+  display: block;
+}
 
-    <p>
-      Smarter credit card strategies, better redemptions,
-      and real trips booked with points.
-    </p>
-  </div>
-</section>
+/* DARK OVERLAY */
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 
-<!-- SECTION TITLE -->
-<div class="section-title">
-  <small>START EXPLORING</small>
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.52) 0%,
+      rgba(0,0,0,0.28) 35%,
+      rgba(0,0,0,0.12) 60%,
+      rgba(0,0,0,0.08) 100%
+    );
 
-  <h2>
-    Build your rewards strategy<br>
-    faster and smarter
-  </h2>
-</div>
+  z-index: 1;
+}
 
+/* HERO TEXT */
 
-<!-- DASHBOARD -->
-<section class="home-dashboard">
-  <div class="dashboard-image-wrap">
+.hero-overlay {
+  position: absolute;
+  top: 18%;
+  left: 7%;
+  width: 78%;
+  z-index: 5;
+}
 
-    <img
-      class="dashboard-image"
-      src="assets/images/card-home-images.PNG"
-      alt="TravelWithTripp Dashboard"
-    >
+/* SMALL LABEL */
 
-    <div class="dashboard-label label-1">
-      <h3>Card Finder</h3>
-      <p>Find your best rewards setup.</p>
-      <span>Find Cards →</span>
-    </div>
+.hero-overlay small {
+  display: block;
 
-    <div class="dashboard-label label-2">
-      <h3>My Wallet</h3>
-      <p>See the exact cards I use.</p>
-      <span>Explore →</span>
-    </div>
+  font-family: "Poppins", sans-serif;
+  color: #e3a63a;
 
-    <div class="dashboard-label label-3">
-      <h3>Best Offers</h3>
-      <p>Track the strongest card offers.</p>
-      <span>View Offers →</span>
-    </div>
+  font-size: 3.2vw;
+  font-weight: 700;
+  letter-spacing: 4px;
 
-    <div class="dashboard-label label-4">
-      <h3>Trip Guides</h3>
-      <p>Luxury trips booked with points.</p>
-      <span>See Trips →</span>
-    </div>
+  margin-bottom: 18px;
+}
 
-    <div class="dashboard-label label-5">
-      <h3>Credit Tracker</h3>
-      <p>Track credits, perks, and fees.</p>
-      <span>Track Value →</span>
-    </div>
+/* MAIN TITLE */
 
-    <div class="dashboard-label label-6">
-      <h3>About Tripp</h3>
-      <p>The story behind TravelWithTripp.</p>
-      <span>Read More →</span>
-    </div>
+.hero-overlay h1 {
+  font-family: "Cormorant Garamond", serif;
 
-  </div>
-</section>
+  color: #f5f0e8;
 
+  font-size: 15vw;
+  font-weight: 600;
 
-<!-- FOLLOW -->
-<section class="follow-section">
-  <h2>Follow The Journey</h2>
+  line-height: 0.9;
+  letter-spacing: -1px;
 
-  <p>
-    Luxury travel, points strategies, and real redemptions.
-  </p>
+  margin-bottom: 18px;
 
-  <div class="social-icons">
-    <a href="YOUR_YOUTUBE_LINK" target="_blank">
-      <img src="assets/images/youtube-icon.png" alt="YouTube">
-    </a>
+  text-shadow:
+    0 4px 30px rgba(0,0,0,0.45);
+}
 
-    <a href="YOUR_INSTAGRAM_LINK" target="_blank">
-      <img src="assets/images/instagram-icon.png" alt="Instagram">
-    </a>
-  </div>
-</section>
+/* GOLD LINE */
+
+.hero-overlay h1 span {
+  color: #e3a63a;
+}
+
+/* DESCRIPTION */
+
+.hero-overlay p {
+  font-family: "Poppins", sans-serif;
+
+  color: rgba(255,255,255,0.82);
+
+  font-size: 4.5vw;
+  line-height: 1.32;
+
+  max-width: 78%;
+
+  text-shadow:
+    0 2px 14px rgba(0,0,0,0.42);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .hero img {
+    height: 92vh;
+  }
+
+  .hero-overlay {
+    top: 18%;
+    left: 7%;
+    width: 82%;
+  }
+
+  .hero-overlay h1 {
+    font-size: 15vw;
+  }
+
+  .hero-overlay p {
+    font-size: 4.5vw;
+  }
+
+}
