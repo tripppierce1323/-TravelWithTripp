@@ -224,10 +224,10 @@ body {
     padding: 18px 20px;
   }
 
-  .brand-logo {
-    width: 38px;
-    height: 38px;
-  }
+.brand-logo {
+  width: 84px;
+  height: auto;
+}
 
   .brand-name {
     font-size: 20px;
