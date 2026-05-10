@@ -6,6 +6,33 @@
 <style>
 
 /* ===================================================== */
+/* BODY */
+/* ===================================================== */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(184,131,36,0.08),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      180deg,
+      #010912 0%,
+      #011224 24%,
+      #02152d 52%,
+      #011224 78%,
+      #010912 100%
+    );
+
+  color: #ffffff;
+}
+
+
+/* ===================================================== */
 /* HERO */
 /* ===================================================== */
 
@@ -134,13 +161,6 @@
 
 .home-dashboard {
   margin-top: 30px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #010b16 0%,
-      #021427 100%
-    );
 }
 
 .dashboard-image-wrap {
@@ -242,22 +262,27 @@
 
   border-radius: 36px;
 
-  border: 1px solid rgba(184,131,36,0.14);
+  border: 1px solid rgba(184,131,36,0.18);
 
   background:
     radial-gradient(
       circle at top,
-      rgba(255,255,255,0.03),
-      transparent 60%
+      rgba(255,255,255,0.025),
+      transparent 58%
     ),
 
     linear-gradient(
       180deg,
-      #04182d 0%,
-      #031425 100%
+      #021b3a 0%,
+      #02142d 52%,
+      #011124 100%
     );
 
   text-align: center;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.03),
+    0 20px 60px rgba(0,0,0,0.35);
 }
 
 .follow-section h2 {
@@ -298,15 +323,24 @@
 
   border-radius: 50%;
 
-  border: 1px solid rgba(184,131,36,0.18);
+  border: 1px solid rgba(184,131,36,0.22);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: rgba(3,20,37,0.92);
+  background:
+    linear-gradient(
+      180deg,
+      #021a38 0%,
+      #011326 100%
+    );
 
   transition: 0.25s ease;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.03),
+    0 10px 30px rgba(0,0,0,0.28);
 }
 
 .social-icons a:hover {
