@@ -44,7 +44,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(3, 18, 31, 0.94);
+  background:
+  linear-gradient(
+    180deg,
+    rgba(2,27,58,0.96) 0%,
+    rgba(1,18,36,0.96) 100%
+  );
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(184,131,36,0.12);
   display: flex;
