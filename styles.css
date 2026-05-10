@@ -60,10 +60,13 @@ body {
 }
 
 .brand-logo {
-  width: 42px;
-  height: 42px;
+  width: 84px;
+  height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(184,131,36,0.25));
+
+  filter:
+    drop-shadow(0 0 10px rgba(184,131,36,0.35))
+    drop-shadow(0 0 22px rgba(184,131,36,0.18));
 }
 
 .logo-mark {
