@@ -1,7 +1,7 @@
 // =============================
 // PAGE LOADING
 // =============================
-
+//
 function loadPage(page) {
   fetch("pages/" + page)
     .then(function(res) {
