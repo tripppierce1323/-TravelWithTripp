@@ -5,6 +5,7 @@ const businessCreditCards = [
   // =====================
 
   {
+    slug: "business-platinum-amex",
     name: "The Business Platinum Card from American Express",
     issuer: "Amex",
     issuerTag: "amex",
@@ -13,9 +14,11 @@ const businessCreditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "amex",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/business-platinum-amex.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium Business Travel",
 
     rewards: {
@@ -36,12 +39,11 @@ const businessCreditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is a premium business travel card, not an everyday spending card. It is best for business owners who travel often and can use the travel credits and lounge benefits.",
 
-    myReview: "This is a premium business travel card, not an everyday spending card. It is best for business owners who travel often and can use the travel credits and lounge benefits.",
-
-    bestPairing: "Pairs well with Amex Business Gold or Blue Business Plus.",
+    bestPairing:
+      "Pairs well with Amex Business Gold or Blue Business Plus.",
 
     goodFor: [
       "Business travel",
@@ -58,7 +60,14 @@ const businessCreditCards = [
 
     featuredCard: true,
 
-    tags: ["amex", "business", "flexible", "premium", "travel", "luxuryTravel"],
+    tags: [
+      "amex",
+      "business",
+      "flexible",
+      "premium",
+      "travel",
+      "luxuryTravel"
+    ],
 
     benefits: [
       "Premium travel perks",
@@ -67,7 +76,8 @@ const businessCreditCards = [
       "Business travel credits"
     ],
 
-    why: "Best for business owners who travel often and value premium perks.",
+    why:
+      "Best for business owners who travel often and value premium perks.",
 
     weaknesses: [
       "Very high annual fee",
@@ -81,6 +91,7 @@ const businessCreditCards = [
   },
 
   {
+    slug: "business-gold-amex",
     name: "American Express Business Gold Card",
     issuer: "Amex",
     issuerTag: "amex",
@@ -89,9 +100,11 @@ const businessCreditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "amex",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/business-gold-amex.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Business Category Spend",
 
     rewards: {
@@ -111,12 +124,11 @@ const businessCreditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This card is strong if your business spends heavily in eligible bonus categories. I would not recommend it as the simplest first business card.",
 
-    myReview: "This card is strong if your business spends heavily in eligible bonus categories. I would not recommend it as the simplest first business card.",
-
-    bestPairing: "Pairs well with Blue Business Plus or Business Platinum.",
+    bestPairing:
+      "Pairs well with Blue Business Plus or Business Platinum.",
 
     goodFor: [
       "Business owners",
@@ -133,7 +145,12 @@ const businessCreditCards = [
 
     featuredCard: true,
 
-    tags: ["amex", "business", "flexible", "travel"],
+    tags: [
+      "amex",
+      "business",
+      "flexible",
+      "travel"
+    ],
 
     benefits: [
       "Flexible Amex points",
@@ -141,7 +158,8 @@ const businessCreditCards = [
       "Good for high business spend"
     ],
 
-    why: "Best for businesses with large spend in eligible Amex bonus categories.",
+    why:
+      "Best for businesses with large spend in eligible Amex bonus categories.",
 
     weaknesses: [
       "Higher annual fee",
@@ -155,6 +173,7 @@ const businessCreditCards = [
   },
 
   {
+    slug: "blue-business-plus",
     name: "Blue Business Plus Credit Card",
     issuer: "Amex",
     issuerTag: "amex",
@@ -163,9 +182,11 @@ const businessCreditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "amex",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/blue-business-plus.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Business Catch-All",
 
     rewards: {
@@ -185,12 +206,11 @@ const businessCreditCards = [
       "No annual fee"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "One of the best no-annual-fee business cards because it earns flexible Amex points at 2x on everyday business purchases.",
 
-    myReview: "One of the best no-annual-fee business cards because it earns flexible Amex points at 2x on everyday business purchases.",
-
-    bestPairing: "Pairs well with Amex Gold, Business Gold, or Business Platinum.",
+    bestPairing:
+      "Pairs well with Amex Gold, Business Gold, or Business Platinum.",
 
     goodFor: [
       "Business catch-all spend",
@@ -206,7 +226,13 @@ const businessCreditCards = [
 
     featuredCard: true,
 
-    tags: ["amex", "business", "flexible", "noAnnualFee", "everyday"],
+    tags: [
+      "amex",
+      "business",
+      "flexible",
+      "noAnnualFee",
+      "everyday"
+    ],
 
     benefits: [
       "No annual fee",
@@ -214,7 +240,8 @@ const businessCreditCards = [
       "Flexible Amex points"
     ],
 
-    why: "Best no-fee Amex business catch-all card.",
+    why:
+      "Best no-fee Amex business catch-all card.",
 
     weaknesses: [
       "No major premium perks",
@@ -227,6 +254,7 @@ const businessCreditCards = [
   },
 
   {
+    slug: "blue-business-cash",
     name: "Blue Business Cash Card",
     issuer: "Amex",
     issuerTag: "amex",
@@ -235,9 +263,11 @@ const businessCreditCards = [
     pointValue: 0.01,
     type: "cashback",
     brand: "amex",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/blue-business-cash.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Simple Business Cash Back",
 
     rewards: {
@@ -257,12 +287,11 @@ const businessCreditCards = [
       "No annual fee"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is the cash back version of the Blue Business Plus. I would pick Blue Business Plus if you want points and this if you only want simple cash back.",
 
-    myReview: "This is the cash back version of the Blue Business Plus. I would pick Blue Business Plus if you want points and this if you only want simple cash back.",
-
-    bestPairing: "Pairs well with a travel rewards business card.",
+    bestPairing:
+      "Pairs well with a travel rewards business card.",
 
     goodFor: [
       "Simple cash back",
@@ -277,7 +306,13 @@ const businessCreditCards = [
 
     featuredCard: false,
 
-    tags: ["amex", "business", "cashback", "noAnnualFee", "everyday"],
+    tags: [
+      "amex",
+      "business",
+      "cashback",
+      "noAnnualFee",
+      "everyday"
+    ],
 
     benefits: [
       "No annual fee",
@@ -285,7 +320,8 @@ const businessCreditCards = [
       "Good business catch-all card"
     ],
 
-    why: "Best for business owners who want simple no-fee cash back.",
+    why:
+      "Best for business owners who want simple no-fee cash back.",
 
     weaknesses: [
       "No transferable points",
@@ -296,599 +332,102 @@ const businessCreditCards = [
     beginnerFriendly: true,
     business: true
   },
-  //Hilton Amex Business//
-//.                     //
-{
-  name: "Hilton Honors American Express Business Card",
-  issuer: "Amex / Hilton",
-  issuerTag: "amex",
-  ecosystem: "Hilton Honors",
-  annualFee: 195,
-  pointValue: 0.005,
-  type: "hotel",
-  brand: "hilton",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
 
-  bestFor: "Hilton Business Travel",
-
-  rewards: {
-    dining: 5,
-    groceries: 3,
-    gas: 3,
-    rent: 0,
-    flightsDirect: 5,
-    hotelsDirect: 12,
-    travelPortal: 3,
-    other: 3
-  },
-
-  tags: [
-    "amex",
-    "business",
-    "hotel",
-    "hilton",
-    "travel"
-  ],
-
-  benefits: [
-    "12x Hilton purchases",
-    "5x flights booked directly with airlines",
-    "5x dining",
-    "5x gas stations",
-    "Complimentary Hilton Gold status"
-  ],
-
-  welcomeBonus: "Check Amex for the latest elevated offer.",
-
-  why: "One of the best business hotel cards for Hilton loyalists who travel frequently.",
-
-  myReview:
-    "This is one of the strongest hotel business cards if you stay at Hilton properties often. The automatic Hilton Gold status and strong Hilton earning make it easy to justify.",
-
-  goodFor: [
-    "Hilton business travelers",
-    "Frequent hotel stays",
-    "Business travel expenses",
-    "Hilton loyalists"
-  ],
-
-  notGoodFor: [
-    "People who rarely stay at Hilton",
-    "Users wanting flexible points",
-    "Simple cashback setups"
-  ],
-
-  bestPairing: [
-    "Amex Gold",
-    "Amex Platinum",
-    "Blue Business Plus"
-  ],
-
-  weaknesses: [
-    "Hilton points are less flexible than Membership Rewards",
-    "Best value comes from Hilton stays"
-  ],
-
-  premium: false,
-  beginnerFriendly: false,
-  business: true,
-  featured: true
-},
   // =====================
-  // CHASE INK BUSINESS
+  // AMEX HILTON BUSINESS
   // =====================
 
   {
-    name: "Ink Business Preferred",
-    issuer: "Chase",
-    issuerTag: "chase",
-    ecosystem: "Chase Ultimate Rewards",
-    annualFee: 95,
-    pointValue: 0.02,
-    type: "flexible",
-    brand: "chase",
-    imageUrl: "",
+    slug: "hilton-business-amex",
+    name: "Hilton Honors American Express Business Card",
+    issuer: "Amex / Hilton",
+    issuerTag: "amex",
+    ecosystem: "Hilton Honors",
+    annualFee: 195,
+    pointValue: 0.005,
+    type: "hotel",
+    brand: "hilton",
+
+    imageUrl: "assets/cards/hilton-business-amex.png",
     youtubeUrl: "",
     applyUrl: "#",
-    bestFor: "Business Travel + Ads",
+
+    bestFor: "Hilton Business Travel",
 
     rewards: {
-      dining: 1,
-      groceries: 1,
-      gas: 1,
+      dining: 5,
+      groceries: 3,
+      gas: 3,
       rent: 0,
-      flightsDirect: 3,
-      hotelsDirect: 3,
+      flightsDirect: 5,
+      hotelsDirect: 12,
       travelPortal: 3,
-      other: 1
+      other: 3
     },
 
     multipliers: [
-      "3x travel",
-      "3x shipping",
-      "3x internet, cable, and phone",
-      "3x advertising",
-      "1x everything else"
+      "12x Hilton purchases",
+      "5x flights booked directly with airlines",
+      "5x dining",
+      "5x gas stations",
+      "3x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is one of the strongest hotel business cards if you stay at Hilton properties often. The automatic Hilton Gold status and strong Hilton earning make it easy to justify.",
 
-    myReview: "One of the best business travel cards because it unlocks Chase transfer partners at a reasonable annual fee.",
-
-    bestPairing: "Pairs well with Ink Business Unlimited and Ink Business Cash.",
+    bestPairing:
+      "Pairs well with Amex Gold, Amex Platinum, or Blue Business Plus.",
 
     goodFor: [
-      "Business travel",
-      "Advertising",
-      "Shipping",
-      "Chase transfer partners"
+      "Hilton business travelers",
+      "Frequent hotel stays",
+      "Business travel expenses",
+      "Hilton loyalists"
     ],
 
     notGoodFor: [
-      "Simple cash back only",
-      "People who want no annual fee",
-      "Dining and grocery optimization"
+      "People who rarely stay at Hilton",
+      "Users wanting flexible points",
+      "Simple cashback setups"
     ],
 
     featuredCard: true,
 
-    tags: ["chase", "business", "flexible", "travel"],
-
-    benefits: [
-      "Chase transfer partners",
-      "Strong business categories",
-      "Great business travel card"
+    tags: [
+      "amex",
+      "business",
+      "hotel",
+      "hilton",
+      "travel"
     ],
 
-    why: "Best Chase business card for transferable points.",
+    benefits: [
+      "12x Hilton purchases",
+      "5x flights booked directly with airlines",
+      "5x dining",
+      "Complimentary Hilton Gold status"
+    ],
+
+    why:
+      "One of the best business hotel cards for Hilton loyalists who travel frequently.",
 
     weaknesses: [
-      "Has annual fee",
-      "Not a dining or grocery card"
+      "Hilton points are less flexible than Membership Rewards",
+      "Best value comes from Hilton stays"
     ],
 
     premium: false,
     beginnerFriendly: false,
     business: true
   },
-
-  {
-    name: "Ink Business Unlimited",
-    issuer: "Chase",
-    issuerTag: "chase",
-    ecosystem: "Chase Ultimate Rewards",
-    annualFee: 0,
-    pointValue: 0.02,
-    type: "flexible",
-    brand: "chase",
-    imageUrl: "",
-    youtubeUrl: "",
-    applyUrl: "#",
-    bestFor: "Business Catch-All",
-
-    rewards: {
-      dining: 1.5,
-      groceries: 1.5,
-      gas: 1.5,
-      rent: 0,
-      flightsDirect: 1.5,
-      hotelsDirect: 1.5,
-      travelPortal: 1.5,
-      other: 1.5
-    },
-
-    multipliers: [
-      "1.5x on every purchase",
-      "No annual fee"
-    ],
-
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
-
-    myReview: "A great no-fee business catch-all card, especially if paired with a Sapphire card or Ink Preferred.",
-
-    bestPairing: "Pairs well with Ink Business Preferred or Chase Sapphire Preferred.",
-
-    goodFor: [
-      "Business catch-all spend",
-      "No annual fee",
-      "Chase setups"
-    ],
-
-    notGoodFor: [
-      "Premium perks",
-      "High category earning"
-    ],
-
-    featuredCard: true,
-
-    tags: ["chase", "business", "flexible", "noAnnualFee", "everyday"],
-
-    benefits: [
-      "No annual fee",
-      "Simple 1.5x earning",
-      "Pairs well with premium Chase cards"
-    ],
-
-    why: "Best no-fee Chase business catch-all card.",
-
-    weaknesses: [
-      "Best when paired with a transfer card"
-    ],
-
-    premium: false,
-    beginnerFriendly: true,
-    business: true
-  },
-
-  {
-    name: "Ink Business Cash",
-    issuer: "Chase",
-    issuerTag: "chase",
-    ecosystem: "Chase Ultimate Rewards",
-    annualFee: 0,
-    pointValue: 0.02,
-    type: "flexible",
-    brand: "chase",
-    imageUrl: "",
-    youtubeUrl: "",
-    applyUrl: "#",
-    bestFor: "Office + Internet",
-
-    rewards: {
-      dining: 2,
-      groceries: 1,
-      gas: 2,
-      rent: 0,
-      flightsDirect: 1,
-      hotelsDirect: 1,
-      travelPortal: 1,
-      other: 1
-    },
-
-    multipliers: [
-      "5x office supply stores",
-      "5x internet, cable, and phone",
-      "2x gas",
-      "2x dining",
-      "1x everything else"
-    ],
-
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
-
-    myReview: "A very strong no-fee business card if you can use the 5x categories. This is one of the best support cards in the Chase ecosystem.",
-
-    bestPairing: "Pairs well with Ink Business Preferred.",
-
-    goodFor: [
-      "Office supplies",
-      "Internet and phone bills",
-      "No annual fee",
-      "Chase points"
-    ],
-
-    notGoodFor: [
-      "Simple one-card setups",
-      "Businesses without those categories"
-    ],
-
-    featuredCard: true,
-
-    tags: ["chase", "business", "flexible", "noAnnualFee"],
-
-    benefits: [
-      "5x business categories",
-      "No annual fee",
-      "Strong Chase support card"
-    ],
-
-    why: "Best for office, internet, cable, and phone business spend.",
-
-    weaknesses: [
-      "Category caps and tracking required"
-    ],
-
-    premium: false,
-    beginnerFriendly: true,
-    business: true
-  },
-
-  // =====================
-  // CAPITAL ONE BUSINESS
-  // =====================
-
-  {
-    name: "Capital One Venture X Business",
-    issuer: "Capital One",
-    issuerTag: "capitalone",
-    ecosystem: "Capital One Miles",
-    annualFee: 395,
-    pointValue: 0.018,
-    type: "flexible",
-    brand: "capitalone",
-    imageUrl: "",
-    youtubeUrl: "",
-    applyUrl: "#",
-    bestFor: "Premium Business Travel",
-
-    rewards: {
-      dining: 2,
-      groceries: 2,
-      gas: 2,
-      rent: 0,
-      flightsDirect: 2,
-      hotelsDirect: 2,
-      travelPortal: 10,
-      other: 2
-    },
-
-    multipliers: [
-      "2x miles on every purchase",
-      "10x hotels and rental cars through Capital One Travel",
-      "5x flights through Capital One Travel"
-    ],
-
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
-
-    myReview: "A strong premium business card for simple 2x earning and travel perks. I like it most for business owners who want simplicity plus lounge access.",
-
-    bestPairing: "Pairs well with Capital One Spark Cash or Venture Business.",
-
-    goodFor: [
-      "Business travel",
-      "Simple 2x earning",
-      "Lounge access",
-      "Capital One miles"
-    ],
-
-    notGoodFor: [
-      "People who do not travel",
-      "People who avoid travel portals"
-    ],
-
-    featuredCard: true,
-
-    tags: ["capitalone", "business", "flexible", "premium", "travel", "luxuryTravel"],
-
-    benefits: [
-      "2x miles on every purchase",
-      "Premium travel benefits",
-      "Airport lounge access",
-      "Capital One transfer partners"
-    ],
-
-    why: "Best premium Capital One business travel card.",
-
-    weaknesses: [
-      "Annual fee",
-      "Top travel multipliers require Capital One Travel"
-    ],
-
-    premium: true,
-    beginnerFriendly: false,
-    business: true
-  },
-
-  {
-    name: "Capital One Venture Business",
-    issuer: "Capital One",
-    issuerTag: "capitalone",
-    ecosystem: "Capital One Miles",
-    annualFee: 95,
-    pointValue: 0.018,
-    type: "flexible",
-    brand: "capitalone",
-    imageUrl: "",
-    youtubeUrl: "",
-    applyUrl: "#",
-    bestFor: "Simple Business Miles",
-
-    rewards: {
-      dining: 2,
-      groceries: 2,
-      gas: 2,
-      rent: 0,
-      flightsDirect: 2,
-      hotelsDirect: 2,
-      travelPortal: 5,
-      other: 2
-    },
-
-    multipliers: [
-      "2x miles on every purchase",
-      "5x hotels and rental cars through Capital One Travel"
-    ],
-
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
-
-    myReview: "A simple business miles card for people who want flat 2x earning without tracking categories.",
-
-    bestPairing: "Pairs well with Venture X Business or Spark Cash.",
-
-    goodFor: [
-      "Simple business rewards",
-      "Flat 2x earning",
-      "Travel miles"
-    ],
-
-    notGoodFor: [
-      "Premium lounge access",
-      "Category maximizers"
-    ],
-
-    featuredCard: false,
-
-    tags: ["capitalone", "business", "flexible", "travel", "everyday"],
-
-    benefits: [
-      "2x on every purchase",
-      "Simple business miles",
-      "Travel rewards"
-    ],
-
-    why: "Best for business owners who want simple travel miles.",
-
-    weaknesses: [
-      "Fewer premium perks than Venture X Business"
-    ],
-
-    premium: false,
-    beginnerFriendly: true,
-    business: true
-  },
-
-  {
-    name: "Capital One Spark Cash Plus",
-    issuer: "Capital One",
-    issuerTag: "capitalone",
-    ecosystem: "Cash Back",
-    annualFee: 150,
-    pointValue: 0.01,
-    type: "cashback",
-    brand: "capitalone",
-    imageUrl: "",
-    youtubeUrl: "",
-    applyUrl: "#",
-    bestFor: "High Business Cash Back",
-
-    rewards: {
-      dining: 2,
-      groceries: 2,
-      gas: 2,
-      rent: 0,
-      flightsDirect: 2,
-      hotelsDirect: 2,
-      travelPortal: 5,
-      other: 2
-    },
-
-    multipliers: [
-      "2% cash back on every purchase",
-      "5% cash back on hotels and rental cars through Capital One Travel"
-    ],
-
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
-
-    myReview: "Great for businesses that want simple uncapped cash back and spend enough to justify the annual fee.",
-
-    bestPairing: "Pairs well with Venture X Business if you want both cash back and travel miles.",
-
-    goodFor: [
-      "High business spend",
-      "Simple cash back",
-      "Flat earning"
-    ],
-
-    notGoodFor: [
-      "Transferable points",
-      "Low-spend businesses",
-      "No annual fee setups"
-    ],
-
-    featuredCard: false,
-
-    tags: ["capitalone", "business", "cashback", "everyday"],
-
-    benefits: [
-      "Simple 2% cash back",
-      "Good for high business spend",
-      "No category tracking"
-    ],
-
-    why: "Best for businesses that want simple high cash back.",
-
-    weaknesses: [
-      "Annual fee",
-      "No transferable points"
-    ],
-
-    premium: false,
-    beginnerFriendly: true,
-    business: true
-  },
-
-  {
-    name: "Capital One Spark Cash Select",
-    issuer: "Capital One",
-    issuerTag: "capitalone",
-    ecosystem: "Cash Back",
-    annualFee: 0,
-    pointValue: 0.01,
-    type: "cashback",
-    brand: "capitalone",
-    imageUrl: "",
-    youtubeUrl: "",
-    applyUrl: "#",
-    bestFor: "No-Fee Business Cash Back",
-
-    rewards: {
-      dining: 1.5,
-      groceries: 1.5,
-      gas: 1.5,
-      rent: 0,
-      flightsDirect: 1.5,
-      hotelsDirect: 1.5,
-      travelPortal: 1.5,
-      other: 1.5
-    },
-
-    multipliers: [
-      "1.5% cash back on every purchase",
-      "No annual fee"
-    ],
-
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
-
-    myReview: "A simple no-fee business cash back card. Good for beginners, but not the strongest long-term rewards setup.",
-
-    bestPairing: "Pairs well with a premium business travel card.",
-
-    goodFor: [
-      "No annual fee",
-      "Simple cash back",
-      "Beginner business owners"
-    ],
-
-    notGoodFor: [
-      "Maximizing rewards",
-      "Premium travel perks"
-    ],
-
-    featuredCard: false,
-
-    tags: ["capitalone", "business", "cashback", "noAnnualFee", "everyday"],
-
-    benefits: [
-      "No annual fee",
-      "Simple 1.5% cash back",
-      "Easy business card"
-    ],
-
-    why: "Best no-fee Capital One business cash back card.",
-
-    weaknesses: [
-      "Lower earning than Spark Cash Plus"
-    ],
-
-    premium: false,
-    beginnerFriendly: true,
-    business: true
-  }
 
   // =====================
   // AMEX MARRIOTT BUSINESS
-  // Add before closing ];
   // =====================
 
   {
+    slug: "marriott-bonvoy-business",
     name: "Marriott Bonvoy Business American Express Card",
     issuer: "Amex / Marriott",
     issuerTag: "amex",
@@ -897,9 +436,11 @@ const businessCreditCards = [
     pointValue: 0.008,
     type: "hotel",
     brand: "marriott",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/marriott-bonvoy-business.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Marriott Business Travel",
 
     rewards: {
@@ -921,11 +462,11 @@ const businessCreditCards = [
       "2x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-09",
+    myReview:
+      "This is the main Marriott business card to consider if you stay with Marriott and value annual free night certificates.",
 
-    myReview: "This is the main Marriott business card to consider if you stay with Marriott and value annual free night certificates.",
-    bestPairing: "Pairs well with Amex Business Gold, Blue Business Plus, or a flexible travel card.",
+    bestPairing:
+      "Pairs well with Amex Business Gold, Blue Business Plus, or a flexible travel card.",
 
     goodFor: [
       "Marriott business travelers",
@@ -941,14 +482,25 @@ const businessCreditCards = [
     ],
 
     featuredCard: true,
-    tags: ["amex", "business", "hotel", "marriott", "travel"],
+
+    tags: [
+      "amex",
+      "business",
+      "hotel",
+      "marriott",
+      "travel"
+    ],
+
     benefits: [
       "Marriott points",
       "Annual free night certificate",
       "Elite night credits",
       "Business hotel rewards"
     ],
-    why: "Best Marriott business card for business owners who stay with Marriott.",
+
+    why:
+      "Best Marriott business card for business owners who stay with Marriott.",
+
     weaknesses: [
       "Marriott points are less flexible than transferable points",
       "Best value depends on Marriott stays"
@@ -958,12 +510,593 @@ const businessCreditCards = [
     beginnerFriendly: false,
     business: true
   },
-    // =====================
-  // CHASE HYATT BUSINESS
-  // Add before closing ];
+
+  // =====================
+  // AMEX DELTA BUSINESS
   // =====================
 
   {
+    slug: "delta-gold-business",
+    name: "Delta SkyMiles Gold Business American Express Card",
+    issuer: "Amex / Delta",
+    issuerTag: "amex",
+    ecosystem: "Delta SkyMiles",
+    annualFee: 150,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "delta",
+
+    imageUrl: "assets/cards/delta-gold-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "Starter Delta Business",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "2x Delta purchases",
+      "2x dining",
+      "2x U.S. shipping",
+      "1x everything else"
+    ],
+
+    myReview:
+      "This is the easiest Delta business card to justify if you fly Delta occasionally and value the free checked bag.",
+
+    bestPairing:
+      "Pairs well with Amex Business Gold or Blue Business Plus.",
+
+    goodFor: [
+      "Occasional Delta flyers",
+      "Business owners who fly Delta",
+      "Free checked bag"
+    ],
+
+    notGoodFor: [
+      "Premium lounge access",
+      "Everyday business spend",
+      "People who rarely fly Delta"
+    ],
+
+    featuredCard: false,
+
+    tags: [
+      "amex",
+      "business",
+      "airline",
+      "delta"
+    ],
+
+    benefits: [
+      "First checked bag free",
+      "Priority boarding",
+      "Delta flight credit opportunity"
+    ],
+
+    why:
+      "Best starter business card for occasional Delta flyers.",
+
+    weaknesses: [
+      "Not strong for everyday spending",
+      "Limited premium perks"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: true
+  },
+
+  {
+    slug: "delta-platinum-business",
+    name: "Delta SkyMiles Platinum Business American Express Card",
+    issuer: "Amex / Delta",
+    issuerTag: "amex",
+    ecosystem: "Delta SkyMiles",
+    annualFee: 350,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "delta",
+
+    imageUrl: "assets/cards/delta-platinum-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "Delta Business Flyers",
+
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 1.5,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "3x Delta purchases",
+      "3x hotels",
+      "1.5x eligible larger purchases",
+      "1x everything else"
+    ],
+
+    myReview:
+      "This is the Delta business card I’d compare first if you fly Delta enough to use the companion certificate but do not need the highest-tier Reserve card.",
+
+    bestPairing:
+      "Pairs well with Amex Gold or Blue Business Plus.",
+
+    goodFor: [
+      "Frequent Delta flyers",
+      "Companion certificate users",
+      "Business travel"
+    ],
+
+    notGoodFor: [
+      "Casual Delta flyers",
+      "People who want flexible points",
+      "Simple cash back setups"
+    ],
+
+    featuredCard: false,
+
+    tags: [
+      "amex",
+      "business",
+      "airline",
+      "delta"
+    ],
+
+    benefits: [
+      "Companion certificate",
+      "First checked bag free",
+      "Priority boarding",
+      "MQD earning support"
+    ],
+
+    why:
+      "Best middle-tier Delta business card for flyers who can use the companion certificate.",
+
+    weaknesses: [
+      "Only worth it if you use Delta benefits",
+      "Weak everyday earning compared to flexible points cards"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: true
+  },
+
+  // =====================
+  // CHASE INK BUSINESS
+  // =====================
+
+  {
+    slug: "ink-business-premier",
+    name: "Ink Business Premier",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Cash Back",
+    annualFee: 195,
+    pointValue: 0.01,
+    type: "cashback",
+    brand: "chase",
+
+    imageUrl: "assets/cards/ink-business-premier.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "Large Business Spend",
+
+    rewards: {
+      dining: 2.5,
+      groceries: 2.5,
+      gas: 2.5,
+      rent: 0,
+      flightsDirect: 2.5,
+      hotelsDirect: 2.5,
+      travelPortal: 5,
+      other: 2.5
+    },
+
+    multipliers: [
+      "2.5% cash back on large purchases",
+      "2% back on all other purchases",
+      "5% travel through Chase Travel"
+    ],
+
+    myReview:
+      "This card is more for business cash flow and high spending than maximizing transfer partners. Strong for businesses with large transactions.",
+
+    bestPairing:
+      "Pairs well with Ink Business Cash or Chase Sapphire cards.",
+
+    goodFor: [
+      "Large business purchases",
+      "Simple cash back",
+      "High business spend"
+    ],
+
+    notGoodFor: [
+      "Transfer partner strategies",
+      "Low spend users",
+      "Beginner setups"
+    ],
+
+    featuredCard: false,
+
+    tags: [
+      "chase",
+      "business",
+      "cashback"
+    ],
+
+    benefits: [
+      "High purchase rewards",
+      "Simple earning structure",
+      "Business protections"
+    ],
+
+    why:
+      "Best Chase business card for large purchase spending.",
+
+    weaknesses: [
+      "Not focused on transferable points",
+      "Annual fee"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: true
+  },
+
+  {
+    slug: "ink-business-preferred",
+    name: "Ink Business Preferred",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Chase Ultimate Rewards",
+    annualFee: 95,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "chase",
+
+    imageUrl: "assets/cards/ink-business-preferred.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "Business Travel + Ads",
+
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 3,
+      travelPortal: 3,
+      other: 1
+    },
+
+    multipliers: [
+      "3x travel",
+      "3x shipping",
+      "3x internet, cable, and phone",
+      "3x advertising",
+      "1x everything else"
+    ],
+
+    myReview:
+      "One of the best business travel cards because it unlocks Chase transfer partners at a reasonable annual fee.",
+
+    bestPairing:
+      "Pairs well with Ink Business Unlimited and Ink Business Cash.",
+
+    goodFor: [
+      "Business travel",
+      "Advertising",
+      "Shipping",
+      "Chase transfer partners"
+    ],
+
+    notGoodFor: [
+      "Simple cash back only",
+      "People who want no annual fee",
+      "Dining and grocery optimization"
+    ],
+
+    featuredCard: true,
+
+    tags: [
+      "chase",
+      "business",
+      "flexible",
+      "travel"
+    ],
+
+    benefits: [
+      "Chase transfer partners",
+      "Strong business categories",
+      "Great business travel card"
+    ],
+
+    why:
+      "Best Chase business card for transferable points.",
+
+    weaknesses: [
+      "Has annual fee",
+      "Not a dining or grocery card"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: true
+  },
+
+  {
+    slug: "ink-business-unlimited",
+    name: "Ink Business Unlimited",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Chase Ultimate Rewards",
+    annualFee: 0,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "chase",
+
+    imageUrl: "assets/cards/ink-business-unlimited.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "Business Catch-All",
+
+    rewards: {
+      dining: 1.5,
+      groceries: 1.5,
+      gas: 1.5,
+      rent: 0,
+      flightsDirect: 1.5,
+      hotelsDirect: 1.5,
+      travelPortal: 1.5,
+      other: 1.5
+    },
+
+    multipliers: [
+      "1.5x on every purchase",
+      "No annual fee"
+    ],
+
+    myReview:
+      "A great no-fee business catch-all card, especially if paired with a Sapphire card or Ink Preferred.",
+
+    bestPairing:
+      "Pairs well with Ink Business Preferred or Chase Sapphire Preferred.",
+
+    goodFor: [
+      "Business catch-all spend",
+      "No annual fee",
+      "Chase setups"
+    ],
+
+    notGoodFor: [
+      "Premium perks",
+      "High category earning"
+    ],
+
+    featuredCard: true,
+
+    tags: [
+      "chase",
+      "business",
+      "flexible",
+      "noAnnualFee",
+      "everyday"
+    ],
+
+    benefits: [
+      "No annual fee",
+      "Simple 1.5x earning",
+      "Pairs well with premium Chase cards"
+    ],
+
+    why:
+      "Best no-fee Chase business catch-all card.",
+
+    weaknesses: [
+      "Best when paired with a transfer card"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: true
+  },
+
+  {
+    slug: "ink-business-cash",
+    name: "Ink Business Cash",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Chase Ultimate Rewards",
+    annualFee: 0,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "chase",
+
+    imageUrl: "assets/cards/ink-business-cash.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "Office + Internet",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 1,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "5x office supply stores",
+      "5x internet, cable, and phone",
+      "2x gas",
+      "2x dining",
+      "1x everything else"
+    ],
+
+    myReview:
+      "A very strong no-fee business card if you can use the 5x categories. This is one of the best support cards in the Chase ecosystem.",
+
+    bestPairing:
+      "Pairs well with Ink Business Preferred.",
+
+    goodFor: [
+      "Office supplies",
+      "Internet and phone bills",
+      "No annual fee",
+      "Chase points"
+    ],
+
+    notGoodFor: [
+      "Simple one-card setups",
+      "Businesses without those categories"
+    ],
+
+    featuredCard: true,
+
+    tags: [
+      "chase",
+      "business",
+      "flexible",
+      "noAnnualFee"
+    ],
+
+    benefits: [
+      "5x business categories",
+      "No annual fee",
+      "Strong Chase support card"
+    ],
+
+    why:
+      "Best for office, internet, cable, and phone business spend.",
+
+    weaknesses: [
+      "Category caps and tracking required"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: true
+  },
+
+  // =====================
+  // CHASE SAPPHIRE BUSINESS
+  // =====================
+
+  {
+    slug: "sapphire-reserve-business",
+    name: "Chase Sapphire Reserve Business",
+    issuer: "Chase",
+    issuerTag: "chase",
+    ecosystem: "Chase Ultimate Rewards",
+    annualFee: 795,
+    pointValue: 0.02,
+    type: "flexible",
+    brand: "chase",
+
+    imageUrl: "assets/cards/chase-sapphire-reserve-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "Premium Business Travel",
+
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 4,
+      hotelsDirect: 4,
+      travelPortal: 8,
+      other: 1
+    },
+
+    multipliers: [
+      "8x Chase Travel",
+      "4x flights and hotels booked direct",
+      "3x dining",
+      "1x everything else"
+    ],
+
+    myReview:
+      "This is the premium Chase business travel card. Best for business owners who travel heavily and can justify the premium perks and credits.",
+
+    bestPairing:
+      "Pairs well with Ink Business Unlimited and Ink Business Cash.",
+
+    goodFor: [
+      "Business travel",
+      "Premium travel perks",
+      "Airport lounges",
+      "Chase transfer partners"
+    ],
+
+    notGoodFor: [
+      "Low annual fee setups",
+      "Minimal travelers",
+      "Simple cash back users"
+    ],
+
+    featuredCard: true,
+
+    tags: [
+      "chase",
+      "business",
+      "premium",
+      "travel",
+      "flexible"
+    ],
+
+    benefits: [
+      "Premium travel perks",
+      "Airport lounge access",
+      "Travel protections",
+      "Chase transfer partners"
+    ],
+
+    why:
+      "Best premium Chase business travel card.",
+
+    weaknesses: [
+      "Very high annual fee",
+      "Requires travel to maximize value"
+    ],
+
+    premium: true,
+    beginnerFriendly: false,
+    business: true
+  },
+
+  // =====================
+  // CHASE HYATT BUSINESS
+  // =====================
+
+  {
+    slug: "world-of-hyatt-business",
     name: "World of Hyatt Business Credit Card",
     issuer: "Chase / Hyatt",
     issuerTag: "chase",
@@ -972,9 +1105,11 @@ const businessCreditCards = [
     pointValue: 0.02,
     type: "hotel",
     brand: "hyatt",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/world-of-hyatt-business.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Hyatt Business Travel",
 
     rewards: {
@@ -995,11 +1130,11 @@ const businessCreditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-09",
+    myReview:
+      "Hyatt points are extremely valuable, but this card is best for actual Hyatt loyalists rather than casual travelers.",
 
-    myReview: "Hyatt points are extremely valuable, but this card is best for actual Hyatt loyalists rather than casual travelers.",
-    bestPairing: "Pairs well with Chase Sapphire Preferred, Sapphire Reserve, or Ink Business Preferred.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred, Sapphire Reserve, or Ink Business Preferred.",
 
     goodFor: [
       "Hyatt loyalists",
@@ -1015,14 +1150,25 @@ const businessCreditCards = [
     ],
 
     featuredCard: true,
-    tags: ["chase", "business", "hotel", "hyatt", "travel"],
+
+    tags: [
+      "chase",
+      "business",
+      "hotel",
+      "hyatt",
+      "travel"
+    ],
+
     benefits: [
       "Hyatt points",
       "Elite night credit opportunities",
       "Strong redemption value",
       "Business hotel benefits"
     ],
-    why: "Best for business owners who regularly stay with Hyatt.",
+
+    why:
+      "Best for business owners who regularly stay with Hyatt.",
+
     weaknesses: [
       "Hyatt footprint is smaller than Marriott or Hilton",
       "Best only if you use Hyatt"
@@ -1032,779 +1178,985 @@ const businessCreditCards = [
     beginnerFriendly: false,
     business: true
   },
+
   // =====================
-// AMEX DELTA BUSINESS
-// Add below Hilton/Marriott/Hyatt/IHG business cards
-// =====================
-{
-  name: "Delta SkyMiles Gold Business American Express Card",
-  issuer: "Amex / Delta",
-  issuerTag: "amex",
-  ecosystem: "Delta SkyMiles",
-  annualFee: 150,
-  pointValue: 0.013,
-  type: "airline",
-  brand: "delta",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+  // IHG BUSINESS
+  // =====================
 
-  bestFor: "Starter Delta Business",
+  {
+    slug: "ihg-premier-business",
+    name: "IHG One Rewards Premier Business Card",
+    issuer: "Chase / IHG",
+    issuerTag: "chase",
+    ecosystem: "IHG One Rewards",
+    annualFee: 99,
+    pointValue: 0.005,
+    type: "hotel",
+    brand: "ihg",
 
-  rewards: {
-    dining: 2,
-    groceries: 1,
-    gas: 1,
-    rent: 0,
-    flightsDirect: 2,
-    hotelsDirect: 1,
-    travelPortal: 1,
-    other: 1
+    imageUrl: "assets/cards/ihg-premier-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "IHG Hotel Stays",
+
+    rewards: {
+      dining: 3,
+      groceries: 2,
+      gas: 5,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 10,
+      travelPortal: 2,
+      other: 3
+    },
+
+    multipliers: [
+      "10x IHG purchases",
+      "5x gas stations",
+      "5x travel",
+      "3x dining"
+    ],
+
+    myReview:
+      "The annual free night alone can offset the annual fee if you stay at IHG occasionally.",
+
+    bestPairing:
+      "Pairs well with Ink Business Preferred.",
+
+    goodFor: [
+      "IHG travelers",
+      "Road warriors",
+      "Lower annual fee hotel setup"
+    ],
+
+    notGoodFor: [
+      "Luxury hotel maximizers",
+      "Flexible points setups"
+    ],
+
+    featuredCard: false,
+
+    tags: [
+      "chase",
+      "business",
+      "hotel",
+      "ihg",
+      "travel"
+    ],
+
+    benefits: [
+      "IHG Platinum status",
+      "Anniversary free night",
+      "Global Entry/TSA credit"
+    ],
+
+    why:
+      "Strong value for IHG loyalists with a low annual fee.",
+
+    weaknesses: [
+      "IHG points are lower value"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: true
   },
 
-  multipliers: [
-    "2x Delta purchases",
-    "2x dining",
-    "2x U.S. shipping",
-    "1x everything else"
-  ],
+  // =====================
+  // SOUTHWEST BUSINESS
+  // =====================
 
-  tags: ["amex", "business", "airline", "delta"],
+  {
+    slug: "southwest-premier-business",
+    name: "Southwest Rapid Rewards Premier Business Credit Card",
+    issuer: "Chase / Southwest",
+    issuerTag: "chase",
+    ecosystem: "Southwest Rapid Rewards",
+    annualFee: 99,
+    pointValue: 0.014,
+    type: "airline",
+    brand: "southwest",
 
-  benefits: [
-    "First checked bag free",
-    "Priority boarding",
-    "Delta flight credit opportunity"
-  ],
+    imageUrl: "assets/cards/southwest-premier-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  welcomeBonus: "Check Amex for latest Delta Gold Business offer.",
+    bestFor: "Southwest Business Flyers",
 
-  why: "Best starter business card for occasional Delta flyers.",
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 2,
+      travelPortal: 1,
+      other: 1
+    },
 
-  myReview:
-    "This is the easiest Delta business card to justify if you fly Delta occasionally and value the free checked bag.",
+    multipliers: [
+      "3x Southwest purchases",
+      "2x Rapid Rewards hotel and car rental partners",
+      "2x local transit and commuting",
+      "1x everything else"
+    ],
 
-  goodFor: [
-    "Occasional Delta flyers",
-    "Business owners who fly Delta",
-    "Free checked bag"
-  ],
+    myReview:
+      "One of the easiest ways to help earn the Southwest Companion Pass for business owners.",
 
-  notGoodFor: [
-    "Premium lounge access",
-    "Everyday business spend",
-    "People who rarely fly Delta"
-  ],
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
-  bestPairing: [
-    "Amex Business Gold",
-    "Blue Business Plus"
-  ],
+    goodFor: [
+      "Southwest flyers",
+      "Domestic travel",
+      "Companion Pass strategy"
+    ],
 
-  weaknesses: [
-    "Not strong for everyday spending",
-    "Limited premium perks"
-  ],
+    notGoodFor: [
+      "Luxury travel",
+      "International premium flights"
+    ],
 
-  premium: false,
-  beginnerFriendly: true,
-  business: true,
-  featured: false
-},
+    featuredCard: false,
 
-{
-  name: "Delta SkyMiles Platinum Business American Express Card",
-  issuer: "Amex / Delta",
-  issuerTag: "amex",
-  ecosystem: "Delta SkyMiles",
-  annualFee: 350,
-  pointValue: 0.013,
-  type: "airline",
-  brand: "delta",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    tags: [
+      "chase",
+      "business",
+      "airline",
+      "southwest"
+    ],
 
-  bestFor: "Delta Business Flyers",
+    benefits: [
+      "Companion Pass qualifying points",
+      "EarlyBird Check-In credits",
+      "Anniversary bonus points"
+    ],
 
-  rewards: {
-    dining: 1,
-    groceries: 1,
-    gas: 1.5,
-    rent: 0,
-    flightsDirect: 3,
-    hotelsDirect: 3,
-    travelPortal: 1,
-    other: 1
+    why:
+      "Great for Southwest loyalists chasing Companion Pass.",
+
+    weaknesses: [
+      "Limited airline partner flexibility"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: true
   },
 
-  multipliers: [
-    "3x Delta purchases",
-    "3x hotels",
-    "1.5x eligible larger purchases",
-    "1x everything else"
-  ],
+  {
+    slug: "southwest-performance-business",
+    name: "Southwest Rapid Rewards Performance Business Credit Card",
+    issuer: "Chase / Southwest",
+    issuerTag: "chase",
+    ecosystem: "Southwest Rapid Rewards",
+    annualFee: 199,
+    pointValue: 0.014,
+    type: "airline",
+    brand: "southwest",
 
-  tags: ["amex", "business", "airline", "delta"],
+    imageUrl: "assets/cards/southwest-performance-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  benefits: [
-    "Companion certificate",
-    "First checked bag free",
-    "Priority boarding",
-    "MQD earning support"
-  ],
+    bestFor: "Frequent Southwest Travelers",
 
-  welcomeBonus: "Check Amex for latest Delta Platinum Business offer.",
+    rewards: {
+      dining: 3,
+      groceries: 1,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 4,
+      hotelsDirect: 3,
+      travelPortal: 1,
+      other: 1
+    },
 
-  why: "Best middle-tier Delta business card for flyers who can use the companion certificate.",
+    multipliers: [
+      "4x Southwest purchases",
+      "3x Rapid Rewards hotel/car partners",
+      "2x social media and search advertising",
+      "2x internet/cable/phone"
+    ],
 
-  myReview:
-    "This is the Delta business card I’d compare first if you fly Delta enough to use the companion certificate but do not need the highest-tier Reserve card.",
+    myReview:
+      "Worth it for heavy Southwest travelers who value upgraded boarding and extra perks.",
 
-  goodFor: [
-    "Frequent Delta flyers",
-    "Companion certificate users",
-    "Business travel"
-  ],
+    bestPairing:
+      "Pairs well with Chase Sapphire Reserve.",
 
-  notGoodFor: [
-    "Casual Delta flyers",
-    "People who want flexible points",
-    "Simple cash back setups"
-  ],
+    goodFor: [
+      "Frequent Southwest flyers",
+      "Companion Pass users",
+      "Business travel"
+    ],
 
-  bestPairing: [
-    "Amex Gold",
-    "Blue Business Plus"
-  ],
+    notGoodFor: [
+      "Luxury travel seekers",
+      "International airline partners"
+    ],
 
-  weaknesses: [
-    "Only worth it if you use Delta benefits",
-    "Weak everyday earning compared to flexible points cards"
-  ],
+    featuredCard: false,
 
-  premium: false,
-  beginnerFriendly: false,
-  business: true,
-  featured: false
-},
+    tags: [
+      "chase",
+      "business",
+      "airline",
+      "southwest",
+      "premium"
+    ],
 
-//
-//IHG
-//
+    benefits: [
+      "Upgraded boardings",
+      "Wi-Fi credits",
+      "Companion Pass qualifying points"
+    ],
 
-{
-  name: "IHG One Rewards Premier Business Card",
-  issuer: "Chase / IHG",
-  issuerTag: "chase",
-  ecosystem: "IHG One Rewards",
-  annualFee: 99,
-  pointValue: 0.005,
-  type: "hotel",
-  brand: "ihg",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    why:
+      "Best premium Southwest business card.",
 
-  bestFor: "IHG Hotel Stays",
+    weaknesses: [
+      "Southwest-only ecosystem"
+    ],
 
-  rewards: {
-    dining: 3,
-    groceries: 2,
-    gas: 5,
-    rent: 0,
-    flightsDirect: 3,
-    hotelsDirect: 10,
-    travelPortal: 2,
-    other: 3
+    premium: true,
+    beginnerFriendly: false,
+    business: true
   },
 
-  multipliers: [
-    "10x IHG purchases",
-    "5x gas stations",
-    "5x travel",
-    "3x dining"
-  ],
+  // =====================
+  // UNITED BUSINESS
+  // =====================
 
-  tags: [
-    "chase",
-    "business",
-    "hotel",
-    "ihg",
-    "travel"
-  ],
+  {
+    slug: "united-business-card",
+    name: "United Business Card",
+    issuer: "Chase / United",
+    issuerTag: "chase",
+    ecosystem: "United MileagePlus",
+    annualFee: 150,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "united",
 
-  benefits: [
-    "IHG Platinum status",
-    "Anniversary free night",
-    "Global Entry/TSA credit"
-  ],
+    imageUrl: "assets/cards/united-business-card.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  welcomeBonus: "Check Chase for latest IHG Business offer.",
+    bestFor: "United Business Flyers",
 
-  why: "Strong value for IHG loyalists with a low annual fee.",
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 1,
+      other: 1
+    },
 
-  myReview:
-    "The annual free night alone can offset the annual fee if you stay at IHG occasionally.",
+    multipliers: [
+      "2x United purchases",
+      "2x dining",
+      "2x gas stations",
+      "2x office supply stores"
+    ],
 
-  goodFor: [
-    "IHG travelers",
-    "Road warriors",
-    "Lower annual fee hotel setup"
-  ],
+    myReview:
+      "Solid airline business card if you regularly fly United and want travel perks.",
 
-  notGoodFor: [
-    "Luxury hotel maximizers",
-    "Flexible points setups"
-  ],
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
-  bestPairing: [
-    "Ink Business Preferred"
-  ],
+    goodFor: [
+      "United loyalists",
+      "Business travel",
+      "Airline perks"
+    ],
 
-  weaknesses: [
-    "IHG points are lower value"
-  ],
+    notGoodFor: [
+      "Everyday spend",
+      "Flexible points users"
+    ],
 
-  premium: false,
-  beginnerFriendly: true,
-  business: true,
-  featured: false
-},
-// =====================
-// SOUTHWEST BUSINESS
-// =====================
+    featuredCard: false,
 
-{
-  name: "Southwest Rapid Rewards Premier Business Credit Card",
-  issuer: "Chase / Southwest",
-  issuerTag: "chase",
-  ecosystem: "Southwest Rapid Rewards",
-  annualFee: 99,
-  pointValue: 0.014,
-  type: "airline",
-  brand: "southwest",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    tags: [
+      "chase",
+      "business",
+      "airline",
+      "united"
+    ],
 
-  bestFor: "Southwest Business Flyers",
+    benefits: [
+      "Free checked bag",
+      "Priority boarding",
+      "United flight discounts"
+    ],
 
-  rewards: {
-    dining: 2,
-    groceries: 1,
-    gas: 1,
-    rent: 0,
-    flightsDirect: 3,
-    hotelsDirect: 2,
-    travelPortal: 1,
-    other: 1
+    why:
+      "Best United business airline card for frequent flyers.",
+
+    weaknesses: [
+      "Limited value outside United ecosystem"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: true
   },
 
-  multipliers: [
-    "3x Southwest purchases",
-    "2x Rapid Rewards hotel and car rental partners",
-    "2x local transit and commuting",
-    "1x everything else"
-  ],
+  {
+    slug: "united-club-business",
+    name: "United Club Business Card",
+    issuer: "Chase / United",
+    issuerTag: "chase",
+    ecosystem: "United MileagePlus",
+    annualFee: 695,
+    pointValue: 0.013,
+    type: "airline",
+    brand: "united",
 
-  tags: ["chase", "business", "airline", "southwest"],
+    imageUrl: "assets/cards/united-club-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  benefits: [
-    "Companion Pass qualifying points",
-    "EarlyBird Check-In credits",
-    "Anniversary bonus points"
-  ],
+    bestFor: "Premium United Travelers",
 
-  welcomeBonus: "Check Chase for latest Southwest Premier Business offer.",
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 7,
+      hotelsDirect: 2,
+      travelPortal: 1,
+      other: 1.5
+    },
 
-  why: "Great for Southwest loyalists chasing Companion Pass.",
+    multipliers: [
+      "7x United purchases",
+      "2x dining",
+      "2x travel",
+      "1.5x everything else"
+    ],
 
-  myReview:
-    "One of the easiest ways to help earn the Southwest Companion Pass for business owners.",
+    myReview:
+      "Best for business travelers heavily committed to United and Star Alliance travel.",
 
-  goodFor: [
-    "Southwest flyers",
-    "Domestic travel",
-    "Companion Pass strategy"
-  ],
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
-  notGoodFor: [
-    "Luxury travel",
-    "International premium flights"
-  ],
+    goodFor: [
+      "United loyalists",
+      "Airport lounge access",
+      "Frequent business flyers"
+    ],
 
-  bestPairing: [
-    "Chase Sapphire Preferred"
-  ],
+    notGoodFor: [
+      "Casual travelers",
+      "Simple rewards setups"
+    ],
 
-  weaknesses: [
-    "Limited airline partner flexibility"
-  ],
+    featuredCard: false,
 
-  premium: false,
-  beginnerFriendly: true,
-  business: true,
-  featured: false
-},
+    tags: [
+      "chase",
+      "business",
+      "airline",
+      "united",
+      "premium"
+    ],
 
-{
-  name: "Southwest Rapid Rewards Performance Business Credit Card",
-  issuer: "Chase / Southwest",
-  issuerTag: "chase",
-  ecosystem: "Southwest Rapid Rewards",
-  annualFee: 199,
-  pointValue: 0.014,
-  type: "airline",
-  brand: "southwest",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    benefits: [
+      "United Club membership",
+      "Premier Access",
+      "Free checked bags"
+    ],
 
-  bestFor: "Frequent Southwest Travelers",
+    why:
+      "Best premium United business travel card.",
 
-  rewards: {
-    dining: 3,
-    groceries: 1,
-    gas: 2,
-    rent: 0,
-    flightsDirect: 4,
-    hotelsDirect: 3,
-    travelPortal: 1,
-    other: 1
+    weaknesses: [
+      "Very high annual fee"
+    ],
+
+    premium: true,
+    beginnerFriendly: false,
+    business: true
   },
 
-  multipliers: [
-    "4x Southwest purchases",
-    "3x Rapid Rewards hotel/car partners",
-    "2x social media and search advertising",
-    "2x internet/cable/phone"
-  ],
+  // =====================
+  // CAPITAL ONE BUSINESS
+  // =====================
 
-  tags: ["chase", "business", "airline", "southwest", "premium"],
+  {
+    slug: "venture-x-business",
+    name: "Capital One Venture X Business",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Capital One Miles",
+    annualFee: 395,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "capitalone",
 
-  benefits: [
-    "Upgraded boardings",
-    "Wi-Fi credits",
-    "Companion Pass qualifying points"
-  ],
+    imageUrl: "assets/cards/venture-x-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  welcomeBonus: "Check Chase for latest Southwest Performance Business offer.",
+    bestFor: "Premium Business Travel",
 
-  why: "Best premium Southwest business card.",
+    rewards: {
+      dining: 2,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 10,
+      other: 2
+    },
 
-  myReview:
-    "Worth it for heavy Southwest travelers who value upgraded boarding and extra perks.",
+    multipliers: [
+      "2x miles on every purchase",
+      "10x hotels and rental cars through Capital One Travel",
+      "5x flights through Capital One Travel"
+    ],
 
-  goodFor: [
-    "Frequent Southwest flyers",
-    "Companion Pass users",
-    "Business travel"
-  ],
+    myReview:
+      "A strong premium business card for simple 2x earning and travel perks. I like it most for business owners who want simplicity plus lounge access.",
 
-  notGoodFor: [
-    "Luxury travel seekers",
-    "International airline partners"
-  ],
+    bestPairing:
+      "Pairs well with Capital One Spark Cash or Venture Business.",
 
-  bestPairing: [
-    "Chase Sapphire Reserve"
-  ],
+    goodFor: [
+      "Business travel",
+      "Simple 2x earning",
+      "Lounge access",
+      "Capital One miles"
+    ],
 
-  weaknesses: [
-    "Southwest-only ecosystem"
-  ],
+    notGoodFor: [
+      "People who do not travel",
+      "People who avoid travel portals"
+    ],
 
-  premium: true,
-  beginnerFriendly: false,
-  business: true,
-  featured: false
-},
+    featuredCard: true,
 
-// =====================
-// UNITED BUSINESS
-// =====================
+    tags: [
+      "capitalone",
+      "business",
+      "flexible",
+      "premium",
+      "travel",
+      "luxuryTravel"
+    ],
 
-{
-  name: "United Business Card",
-  issuer: "Chase / United",
-  issuerTag: "chase",
-  ecosystem: "United MileagePlus",
-  annualFee: 150,
-  pointValue: 0.013,
-  type: "airline",
-  brand: "united",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    benefits: [
+      "2x miles on every purchase",
+      "Premium travel benefits",
+      "Airport lounge access",
+      "Capital One transfer partners"
+    ],
 
-  bestFor: "United Business Flyers",
+    why:
+      "Best premium Capital One business travel card.",
 
-  rewards: {
-    dining: 2,
-    groceries: 1,
-    gas: 2,
-    rent: 0,
-    flightsDirect: 2,
-    hotelsDirect: 2,
-    travelPortal: 1,
-    other: 1
+    weaknesses: [
+      "Annual fee",
+      "Top travel multipliers require Capital One Travel"
+    ],
+
+    premium: true,
+    beginnerFriendly: false,
+    business: true
   },
 
-  multipliers: [
-    "2x United purchases",
-    "2x dining",
-    "2x gas stations",
-    "2x office supply stores"
-  ],
+  {
+    slug: "venture-business",
+    name: "Capital One Venture Business",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Capital One Miles",
+    annualFee: 95,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "capitalone",
 
-  tags: [
-    "chase",
-    "business",
-    "airline",
-    "united"
-  ],
+    imageUrl: "assets/cards/venture-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  benefits: [
-    "Free checked bag",
-    "Priority boarding",
-    "United flight discounts"
-  ],
+    bestFor: "Simple Business Miles",
 
-  welcomeBonus: "Check Chase for latest United Business offer.",
+    rewards: {
+      dining: 2,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 5,
+      other: 2
+    },
 
-  why: "Best United business airline card for frequent flyers.",
+    multipliers: [
+      "2x miles on every purchase",
+      "5x hotels and rental cars through Capital One Travel"
+    ],
 
-  myReview:
-    "Solid airline business card if you regularly fly United and want travel perks.",
+    myReview:
+      "A simple business miles card for people who want flat 2x earning without tracking categories.",
 
-  goodFor: [
-    "United loyalists",
-    "Business travel",
-    "Airline perks"
-  ],
+    bestPairing:
+      "Pairs well with Venture X Business or Spark Cash.",
 
-  notGoodFor: [
-    "Everyday spend",
-    "Flexible points users"
-  ],
+    goodFor: [
+      "Simple business rewards",
+      "Flat 2x earning",
+      "Travel miles"
+    ],
 
-  bestPairing: [
-    "Chase Sapphire Preferred"
-  ],
+    notGoodFor: [
+      "Premium lounge access",
+      "Category maximizers"
+    ],
 
-  weaknesses: [
-    "Limited value outside United ecosystem"
-  ],
+    featuredCard: false,
 
-  premium: false,
-  beginnerFriendly: true,
-  business: true,
-  featured: false
-},
+    tags: [
+      "capitalone",
+      "business",
+      "flexible",
+      "travel",
+      "everyday"
+    ],
 
-{
-  name: "United Club Business Card",
-  issuer: "Chase / United",
-  issuerTag: "chase",
-  ecosystem: "United MileagePlus",
-  annualFee: 695,
-  pointValue: 0.013,
-  type: "airline",
-  brand: "united",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    benefits: [
+      "2x on every purchase",
+      "Simple business miles",
+      "Travel rewards"
+    ],
 
-  bestFor: "Premium United Travelers",
+    why:
+      "Best for business owners who want simple travel miles.",
 
-  rewards: {
-    dining: 2,
-    groceries: 1,
-    gas: 2,
-    rent: 0,
-    flightsDirect: 7,
-    hotelsDirect: 2,
-    travelPortal: 1,
-    other: 1.5
+    weaknesses: [
+      "Fewer premium perks than Venture X Business"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: true
   },
 
-  multipliers: [
-    "7x United purchases",
-    "2x dining",
-    "2x travel",
-    "1.5x everything else"
-  ],
+  {
+    slug: "spark-cash-plus",
+    name: "Capital One Spark Cash Plus",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Cash Back",
+    annualFee: 150,
+    pointValue: 0.01,
+    type: "cashback",
+    brand: "capitalone",
 
-  tags: ["chase", "business", "airline", "united", "premium"],
+    imageUrl: "assets/cards/spark-cash-plus.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  benefits: [
-    "United Club membership",
-    "Premier Access",
-    "Free checked bags"
-  ],
+    bestFor: "High Business Cash Back",
 
-  welcomeBonus: "Check Chase for latest United Club Business offer.",
+    rewards: {
+      dining: 2,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 5,
+      other: 2
+    },
 
-  why: "Best premium United business travel card.",
+    multipliers: [
+      "2% cash back on every purchase",
+      "5% cash back on hotels and rental cars through Capital One Travel"
+    ],
 
-  myReview:
-    "Best for business travelers heavily committed to United and Star Alliance travel.",
+    myReview:
+      "Great for businesses that want simple uncapped cash back and spend enough to justify the annual fee.",
 
-  goodFor: [
-    "United loyalists",
-    "Airport lounge access",
-    "Frequent business flyers"
-  ],
+    bestPairing:
+      "Pairs well with Venture X Business if you want both cash back and travel miles.",
 
-  notGoodFor: [
-    "Casual travelers",
-    "Simple rewards setups"
-  ],
+    goodFor: [
+      "High business spend",
+      "Simple cash back",
+      "Flat earning"
+    ],
 
-  bestPairing: [
-    "Chase Sapphire Preferred"
-  ],
+    notGoodFor: [
+      "Transferable points",
+      "Low-spend businesses",
+      "No annual fee setups"
+    ],
 
-  weaknesses: [
-    "Very high annual fee"
-  ],
+    featuredCard: false,
 
-  premium: true,
-  beginnerFriendly: false,
-  business: true,
-  featured: false
-},
+    tags: [
+      "capitalone",
+      "business",
+      "cashback",
+      "everyday"
+    ],
 
-// =====================
-// AMERICAN AIRLINES BUSINESS
-// =====================
+    benefits: [
+      "Simple 2% cash back",
+      "Good for high business spend",
+      "No category tracking"
+    ],
 
-{
-  name: "CitiBusiness AAdvantage Platinum Select Mastercard",
-  issuer: "Citi / American Airlines",
-  issuerTag: "citi",
-  ecosystem: "American Airlines AAdvantage",
-  annualFee: 99,
-  pointValue: 0.014,
-  type: "airline",
-  brand: "american",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    why:
+      "Best for businesses that want simple high cash back.",
 
-  bestFor: "American Airlines Flyers",
+    weaknesses: [
+      "Annual fee",
+      "No transferable points"
+    ],
 
-  rewards: {
-    dining: 1,
-    groceries: 1,
-    gas: 2,
-    rent: 0,
-    flightsDirect: 2,
-    hotelsDirect: 1,
-    travelPortal: 1,
-    other: 1
+    premium: false,
+    beginnerFriendly: true,
+    business: true
   },
 
-  multipliers: [
-    "2x American Airlines purchases",
-    "2x gas stations",
-    "2x telecommunications",
-    "1x everything else"
-  ],
+  {
+    slug: "spark-cash-select",
+    name: "Capital One Spark Cash Select",
+    issuer: "Capital One",
+    issuerTag: "capitalone",
+    ecosystem: "Cash Back",
+    annualFee: 0,
+    pointValue: 0.01,
+    type: "cashback",
+    brand: "capitalone",
 
-  tags: ["citi", "business", "airline", "american"],
+    imageUrl: "assets/cards/spark-cash-select.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  benefits: [
-    "First checked bag free",
-    "Preferred boarding",
-    "Companion certificate opportunity"
-  ],
+    bestFor: "No-Fee Business Cash Back",
 
-  welcomeBonus: "Check Citi for latest AA Business offer.",
+    rewards: {
+      dining: 1.5,
+      groceries: 1.5,
+      gas: 1.5,
+      rent: 0,
+      flightsDirect: 1.5,
+      hotelsDirect: 1.5,
+      travelPortal: 1.5,
+      other: 1.5
+    },
 
-  why: "Best business card for American Airlines loyalists.",
+    multipliers: [
+      "1.5% cash back on every purchase",
+      "No annual fee"
+    ],
 
-  myReview:
-    "Strong airline business card if you regularly fly American Airlines and value checked bag savings.",
+    myReview:
+      "A simple no-fee business cash back card. Good for beginners, but not the strongest long-term rewards setup.",
 
-  goodFor: [
-    "American Airlines travelers",
-    "Business flights",
-    "Domestic travel"
-  ],
+    bestPairing:
+      "Pairs well with a premium business travel card.",
 
-  notGoodFor: [
-    "Flexible points users",
-    "Luxury travel redemptions"
-  ],
+    goodFor: [
+      "No annual fee",
+      "Simple cash back",
+      "Beginner business owners"
+    ],
 
-  bestPairing: [
-    "Citi Strata Premier"
-  ],
+    notGoodFor: [
+      "Maximizing rewards",
+      "Premium travel perks"
+    ],
 
-  weaknesses: [
-    "Limited outside AA ecosystem"
-  ],
+    featuredCard: false,
 
-  premium: false,
-  beginnerFriendly: true,
-  business: true,
-  featured: false
-},
+    tags: [
+      "capitalone",
+      "business",
+      "cashback",
+      "noAnnualFee",
+      "everyday"
+    ],
 
-// =====================
-// WYNDHAM BUSINESS
-// =====================
+    benefits: [
+      "No annual fee",
+      "Simple 1.5% cash back",
+      "Easy business card"
+    ],
 
-{
-  name: "Wyndham Rewards Earner Business Card",
-  issuer: "Barclays / Wyndham",
-  issuerTag: "barclays",
-  ecosystem: "Wyndham Rewards",
-  annualFee: 95,
-  pointValue: 0.011,
-  type: "hotel",
-  brand: "wyndham",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    why:
+      "Best no-fee Capital One business cash back card.",
 
-  bestFor: "Gas + Wyndham Stays",
+    weaknesses: [
+      "Lower earning than Spark Cash Plus"
+    ],
 
-  rewards: {
-    dining: 5,
-    groceries: 1,
-    gas: 8,
-    rent: 0,
-    flightsDirect: 1,
-    hotelsDirect: 8,
-    travelPortal: 1,
-    other: 1
+    premium: false,
+    beginnerFriendly: true,
+    business: true
   },
 
-  multipliers: [
-    "8x Wyndham purchases",
-    "8x gas",
-    "5x marketing/advertising/utilities",
-    "1x everything else"
-  ],
+  // =====================
+  // CITI BUSINESS
+  // =====================
 
-  tags: ["business", "hotel", "wyndham"],
+  {
+    slug: "citi-aa-business",
+    name: "CitiBusiness AAdvantage Platinum Select Mastercard",
+    issuer: "Citi / American Airlines",
+    issuerTag: "citi",
+    ecosystem: "American Airlines AAdvantage",
+    annualFee: 99,
+    pointValue: 0.014,
+    type: "airline",
+    brand: "american",
 
-  benefits: [
-    "Wyndham Diamond status",
-    "Strong gas rewards",
-    "Caesars status match potential"
-  ],
+    imageUrl: "assets/cards/citi-aa-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  welcomeBonus: "Check Barclays for latest Wyndham Business offer.",
+    bestFor: "American Airlines Flyers",
 
-  why: "One of the strongest gas rewards business cards available.",
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
 
-  myReview:
-    "Extremely underrated business card for gas spending and Wyndham/Caesars strategies.",
+    multipliers: [
+      "2x American Airlines purchases",
+      "2x gas stations",
+      "2x telecommunications",
+      "1x everything else"
+    ],
 
-  goodFor: [
-    "Road warriors",
-    "Gas spending",
-    "Wyndham stays"
-  ],
+    myReview:
+      "Strong airline business card if you regularly fly American Airlines and value checked bag savings.",
 
-  notGoodFor: [
-    "Luxury hotel seekers",
-    "Flexible points setups"
-  ],
+    bestPairing:
+      "Pairs well with Citi Strata Premier.",
 
-  bestPairing: [
-    "Chase Sapphire Preferred"
-  ],
+    goodFor: [
+      "American Airlines travelers",
+      "Business flights",
+      "Domestic travel"
+    ],
 
-  weaknesses: [
-    "Smaller hotel footprint"
-  ],
+    notGoodFor: [
+      "Flexible points users",
+      "Luxury travel redemptions"
+    ],
 
-  premium: false,
-  beginnerFriendly: false,
-  business: true,
- featured: true
-},
+    featuredCard: false,
 
-// =====================
-// ALASKA BUSINESS
-// =====================
+    tags: [
+      "citi",
+      "business",
+      "airline",
+      "american"
+    ],
 
-{
-  name: "Alaska Airlines Visa Business Card",
-  issuer: "Bank of America / Alaska",
-  issuerTag: "boa",
-  ecosystem: "Alaska Mileage Plan",
-  annualFee: 70,
-  pointValue: 0.018,
-  type: "airline",
-  brand: "alaska",
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    benefits: [
+      "First checked bag free",
+      "Preferred boarding",
+      "Companion certificate opportunity"
+    ],
 
-  bestFor: "Alaska Mileage Plan",
+    why:
+      "Best business card for American Airlines loyalists.",
 
-  rewards: {
-    dining: 2,
-    groceries: 1,
-    gas: 1,
-    rent: 0,
-    flightsDirect: 3,
-    hotelsDirect: 1,
-    travelPortal: 1,
-    other: 1
+    weaknesses: [
+      "Limited outside AA ecosystem"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: true
   },
 
-  multipliers: [
-    "3x Alaska purchases",
-    "2x gas, EV charging, shipping",
-    "2x cable/streaming"
-  ],
+  // =====================
+  // WYNDHAM BUSINESS
+  // =====================
 
-  tags: ["business", "airline", "alaska"],
+  {
+    slug: "wyndham-earner-business",
+    name: "Wyndham Rewards Earner Business Card",
+    issuer: "Barclays / Wyndham",
+    issuerTag: "barclays",
+    ecosystem: "Wyndham Rewards",
+    annualFee: 95,
+    pointValue: 0.011,
+    type: "hotel",
+    brand: "wyndham",
 
-  benefits: [
-    "Companion fare",
-    "Free checked bag",
-    "Oneworld partner value"
-  ],
+    imageUrl: "assets/cards/wyndham-earner-business.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  welcomeBonus: "Check Bank of America for latest Alaska Business offer.",
+    bestFor: "Gas + Wyndham Stays",
 
-  why: "Best for Alaska Airlines loyalists and Oneworld award travelers.",
+    rewards: {
+      dining: 5,
+      groceries: 1,
+      gas: 8,
+      rent: 0,
+      flightsDirect: 1,
+      hotelsDirect: 8,
+      travelPortal: 1,
+      other: 1
+    },
 
-  myReview:
-    "Alaska miles can be extremely valuable for premium international flights.",
+    multipliers: [
+      "8x Wyndham purchases",
+      "8x gas",
+      "5x marketing/advertising/utilities",
+      "1x everything else"
+    ],
 
-  goodFor: [
-    "Oneworld travel",
-    "Alaska flyers",
-    "International award flights"
-  ],
+    myReview:
+      "Extremely underrated business card for gas spending and Wyndham/Caesars strategies.",
 
-  notGoodFor: [
-    "Everyday cash back",
-    "People without Alaska usage"
-  ],
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
-  bestPairing: [
-    "Bilt Mastercard"
-  ],
+    goodFor: [
+      "Road warriors",
+      "Gas spending",
+      "Wyndham stays"
+    ],
 
-  weaknesses: [
-    "Smaller domestic footprint"
-  ],
+    notGoodFor: [
+      "Luxury hotel seekers",
+      "Flexible points setups"
+    ],
 
-  premium: false,
-  beginnerFriendly: false,
-  business: true,
-  featured: false
-},
+    featuredCard: true,
+
+    tags: [
+      "business",
+      "hotel",
+      "wyndham"
+    ],
+
+    benefits: [
+      "Wyndham Diamond status",
+      "Strong gas rewards",
+      "Caesars status match potential"
+    ],
+
+    why:
+      "One of the strongest gas rewards business cards available.",
+
+    weaknesses: [
+      "Smaller hotel footprint"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: true
+  },
+
+  // =====================
+  // ALASKA BUSINESS
+  // =====================
+
+  {
+    slug: "alaska-business-card",
+    name: "Alaska Airlines Visa Business Card",
+    issuer: "Bank of America / Alaska",
+    issuerTag: "boa",
+    ecosystem: "Alaska Mileage Plan",
+    annualFee: 70,
+    pointValue: 0.018,
+    type: "airline",
+    brand: "alaska",
+
+    imageUrl: "assets/cards/alaska-business-card.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "Alaska Mileage Plan",
+
+    rewards: {
+      dining: 2,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 3,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    multipliers: [
+      "3x Alaska purchases",
+      "2x gas, EV charging, shipping",
+      "2x cable/streaming"
+    ],
+
+    myReview:
+      "Alaska miles can be extremely valuable for premium international flights.",
+
+    bestPairing:
+      "Pairs well with Bilt Mastercard.",
+
+    goodFor: [
+      "Oneworld travel",
+      "Alaska flyers",
+      "International award flights"
+    ],
+
+    notGoodFor: [
+      "Everyday cash back",
+      "People without Alaska usage"
+    ],
+
+    featuredCard: false,
+
+    tags: [
+      "business",
+      "airline",
+      "alaska"
+    ],
+
+    benefits: [
+      "Companion fare",
+      "Free checked bag",
+      "Oneworld partner value"
+    ],
+
+    why:
+      "Best for Alaska Airlines loyalists and Oneworld award travelers.",
+
+    weaknesses: [
+      "Smaller domestic footprint"
+    ],
+
+    premium: false,
+    beginnerFriendly: false,
+    business: true
+  }
+
 ];
 
 window.businessCreditCards = businessCreditCards;
