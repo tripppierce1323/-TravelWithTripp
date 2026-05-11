@@ -5,6 +5,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "amex-gold",
     name: "American Express Gold Card",
     issuer: "Amex",
     issuerTag: "amex",
@@ -13,9 +14,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "amex",
+
     imageUrl: "assets/cards/amex-gold.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Dining + Groceries",
 
     rewards: {
@@ -36,12 +39,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "One of my favorite everyday points cards for people who spend a lot on food. The big thing is making sure you naturally use the credits.",
 
-    myReview: "One of my favorite everyday points cards for people who spend a lot on food. The big thing is making sure you naturally use the credits.",
-
-    bestPairing: "Pairs well with Amex Platinum or Blue Business Plus.",
+    bestPairing:
+      "Pairs well with Amex Platinum or Blue Business Plus.",
 
     goodFor: [
       "Dining",
@@ -58,7 +60,13 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["amex", "flexible", "dining", "groceries", "travel"],
+    tags: [
+      "amex",
+      "flexible",
+      "dining",
+      "groceries",
+      "travel"
+    ],
 
     benefits: [
       "4x dining",
@@ -67,7 +75,8 @@ const creditCards = [
       "Strong food-spend card"
     ],
 
-    why: "Best for people who spend heavily on dining and groceries.",
+    why:
+      "Best for people who spend heavily on dining and groceries.",
 
     weaknesses: [
       "Credits require monthly usage",
@@ -80,6 +89,7 @@ const creditCards = [
   },
 
   {
+    slug: "amex-platinum",
     name: "The Platinum Card from American Express",
     issuer: "Amex",
     issuerTag: "amex",
@@ -88,9 +98,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "amex",
+
     imageUrl: "assets/cards/amex-platinum.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Flights + Luxury Travel",
 
     rewards: {
@@ -110,12 +122,11 @@ const creditCards = [
       "1x most other purchases"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is more of a luxury perks card than an everyday spending card. It can be incredible if you use the lounges, credits, and premium travel benefits, but it is not the card I would use for normal daily spending.",
 
-    myReview: "This is more of a luxury perks card than an everyday spending card. It can be incredible if you use the lounges, credits, and premium travel benefits, but it is not the card I would use for normal daily spending.",
-
-    bestPairing: "Pairs well with Amex Gold for dining and groceries.",
+    bestPairing:
+      "Pairs well with Amex Gold for dining and groceries.",
 
     goodFor: [
       "Airport lounge access",
@@ -132,7 +143,13 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["amex", "flexible", "premium", "flights", "luxuryTravel"],
+    tags: [
+      "amex",
+      "flexible",
+      "premium",
+      "flights",
+      "luxuryTravel"
+    ],
 
     benefits: [
       "5x flights",
@@ -141,7 +158,8 @@ const creditCards = [
       "Premium travel credits"
     ],
 
-    why: "Best for frequent flyers who value airport and luxury travel perks.",
+    why:
+      "Best for frequent flyers who value airport and luxury travel perks.",
 
     weaknesses: [
       "Very high annual fee",
@@ -155,6 +173,7 @@ const creditCards = [
   },
 
   {
+    slug: "amex-green",
     name: "American Express Green Card",
     issuer: "Amex",
     issuerTag: "amex",
@@ -163,9 +182,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "amex",
+
     imageUrl: "assets/cards/amex-green.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Travel + Dining",
 
     rewards: {
@@ -186,12 +207,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A solid broad travel and dining card, but I would usually compare it closely against the Chase Sapphire Preferred before choosing it.",
 
-    myReview: "A solid broad travel and dining card, but I would usually compare it closely against the Chase Sapphire Preferred before choosing it.",
-
-    bestPairing: "Pairs well with Amex Gold if you want to stay inside Membership Rewards.",
+    bestPairing:
+      "Pairs well with Amex Gold if you want to stay inside Membership Rewards.",
 
     goodFor: [
       "Broad travel",
@@ -208,7 +228,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["amex", "flexible", "travel", "dining"],
+    tags: [
+      "amex",
+      "flexible",
+      "travel",
+      "dining"
+    ],
 
     benefits: [
       "3x travel",
@@ -217,7 +242,8 @@ const creditCards = [
       "Flexible Membership Rewards points"
     ],
 
-    why: "Best for broad travel and dining without Platinum-level fees.",
+    why:
+      "Best for broad travel and dining without Platinum-level fees.",
 
     weaknesses: [
       "Not best for groceries",
@@ -234,6 +260,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "blue-cash-preferred",
     name: "Blue Cash Preferred Card",
     issuer: "Amex",
     issuerTag: "amex",
@@ -242,9 +269,11 @@ const creditCards = [
     pointValue: 0.01,
     type: "cashback",
     brand: "amex",
+
     imageUrl: "assets/cards/blue-cash-preferred.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Groceries + Gas",
 
     rewards: {
@@ -265,12 +294,11 @@ const creditCards = [
       "1% back elsewhere"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is a strong cash back card for families or grocery-heavy households. I would use this more for simple cash back than travel points.",
 
-    myReview: "This is a strong cash back card for families or grocery-heavy households. I would use this more for simple cash back than travel points.",
-
-    bestPairing: "Pairs well with a flexible travel card like Chase Sapphire Preferred or Venture X.",
+    bestPairing:
+      "Pairs well with a flexible travel card like Chase Sapphire Preferred or Venture X.",
 
     goodFor: [
       "Groceries",
@@ -286,7 +314,12 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["amex", "cashback", "groceries", "gas"],
+    tags: [
+      "amex",
+      "cashback",
+      "groceries",
+      "gas"
+    ],
 
     benefits: [
       "6x cash back at U.S. supermarkets",
@@ -295,7 +328,8 @@ const creditCards = [
       "Great family spending card"
     ],
 
-    why: "Best for grocery-heavy households that prefer cash back.",
+    why:
+      "Best for grocery-heavy households that prefer cash back.",
 
     weaknesses: [
       "Not ideal for travel points"
@@ -307,6 +341,7 @@ const creditCards = [
   },
 
   {
+    slug: "blue-cash-everyday",
     name: "Blue Cash Everyday Card",
     issuer: "Amex",
     issuerTag: "amex",
@@ -315,9 +350,11 @@ const creditCards = [
     pointValue: 0.01,
     type: "cashback",
     brand: "amex",
+
     imageUrl: "assets/cards/blue-cash-everyday.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Groceries + Gas + Online Shopping",
 
     rewards: {
@@ -338,12 +375,11 @@ const creditCards = [
       "1% back elsewhere"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A good no-annual-fee starter card for people who want easy cash back on common everyday categories.",
 
-    myReview: "A good no-annual-fee starter card for people who want easy cash back on common everyday categories.",
-
-    bestPairing: "Pairs well with Blue Cash Preferred or a flexible travel card.",
+    bestPairing:
+      "Pairs well with Blue Cash Preferred or a flexible travel card.",
 
     goodFor: [
       "No annual fee",
@@ -359,7 +395,13 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["amex", "cashback", "groceries", "gas", "noAnnualFee"],
+    tags: [
+      "amex",
+      "cashback",
+      "groceries",
+      "gas",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "No annual fee",
@@ -368,7 +410,8 @@ const creditCards = [
       "Online retail rewards"
     ],
 
-    why: "Best no-fee Amex for everyday cash back.",
+    why:
+      "Best no-fee Amex for everyday cash back.",
 
     weaknesses: [
       "Not a premium travel card"
@@ -384,6 +427,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "delta-skymiles-blue",
     name: "Delta SkyMiles Blue American Express Card",
     issuer: "Amex / Delta",
     issuerTag: "amex",
@@ -392,9 +436,11 @@ const creditCards = [
     pointValue: 0.012,
     type: "airline",
     brand: "delta",
+
     imageUrl: "assets/cards/delta-skymiles-blue.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Starter Delta",
 
     rewards: {
@@ -414,12 +460,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A simple no-fee Delta starter card, but most Delta flyers will probably get more value from the Gold version if they check bags.",
 
-    myReview: "A simple no-fee Delta starter card, but most Delta flyers will probably get more value from the Gold version if they check bags.",
-
-    bestPairing: "Pairs well with Amex Gold or Amex Platinum.",
+    bestPairing:
+      "Pairs well with Amex Gold or Amex Platinum.",
 
     goodFor: [
       "No annual fee",
@@ -435,7 +480,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["amex", "airline", "delta", "noAnnualFee"],
+    tags: [
+      "amex",
+      "airline",
+      "delta",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "No annual fee",
@@ -444,7 +494,8 @@ const creditCards = [
       "Starter Delta card"
     ],
 
-    why: "Best no-fee card for casual Delta flyers.",
+    why:
+      "Best no-fee card for casual Delta flyers.",
 
     weaknesses: [
       "Limited premium Delta perks"
@@ -456,6 +507,7 @@ const creditCards = [
   },
 
   {
+    slug: "delta-skymiles-gold",
     name: "Delta SkyMiles Gold American Express Card",
     issuer: "Amex / Delta",
     issuerTag: "amex",
@@ -464,9 +516,11 @@ const creditCards = [
     pointValue: 0.012,
     type: "airline",
     brand: "delta",
+
     imageUrl: "assets/cards/delta-skymiles-gold.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Delta Flights",
 
     rewards: {
@@ -487,12 +541,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is usually the Delta card I would look at first if you fly Delta occasionally and value the checked bag benefit.",
 
-    myReview: "This is usually the Delta card I would look at first if you fly Delta occasionally and value the checked bag benefit.",
-
-    bestPairing: "Pairs well with Amex Gold or Amex Platinum.",
+    bestPairing:
+      "Pairs well with Amex Gold or Amex Platinum.",
 
     goodFor: [
       "Occasional Delta flyers",
@@ -507,7 +560,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["amex", "airline", "delta"],
+    tags: [
+      "amex",
+      "airline",
+      "delta"
+    ],
 
     benefits: [
       "Free checked bag on Delta",
@@ -516,7 +573,8 @@ const creditCards = [
       "2x dining and groceries"
     ],
 
-    why: "Best for occasional Delta flyers who check bags.",
+    why:
+      "Best for occasional Delta flyers who check bags.",
 
     weaknesses: [
       "Not the best everyday earning card"
@@ -528,6 +586,7 @@ const creditCards = [
   },
 
   {
+    slug: "delta-skymiles-platinum",
     name: "Delta SkyMiles Platinum American Express Card",
     issuer: "Amex / Delta",
     issuerTag: "amex",
@@ -536,9 +595,11 @@ const creditCards = [
     pointValue: 0.012,
     type: "airline",
     brand: "delta",
+
     imageUrl: "assets/cards/delta-skymiles-platinum.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Delta Flyers",
 
     rewards: {
@@ -560,12 +621,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This card starts to make sense if you fly Delta enough to use the companion certificate and Delta-specific perks.",
 
-    myReview: "This card starts to make sense if you fly Delta enough to use the companion certificate and Delta-specific perks.",
-
-    bestPairing: "Pairs well with Amex Gold for stronger everyday food spending.",
+    bestPairing:
+      "Pairs well with Amex Gold for stronger everyday food spending.",
 
     goodFor: [
       "Delta flyers",
@@ -580,7 +640,11 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["amex", "airline", "delta"],
+    tags: [
+      "amex",
+      "airline",
+      "delta"
+    ],
 
     benefits: [
       "3x Delta purchases",
@@ -589,7 +653,8 @@ const creditCards = [
       "Free checked bag"
     ],
 
-    why: "Best for Delta flyers who can use the companion certificate.",
+    why:
+      "Best for Delta flyers who can use the companion certificate.",
 
     weaknesses: [
       "Only makes sense if you fly Delta enough"
@@ -601,6 +666,7 @@ const creditCards = [
   },
 
   {
+    slug: "delta-skymiles-reserve",
     name: "Delta SkyMiles Reserve American Express Card",
     issuer: "Amex / Delta",
     issuerTag: "amex",
@@ -609,9 +675,11 @@ const creditCards = [
     pointValue: 0.012,
     type: "airline",
     brand: "delta",
+
     imageUrl: "assets/cards/delta-skymiles-reserve.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium Delta",
 
     rewards: {
@@ -630,12 +698,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is a premium Delta perks card, not an everyday earning card. I would only consider it if you are loyal to Delta and value the airport benefits.",
 
-    myReview: "This is a premium Delta perks card, not an everyday earning card. I would only consider it if you are loyal to Delta and value the airport benefits.",
-
-    bestPairing: "Pairs well with Amex Gold for everyday spending.",
+    bestPairing:
+      "Pairs well with Amex Gold for everyday spending.",
 
     goodFor: [
       "Delta loyalists",
@@ -651,7 +718,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["amex", "airline", "delta", "premium"],
+    tags: [
+      "amex",
+      "airline",
+      "delta",
+      "premium"
+    ],
 
     benefits: [
       "Delta lounge access benefits",
@@ -660,7 +732,8 @@ const creditCards = [
       "Premium Delta travel perks"
     ],
 
-    why: "Best for loyal Delta flyers who want premium airport perks.",
+    why:
+      "Best for loyal Delta flyers who want premium airport perks.",
 
     weaknesses: [
       "High annual fee",
@@ -677,6 +750,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "hilton-honors-amex",
     name: "Hilton Honors American Express Card",
     issuer: "Amex / Hilton",
     issuerTag: "amex",
@@ -685,9 +759,11 @@ const creditCards = [
     pointValue: 0.005,
     type: "hotel",
     brand: "hilton",
+
     imageUrl: "assets/cards/hilton-honors-amex-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Starter Hilton",
 
     rewards: {
@@ -709,12 +785,11 @@ const creditCards = [
       "3x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A good no-fee Hilton starter card, but remember Hilton points are not worth the same as flexible points.",
 
-    myReview: "A good no-fee Hilton starter card, but remember Hilton points are not worth the same as flexible points.",
-
-    bestPairing: "Pairs well with a flexible travel card like Amex Gold, Sapphire Preferred, or Venture X.",
+    bestPairing:
+      "Pairs well with a flexible travel card like Amex Gold, Sapphire Preferred, or Venture X.",
 
     goodFor: [
       "No annual fee",
@@ -729,7 +804,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["amex", "hotel", "hilton", "noAnnualFee"],
+    tags: [
+      "amex",
+      "hotel",
+      "hilton",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "No annual fee",
@@ -738,7 +818,8 @@ const creditCards = [
       "Bonus points at Hilton"
     ],
 
-    why: "Best no-fee Hilton card.",
+    why:
+      "Best no-fee Hilton card.",
 
     weaknesses: [
       "Hilton points are worth less than flexible points"
@@ -750,6 +831,7 @@ const creditCards = [
   },
 
   {
+    slug: "hilton-honors-surpass",
     name: "Hilton Honors Surpass Card",
     issuer: "Amex / Hilton",
     issuerTag: "amex",
@@ -758,9 +840,11 @@ const creditCards = [
     pointValue: 0.005,
     type: "hotel",
     brand: "hilton",
+
     imageUrl: "assets/cards/hilton-honors-surpass.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Hilton + Everyday Spend",
 
     rewards: {
@@ -782,12 +866,11 @@ const creditCards = [
       "3x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This can be a strong Hilton card if you stay with Hilton and want a middle-tier hotel card, but I would not rank it above flexible points cards for normal dining and grocery spend.",
 
-    myReview: "This can be a strong Hilton card if you stay with Hilton and want a middle-tier hotel card, but I would not rank it above flexible points cards for normal dining and grocery spend.",
-
-    bestPairing: "Pairs well with Amex Gold or Hilton Aspire.",
+    bestPairing:
+      "Pairs well with Amex Gold or Hilton Aspire.",
 
     goodFor: [
       "Hilton loyalists",
@@ -802,7 +885,11 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["amex", "hotel", "hilton"],
+    tags: [
+      "amex",
+      "hotel",
+      "hilton"
+    ],
 
     benefits: [
       "High Hilton earning",
@@ -811,7 +898,8 @@ const creditCards = [
       "Good middle-tier Hilton card"
     ],
 
-    why: "Best for Hilton loyalists with strong everyday spending.",
+    why:
+      "Best for Hilton loyalists with strong everyday spending.",
 
     weaknesses: [
       "Less flexible than transferable points"
@@ -823,6 +911,7 @@ const creditCards = [
   },
 
   {
+    slug: "hilton-honors-aspire",
     name: "Hilton Honors Aspire Card",
     issuer: "Amex / Hilton",
     issuerTag: "amex",
@@ -831,9 +920,11 @@ const creditCards = [
     pointValue: 0.005,
     type: "hotel",
     brand: "hilton",
+
     imageUrl: "assets/cards/hilton-honors-aspire.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium Hilton",
 
     rewards: {
@@ -854,12 +945,11 @@ const creditCards = [
       "3x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is the premium Hilton card. It can be very valuable for Hilton loyalists, but I would not recommend it just for dining or grocery earning.",
 
-    myReview: "This is the premium Hilton card. It can be very valuable for Hilton loyalists, but I would not recommend it just for dining or grocery earning.",
-
-    bestPairing: "Pairs well with Amex Gold or Amex Platinum.",
+    bestPairing:
+      "Pairs well with Amex Gold or Amex Platinum.",
 
     goodFor: [
       "Hilton loyalists",
@@ -875,7 +965,13 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["amex", "hotel", "hilton", "premium", "luxuryTravel"],
+    tags: [
+      "amex",
+      "hotel",
+      "hilton",
+      "premium",
+      "luxuryTravel"
+    ],
 
     benefits: [
       "Premium Hilton benefits",
@@ -884,7 +980,8 @@ const creditCards = [
       "Top-tier Hilton perks"
     ],
 
-    why: "Best for Hilton loyalists who use premium hotel benefits.",
+    why:
+      "Best for Hilton loyalists who use premium hotel benefits.",
 
     weaknesses: [
       "High annual fee",
@@ -901,6 +998,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "marriott-bonvoy-bevy",
     name: "Marriott Bonvoy Bevy American Express Card",
     issuer: "Amex / Marriott",
     issuerTag: "amex",
@@ -909,9 +1007,11 @@ const creditCards = [
     pointValue: 0.008,
     type: "hotel",
     brand: "marriott",
+
     imageUrl: "assets/cards/marriott-bonvoy-bevy.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Marriott + Dining",
 
     rewards: {
@@ -932,12 +1032,11 @@ const creditCards = [
       "2x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This can make sense for Marriott loyalists, but for dining and groceries I would usually prefer flexible points first.",
 
-    myReview: "This can make sense for Marriott loyalists, but for dining and groceries I would usually prefer flexible points first.",
-
-    bestPairing: "Pairs well with a premium Marriott card or a flexible points card.",
+    bestPairing:
+      "Pairs well with a premium Marriott card or a flexible points card.",
 
     goodFor: [
       "Marriott travelers",
@@ -953,7 +1052,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["amex", "hotel", "marriott"],
+    tags: [
+      "amex",
+      "hotel",
+      "marriott"
+    ],
 
     benefits: [
       "Marriott points",
@@ -962,7 +1065,8 @@ const creditCards = [
       "Good Marriott earning"
     ],
 
-    why: "Best for Marriott travelers who also spend on dining and groceries.",
+    why:
+      "Best for Marriott travelers who also spend on dining and groceries.",
 
     weaknesses: [
       "Best only if you value Marriott points"
@@ -974,6 +1078,7 @@ const creditCards = [
   },
 
   {
+    slug: "marriott-bonvoy-brilliant",
     name: "Marriott Bonvoy Brilliant American Express Card",
     issuer: "Amex / Marriott",
     issuerTag: "amex",
@@ -982,9 +1087,11 @@ const creditCards = [
     pointValue: 0.008,
     type: "hotel",
     brand: "marriott",
+
     imageUrl: "assets/cards/marriott-bonvoy-brilliant.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium Marriott",
 
     rewards: {
@@ -1005,12 +1112,11 @@ const creditCards = [
       "2x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A premium Marriott card for people who actually stay with Marriott enough to use the benefits. Not a simple everyday card.",
 
-    myReview: "A premium Marriott card for people who actually stay with Marriott enough to use the benefits. Not a simple everyday card.",
-
-    bestPairing: "Pairs well with Amex Gold or Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with Amex Gold or Chase Sapphire Preferred.",
 
     goodFor: [
       "Marriott loyalists",
@@ -1026,7 +1132,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["amex", "hotel", "marriott", "premium"],
+    tags: [
+      "amex",
+      "hotel",
+      "marriott",
+      "premium"
+    ],
 
     benefits: [
       "Premium Marriott benefits",
@@ -1035,7 +1146,8 @@ const creditCards = [
       "Travel credits"
     ],
 
-    why: "Best for Marriott loyalists who want premium hotel perks.",
+    why:
+      "Best for Marriott loyalists who want premium hotel perks.",
 
     weaknesses: [
       "High annual fee",
@@ -1045,13 +1157,14 @@ const creditCards = [
     premium: true,
     beginnerFriendly: false,
     business: false
-  },  
-  
+  },
+
   // =====================
   // CHASE ULTIMATE REWARDS
   // =====================
 
   {
+    slug: "chase-sapphire-preferred",
     name: "Chase Sapphire Preferred",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1060,9 +1173,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "chase",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/chase-sapphire-preferred.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Travel + Dining",
 
     rewards: {
@@ -1083,12 +1198,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "One of the best starter travel cards. I like it because Chase points are easy to understand and Hyatt transfers can be extremely valuable.",
 
-    myReview: "One of the best starter travel cards. I like it because Chase points are easy to understand and Hyatt transfers can be extremely valuable.",
-
-    bestPairing: "Pairs well with Chase Freedom Unlimited and Chase Freedom Flex.",
+    bestPairing:
+      "Pairs well with Chase Freedom Unlimited and Chase Freedom Flex.",
 
     goodFor: [
       "Beginner travel points",
@@ -1104,7 +1218,13 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["chase", "flexible", "travel", "dining", "beginner"],
+    tags: [
+      "chase",
+      "flexible",
+      "travel",
+      "dining",
+      "beginner"
+    ],
 
     benefits: [
       "5x Chase Travel",
@@ -1113,7 +1233,8 @@ const creditCards = [
       "Great beginner travel card"
     ],
 
-    why: "Best starter card for flexible travel points.",
+    why:
+      "Best starter card for flexible travel points.",
 
     weaknesses: [
       "Best travel earning requires Chase Travel portal",
@@ -1126,6 +1247,7 @@ const creditCards = [
   },
 
   {
+    slug: "chase-sapphire-reserve",
     name: "Chase Sapphire Reserve",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1134,9 +1256,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "chase",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/chase-sapphire-reserve.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium Travel",
 
     rewards: {
@@ -1157,12 +1281,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is for people who want premium travel perks and actually use the benefits. I would not pick it just because it sounds premium.",
 
-    myReview: "This is for people who want premium travel perks and actually use the benefits. I would not pick it just because it sounds premium.",
-
-    bestPairing: "Pairs well with Chase Freedom Unlimited and Chase Freedom Flex.",
+    bestPairing:
+      "Pairs well with Chase Freedom Unlimited and Chase Freedom Flex.",
 
     goodFor: [
       "Premium travel",
@@ -1179,7 +1302,13 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["chase", "flexible", "premium", "travel", "luxuryTravel"],
+    tags: [
+      "chase",
+      "flexible",
+      "premium",
+      "travel",
+      "luxuryTravel"
+    ],
 
     benefits: [
       "Premium travel rewards",
@@ -1188,7 +1317,8 @@ const creditCards = [
       "Strong travel protection"
     ],
 
-    why: "Best for premium travelers who use Chase benefits often.",
+    why:
+      "Best for premium travelers who use Chase benefits often.",
 
     weaknesses: [
       "High annual fee",
@@ -1201,6 +1331,7 @@ const creditCards = [
   },
 
   {
+    slug: "chase-freedom-unlimited",
     name: "Chase Freedom Unlimited",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1209,9 +1340,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "chase",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/chase-freedom-unlimited.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Everyday Spend",
 
     rewards: {
@@ -1232,12 +1365,11 @@ const creditCards = [
       "1.5x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "One of the best no-fee support cards. It gets much better when paired with a Sapphire card because the points become more powerful.",
 
-    myReview: "One of the best no-fee support cards. It gets much better when paired with a Sapphire card because the points become more powerful.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Sapphire Reserve.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred or Chase Sapphire Reserve.",
 
     goodFor: [
       "Everyday spend",
@@ -1253,7 +1385,13 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["chase", "flexible", "cashback", "noAnnualFee", "everyday"],
+    tags: [
+      "chase",
+      "flexible",
+      "cashback",
+      "noAnnualFee",
+      "everyday"
+    ],
 
     benefits: [
       "No annual fee",
@@ -1262,7 +1400,8 @@ const creditCards = [
       "Pairs well with Sapphire cards"
     ],
 
-    why: "Best Chase catch-all card.",
+    why:
+      "Best Chase catch-all card.",
 
     weaknesses: [
       "Works best when paired with a Sapphire card"
@@ -1274,6 +1413,7 @@ const creditCards = [
   },
 
   {
+    slug: "chase-freedom-flex",
     name: "Chase Freedom Flex",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1282,9 +1422,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "chase",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/chase-freedom-flex.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Rotating Categories",
 
     rewards: {
@@ -1306,12 +1448,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "Great if you like maximizing categories, but it takes more effort than the Freedom Unlimited because you have to track rotating categories.",
 
-    myReview: "Great if you like maximizing categories, but it takes more effort than the Freedom Unlimited because you have to track rotating categories.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Sapphire Reserve.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred or Chase Sapphire Reserve.",
 
     goodFor: [
       "Rotating categories",
@@ -1327,7 +1468,13 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "flexible", "cashback", "noAnnualFee", "rotating"],
+    tags: [
+      "chase",
+      "flexible",
+      "cashback",
+      "noAnnualFee",
+      "rotating"
+    ],
 
     benefits: [
       "No annual fee",
@@ -1336,7 +1483,8 @@ const creditCards = [
       "Pairs well with Sapphire cards"
     ],
 
-    why: "Best for maximizing rotating bonus categories.",
+    why:
+      "Best for maximizing rotating bonus categories.",
 
     weaknesses: [
       "Rotating categories require activation and tracking"
@@ -1348,6 +1496,7 @@ const creditCards = [
   },
 
   {
+    slug: "chase-freedom-rise",
     name: "Chase Freedom Rise",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1356,9 +1505,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "chase",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/chase-freedom-rise.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Building Credit",
 
     rewards: {
@@ -1377,12 +1528,11 @@ const creditCards = [
       "Simple earning structure"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A simple Chase starter card for people building credit. This is not really a premium travel strategy card.",
 
-    myReview: "A simple Chase starter card for people building credit. This is not really a premium travel strategy card.",
-
-    bestPairing: "Can eventually pair with Chase Sapphire Preferred.",
+    bestPairing:
+      "Can eventually pair with Chase Sapphire Preferred.",
 
     goodFor: [
       "Building credit",
@@ -1397,7 +1547,13 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "flexible", "cashback", "noAnnualFee", "beginner"],
+    tags: [
+      "chase",
+      "flexible",
+      "cashback",
+      "noAnnualFee",
+      "beginner"
+    ],
 
     benefits: [
       "No annual fee",
@@ -1405,7 +1561,8 @@ const creditCards = [
       "Simple earning"
     ],
 
-    why: "Best Chase starter card for building credit.",
+    why:
+      "Best Chase starter card for building credit.",
 
     weaknesses: [
       "Not a premium travel card"
@@ -1421,6 +1578,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "marriott-bonvoy-bold",
     name: "Marriott Bonvoy Bold",
     issuer: "Chase / Marriott",
     issuerTag: "chase",
@@ -1429,9 +1587,11 @@ const creditCards = [
     pointValue: 0.008,
     type: "hotel",
     brand: "marriott",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/marriott-bonvoy-bold.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "No-Fee Marriott",
 
     rewards: {
@@ -1451,12 +1611,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A basic no-fee Marriott card. Good only if you want a simple Marriott starter card without paying an annual fee.",
 
-    myReview: "A basic no-fee Marriott card. Good only if you want a simple Marriott starter card without paying an annual fee.",
-
-    bestPairing: "Pairs well with a flexible travel card like Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with a flexible travel card like Chase Sapphire Preferred.",
 
     goodFor: [
       "No annual fee",
@@ -1472,7 +1631,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "hotel", "marriott", "noAnnualFee"],
+    tags: [
+      "chase",
+      "hotel",
+      "marriott",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "No annual fee",
@@ -1481,7 +1645,8 @@ const creditCards = [
       "Travel rewards"
     ],
 
-    why: "Best no-fee Marriott card.",
+    why:
+      "Best no-fee Marriott card.",
 
     weaknesses: [
       "Low earning compared to paid Marriott cards"
@@ -1493,6 +1658,7 @@ const creditCards = [
   },
 
   {
+    slug: "marriott-bonvoy-boundless",
     name: "Marriott Bonvoy Boundless",
     issuer: "Chase / Marriott",
     issuerTag: "chase",
@@ -1501,9 +1667,11 @@ const creditCards = [
     pointValue: 0.008,
     type: "hotel",
     brand: "marriott",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/marriott-bonvoy-boundless.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Marriott Hotels",
 
     rewards: {
@@ -1525,12 +1693,11 @@ const creditCards = [
       "2x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is probably the Marriott card I would start with if you want a simple paid Marriott card because the free night can help justify the annual fee.",
 
-    myReview: "This is probably the Marriott card I would start with if you want a simple paid Marriott card because the free night can help justify the annual fee.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
     goodFor: [
       "Marriott travelers",
@@ -1545,7 +1712,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "hotel", "marriott"],
+    tags: [
+      "chase",
+      "hotel",
+      "marriott"
+    ],
 
     benefits: [
       "Free night certificate",
@@ -1554,7 +1725,8 @@ const creditCards = [
       "Good mid-tier Marriott card"
     ],
 
-    why: "Best starter Marriott card with an annual free night.",
+    why:
+      "Best starter Marriott card with an annual free night.",
 
     weaknesses: [
       "Best only if you stay with Marriott"
@@ -1566,6 +1738,7 @@ const creditCards = [
   },
 
   {
+    slug: "marriott-bonvoy-bountiful",
     name: "Marriott Bonvoy Bountiful",
     issuer: "Chase / Marriott",
     issuerTag: "chase",
@@ -1574,9 +1747,11 @@ const creditCards = [
     pointValue: 0.008,
     type: "hotel",
     brand: "marriott",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/marriott-bonvoy-bountiful.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Marriott + Everyday Spend",
 
     rewards: {
@@ -1598,12 +1773,11 @@ const creditCards = [
       "2x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This card can earn well in common categories, but I would only prioritize it if you specifically value Marriott points.",
 
-    myReview: "This card can earn well in common categories, but I would only prioritize it if you specifically value Marriott points.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred or Marriott Boundless.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred or Marriott Boundless.",
 
     goodFor: [
       "Marriott loyalists",
@@ -1619,7 +1793,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "hotel", "marriott"],
+    tags: [
+      "chase",
+      "hotel",
+      "marriott"
+    ],
 
     benefits: [
       "Marriott points",
@@ -1628,7 +1806,8 @@ const creditCards = [
       "Mid-premium Marriott card"
     ],
 
-    why: "Best for Marriott loyalists with everyday spending.",
+    why:
+      "Best for Marriott loyalists with everyday spending.",
 
     weaknesses: [
       "No-fee or $95 Marriott cards may be better for casual users"
@@ -1644,6 +1823,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "world-of-hyatt-credit-card",
     name: "World of Hyatt Credit Card",
     issuer: "Chase / Hyatt",
     issuerTag: "chase",
@@ -1652,9 +1832,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "hotel",
     brand: "hyatt",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/world-of-hyatt-credit-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Hyatt Hotels",
 
     rewards: {
@@ -1676,12 +1858,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "Hyatt points can be extremely valuable. I like this card most for people who already use Hyatt or want to build a Chase/Hyatt strategy.",
 
-    myReview: "Hyatt points can be extremely valuable. I like this card most for people who already use Hyatt or want to build a Chase/Hyatt strategy.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred and Chase Freedom Unlimited.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred and Chase Freedom Unlimited.",
 
     goodFor: [
       "Hyatt travelers",
@@ -1696,7 +1877,11 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["chase", "hotel", "hyatt"],
+    tags: [
+      "chase",
+      "hotel",
+      "hyatt"
+    ],
 
     benefits: [
       "Hyatt points",
@@ -1705,7 +1890,8 @@ const creditCards = [
       "Great hotel redemption value"
     ],
 
-    why: "Best for Hyatt travelers.",
+    why:
+      "Best for Hyatt travelers.",
 
     weaknesses: [
       "Best only if you use Hyatt"
@@ -1721,6 +1907,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "ihg-one-rewards-traveler",
     name: "IHG One Rewards Traveler",
     issuer: "Chase / IHG",
     issuerTag: "chase",
@@ -1729,9 +1916,11 @@ const creditCards = [
     pointValue: 0.005,
     type: "hotel",
     brand: "ihg",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/ihg-one-rewards-traveler.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "No-Fee IHG",
 
     rewards: {
@@ -1753,12 +1942,11 @@ const creditCards = [
       "2x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A decent no-fee hotel starter card, but I would usually prefer Chase flexible points unless you specifically stay with IHG.",
 
-    myReview: "A decent no-fee hotel starter card, but I would usually prefer Chase flexible points unless you specifically stay with IHG.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
     goodFor: [
       "No annual fee",
@@ -1773,7 +1961,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "hotel", "ihg", "noAnnualFee"],
+    tags: [
+      "chase",
+      "hotel",
+      "ihg",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "No annual fee",
@@ -1782,7 +1975,8 @@ const creditCards = [
       "Good for casual IHG stays"
     ],
 
-    why: "Best no-fee IHG card.",
+    why:
+      "Best no-fee IHG card.",
 
     weaknesses: [
       "IHG points are less flexible than Chase points"
@@ -1794,6 +1988,7 @@ const creditCards = [
   },
 
   {
+    slug: "ihg-one-rewards-premier",
     name: "IHG One Rewards Premier",
     issuer: "Chase / IHG",
     issuerTag: "chase",
@@ -1802,9 +1997,11 @@ const creditCards = [
     pointValue: 0.005,
     type: "hotel",
     brand: "ihg",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/ihg-one-rewards-premier.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "IHG Hotels",
 
     rewards: {
@@ -1826,12 +2023,11 @@ const creditCards = [
       "3x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is the IHG card I would look at if you actually stay with IHG because the free night and status perks can make it worthwhile.",
 
-    myReview: "This is the IHG card I would look at if you actually stay with IHG because the free night and status perks can make it worthwhile.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
 
     goodFor: [
       "IHG travelers",
@@ -1846,7 +2042,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "hotel", "ihg"],
+    tags: [
+      "chase",
+      "hotel",
+      "ihg"
+    ],
 
     benefits: [
       "IHG points",
@@ -1855,7 +2055,8 @@ const creditCards = [
       "IHG status benefits"
     ],
 
-    why: "Best for IHG travelers.",
+    why:
+      "Best for IHG travelers.",
 
     weaknesses: [
       "Best only if you stay with IHG"
@@ -1865,11 +2066,13 @@ const creditCards = [
     beginnerFriendly: false,
     business: false
   },
-    // =====================
+
+  // =====================
   // CHASE UNITED
   // =====================
 
   {
+    slug: "united-gateway-card",
     name: "United Gateway Card",
     issuer: "Chase / United",
     issuerTag: "chase",
@@ -1878,9 +2081,11 @@ const creditCards = [
     pointValue: 0.013,
     type: "airline",
     brand: "united",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/united-gateway-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "No-Fee United",
 
     rewards: {
@@ -1901,12 +2106,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A simple no-fee United starter card, but it lacks the bigger United perks most travelers care about.",
 
-    myReview: "A simple no-fee United starter card, but it lacks the bigger United perks most travelers care about.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
     goodFor: [
       "No annual fee",
@@ -1922,7 +2126,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "united", "noAnnualFee"],
+    tags: [
+      "chase",
+      "airline",
+      "united",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "No annual fee",
@@ -1930,7 +2139,8 @@ const creditCards = [
       "Good starter United card"
     ],
 
-    why: "Best no-fee United card.",
+    why:
+      "Best no-fee United card.",
 
     weaknesses: [
       "Limited United perks"
@@ -1942,6 +2152,7 @@ const creditCards = [
   },
 
   {
+    slug: "united-explorer-card",
     name: "United Explorer Card",
     issuer: "Chase / United",
     issuerTag: "chase",
@@ -1950,9 +2161,11 @@ const creditCards = [
     pointValue: 0.013,
     type: "airline",
     brand: "united",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/united-explorer-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "United Flights",
 
     rewards: {
@@ -1973,12 +2186,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is the United card I would look at first for occasional United flyers because the checked bag benefit can matter quickly.",
 
-    myReview: "This is the United card I would look at first for occasional United flyers because the checked bag benefit can matter quickly.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
 
     goodFor: [
       "Occasional United flyers",
@@ -1993,7 +2205,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "united"],
+    tags: [
+      "chase",
+      "airline",
+      "united"
+    ],
 
     benefits: [
       "Free checked bag",
@@ -2002,7 +2218,8 @@ const creditCards = [
       "Good beginner airline card"
     ],
 
-    why: "Best for occasional United flyers.",
+    why:
+      "Best for occasional United flyers.",
 
     weaknesses: [
       "Not strong for everyday spending"
@@ -2014,6 +2231,7 @@ const creditCards = [
   },
 
   {
+    slug: "united-quest-card",
     name: "United Quest Card",
     issuer: "Chase / United",
     issuerTag: "chase",
@@ -2022,9 +2240,11 @@ const creditCards = [
     pointValue: 0.013,
     type: "airline",
     brand: "united",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/united-quest-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "United Loyalists",
 
     rewards: {
@@ -2046,12 +2266,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This starts making sense for more frequent United flyers who can use the credits and checked bag benefits.",
 
-    myReview: "This starts making sense for more frequent United flyers who can use the credits and checked bag benefits.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
 
     goodFor: [
       "Frequent United flyers",
@@ -2066,7 +2285,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "united"],
+    tags: [
+      "chase",
+      "airline",
+      "united"
+    ],
 
     benefits: [
       "United travel credits",
@@ -2075,7 +2298,8 @@ const creditCards = [
       "Good for frequent United flyers"
     ],
 
-    why: "Best for frequent United travelers.",
+    why:
+      "Best for frequent United travelers.",
 
     weaknesses: [
       "Best only if you fly United regularly"
@@ -2087,6 +2311,7 @@ const creditCards = [
   },
 
   {
+    slug: "united-club-card",
     name: "United Club Card",
     issuer: "Chase / United",
     issuerTag: "chase",
@@ -2095,9 +2320,11 @@ const creditCards = [
     pointValue: 0.013,
     type: "airline",
     brand: "united",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/united-club-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium United",
 
     rewards: {
@@ -2118,12 +2345,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is really about United Club access. I would only consider it if you fly United often enough to value the lounge membership.",
 
-    myReview: "This is really about United Club access. I would only consider it if you fly United often enough to value the lounge membership.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred or Chase Freedom Unlimited.",
 
     goodFor: [
       "United loyalists",
@@ -2139,7 +2365,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "united", "premium"],
+    tags: [
+      "chase",
+      "airline",
+      "united",
+      "premium"
+    ],
 
     benefits: [
       "United Club membership",
@@ -2148,7 +2379,8 @@ const creditCards = [
       "Strong airline benefits"
     ],
 
-    why: "Best for United flyers who value lounge access.",
+    why:
+      "Best for United flyers who value lounge access.",
 
     weaknesses: [
       "High annual fee",
@@ -2165,6 +2397,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "southwest-rapid-rewards-plus",
     name: "Southwest Rapid Rewards Plus",
     issuer: "Chase / Southwest",
     issuerTag: "chase",
@@ -2173,9 +2406,11 @@ const creditCards = [
     pointValue: 0.013,
     type: "airline",
     brand: "southwest",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/southwest-rapid-rewards-plus.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Southwest Starter",
 
     rewards: {
@@ -2195,12 +2430,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A low-fee Southwest starter card, but I would compare it against the higher Southwest cards if you fly them often.",
 
-    myReview: "A low-fee Southwest starter card, but I would compare it against the higher Southwest cards if you fly them often.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
     goodFor: [
       "Southwest beginners",
@@ -2215,7 +2449,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "southwest"],
+    tags: [
+      "chase",
+      "airline",
+      "southwest"
+    ],
 
     benefits: [
       "Southwest points",
@@ -2224,7 +2462,8 @@ const creditCards = [
       "Good starter Southwest card"
     ],
 
-    why: "Best low-fee Southwest card.",
+    why:
+      "Best low-fee Southwest card.",
 
     weaknesses: [
       "Limited premium Southwest perks"
@@ -2236,6 +2475,7 @@ const creditCards = [
   },
 
   {
+    slug: "southwest-rapid-rewards-premier",
     name: "Southwest Rapid Rewards Premier",
     issuer: "Chase / Southwest",
     issuerTag: "chase",
@@ -2244,9 +2484,11 @@ const creditCards = [
     pointValue: 0.013,
     type: "airline",
     brand: "southwest",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/southwest-rapid-rewards-premier.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Southwest Flyers",
 
     rewards: {
@@ -2266,12 +2508,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A middle-tier Southwest card for people who fly Southwest regularly but do not need every premium perk.",
 
-    myReview: "A middle-tier Southwest card for people who fly Southwest regularly but do not need every premium perk.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred or Freedom Unlimited.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred or Freedom Unlimited.",
 
     goodFor: [
       "Southwest flyers",
@@ -2286,7 +2527,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "southwest"],
+    tags: [
+      "chase",
+      "airline",
+      "southwest"
+    ],
 
     benefits: [
       "Southwest points",
@@ -2295,7 +2540,8 @@ const creditCards = [
       "No foreign transaction fees"
     ],
 
-    why: "Best middle-tier Southwest card.",
+    why:
+      "Best middle-tier Southwest card.",
 
     weaknesses: [
       "Best only if you fly Southwest"
@@ -2307,6 +2553,7 @@ const creditCards = [
   },
 
   {
+    slug: "southwest-rapid-rewards-priority",
     name: "Southwest Rapid Rewards Priority",
     issuer: "Chase / Southwest",
     issuerTag: "chase",
@@ -2315,9 +2562,11 @@ const creditCards = [
     pointValue: 0.013,
     type: "airline",
     brand: "southwest",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/southwest-rapid-rewards-priority.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Frequent Southwest",
 
     rewards: {
@@ -2337,12 +2586,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is probably the best personal Southwest card if you fly them enough to use the travel credit and upgraded boarding benefits.",
 
-    myReview: "This is probably the best personal Southwest card if you fly them enough to use the travel credit and upgraded boarding benefits.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
     goodFor: [
       "Frequent Southwest flyers",
@@ -2357,7 +2605,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "southwest"],
+    tags: [
+      "chase",
+      "airline",
+      "southwest"
+    ],
 
     benefits: [
       "Southwest travel credit",
@@ -2366,7 +2618,8 @@ const creditCards = [
       "Best personal Southwest card"
     ],
 
-    why: "Best for frequent Southwest flyers.",
+    why:
+      "Best for frequent Southwest flyers.",
 
     weaknesses: [
       "Best only if you fly Southwest often"
@@ -2382,6 +2635,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "aeroplan-card",
     name: "Aeroplan Card",
     issuer: "Chase / Air Canada",
     issuerTag: "chase",
@@ -2390,9 +2644,11 @@ const creditCards = [
     pointValue: 0.017,
     type: "airline",
     brand: "aircanada",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/aeroplan-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Star Alliance Travel",
 
     rewards: {
@@ -2413,12 +2669,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is more advanced than a normal beginner travel card, but Aeroplan can be very powerful if you understand airline redemptions.",
 
-    myReview: "This is more advanced than a normal beginner travel card, but Aeroplan can be very powerful if you understand airline redemptions.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred or Amex Membership Rewards cards.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred or Amex Membership Rewards cards.",
 
     goodFor: [
       "Star Alliance redemptions",
@@ -2433,7 +2688,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "aircanada", "aeroplan"],
+    tags: [
+      "chase",
+      "airline",
+      "aircanada",
+      "aeroplan"
+    ],
 
     benefits: [
       "Aeroplan points",
@@ -2441,7 +2701,8 @@ const creditCards = [
       "Good travel partners"
     ],
 
-    why: "Best for people who understand airline transfer redemptions.",
+    why:
+      "Best for people who understand airline transfer redemptions.",
 
     weaknesses: [
       "More advanced than beginner travel cards"
@@ -2453,6 +2714,7 @@ const creditCards = [
   },
 
   {
+    slug: "british-airways-visa-signature",
     name: "British Airways Visa Signature Card",
     issuer: "Chase / British Airways",
     issuerTag: "chase",
@@ -2461,9 +2723,11 @@ const creditCards = [
     pointValue: 0.015,
     type: "airline",
     brand: "britishairways",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/british-airways-visa-signature.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Avios Flights",
 
     rewards: {
@@ -2483,12 +2747,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "Useful for Avios users, but too niche for most beginners unless you already know how you want to redeem Avios.",
 
-    myReview: "Useful for Avios users, but too niche for most beginners unless you already know how you want to redeem Avios.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
     goodFor: [
       "Avios users",
@@ -2503,7 +2766,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "avios", "britishairways"],
+    tags: [
+      "chase",
+      "airline",
+      "avios",
+      "britishairways"
+    ],
 
     benefits: [
       "Avios points",
@@ -2511,7 +2779,8 @@ const creditCards = [
       "Partner airline redemptions"
     ],
 
-    why: "Best for Avios users and partner redemptions.",
+    why:
+      "Best for Avios users and partner redemptions.",
 
     weaknesses: [
       "Best if you understand Avios redemptions"
@@ -2523,6 +2792,7 @@ const creditCards = [
   },
 
   {
+    slug: "aer-lingus-visa-signature",
     name: "Aer Lingus Visa Signature Card",
     issuer: "Chase / Aer Lingus",
     issuerTag: "chase",
@@ -2531,9 +2801,11 @@ const creditCards = [
     pointValue: 0.015,
     type: "airline",
     brand: "aerlingus",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/aer-lingus-visa-signature.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Avios Flights",
 
     rewards: {
@@ -2553,12 +2825,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A niche Avios card. I would only look at this if Aer Lingus or Avios redemptions are part of your strategy.",
 
-    myReview: "A niche Avios card. I would only look at this if Aer Lingus or Avios redemptions are part of your strategy.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
     goodFor: [
       "Avios users",
@@ -2573,7 +2844,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "avios", "aerlingus"],
+    tags: [
+      "chase",
+      "airline",
+      "avios",
+      "aerlingus"
+    ],
 
     benefits: [
       "Avios points",
@@ -2581,7 +2857,8 @@ const creditCards = [
       "Partner airline redemptions"
     ],
 
-    why: "Best for Avios users flying Aer Lingus.",
+    why:
+      "Best for Avios users flying Aer Lingus.",
 
     weaknesses: [
       "Niche airline card for most users"
@@ -2593,6 +2870,7 @@ const creditCards = [
   },
 
   {
+    slug: "iberia-visa-signature",
     name: "Iberia Visa Signature Card",
     issuer: "Chase / Iberia",
     issuerTag: "chase",
@@ -2601,9 +2879,11 @@ const creditCards = [
     pointValue: 0.015,
     type: "airline",
     brand: "iberia",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/iberia-visa-signature.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Avios Flights",
 
     rewards: {
@@ -2623,12 +2903,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "Another niche Avios card. Powerful for the right person, but not where I would start for most beginners.",
 
-    myReview: "Another niche Avios card. Powerful for the right person, but not where I would start for most beginners.",
-
-    bestPairing: "Pairs well with Chase Sapphire Preferred.",
+    bestPairing:
+      "Pairs well with Chase Sapphire Preferred.",
 
     goodFor: [
       "Avios users",
@@ -2643,7 +2922,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "airline", "avios", "iberia"],
+    tags: [
+      "chase",
+      "airline",
+      "avios",
+      "iberia"
+    ],
 
     benefits: [
       "Avios points",
@@ -2651,7 +2935,8 @@ const creditCards = [
       "Partner airline redemptions"
     ],
 
-    why: "Best for Avios users flying Iberia.",
+    why:
+      "Best for Avios users flying Iberia.",
 
     weaknesses: [
       "Niche airline card for most users"
@@ -2667,6 +2952,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "prime-visa",
     name: "Prime Visa",
     issuer: "Chase / Amazon",
     issuerTag: "chase",
@@ -2675,9 +2961,11 @@ const creditCards = [
     pointValue: 0.01,
     type: "cashback",
     brand: "amazon",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/prime-visa.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Amazon + Whole Foods",
 
     rewards: {
@@ -2699,12 +2987,11 @@ const creditCards = [
       "1% back elsewhere"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A great retail card if you spend heavily at Amazon or Whole Foods. It is not really a travel strategy card.",
 
-    myReview: "A great retail card if you spend heavily at Amazon or Whole Foods. It is not really a travel strategy card.",
-
-    bestPairing: "Pairs well with a flexible travel card.",
+    bestPairing:
+      "Pairs well with a flexible travel card.",
 
     goodFor: [
       "Amazon",
@@ -2719,7 +3006,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "cashback", "amazon", "noAnnualFee"],
+    tags: [
+      "chase",
+      "cashback",
+      "amazon",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "High Amazon earning",
@@ -2727,7 +3019,8 @@ const creditCards = [
       "No annual fee with Prime"
     ],
 
-    why: "Best for heavy Amazon and Whole Foods shoppers.",
+    why:
+      "Best for heavy Amazon and Whole Foods shoppers.",
 
     weaknesses: [
       "Best value depends on Amazon/Whole Foods spending"
@@ -2739,6 +3032,7 @@ const creditCards = [
   },
 
   {
+    slug: "amazon-visa",
     name: "Amazon Visa",
     issuer: "Chase / Amazon",
     issuerTag: "chase",
@@ -2747,9 +3041,11 @@ const creditCards = [
     pointValue: 0.01,
     type: "cashback",
     brand: "amazon",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/amazon-visa.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Amazon",
 
     rewards: {
@@ -2770,12 +3066,11 @@ const creditCards = [
       "1% back elsewhere"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "Useful if you shop at Amazon but do not have Prime. Prime members should usually look at the Prime Visa instead.",
 
-    myReview: "Useful if you shop at Amazon but do not have Prime. Prime members should usually look at the Prime Visa instead.",
-
-    bestPairing: "Pairs well with a flexible travel card.",
+    bestPairing:
+      "Pairs well with a flexible travel card.",
 
     goodFor: [
       "Amazon shoppers without Prime",
@@ -2790,7 +3085,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["chase", "cashback", "amazon", "noAnnualFee"],
+    tags: [
+      "chase",
+      "cashback",
+      "amazon",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "Amazon rewards",
@@ -2798,7 +3098,8 @@ const creditCards = [
       "Useful retail card"
     ],
 
-    why: "Best for Amazon shoppers without Prime.",
+    why:
+      "Best for Amazon shoppers without Prime.",
 
     weaknesses: [
       "Prime Visa is better for Prime members"
@@ -2814,6 +3115,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "capital-one-venture-x",
     name: "Capital One Venture X",
     issuer: "Capital One",
     issuerTag: "capitalone",
@@ -2822,9 +3124,11 @@ const creditCards = [
     pointValue: 0.018,
     type: "flexible",
     brand: "capitalone",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/capital-one-venture-x.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium Travel + Catch-All",
 
     rewards: {
@@ -2844,12 +3148,11 @@ const creditCards = [
       "5x flights through Capital One Travel"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "One of the easiest premium travel cards to justify if you use the travel credit and want simple 2x earning.",
 
-    myReview: "One of the easiest premium travel cards to justify if you use the travel credit and want simple 2x earning.",
-
-    bestPairing: "Pairs well with Capital One Savor.",
+    bestPairing:
+      "Pairs well with Capital One Savor.",
 
     goodFor: [
       "Simple 2x earning",
@@ -2865,7 +3168,14 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["capitalone", "flexible", "premium", "travel", "luxuryTravel", "everyday"],
+    tags: [
+      "capitalone",
+      "flexible",
+      "premium",
+      "travel",
+      "luxuryTravel",
+      "everyday"
+    ],
 
     benefits: [
       "2x on everything",
@@ -2874,7 +3184,8 @@ const creditCards = [
       "Airport lounge access"
     ],
 
-    why: "Best premium card for simple 2x earning.",
+    why:
+      "Best premium card for simple 2x earning.",
 
     weaknesses: [
       "Top travel multipliers require Capital One Travel portal"
@@ -2886,6 +3197,7 @@ const creditCards = [
   },
 
   {
+    slug: "capital-one-venture-rewards",
     name: "Capital One Venture Rewards",
     issuer: "Capital One",
     issuerTag: "capitalone",
@@ -2894,9 +3206,11 @@ const creditCards = [
     pointValue: 0.018,
     type: "flexible",
     brand: "capitalone",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/capital-one-venture-rewards.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Simple Travel Rewards",
 
     rewards: {
@@ -2915,12 +3229,11 @@ const creditCards = [
       "5x hotels through Capital One Travel"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A simple travel card for people who do not want to track categories. Venture X is worth comparing if you travel enough to use the credits.",
 
-    myReview: "A simple travel card for people who do not want to track categories. Venture X is worth comparing if you travel enough to use the credits.",
-
-    bestPairing: "Pairs well with Capital One Savor.",
+    bestPairing:
+      "Pairs well with Capital One Savor.",
 
     goodFor: [
       "Simple rewards",
@@ -2935,7 +3248,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["capitalone", "flexible", "travel", "everyday"],
+    tags: [
+      "capitalone",
+      "flexible",
+      "travel",
+      "everyday"
+    ],
 
     benefits: [
       "2x on every purchase",
@@ -2944,7 +3262,8 @@ const creditCards = [
       "Good mid-tier travel card"
     ],
 
-    why: "Best for simple travel rewards without tracking categories.",
+    why:
+      "Best for simple travel rewards without tracking categories.",
 
     weaknesses: [
       "Fewer premium perks than Venture X"
@@ -2956,6 +3275,7 @@ const creditCards = [
   },
 
   {
+    slug: "capital-one-ventureone",
     name: "Capital One VentureOne",
     issuer: "Capital One",
     issuerTag: "capitalone",
@@ -2964,9 +3284,11 @@ const creditCards = [
     pointValue: 0.018,
     type: "flexible",
     brand: "capitalone",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/capital-one-ventureone.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "No-Fee Travel",
 
     rewards: {
@@ -2985,12 +3307,11 @@ const creditCards = [
       "5x hotels and rental cars through Capital One Travel"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A no-fee travel card, but the earning rate is much weaker than the Venture Rewards or Venture X.",
 
-    myReview: "A no-fee travel card, but the earning rate is much weaker than the Venture Rewards or Venture X.",
-
-    bestPairing: "Pairs well with Capital One Savor.",
+    bestPairing:
+      "Pairs well with Capital One Savor.",
 
     goodFor: [
       "No annual fee",
@@ -3005,7 +3326,13 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["capitalone", "flexible", "travel", "noAnnualFee", "beginner"],
+    tags: [
+      "capitalone",
+      "flexible",
+      "travel",
+      "noAnnualFee",
+      "beginner"
+    ],
 
     benefits: [
       "No annual fee",
@@ -3014,7 +3341,8 @@ const creditCards = [
       "Beginner-friendly"
     ],
 
-    why: "Best no-fee Capital One travel card.",
+    why:
+      "Best no-fee Capital One travel card.",
 
     weaknesses: [
       "Lower everyday earning than Venture Rewards"
@@ -3030,6 +3358,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "capital-one-savor",
     name: "Capital One Savor",
     issuer: "Capital One",
     issuerTag: "capitalone",
@@ -3038,9 +3367,11 @@ const creditCards = [
     pointValue: 0.01,
     type: "cashback",
     brand: "capitalone",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/capital-one-savor.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Dining + Groceries + Entertainment",
 
     rewards: {
@@ -3061,12 +3392,11 @@ const creditCards = [
       "1% everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A really strong no-fee card for dining and groceries, especially if you want simple cash back or want to pair it with Venture X.",
 
-    myReview: "A really strong no-fee card for dining and groceries, especially if you want simple cash back or want to pair it with Venture X.",
-
-    bestPairing: "Pairs well with Capital One Venture X.",
+    bestPairing:
+      "Pairs well with Capital One Venture X.",
 
     goodFor: [
       "Dining",
@@ -3082,7 +3412,13 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["capitalone", "cashback", "dining", "groceries", "noAnnualFee"],
+    tags: [
+      "capitalone",
+      "cashback",
+      "dining",
+      "groceries",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "3x dining",
@@ -3091,7 +3427,8 @@ const creditCards = [
       "No annual fee"
     ],
 
-    why: "Best Capital One card for dining and groceries.",
+    why:
+      "Best Capital One card for dining and groceries.",
 
     weaknesses: [
       "Cash back value is simpler but less flexible than transferable points"
@@ -3103,6 +3440,7 @@ const creditCards = [
   },
 
   {
+    slug: "capital-one-quicksilver",
     name: "Capital One Quicksilver",
     issuer: "Capital One",
     issuerTag: "capitalone",
@@ -3111,9 +3449,11 @@ const creditCards = [
     pointValue: 0.01,
     type: "cashback",
     brand: "capitalone",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/capital-one-quicksilver.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Simple Cash Back",
 
     rewards: {
@@ -3131,12 +3471,11 @@ const creditCards = [
       "1.5% cash back on purchases"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "Simple and beginner-friendly, but not the strongest card if you are trying to maximize categories or travel points.",
 
-    myReview: "Simple and beginner-friendly, but not the strongest card if you are trying to maximize categories or travel points.",
-
-    bestPairing: "Pairs well with Capital One Savor or Venture X.",
+    bestPairing:
+      "Pairs well with Capital One Savor or Venture X.",
 
     goodFor: [
       "Simple cash back",
@@ -3151,7 +3490,13 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["capitalone", "cashback", "noAnnualFee", "everyday", "beginner"],
+    tags: [
+      "capitalone",
+      "cashback",
+      "noAnnualFee",
+      "everyday",
+      "beginner"
+    ],
 
     benefits: [
       "Flat cash back",
@@ -3160,7 +3505,8 @@ const creditCards = [
       "Easy beginner card"
     ],
 
-    why: "Best for simple cash back on everything.",
+    why:
+      "Best for simple cash back on everything.",
 
     weaknesses: [
       "Not optimized for travel points"
@@ -3172,6 +3518,7 @@ const creditCards = [
   },
 
   {
+    slug: "capital-one-quicksilverone",
     name: "Capital One QuicksilverOne",
     issuer: "Capital One",
     issuerTag: "capitalone",
@@ -3180,9 +3527,11 @@ const creditCards = [
     pointValue: 0.01,
     type: "cashback",
     brand: "capitalone",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/capital-one-quicksilverone.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Fair Credit Cash Back",
 
     rewards: {
@@ -3200,12 +3549,11 @@ const creditCards = [
       "1.5% cash back on purchases"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is mainly for people building credit. If you can qualify for no-fee cards with similar earning, those may be better.",
 
-    myReview: "This is mainly for people building credit. If you can qualify for no-fee cards with similar earning, those may be better.",
-
-    bestPairing: "Pairs well with a future no-fee or travel card once credit improves.",
+    bestPairing:
+      "Pairs well with a future no-fee or travel card once credit improves.",
 
     goodFor: [
       "Fair credit",
@@ -3220,7 +3568,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["capitalone", "cashback", "everyday", "beginner"],
+    tags: [
+      "capitalone",
+      "cashback",
+      "everyday",
+      "beginner"
+    ],
 
     benefits: [
       "Flat cash back",
@@ -3228,7 +3581,8 @@ const creditCards = [
       "Simple rewards"
     ],
 
-    why: "Best for users building credit who still want cash back.",
+    why:
+      "Best for users building credit who still want cash back.",
 
     weaknesses: [
       "Annual fee despite basic earning structure"
@@ -3238,11 +3592,98 @@ const creditCards = [
     beginnerFriendly: true,
     business: false
   },
+
   // =====================
   // CITI THANKYOU POINTS
   // =====================
 
   {
+    slug: "citi-strata-card",
+    name: "Citi Strata Card",
+    issuer: "Citi",
+    issuerTag: "citi",
+    ecosystem: "Citi ThankYou Points",
+    annualFee: 0,
+    pointValue: 0.018,
+    type: "flexible",
+    brand: "citi",
+
+    imageUrl: "assets/cards/citi-strata-card.png",
+    youtubeUrl: "",
+    applyUrl: "#",
+
+    bestFor: "Starter Citi Rewards",
+
+    rewards: {
+      dining: 2,
+      groceries: 2,
+      gas: 2,
+      rent: 0,
+      flightsDirect: 2,
+      hotelsDirect: 2,
+      travelPortal: 2,
+      other: 1
+    },
+
+    multipliers: [
+      "2x dining",
+      "2x groceries",
+      "2x gas",
+      "2x travel",
+      "1x everything else"
+    ],
+
+    myReview:
+      "A simple entry-level Citi travel rewards card. Good for beginners wanting Citi ThankYou points without an annual fee.",
+
+    bestPairing:
+      "Pairs well with Citi Double Cash and Citi Custom Cash.",
+
+    goodFor: [
+      "Beginner Citi setups",
+      "No annual fee",
+      "Dining",
+      "Groceries",
+      "Travel"
+    ],
+
+    notGoodFor: [
+      "Premium travel perks",
+      "Airport lounge access",
+      "Advanced transfer strategies"
+    ],
+
+    featuredCard: false,
+
+    tags: [
+      "citi",
+      "flexible",
+      "travel",
+      "noAnnualFee",
+      "beginner"
+    ],
+
+    benefits: [
+      "No annual fee",
+      "Citi ThankYou points",
+      "Broad everyday categories"
+    ],
+
+    why:
+      "Best beginner Citi travel rewards card.",
+
+    weaknesses: [
+      "Limited premium perks",
+      "Lower upside than Strata Premier"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
+  },
+
+  {
+    slug: "citi-strata-elite-card",
     name: "Citi Strata Elite Card",
     issuer: "Citi",
     issuerTag: "citi",
@@ -3251,9 +3692,11 @@ const creditCards = [
     pointValue: 0.018,
     type: "flexible",
     brand: "citi",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/citi-strata-elite-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium Citi Travel",
 
     rewards: {
@@ -3275,11 +3718,11 @@ const creditCards = [
       "1.5x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is Citi’s premium travel option. I would mainly look at it if you are intentionally building around Citi ThankYou points.",
 
-    myReview: "This is Citi’s premium travel option. I would mainly look at it if you are intentionally building around Citi ThankYou points.",
-    bestPairing: "Pairs well with Citi Double Cash and Citi Custom Cash.",
+    bestPairing:
+      "Pairs well with Citi Double Cash and Citi Custom Cash.",
 
     goodFor: [
       "Premium Citi setup",
@@ -3295,7 +3738,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["citi", "flexible", "premium", "travel"],
+    tags: [
+      "citi",
+      "flexible",
+      "premium",
+      "travel"
+    ],
 
     benefits: [
       "Premium Citi travel card",
@@ -3303,7 +3751,8 @@ const creditCards = [
       "Travel benefits"
     ],
 
-    why: "Best premium Citi option for travel-focused users.",
+    why:
+      "Best premium Citi option for travel-focused users.",
 
     weaknesses: [
       "High annual fee",
@@ -3316,6 +3765,7 @@ const creditCards = [
   },
 
   {
+    slug: "citi-strata-premier-card",
     name: "Citi Strata Premier Card",
     issuer: "Citi",
     issuerTag: "citi",
@@ -3324,9 +3774,11 @@ const creditCards = [
     pointValue: 0.018,
     type: "flexible",
     brand: "citi",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/citi-strata-premier-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Travel + Everyday",
 
     rewards: {
@@ -3348,11 +3800,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "Very underrated all-around card because it covers several major everyday categories in one card.",
 
-    myReview: "Very underrated all-around card because it covers several major everyday categories in one card.",
-    bestPairing: "Pairs well with Citi Double Cash and Citi Custom Cash.",
+    bestPairing:
+      "Pairs well with Citi Double Cash and Citi Custom Cash.",
 
     goodFor: [
       "Dining",
@@ -3369,7 +3821,14 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["citi", "flexible", "travel", "dining", "groceries", "gas"],
+    tags: [
+      "citi",
+      "flexible",
+      "travel",
+      "dining",
+      "groceries",
+      "gas"
+    ],
 
     benefits: [
       "3x travel",
@@ -3378,7 +3837,8 @@ const creditCards = [
       "3x gas"
     ],
 
-    why: "Best all-around Citi travel card.",
+    why:
+      "Best all-around Citi travel card.",
 
     weaknesses: [
       "Not as simple as a flat 2x card"
@@ -3390,6 +3850,7 @@ const creditCards = [
   },
 
   {
+    slug: "citi-double-cash-card",
     name: "Citi Double Cash Card",
     issuer: "Citi",
     issuerTag: "citi",
@@ -3398,9 +3859,11 @@ const creditCards = [
     pointValue: 0.018,
     type: "flexible",
     brand: "citi",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/citi-double-cash-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Catch-All Spend",
 
     rewards: {
@@ -3418,11 +3881,11 @@ const creditCards = [
       "2x total earning on purchases"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A great catch-all card, especially inside a Citi setup with Strata Premier.",
 
-    myReview: "A great catch-all card, especially inside a Citi setup with Strata Premier.",
-    bestPairing: "Pairs well with Citi Strata Premier.",
+    bestPairing:
+      "Pairs well with Citi Strata Premier.",
 
     goodFor: [
       "Everyday spend",
@@ -3438,7 +3901,13 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["citi", "flexible", "cashback", "noAnnualFee", "everyday"],
+    tags: [
+      "citi",
+      "flexible",
+      "cashback",
+      "noAnnualFee",
+      "everyday"
+    ],
 
     benefits: [
       "2x total earning",
@@ -3446,7 +3915,8 @@ const creditCards = [
       "Excellent catch-all card"
     ],
 
-    why: "Best Citi catch-all card.",
+    why:
+      "Best Citi catch-all card.",
 
     weaknesses: [
       "Best when paired with a premium Citi transfer card"
@@ -3458,6 +3928,7 @@ const creditCards = [
   },
 
   {
+    slug: "citi-custom-cash-card",
     name: "Citi Custom Cash Card",
     issuer: "Citi",
     issuerTag: "citi",
@@ -3466,9 +3937,11 @@ const creditCards = [
     pointValue: 0.018,
     type: "flexible",
     brand: "citi",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/citi-custom-cash-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Top Monthly Category",
 
     rewards: {
@@ -3487,11 +3960,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "Great as a one-category optimizer. I would not use it as my only card, but it can be powerful in a Citi setup.",
 
-    myReview: "Great as a one-category optimizer. I would not use it as my only card, but it can be powerful in a Citi setup.",
-    bestPairing: "Pairs well with Citi Strata Premier and Citi Double Cash.",
+    bestPairing:
+      "Pairs well with Citi Strata Premier and Citi Double Cash.",
 
     goodFor: [
       "One high monthly category",
@@ -3506,7 +3979,13 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["citi", "flexible", "cashback", "noAnnualFee", "category"],
+    tags: [
+      "citi",
+      "flexible",
+      "cashback",
+      "noAnnualFee",
+      "category"
+    ],
 
     benefits: [
       "5x eligible top spend category",
@@ -3514,7 +3993,8 @@ const creditCards = [
       "Great category optimizer"
     ],
 
-    why: "Best for one high monthly spending category.",
+    why:
+      "Best for one high monthly spending category.",
 
     weaknesses: [
       "Requires category strategy to maximize"
@@ -3526,6 +4006,7 @@ const creditCards = [
   },
 
   {
+    slug: "citi-rewards-plus-card",
     name: "Citi Rewards+ Card",
     issuer: "Citi",
     issuerTag: "citi",
@@ -3534,9 +4015,11 @@ const creditCards = [
     pointValue: 0.018,
     type: "flexible",
     brand: "citi",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/citi-rewards-plus-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Small Purchases",
 
     rewards: {
@@ -3557,11 +4040,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is more of a supporting Citi card than a card I would usually recommend by itself.",
 
-    myReview: "This is more of a supporting Citi card than a card I would usually recommend by itself.",
-    bestPairing: "Pairs well with Citi Strata Premier.",
+    bestPairing:
+      "Pairs well with Citi Strata Premier.",
 
     goodFor: [
       "Small purchases",
@@ -3576,7 +4059,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["citi", "flexible", "noAnnualFee"],
+    tags: [
+      "citi",
+      "flexible",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "Rounds up points on purchases",
@@ -3584,7 +4071,8 @@ const creditCards = [
       "Useful with other Citi cards"
     ],
 
-    why: "Best as a supporting Citi card.",
+    why:
+      "Best as a supporting Citi card.",
 
     weaknesses: [
       "Not usually the best standalone card"
@@ -3600,6 +4088,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "aa-mileup-card",
     name: "American Airlines AAdvantage MileUp Card",
     issuer: "Citi / American Airlines",
     issuerTag: "citi",
@@ -3608,9 +4097,11 @@ const creditCards = [
     pointValue: 0.014,
     type: "airline",
     brand: "american",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/aa-mileup-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "No-Fee American Airlines",
 
     rewards: {
@@ -3630,11 +4121,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A no-fee American Airlines starter card, but it does not have the bigger AA perks that occasional flyers may care about.",
 
-    myReview: "A no-fee American Airlines starter card, but it does not have the bigger AA perks that occasional flyers may care about.",
-    bestPairing: "Pairs well with Citi Strata Premier or Citi Double Cash.",
+    bestPairing:
+      "Pairs well with Citi Strata Premier or Citi Double Cash.",
 
     goodFor: [
       "No annual fee",
@@ -3650,7 +4141,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["citi", "airline", "american", "noAnnualFee"],
+    tags: [
+      "citi",
+      "airline",
+      "american",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "No annual fee",
@@ -3658,7 +4154,8 @@ const creditCards = [
       "Good starter AA card"
     ],
 
-    why: "Best no-fee American Airlines card.",
+    why:
+      "Best no-fee American Airlines card.",
 
     weaknesses: [
       "Limited AA travel perks"
@@ -3670,6 +4167,7 @@ const creditCards = [
   },
 
   {
+    slug: "aa-platinum-select-card",
     name: "Citi AAdvantage Platinum Select World Elite Mastercard",
     issuer: "Citi / American Airlines",
     issuerTag: "citi",
@@ -3678,9 +4176,11 @@ const creditCards = [
     pointValue: 0.014,
     type: "airline",
     brand: "american",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/aa-platinum-select-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "American Airlines",
 
     rewards: {
@@ -3701,11 +4201,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This is the AA card I would compare first if you fly American occasionally and value checked bag benefits.",
 
-    myReview: "This is the AA card I would compare first if you fly American occasionally and value checked bag benefits.",
-    bestPairing: "Pairs well with Citi Strata Premier.",
+    bestPairing:
+      "Pairs well with Citi Strata Premier.",
 
     goodFor: [
       "Occasional American Airlines flyers",
@@ -3720,7 +4220,11 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["citi", "airline", "american"],
+    tags: [
+      "citi",
+      "airline",
+      "american"
+    ],
 
     benefits: [
       "Free checked bag",
@@ -3729,7 +4233,8 @@ const creditCards = [
       "Good AA travel card"
     ],
 
-    why: "Best for occasional American Airlines flyers.",
+    why:
+      "Best for occasional American Airlines flyers.",
 
     weaknesses: [
       "Not a strong everyday card"
@@ -3741,6 +4246,7 @@ const creditCards = [
   },
 
   {
+    slug: "aa-executive-card",
     name: "Citi AAdvantage Executive World Elite Mastercard",
     issuer: "Citi / American Airlines",
     issuerTag: "citi",
@@ -3749,9 +4255,11 @@ const creditCards = [
     pointValue: 0.014,
     type: "airline",
     brand: "american",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/aa-executive-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium American Airlines",
 
     rewards: {
@@ -3770,11 +4278,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This card is mainly about Admirals Club access. I would only consider it if you fly American enough to really value the lounge benefit.",
 
-    myReview: "This card is mainly about Admirals Club access. I would only consider it if you fly American enough to really value the lounge benefit.",
-    bestPairing: "Pairs well with Citi Strata Premier or Citi Double Cash.",
+    bestPairing:
+      "Pairs well with Citi Strata Premier or Citi Double Cash.",
 
     goodFor: [
       "American Airlines loyalists",
@@ -3790,7 +4298,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["citi", "airline", "american", "premium"],
+    tags: [
+      "citi",
+      "airline",
+      "american",
+      "premium"
+    ],
 
     benefits: [
       "Admirals Club access",
@@ -3799,7 +4312,8 @@ const creditCards = [
       "Priority perks"
     ],
 
-    why: "Best for loyal American Airlines flyers who value lounge access.",
+    why:
+      "Best for loyal American Airlines flyers who value lounge access.",
 
     weaknesses: [
       "High annual fee",
@@ -3816,6 +4330,7 @@ const creditCards = [
   // =====================
 
   {
+    slug: "bilt-mastercard",
     name: "Bilt Mastercard",
     issuer: "Bilt",
     issuerTag: "bilt",
@@ -3824,9 +4339,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "bilt",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/bilt-mastercard.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Rent",
 
     rewards: {
@@ -3847,11 +4364,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "Best card for renters because earning points on rent is rare. I would mainly recommend it when rent is part of the strategy.",
 
-    myReview: "Best card for renters because earning points on rent is rare. I would mainly recommend it when rent is part of the strategy.",
-    bestPairing: "Pairs well with a dining, grocery, or premium travel card.",
+    bestPairing:
+      "Pairs well with a dining, grocery, or premium travel card.",
 
     goodFor: [
       "Rent",
@@ -3867,7 +4384,12 @@ const creditCards = [
 
     featuredCard: true,
 
-    tags: ["bilt", "flexible", "rent", "noAnnualFee"],
+    tags: [
+      "bilt",
+      "flexible",
+      "rent",
+      "noAnnualFee"
+    ],
 
     benefits: [
       "Earn points on rent",
@@ -3876,7 +4398,8 @@ const creditCards = [
       "Transfer partners"
     ],
 
-    why: "Best for renters who want points on rent payments.",
+    why:
+      "Best for renters who want points on rent payments.",
 
     weaknesses: [
       "Best value depends heavily on rent spend"
@@ -3888,6 +4411,7 @@ const creditCards = [
   },
 
   {
+    slug: "bilt-blue-card",
     name: "Bilt Blue Card",
     issuer: "Bilt",
     issuerTag: "bilt",
@@ -3896,9 +4420,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "bilt",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/bilt-blue-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Rent + Starter Bilt",
 
     rewards: {
@@ -3918,11 +4444,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A starter Bilt option. I would only prioritize this if rent rewards are the main reason you want it.",
 
-    myReview: "A starter Bilt option. I would only prioritize this if rent rewards are the main reason you want it.",
-    bestPairing: "Pairs well with a stronger dining, grocery, or travel card.",
+    bestPairing:
+      "Pairs well with a stronger dining, grocery, or travel card.",
 
     goodFor: [
       "Rent",
@@ -3937,7 +4463,13 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["bilt", "flexible", "rent", "noAnnualFee", "beginner"],
+    tags: [
+      "bilt",
+      "flexible",
+      "rent",
+      "noAnnualFee",
+      "beginner"
+    ],
 
     benefits: [
       "No annual fee",
@@ -3945,7 +4477,8 @@ const creditCards = [
       "Designed for rent rewards"
     ],
 
-    why: "Best starter Bilt option as Bilt transitions to its new lineup.",
+    why:
+      "Best starter Bilt option as Bilt transitions to its new lineup.",
 
     weaknesses: [
       "Limited upside compared to higher-tier Bilt options"
@@ -3957,6 +4490,7 @@ const creditCards = [
   },
 
   {
+    slug: "bilt-obsidian-card",
     name: "Bilt Obsidian Card",
     issuer: "Bilt",
     issuerTag: "bilt",
@@ -3965,9 +4499,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "bilt",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/bilt-obsidian-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Rent + Dining",
 
     rewards: {
@@ -3989,11 +4525,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "A mid-tier Bilt option. It should really only move up in recommendations when the user selects rent.",
 
-    myReview: "A mid-tier Bilt option. It should really only move up in recommendations when the user selects rent.",
-    bestPairing: "Pairs well with a grocery, airline, or hotel card depending on your strategy.",
+    bestPairing:
+      "Pairs well with a grocery, airline, or hotel card depending on your strategy.",
 
     goodFor: [
       "Rent",
@@ -4008,7 +4544,12 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["bilt", "flexible", "rent", "dining"],
+    tags: [
+      "bilt",
+      "flexible",
+      "rent",
+      "dining"
+    ],
 
     benefits: [
       "Bilt rewards",
@@ -4016,7 +4557,8 @@ const creditCards = [
       "Rent-focused rewards"
     ],
 
-    why: "Best mid-tier Bilt option if the new lineup fits your rent strategy.",
+    why:
+      "Best mid-tier Bilt option if the new lineup fits your rent strategy.",
 
     weaknesses: [
       "Only worth it if the annual fee fits your rent strategy"
@@ -4028,6 +4570,7 @@ const creditCards = [
   },
 
   {
+    slug: "bilt-palladium-card",
     name: "Bilt Palladium Card",
     issuer: "Bilt",
     issuerTag: "bilt",
@@ -4036,9 +4579,11 @@ const creditCards = [
     pointValue: 0.02,
     type: "flexible",
     brand: "bilt",
-    imageUrl: "",
+
+    imageUrl: "assets/cards/bilt-palladium-card.png",
     youtubeUrl: "",
     applyUrl: "#",
+
     bestFor: "Premium Bilt",
 
     rewards: {
@@ -4060,11 +4605,11 @@ const creditCards = [
       "1x everything else"
     ],
 
-    welcomeBonus: "Check the current welcome bonus before applying.",
-    lastUpdated: "2026-05-04",
+    myReview:
+      "This should only be a premium Bilt/rent strategy card. It should not outrank cards like Amex Gold or Citi Strata Premier for normal dining and grocery filters.",
 
-    myReview: "This should only be a premium Bilt/rent strategy card. It should not outrank cards like Amex Gold or Citi Strata Premier for normal dining and grocery filters.",
-    bestPairing: "Pairs well with a premium travel or hotel card.",
+    bestPairing:
+      "Pairs well with a premium travel or hotel card.",
 
     goodFor: [
       "Rent",
@@ -4081,7 +4626,13 @@ const creditCards = [
 
     featuredCard: false,
 
-    tags: ["bilt", "flexible", "rent", "premium", "travel"],
+    tags: [
+      "bilt",
+      "flexible",
+      "rent",
+      "premium",
+      "travel"
+    ],
 
     benefits: [
       "Premium Bilt option",
@@ -4089,7 +4640,8 @@ const creditCards = [
       "Travel and rent-focused benefits"
     ],
 
-    why: "Best premium Bilt option if you use the higher-tier benefits.",
+    why:
+      "Best premium Bilt option if you use the higher-tier benefits.",
 
     weaknesses: [
       "High annual fee for a rent-focused setup"
@@ -4099,102 +4651,97 @@ const creditCards = [
     beginnerFriendly: false,
     business: false
   },
+
   // =====================
-// DISCOVER IT
-// Add below Citi section
-// =====================
+  // DISCOVER
+  // =====================
 
-{
-  name: "Discover it Cash Back",
-  issuer: "Discover",
-  issuerTag: "discover",
-  ecosystem: "Cash Back",
-  annualFee: 0,
-  pointValue: 0.01,
-  type: "cashback",
-  brand: "discover",
+  {
+    slug: "discover-it-cash-back",
+    name: "Discover it Cash Back",
+    issuer: "Discover",
+    issuerTag: "discover",
+    ecosystem: "Cash Back",
+    annualFee: 0,
+    pointValue: 0.01,
+    type: "cashback",
+    brand: "discover",
 
-  imageUrl: "",
-  youtubeUrl: "",
-  applyUrl: "#",
+    imageUrl: "assets/cards/discover-it-cash-back.png",
+    youtubeUrl: "",
+    applyUrl: "#",
 
-  bestFor: "Rotating Category Cash Back",
+    bestFor: "Rotating Category Cash Back",
 
-  rewards: {
-    dining: 1,
-    groceries: 1,
-    gas: 1,
-    rent: 0,
-    flightsDirect: 1,
-    hotelsDirect: 1,
-    travelPortal: 1,
-    other: 1
+    rewards: {
+      dining: 1,
+      groceries: 1,
+      gas: 1,
+      rent: 0,
+      flightsDirect: 1,
+      hotelsDirect: 1,
+      travelPortal: 1,
+      other: 1
+    },
+
+    rotatingCategories: true,
+
+    multipliers: [
+      "5% rotating quarterly categories",
+      "1% everything else",
+      "Cashback Match first year"
+    ],
+
+    myReview:
+      "One of the best beginner cashback cards because of the first-year Cashback Match. The rotating categories require activation each quarter but can provide excellent value.",
+
+    bestPairing: [
+      "Chase Freedom Flex",
+      "Citi Double Cash",
+      "Capital One Savor"
+    ],
+
+    goodFor: [
+      "Beginners",
+      "No annual fee",
+      "Rotating category rewards",
+      "First-year cashback value"
+    ],
+
+    notGoodFor: [
+      "Travel transfer partners",
+      "Premium travel perks",
+      "Simple flat-rate earning"
+    ],
+
+    featuredCard: true,
+
+    tags: [
+      "discover",
+      "cashback",
+      "beginner",
+      "noAnnualFee",
+      "everyday"
+    ],
+
+    benefits: [
+      "No annual fee",
+      "Cashback Match first year",
+      "Strong rotating categories"
+    ],
+
+    why:
+      "Best beginner rotating-category cashback card.",
+
+    weaknesses: [
+      "Requires category activation",
+      "Limited travel benefits",
+      "Categories change quarterly"
+    ],
+
+    premium: false,
+    beginnerFriendly: true,
+    business: false
   },
 
-  rotatingCategories: true,
-
-  multipliers: [
-    "5% rotating quarterly categories",
-    "1% everything else",
-    "Cashback Match first year"
-  ],
-
-  welcomeBonus:
-    "Unlimited Cashback Match at the end of your first year.",
-
-  lastUpdated: "2026-05-09",
-
-  myReview:
-    "One of the best beginner cashback cards because of the first-year Cashback Match. The rotating categories require activation each quarter but can provide excellent value.",
-
-  bestPairing: [
-    "Chase Freedom Flex",
-    "Citi Double Cash",
-    "Capital One Savor"
-  ],
-
-  goodFor: [
-    "Beginners",
-    "No annual fee",
-    "Rotating category rewards",
-    "First-year cashback value"
-  ],
-
-  notGoodFor: [
-    "Travel transfer partners",
-    "Premium travel perks",
-    "Simple flat-rate earning"
-  ],
-
-  featuredCard: true,
-
-  tags: [
-    "discover",
-    "cashback",
-    "beginner",
-    "noAnnualFee",
-    "everyday"
-  ],
-
-  benefits: [
-    "No annual fee",
-    "Cashback Match first year",
-    "Strong rotating categories"
-  ],
-
-  why:
-    "Best beginner rotating-category cashback card.",
-
-  weaknesses: [
-    "Requires category activation",
-    "Limited travel benefits",
-    "Categories change quarterly"
-  ],
-
-  premium: false,
-  beginnerFriendly: true,
-  business: false
-},
-  
 ];
-  
