@@ -4745,3 +4745,5 @@ const creditCards = [
   },
 
 ];
+
+window.creditCards = creditCards;
