@@ -477,6 +477,18 @@ function calculateRecommendationScore(
 
   score += getGoalScore(card, goal);
 
+if (card.type === "flexible") {
+  score += 15;
+}
+
+if (card.type === "cashback") {
+  score += 12;
+}
+
+if (card.featuredCard || card.featured) {
+  score += 7;
+}
+
   return {
     card,
     score,
