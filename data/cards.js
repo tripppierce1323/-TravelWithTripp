@@ -3863,7 +3863,7 @@ const creditCards = [
     type: "flexible",
     brand: "citi",
 
-    imageUrl: "assets/cards/citi-custom-cash.png",
+    imageUrl: "assets/cards/citi-custom-cash-card.png",
     youtubeUrl: "",
     applyUrl: "#",
 
