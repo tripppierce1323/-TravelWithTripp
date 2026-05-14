@@ -2963,7 +2963,7 @@ const creditCards = [
     type: "cashback",
     brand: "amazon",
 
-    imageUrl: "assets/cards/prime-visa.png",
+    imageUrl: "assets/cards/amazon-prime-visa.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -3208,7 +3208,7 @@ const creditCards = [
     type: "flexible",
     brand: "capitalone",
 
-    imageUrl: "assets/cards/capital-one-venture-rewards.png",
+    imageUrl: "assets/cards/capital-one-venture.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -3609,7 +3609,7 @@ const creditCards = [
     type: "flexible",
     brand: "citi",
 
-    imageUrl: "assets/cards/citi-strata-card.png",
+    imageUrl: "assets/cards/citi-strata.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -3694,7 +3694,7 @@ const creditCards = [
     type: "flexible",
     brand: "citi",
 
-    imageUrl: "assets/cards/citi-strata-elite-card.png",
+    imageUrl: "assets/cards/citi-strata-elite.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -3776,7 +3776,7 @@ const creditCards = [
     type: "flexible",
     brand: "citi",
 
-    imageUrl: "assets/cards/citi-strata-premier-card.png",
+    imageUrl: "assets/cards/citi-strata-premier.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -3861,7 +3861,7 @@ const creditCards = [
     type: "flexible",
     brand: "citi",
 
-    imageUrl: "assets/cards/citi-double-cash-card.png",
+    imageUrl: "assets/cards/citi-double-cash.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -3939,7 +3939,7 @@ const creditCards = [
     type: "flexible",
     brand: "citi",
 
-    imageUrl: "assets/cards/citi-custom-cash-card.png",
+    imageUrl: "assets/cards/citi-custom-cash.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -4099,7 +4099,7 @@ const creditCards = [
     type: "airline",
     brand: "american",
 
-    imageUrl: "assets/cards/aa-mileup-card.png",
+    imageUrl: "assets/cards/citi-aadvangate-mileup.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -4178,7 +4178,7 @@ const creditCards = [
     type: "airline",
     brand: "american",
 
-    imageUrl: "assets/cards/aa-platinum-select-card.png",
+    imageUrl: "assets/cards/citi-aadvantage-platinum-select.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -4257,7 +4257,7 @@ const creditCards = [
     type: "airline",
     brand: "american",
 
-    imageUrl: "assets/cards/aa-executive-card.png",
+    imageUrl: "assets/cards/citi-aadvantage-executive.png",
     youtubeUrl: "",
     applyUrl: "#",
 
