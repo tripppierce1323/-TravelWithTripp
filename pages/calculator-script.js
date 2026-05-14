@@ -334,7 +334,7 @@ function getCategoryScore(card, category, selectedFilters, goal) {
 
   // Cash back is simple and predictable
   if (isEverydayCategory && card.type === "cashback") {
-    score += 12;
+    score += 35;
   }
 
   // Hotel cards should NOT outrank flexible cards on everyday spend
