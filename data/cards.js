@@ -1834,7 +1834,7 @@ const creditCards = [
     type: "hotel",
     brand: "hyatt",
 
-    imageUrl: "assets/cards/world-of-hyatt-credit-card.png",
+    imageUrl: "assets/cards/world-of-hyatt.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -2083,7 +2083,7 @@ const creditCards = [
     type: "airline",
     brand: "united",
 
-    imageUrl: "assets/cards/united-gateway-card.png",
+    imageUrl: "assets/cards/united-gateway.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -2163,7 +2163,7 @@ const creditCards = [
     type: "airline",
     brand: "united",
 
-    imageUrl: "assets/cards/united-explorer-card.png",
+    imageUrl: "assets/cards/united-explorer.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -2242,7 +2242,7 @@ const creditCards = [
     type: "airline",
     brand: "united",
 
-    imageUrl: "assets/cards/united-quest-card.png",
+    imageUrl: "assets/cards/united-quest.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -2322,7 +2322,7 @@ const creditCards = [
     type: "airline",
     brand: "united",
 
-    imageUrl: "assets/cards/united-club-card.png",
+    imageUrl: "assets/cards/united-club.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -2408,7 +2408,7 @@ const creditCards = [
     type: "airline",
     brand: "southwest",
 
-    imageUrl: "assets/cards/southwest-rapid-rewards-plus.png",
+    imageUrl: "assets/cards/southwest-plus.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -2486,7 +2486,7 @@ const creditCards = [
     type: "airline",
     brand: "southwest",
 
-    imageUrl: "assets/cards/southwest-rapid-rewards-premier.png",
+    imageUrl: "assets/cards/southwest-premier.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -2564,7 +2564,7 @@ const creditCards = [
     type: "airline",
     brand: "southwest",
 
-    imageUrl: "assets/cards/southwest-rapid-rewards-priority.png",
+    imageUrl: "assets/cards/southwest-priority.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -4422,7 +4422,7 @@ const creditCards = [
     type: "flexible",
     brand: "bilt",
 
-    imageUrl: "assets/cards/bilt-blue-card.png",
+    imageUrl: "assets/cards/bilt-blue.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -4501,7 +4501,7 @@ const creditCards = [
     type: "flexible",
     brand: "bilt",
 
-    imageUrl: "assets/cards/bilt-obsidian-card.png",
+    imageUrl: "assets/cards/bilt-obsidian.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -4581,7 +4581,7 @@ const creditCards = [
     type: "flexible",
     brand: "bilt",
 
-    imageUrl: "assets/cards/bilt-palladium-card.png",
+    imageUrl: "assets/cards/bilt-palladium.png",
     youtubeUrl: "",
     applyUrl: "#",
 
