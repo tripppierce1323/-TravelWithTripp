@@ -11,22 +11,27 @@ function loadPage(page) {
       document.getElementById("content").innerHTML = data;
 
       var menu = document.getElementById("menu");
+
       if (menu) {
         menu.classList.remove("open");
       }
 
-      window.scrollTo({ top: 0, behavior: "auto" });
+      window.scrollTo({
+        top: 0,
+        behavior: "auto"
+      });
     });
 }
 
 function toggleMenu() {
   var menu = document.getElementById("menu");
+
   if (menu) {
     menu.classList.toggle("open");
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   loadPage("home.html");
 });
 
@@ -37,15 +42,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function getSelectedFilters() {
   const filters = document.querySelectorAll(".card-filter:checked");
+
   return Array.from(filters).map(f => f.value);
 }
 
 function getSelectedTopCategories() {
   const categories = document.querySelectorAll(".top-category-filter:checked");
+
   return Array.from(categories).map(c => c.value);
 }
 
 function categoryLabel(category) {
+
   const labels = {
     dining: "Dining",
     groceries: "Groceries",
@@ -60,6 +68,7 @@ function categoryLabel(category) {
 }
 
 function getWelcomeBonus(card) {
+
   const bonusData = window.welcomeBonuses || {};
   const bonus = bonusData[card.slug];
 
@@ -67,7 +76,9 @@ function getWelcomeBonus(card) {
     return "Check the current welcome bonus before applying.";
   }
 
-  let text = bonus.bonus || "Check the current welcome bonus before applying.";
+  let text =
+    bonus.bonus ||
+    "Check the current welcome bonus before applying.";
 
   if (bonus.spendRequirement) {
     text += `<br><small>Spend Requirement: ${bonus.spendRequirement}</small>`;
@@ -85,33 +96,58 @@ function getWelcomeBonus(card) {
 }
 
 function clearCardFilters() {
-  document.querySelectorAll(".card-filter, .top-category-filter").forEach(input => {
+
+  document.querySelectorAll(
+    ".card-filter, .top-category-filter"
+  ).forEach(input => {
     input.checked = false;
   });
 
   const goal = document.getElementById("travelGoal");
-  if (goal) goal.value = "bestOverall";
 
-  const minSlider = document.getElementById("minAnnualFeeSlider");
-  if (minSlider) minSlider.value = 0;
+  if (goal) {
+    goal.value = "bestOverall";
+  }
 
-  const maxSlider = document.getElementById("maxAnnualFeeSlider");
-  if (maxSlider) maxSlider.value = 895;
+  const minSlider =
+    document.getElementById("minAnnualFeeSlider");
 
-  const minFeeValue = document.getElementById("minFeeValue");
-  if (minFeeValue) minFeeValue.textContent = "$0";
+  if (minSlider) {
+    minSlider.value = 0;
+  }
 
-  const maxFeeValue = document.getElementById("maxFeeValue");
-  if (maxFeeValue) maxFeeValue.textContent = "$895";
+  const maxSlider =
+    document.getElementById("maxAnnualFeeSlider");
 
-  const container = document.getElementById("resultsContent");
+  if (maxSlider) {
+    maxSlider.value = 895;
+  }
+
+  const minFeeValue =
+    document.getElementById("minFeeValue");
+
+  if (minFeeValue) {
+    minFeeValue.textContent = "$0";
+  }
+
+  const maxFeeValue =
+    document.getElementById("maxFeeValue");
+
+  if (maxFeeValue) {
+    maxFeeValue.textContent = "$895";
+  }
+
+  const container =
+    document.getElementById("resultsContent");
 
   if (container) {
     container.innerHTML = `
       <div class="results-placeholder">
         <h2>Find Your Best Cards</h2>
+
         <p>
-          Select your categories and filters, then click
+          Select your categories and filters,
+          then click
           <strong>"Find My Cards"</strong>
           to get personalized recommendations.
         </p>
@@ -122,7 +158,7 @@ function clearCardFilters() {
 
 
 // =============================
-// FILTER GROUP LOGIC
+// FILTER LOGIC
 // =============================
 
 function passesFilter(card, selectedFilters) {
@@ -186,9 +222,15 @@ function passesFilter(card, selectedFilters) {
     return false;
   }
 
-  const selectedMainTypes = selectedTypes.filter(f =>
-    ["flexible", "cashback", "airline", "hotel"].includes(f)
-  );
+  const selectedMainTypes =
+    selectedTypes.filter(f =>
+      [
+        "flexible",
+        "cashback",
+        "airline",
+        "hotel"
+      ].includes(f)
+    );
 
   if (
     selectedMainTypes.length > 0 &&
@@ -223,10 +265,15 @@ function passesFilter(card, selectedFilters) {
 
 function passesGoalFilter(card, goal) {
 
-  if (goal === "bestOverall") return true;
+  if (goal === "bestOverall") {
+    return true;
+  }
 
   if (goal === "luxuryTravel") {
-    return card.premium || card.tags?.includes("luxuryTravel");
+    return (
+      card.premium ||
+      card.tags?.includes("luxuryTravel")
+    );
   }
 
   if (goal === "freeFlights") {
@@ -246,7 +293,10 @@ function passesGoalFilter(card, goal) {
   }
 
   if (goal === "simpleSetup") {
-    return card.beginnerFriendly || card.tags?.includes("everyday");
+    return (
+      card.beginnerFriendly ||
+      card.tags?.includes("everyday")
+    );
   }
 
   if (goal === "maximizePoints") {
@@ -258,7 +308,8 @@ function passesGoalFilter(card, goal) {
 
 function shouldShowBusinessCards(card, selectedFilters) {
 
-  const businessSelected = selectedFilters.includes("business");
+  const businessSelected =
+    selectedFilters.includes("business");
 
   if (businessSelected) {
     return true;
@@ -273,12 +324,19 @@ function shouldShowBusinessCards(card, selectedFilters) {
 // =============================
 
 function hasHotelBrandFilter(selectedFilters) {
+
   return selectedFilters.some(f =>
-    ["hilton", "marriott", "hyatt", "ihg"].includes(f)
+    [
+      "hilton",
+      "marriott",
+      "hyatt",
+      "ihg"
+    ].includes(f)
   );
 }
 
 function hasAirlineBrandFilter(selectedFilters) {
+
   return selectedFilters.some(f =>
     [
       "delta",
@@ -293,18 +351,30 @@ function hasAirlineBrandFilter(selectedFilters) {
   );
 }
 
-function getCategoryScore(card, category, selectedFilters, goal) {
+function getCategoryScore(
+  card,
+  category,
+  selectedFilters,
+  goal
+) {
 
-  if (!card.rewards) return 0;
+  if (!card.rewards) {
+    return 0;
+  }
 
   let score = 0;
 
   if (category === "rent") {
-    return card.brand === "bilt" ? 120 : 0;
+    return card.brand === "bilt"
+      ? 120
+      : 0;
   }
 
-  const multiplier = card.rewards[category] || 0;
-  const realValue = multiplier * (card.pointValue || 0.01);
+  const multiplier =
+    card.rewards[category] || 0;
+
+  const realValue =
+    multiplier * (card.pointValue || 0.01);
 
   score += multiplier * 10;
   score += realValue * 400;
@@ -337,6 +407,7 @@ function getCategoryScore(card, category, selectedFilters, goal) {
     isEverydayCategory &&
     card.type === "hotel"
   ) {
+
     if (
       !selectedFilters.includes("hotel") &&
       !hasHotelBrandFilter(selectedFilters)
@@ -349,6 +420,7 @@ function getCategoryScore(card, category, selectedFilters, goal) {
     isEverydayCategory &&
     card.type === "airline"
   ) {
+
     if (
       !selectedFilters.includes("airline") &&
       !hasAirlineBrandFilter(selectedFilters)
@@ -361,26 +433,44 @@ function getCategoryScore(card, category, selectedFilters, goal) {
     card.brand === "bilt" &&
     category !== "rent"
   ) {
-    if (!selectedFilters.includes("bilt")) {
+
+    if (
+      !selectedFilters.includes("bilt")
+    ) {
       score -= 75;
     }
   }
 
   if (category === "flightsDirect") {
-    if (card.type === "flexible") score += 25;
-    if (card.type === "airline") score += 30;
+
+    if (card.type === "flexible") {
+      score += 25;
+    }
+
+    if (card.type === "airline") {
+      score += 30;
+    }
   }
 
   if (category === "hotelsDirect") {
-    if (card.type === "hotel") score += 30;
-    if (card.type === "flexible") score += 20;
+
+    if (card.type === "hotel") {
+      score += 30;
+    }
+
+    if (card.type === "flexible") {
+      score += 20;
+    }
   }
 
   const portalMultiplier =
     card.rewards.travelPortal || 0;
 
   if (
-    ["flightsDirect", "hotelsDirect"].includes(category)
+    [
+      "flightsDirect",
+      "hotelsDirect"
+    ].includes(category)
   ) {
     score += portalMultiplier * 2;
   }
@@ -401,3 +491,593 @@ function getCategoryScore(card, category, selectedFilters, goal) {
 
   return score;
 }
+
+
+// =============================
+// GOAL SCORING
+// =============================
+
+function getGoalScore(card, goal) {
+
+  let score = 0;
+
+  if (
+    goal === "luxuryTravel" &&
+    (
+      card.premium ||
+      card.tags?.includes("luxuryTravel")
+    )
+  ) {
+    score += 55;
+  }
+
+  if (
+    goal === "freeFlights" &&
+    card.type === "airline"
+  ) {
+    score += 50;
+  }
+
+  if (
+    goal === "freeHotels" &&
+    card.type === "hotel"
+  ) {
+    score += 50;
+  }
+
+  if (
+    goal === "cashBack" &&
+    card.type === "cashback"
+  ) {
+    score += 55;
+  }
+
+  if (
+    goal === "simpleSetup" &&
+    card.beginnerFriendly
+  ) {
+    score += 50;
+  }
+
+  if (
+    goal === "maximizePoints" &&
+    card.type === "flexible"
+  ) {
+    score += 55;
+  }
+
+  return score;
+}
+
+function getMatchLabel(score) {
+
+  if (score >= 115) {
+    return "Excellent Match";
+  }
+
+  if (score >= 80) {
+    return "Strong Match";
+  }
+
+  return "Good Match";
+}
+
+function calculateRecommendationScore(
+  card,
+  selectedCategories,
+  selectedFilters,
+  goal
+) {
+
+  let score = 0;
+
+  if (selectedCategories.length === 0) {
+
+    score += 20;
+
+    if (card.type === "flexible") {
+      score += 35;
+    }
+
+    if (card.beginnerFriendly) {
+      score += 20;
+    }
+
+    if (
+      card.tags?.includes("everyday")
+    ) {
+      score += 15;
+    }
+  }
+
+  selectedCategories.forEach(category => {
+
+    score += getCategoryScore(
+      card,
+      category,
+      selectedFilters,
+      goal
+    );
+  });
+
+  score += getGoalScore(card, goal);
+
+  if (card.type === "flexible") {
+    score += 10;
+  }
+
+  if (card.beginnerFriendly) {
+    score += 5;
+  }
+
+  if (
+    card.featuredCard ||
+    card.featured
+  ) {
+    score += 7;
+  }
+
+  return {
+    card,
+    score,
+    matchLabel: getMatchLabel(score)
+  };
+}
+
+
+// =============================
+// RENDER HELPERS
+// =============================
+
+function renderList(items) {
+
+  if (!items || !items.length) {
+    return "";
+  }
+
+  return `
+    <ul>
+      ${items.map(item =>
+        `<li>${item}</li>`
+      ).join("")}
+    </ul>
+  `;
+}
+
+function formatBestPairing(bestPairing) {
+
+  if (Array.isArray(bestPairing)) {
+    return bestPairing.join(", ");
+  }
+
+  return (
+    bestPairing ||
+    "Pairs well with a strong everyday earning card."
+  );
+}
+
+function renderCard(cardResult) {
+
+  const card = cardResult.card;
+
+  return `
+    <div class="mini-card">
+
+      <img
+        src="${card.imageUrl || 'assets/cards/default-card.png'}"
+        alt="${card.name}"
+      />
+
+      <h4>${card.name}</h4>
+
+      <p>
+        <strong>${cardResult.matchLabel}</strong>
+      </p>
+
+      <p>
+        <strong>Annual Fee:</strong>
+        $${card.annualFee}
+      </p>
+
+      <p>
+        <strong>Best For:</strong>
+        ${card.bestFor}
+      </p>
+
+      <div class="card-detail-block">
+        <strong>Top Multipliers</strong>
+
+        ${renderList(
+          card.multipliers ||
+          card.benefits ||
+          []
+        )}
+      </div>
+
+      <div class="card-detail-block">
+        <strong>Current Welcome Bonus</strong>
+
+        <p>${getWelcomeBonus(card)}</p>
+      </div>
+
+      <div class="card-detail-block">
+        <strong>My Review</strong>
+
+        <p>
+          ${card.myReview || card.why || ""}
+        </p>
+      </div>
+
+      <div class="card-detail-block">
+        <strong>Good For</strong>
+
+        ${renderList(card.goodFor || [])}
+      </div>
+
+      <div class="card-detail-block">
+        <strong>Not Good For</strong>
+
+        ${renderList(
+          card.notGoodFor ||
+          card.weaknesses ||
+          []
+        )}
+      </div>
+
+      <div class="card-detail-block">
+        <strong>Best Pairing</strong>
+
+        <p>
+          ${formatBestPairing(card.bestPairing)}
+        </p>
+      </div>
+
+      <div class="actions">
+
+        <a
+          href="${card.applyUrl || '#'}"
+          target="_blank"
+          class="apply-btn"
+        >
+          Apply Now
+        </a>
+
+        ${card.youtubeUrl
+          ? `
+            <a
+              href="${card.youtubeUrl}"
+              target="_blank"
+              class="video-btn"
+            >
+              Watch My Review
+            </a>
+          `
+          : ""
+        }
+
+      </div>
+
+    </div>
+  `;
+}
+
+
+// =============================
+// GROUPING LOGIC
+// =============================
+
+function getGroupLabel(
+  card,
+  selectedFilters
+) {
+
+  const brandLabels = {
+    hilton: "Hilton Cards",
+    marriott: "Marriott Cards",
+    hyatt: "Hyatt Cards",
+    ihg: "IHG Cards",
+    delta: "Delta Cards",
+    united: "United Cards",
+    american: "American Airlines Cards",
+    southwest: "Southwest Cards",
+    aircanada: "Air Canada / Aeroplan Cards",
+    britishairways: "British Airways Cards",
+    aerlingus: "Aer Lingus Cards",
+    iberia: "Iberia Cards"
+  };
+
+  if (brandLabels[card.brand]) {
+    return brandLabels[card.brand];
+  }
+
+  if (card.type === "flexible") {
+    return "Flexible Points Cards";
+  }
+
+  if (card.type === "cashback") {
+    return "Cash Back Cards";
+  }
+
+  if (card.type === "airline") {
+    return "Airline Cards";
+  }
+
+  if (card.type === "hotel") {
+    return "Hotel Cards";
+  }
+
+  if (card.business) {
+    return "Business Cards";
+  }
+
+  return "Other Cards";
+}
+
+
+// =============================
+// RESULTS RENDERING
+// =============================
+
+function renderResults(
+  results,
+  selectedCategories
+) {
+
+  const container =
+    document.getElementById("resultsContent");
+
+  if (!container) {
+    return;
+  }
+
+  document.querySelector(
+    ".results-placeholder"
+  )?.remove();
+
+  if (!results.length) {
+
+    container.innerHTML = `
+      <div class="results-placeholder">
+
+        <h2>No cards found</h2>
+
+        <p>
+          No cards matched your selected filters.
+          Try removing one filter or choosing
+          a different issuer or brand.
+        </p>
+
+      </div>
+    `;
+
+    return;
+  }
+
+  const groups = {};
+
+  results.forEach(result => {
+
+    const label = getGroupLabel(
+      result.card,
+      getSelectedFilters()
+    );
+
+    if (!groups[label]) {
+      groups[label] = [];
+    }
+
+    groups[label].push(result);
+  });
+
+  container.innerHTML =
+    Object.keys(groups).map(groupName => `
+
+      <div class="other-cards">
+
+        <h2>${groupName}</h2>
+
+        ${groups[groupName]
+          .map(renderCard)
+          .join("")}
+
+      </div>
+
+    `).join("");
+}
+
+
+// =============================
+// MAIN FINDER
+// =============================
+
+function runCalculator() {
+
+  const personalCards =
+    window.creditCards ||
+    (
+      typeof creditCards !== "undefined"
+        ? creditCards
+        : []
+    );
+
+  const businessCards =
+    window.businessCreditCards || [];
+
+  const selectedCategories =
+    getSelectedTopCategories();
+
+  const selectedFilters =
+    getSelectedFilters();
+
+  const goal =
+    document.getElementById("travelGoal")
+      ?.value || "bestOverall";
+
+  const minFee =
+    Number(
+      document.getElementById(
+        "minAnnualFeeSlider"
+      )?.value
+    ) || 0;
+
+  const maxFee =
+    Number(
+      document.getElementById(
+        "maxAnnualFeeSlider"
+      )?.value
+    ) || 895;
+
+  const cardsData = [
+    ...personalCards,
+    ...businessCards
+  ];
+
+  if (!cardsData.length) {
+
+    alert(
+      "Card data is missing. Make sure cards.js is loaded."
+    );
+
+    return;
+  }
+
+  const results = cardsData
+
+    .filter(card =>
+      card.annualFee >= minFee &&
+      card.annualFee <= maxFee
+    )
+
+    .filter(card =>
+      shouldShowBusinessCards(
+        card,
+        selectedFilters
+      )
+    )
+
+    .filter(card =>
+      passesFilter(
+        card,
+        selectedFilters
+      )
+    )
+
+    .filter(card =>
+      passesGoalFilter(card, goal)
+    )
+
+    .map(card =>
+      calculateRecommendationScore(
+        card,
+        selectedCategories,
+        selectedFilters,
+        goal
+      )
+    )
+
+    .filter(result =>
+      selectedFilters.length > 0 ||
+      selectedCategories.length > 0
+        ? true
+        : result.score > 0
+    )
+
+    .sort((a, b) =>
+      b.score - a.score
+    );
+
+  renderResults(
+    results,
+    selectedCategories
+  );
+}
+
+
+// =============================
+// SLIDER EVENT LISTENERS
+// =============================
+
+document.addEventListener(
+  "input",
+  function(e) {
+
+    const minSlider =
+      document.getElementById(
+        "minAnnualFeeSlider"
+      );
+
+    const maxSlider =
+      document.getElementById(
+        "maxAnnualFeeSlider"
+      );
+
+    const minFeeValue =
+      document.getElementById(
+        "minFeeValue"
+      );
+
+    const maxFeeValue =
+      document.getElementById(
+        "maxFeeValue"
+      );
+
+    if (!minSlider || !maxSlider) {
+      return;
+    }
+
+    let minFee =
+      Number(minSlider.value);
+
+    let maxFee =
+      Number(maxSlider.value);
+
+    if (
+      e.target.id ===
+      "minAnnualFeeSlider"
+    ) {
+
+      if (minFee > maxFee) {
+        maxFee = minFee;
+        maxSlider.value = maxFee;
+      }
+    }
+
+    if (
+      e.target.id ===
+      "maxAnnualFeeSlider"
+    ) {
+
+      if (maxFee < minFee) {
+        minFee = maxFee;
+        minSlider.value = minFee;
+      }
+    }
+
+    if (minFeeValue) {
+      minFeeValue.textContent =
+        "$" + minFee;
+    }
+
+    if (maxFeeValue) {
+      maxFeeValue.textContent =
+        "$" + maxFee;
+    }
+  }
+);
+
+
+// =============================
+// GLOBAL EXPORTS
+// =============================
+
+window.runCalculator =
+  runCalculator;
+
+window.clearCardFilters =
+  clearCardFilters;
+
+window.loadPage =
+  loadPage;
+
+window.toggleMenu =
+  toggleMenu;
