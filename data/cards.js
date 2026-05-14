@@ -1164,7 +1164,7 @@ const creditCards = [
   // =====================
 
   {
-    slug: "chase-sapphire-preferred",
+    slug: "sapphire-preferred",
     name: "Chase Sapphire Preferred",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1174,7 +1174,7 @@ const creditCards = [
     type: "flexible",
     brand: "chase",
 
-    imageUrl: "assets/cards/chase-sapphire-preferred.png",
+    imageUrl: "assets/cards/sapphire-preferred.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -1247,7 +1247,7 @@ const creditCards = [
   },
 
   {
-    slug: "chase-sapphire-reserve",
+    slug: "sapphire-reserve",
     name: "Chase Sapphire Reserve",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1257,7 +1257,7 @@ const creditCards = [
     type: "flexible",
     brand: "chase",
 
-    imageUrl: "assets/cards/chase-sapphire-reserve.png",
+    imageUrl: "assets/cards/sapphire-reserve.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -1331,7 +1331,7 @@ const creditCards = [
   },
 
   {
-    slug: "chase-freedom-unlimited",
+    slug: "freedom-unlimited",
     name: "Chase Freedom Unlimited",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1341,7 +1341,7 @@ const creditCards = [
     type: "flexible",
     brand: "chase",
 
-    imageUrl: "assets/cards/chase-freedom-unlimited.png",
+    imageUrl: "assets/cards/freedom-unlimited.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -1413,7 +1413,7 @@ const creditCards = [
   },
 
   {
-    slug: "chase-freedom-flex",
+    slug: "freedom-flex",
     name: "Chase Freedom Flex",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1423,7 +1423,7 @@ const creditCards = [
     type: "flexible",
     brand: "chase",
 
-    imageUrl: "assets/cards/chase-freedom-flex.png",
+    imageUrl: "assets/cards/freedom-flex.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -1496,7 +1496,7 @@ const creditCards = [
   },
 
   {
-    slug: "chase-freedom-rise",
+    slug: "freedom-rise",
     name: "Chase Freedom Rise",
     issuer: "Chase",
     issuerTag: "chase",
@@ -1506,7 +1506,7 @@ const creditCards = [
     type: "flexible",
     brand: "chase",
 
-    imageUrl: "assets/cards/chase-freedom-rise.png",
+    imageUrl: "assets/cards/freedom-rise.png",
     youtubeUrl: "",
     applyUrl: "#",
 
