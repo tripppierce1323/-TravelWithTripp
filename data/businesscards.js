@@ -1018,7 +1018,7 @@ const businessCreditCards = [
     type: "flexible",
     brand: "chase",
 
-    imageUrl: "assets/cards/chase-sapphire-reserve-business.png",
+    imageUrl: "assets/cards/sapphire-reserve-business.png",
     youtubeUrl: "",
     applyUrl: "#",
 
