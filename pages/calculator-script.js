@@ -286,6 +286,26 @@ function shouldShowBusinessCards(
 // =============================
 // CATEGORY SCORING
 // =============================
+function hasHotelBrandFilter(selectedFilters) {
+  return selectedFilters.some(f =>
+    ["hilton", "marriott", "hyatt", "ihg"].includes(f)
+  );
+}
+
+function hasAirlineBrandFilter(selectedFilters) {
+  return selectedFilters.some(f =>
+    [
+      "delta",
+      "united",
+      "american",
+      "southwest",
+      "aircanada",
+      "britishairways",
+      "aerlingus",
+      "iberia"
+    ].includes(f)
+  );
+}
 
 function getCategoryScore(card, category, selectedFilters, goal) {
   if (!card.rewards) return 0;
@@ -436,7 +456,7 @@ function calculateRecommendationScore(
     score += 20;
 
     if (card.type === "flexible") {
-      score += 35;
+      score += 45;
     }
 
     if (card.beginnerFriendly) {
