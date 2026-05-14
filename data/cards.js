@@ -2322,7 +2322,7 @@ const creditCards = [
     type: "airline",
     brand: "united",
 
-    imageUrl: "assets/cards/united-club.png",
+    imageUrl: "assets/cards/united-club-infinite.png",
     youtubeUrl: "",
     applyUrl: "#",
 
