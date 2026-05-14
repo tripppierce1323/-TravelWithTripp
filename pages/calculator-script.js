@@ -287,34 +287,78 @@ function shouldShowBusinessCards(
 // CATEGORY SCORING
 // =============================
 
-function getCategoryScore(
-  card,
-  category,
-  selectedFilters,
-  goal
-) {
+function getCategoryScore(card, category, selectedFilters, goal) {
+  if (!card.rewards) return 0;
 
-  if (!card.rewards) {
-    return 0;
-  }
-
-  let score = 0;
-
+  // Rent / mortgage should ONLY reward Bilt
   if (category === "rent") {
-    return card.brand === "bilt"
-      ? 120
-      : 0;
+    return card.brand === "bilt" ? 120 : -999;
   }
 
-  const multiplier =
-    card.rewards[category] || 0;
+  const multiplier = card.rewards[category] || 0;
+  const pointValue = card.pointValue || 0.01;
 
-  const realValue =
-    multiplier * (card.pointValue || 0.01);
+  // This is the real value earned per $1 spent
+  // Example: 4x * 2cpp = 8% return
+  const effectiveReturn = multiplier * pointValue;
 
-  score += multiplier * 10;
+  let score = effectiveReturn * 1000;
 
-  score += realValue * 400;
+  const everydayCategories = ["dining", "groceries", "gas", "other"];
+  const isEverydayCategory = everydayCategories.includes(category);
+
+  // Flexible points deserve a small boost because they are easier to use
+  if (isEverydayCategory && card.type === "flexible") {
+    score += 20;
+  }
+
+  // Cash back is simple and predictable
+  if (isEverydayCategory && card.type === "cashback") {
+    score += 12;
+  }
+
+  // Hotel cards should NOT outrank flexible cards on everyday spend
+  // unless user specifically selects hotel or that hotel brand
+  if (isEverydayCategory && card.type === "hotel") {
+    if (!selectedFilters.includes("hotel") && !hasHotelBrandFilter(selectedFilters)) {
+      score -= 35;
+    }
+  }
+
+  // Airline cards should NOT outrank flexible cards on everyday spend
+  // unless user specifically selects airline or that airline brand
+  if (isEverydayCategory && card.type === "airline") {
+    if (!selectedFilters.includes("airline") && !hasAirlineBrandFilter(selectedFilters)) {
+      score -= 35;
+    }
+  }
+
+  // Bilt should only rise when rent is selected
+  if (card.brand === "bilt" && category !== "rent" && !selectedFilters.includes("bilt")) {
+    score -= 60;
+  }
+
+  // Travel category logic
+  if (category === "flightsDirect") {
+    if (card.type === "flexible") score += 20;
+    if (card.type === "airline") score += 20;
+  }
+
+  if (category === "hotelsDirect") {
+    if (card.type === "hotel") score += 25;
+    if (card.type === "flexible") score += 15;
+  }
+
+  // Premium cards should not win everyday categories just because they are premium
+  const premiumRelevant =
+    goal === "luxuryTravel" ||
+    selectedFilters.includes("premium") ||
+    category === "flightsDirect" ||
+    category === "hotelsDirect";
+
+  if (card.premium && !premiumRelevant && isEverydayCategory) {
+    score -= 30;
+  }
 
   return score;
 }
