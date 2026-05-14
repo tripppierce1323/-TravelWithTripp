@@ -2646,7 +2646,7 @@ const creditCards = [
     type: "airline",
     brand: "aircanada",
 
-    imageUrl: "assets/cards/aeroplan-card.png",
+    imageUrl: "assets/cards/aeroplan-mastercard.png",
     youtubeUrl: "",
     applyUrl: "#",
 
@@ -2725,7 +2725,7 @@ const creditCards = [
     type: "airline",
     brand: "britishairways",
 
-    imageUrl: "assets/cards/british-airways-visa-signature.png",
+    imageUrl: "assets/cards/british-airways-visa.png",
     youtubeUrl: "",
     applyUrl: "#",
 
