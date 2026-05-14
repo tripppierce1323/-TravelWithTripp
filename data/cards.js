@@ -1275,10 +1275,11 @@ const creditCards = [
     },
 
     multipliers: [
-      "High earning through Chase Travel",
-      "Strong dining earning",
-      "Strong travel earning",
-      "1x everything else"
+     "8x Chase Travel purchases",
+    "4x direct flights",
+    "4x direct hotels",
+    "3x dining worldwide",
+    "1x everything else"
     ],
 
     myReview:
