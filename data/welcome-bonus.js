@@ -510,7 +510,7 @@ const welcomeBonuses = {
     elevated: true
   }
 
-};
+}
 
   // =====================
   // CAPITAL ONE
