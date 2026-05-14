@@ -4265,7 +4265,7 @@ const creditCards = [
     type: "flexible",
     brand: "bilt",
 
-    imageUrl: "assets/cards/bilt-mastercard.png",
+    imageUrl: "assets/cards/bilt-mastercard .png",
     youtubeUrl: "",
     applyUrl: "#",
 
