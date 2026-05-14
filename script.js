@@ -63,7 +63,7 @@ function loadPageScript(page) {
   }
 
   else if (page === "bonuses.html") {
-    scriptPath = "pages/bonues-script.js";
+    scriptPath = "pages/bonuses-script.js";
   }
 
   else if (page === "wallet.html") {
