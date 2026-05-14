@@ -3529,7 +3529,7 @@ const creditCards = [
     type: "cashback",
     brand: "capitalone",
 
-    imageUrl: "assets/cards/capital-one-quicksilverone.png",
+    imageUrl: "assets/cards/capital-one-quicksilver.png",
     youtubeUrl: "",
     applyUrl: "#",
 
