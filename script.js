@@ -14,7 +14,52 @@ function loadPage(page) {
 
       document.getElementById("content").innerHTML = data;
 
-      const menu = document.getElementById("menu");
+      // =============================
+      // LOAD PAGE-SPECIFIC SCRIPTS
+      // =============================
+
+      if (page === "calculator.html") {
+
+        const oldScript =
+          document.getElementById("calculatorScript");
+
+        if (oldScript) {
+          oldScript.remove();
+        }
+
+        const script =
+          document.createElement("script");
+
+        script.src =
+          "pages/calculator-script.js?v=" + Date.now();
+
+        script.id = "calculatorScript";
+
+        document.body.appendChild(script);
+      }
+
+      if (page === "bonuses.html") {
+
+        const oldScript =
+          document.getElementById("bonusesScript");
+
+        if (oldScript) {
+          oldScript.remove();
+        }
+
+        const script =
+          document.createElement("script");
+
+        script.src =
+          "pages/bonuses-script.js?v=" + Date.now();
+
+        script.id = "bonusesScript";
+
+        document.body.appendChild(script);
+      }
+
+      var menu =
+        document.getElementById("menu");
 
       if (menu) {
         menu.classList.remove("open");
@@ -25,87 +70,18 @@ function loadPage(page) {
         behavior: "auto"
       });
 
-      loadPageScript(page);
-
-    })
-
-    .catch(function(error) {
-
-      console.error("Error loading page:", error);
-
-      document.getElementById("content").innerHTML = `
-        <div style="padding:40px;color:white;">
-          Failed to load page.
-        </div>
-      `;
     });
 }
 
 
 // =============================
-// LOAD PAGE-SPECIFIC SCRIPTS
-// =============================
-
-function loadPageScript(page) {
-
-  // Remove old dynamic scripts
-  document.querySelectorAll(".dynamic-page-script")
-    .forEach(script => script.remove());
-
-  let scriptPath = "";
-
-  // =============================
-  // PAGE SCRIPT ROUTING
-  // =============================
-
-  if (page === "calculator.html") {
-    scriptPath = "pages/calculator-script.js";
-  }
-
-  else if (page === "bonuses.html") {
-    scriptPath = "pages/bonuses-script.js";
-  }
-
-  else if (page === "wallet.html") {
-    scriptPath = "pages/wallet-script.js";
-  }
-
-  else if (page === "tracker.html") {
-    scriptPath = "pages/tracker-script.js";
-  }
-
-  else if (page === "trips.html") {
-    scriptPath = "pages/trips-script.js";
-  }
-
-  else if (page === "about.html") {
-    scriptPath = "pages/about-script.js";
-  }
-
-  // =============================
-  // LOAD SCRIPT
-  // =============================
-
-  if (scriptPath !== "") {
-
-    const script = document.createElement("script");
-
-    script.src = scriptPath;
-
-    script.className = "dynamic-page-script";
-
-    document.body.appendChild(script);
-  }
-}
-
-
-// =============================
-// MENU
+// MOBILE MENU
 // =============================
 
 function toggleMenu() {
 
-  const menu = document.getElementById("menu");
+  var menu =
+    document.getElementById("menu");
 
   if (menu) {
     menu.classList.toggle("open");
@@ -114,19 +90,25 @@ function toggleMenu() {
 
 
 // =============================
-// INITIAL PAGE LOAD
+// LOAD HOME PAGE
 // =============================
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
 
-  loadPage("home.html");
+    loadPage("home.html");
 
-});
+  }
+);
 
 
 // =============================
 // GLOBAL EXPORTS
 // =============================
 
-window.loadPage = loadPage;
-window.toggleMenu = toggleMenu;
+window.loadPage =
+  loadPage;
+
+window.toggleMenu =
+  toggleMenu;
